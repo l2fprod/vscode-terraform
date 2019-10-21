@@ -4,12 +4,12 @@ import * as vscode from "vscode";
 import { getConfiguration } from "./configuration";
 import { Logger } from './logger';
 
+let logger = new Logger("telemetry");
 
 class TelemetryReporter extends vscode.Disposable {
   private client: ai.TelemetryClient;
   private userOptIn: boolean = false;
   private disposables: vscode.Disposable[] = [];
-  private logger = new Logger("telemetry");
 
   constructor(public extensionId: string, public extensionVersion: string, private aiKey: string) {
     super(() => this.disposables.map((d) => d.dispose()));
@@ -26,12 +26,12 @@ class TelemetryReporter extends vscode.Disposable {
 
   trackEvent(eventName: string, properties?: { [key: string]: string }, measurements?: { [key: string]: number }) {
     if (!this.userOptIn || !this.client || !eventName) {
-      this.logger.debug(`Not sending metric ${eventName}`);
+      logger.debug(`Not sending metric ${eventName}`);
       if (properties) {
-        Object.keys(properties).forEach((p) => this.logger.debug(`    ${p}: ${properties[p]}`));
+        Object.keys(properties).forEach((p) => logger.debug(`    ${p}: ${properties[p]}`));
       }
       if (measurements) {
-        Object.keys(measurements).forEach((p) => this.logger.debug(`    ${p}: ${measurements[p]}`));
+        Object.keys(measurements).forEach((p) => logger.debug(`    ${p}: ${measurements[p]}`));
       }
 
       return;
@@ -46,7 +46,7 @@ class TelemetryReporter extends vscode.Disposable {
 
   trackException(eventName: string, exception: Error, properties?: { [key: string]: string }, measurements?: { [key: string]: number }) {
     if (!this.userOptIn || !this.client || !exception || !eventName) {
-      this.logger.debug(`terraform.telemetry: Not sending exception metric ${eventName}/${exception}`);
+      logger.debug(`terraform.telemetry: Not sending exception metric ${eventName}/${exception}`);
       return;
     }
 
@@ -136,7 +136,12 @@ export let Reporter: TelemetryReporter;
 export function activate(ctx: vscode.ExtensionContext) {
   const packageJson = require(ctx.asAbsolutePath('./package.json'));
 
-  const aiKey = require('./constants.json').APPINSIGHTS_KEY;
+  let aiKey;
+  try {
+    aiKey = require('./constants.json').APPINSIGHTS_KEY;
+  } catch (err) {
+    logger.debug(err);
+  }
 
   Reporter = new TelemetryReporter(`${packageJson.publisher}.${packageJson.name}`, packageJson.version, aiKey);
 }
