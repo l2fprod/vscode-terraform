@@ -306,181 +306,6 @@
         }
       ]
     },
-    "ibm_resource_group": {
-      "name": "ibm_resource_group",
-      "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/resource_group.html",
-      "groupName": "Cloud Foundry Data Sources",
-      "args": [
-        {
-          "name": "name",
-          "description": "(Optional, string) The name of the IBM Cloud resource group. You can retrieve the value by running the ibmcloud resource groups command in the IBM Cloud CLI.\nNOTE: Conflicts with is_default.",
-          "args": []
-        },
-        {
-          "name": "is_default",
-          "description": "(Optional, boolean) Specifies whether you want to import default resource group. The default value is false.\nNOTE: Conflicts with name.",
-          "args": []
-        }
-      ],
-      "attrs": [
-        {
-          "name": "id",
-          "description": "The unique identifier of the resource group.",
-          "args": []
-        }
-      ]
-    },
-    "ibm_resource_instance": {
-      "name": "ibm_resource_instance",
-      "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/resource_instance.html",
-      "groupName": "Cloud Foundry Data Sources",
-      "args": [
-        {
-          "name": "name",
-          "description": "(Required, string) The name of the resource instance.",
-          "args": []
-        },
-        {
-          "name": "resource_group_id",
-          "description": "(Optional, string) The id of the resource group where the resource instance exists. If not provided it takes the default resource group.",
-          "args": []
-        },
-        {
-          "name": "location",
-          "description": "(Optional, string) The location or the environment in which instance exists.",
-          "args": []
-        },
-        {
-          "name": "service",
-          "description": "(Optional, string) The service type of the instance. You can retrieve the value by running the ibmcloud catalog service-marketplace or ibmcloud catalog search command in the IBM Cloud CLI.",
-          "args": []
-        }
-      ],
-      "attrs": [
-        {
-          "name": "id",
-          "description": "The unique identifier of the resource instance.",
-          "args": []
-        },
-        {
-          "name": "status",
-          "description": "The status of resource instance.",
-          "args": []
-        },
-        {
-          "name": "plan",
-          "description": "The plan for the service offering used by this resource instance.",
-          "args": []
-        }
-      ]
-    },
-    "ibm_resource_key": {
-      "name": "ibm_resource_key",
-      "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/resource_key.html",
-      "groupName": "Cloud Foundry Data Sources",
-      "args": [
-        {
-          "name": "name",
-          "description": "(Required, string) The name of the resource key. You can retrieve the value by running the ibmcloud resource service-keys command in the IBM Cloud CLI.",
-          "args": []
-        },
-        {
-          "name": "resource_instance_id",
-          "description": "(Optional, string) The id of the resource instance that the resource key is associated with. You can retrieve the value by running the ibmcloud resource service-instances command in the IBM Cloud CLI.\nNOTE: Conflicts with resource_alias_id.",
-          "args": []
-        },
-        {
-          "name": "resource_alias_id",
-          "description": "(Optional, string) The id of the resource alias that the resource key is associated with. You can retrieve the value by running the ibmcloud resource service-alias command in the IBM Cloud CLI.\nNOTE: Conflicts with resource_instance_id.",
-          "args": []
-        },
-        {
-          "name": "most_recent",
-          "description": "(Optional, boolean) If there are multiple resource keys, you can set this argument to true to import only the most recently created key.",
-          "args": []
-        }
-      ],
-      "attrs": [
-        {
-          "name": "id",
-          "description": "The unique identifier of the resource key.",
-          "args": []
-        },
-        {
-          "name": "credentials",
-          "description": "The credentials associated with the key.",
-          "args": []
-        },
-        {
-          "name": "role",
-          "description": "The user role.",
-          "args": []
-        },
-        {
-          "name": "status",
-          "description": "Status of resource key.",
-          "args": []
-        }
-      ]
-    },
-    "ibm_resource_quota": {
-      "name": "ibm_resource_quota",
-      "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/resource_quota.html",
-      "groupName": "Cloud Foundry Data Sources",
-      "args": [
-        {
-          "name": "name",
-          "description": "(Required, string) The name of the quota for the IBM Cloud resource. You can retrieve the value by running the ibmcloud resource quotas command in the IBM Cloud CLI.",
-          "args": []
-        }
-      ],
-      "attrs": [
-        {
-          "name": "id",
-          "description": "The unique identifier of the quota.",
-          "args": []
-        },
-        {
-          "name": "type",
-          "description": "Type of the quota.",
-          "args": []
-        },
-        {
-          "name": "max_apps",
-          "description": "Defines the total app limit.",
-          "args": []
-        },
-        {
-          "name": "max_instances_per_app",
-          "description": "Defines the total instances limit per app.",
-          "args": []
-        },
-        {
-          "name": "max_app_instance_memory",
-          "description": "Defines the total memory of app instance.",
-          "args": []
-        },
-        {
-          "name": "total_app_memory",
-          "description": "Defines the total memory for app.",
-          "args": []
-        },
-        {
-          "name": "max_service_instances",
-          "description": "Defines the total service instances limit.",
-          "args": []
-        },
-        {
-          "name": "vsi_limit",
-          "description": "Defines the VSI limit.",
-          "args": []
-        }
-      ]
-    },
     "ibm_service_instance": {
       "name": "ibm_service_instance",
       "type": "data",
@@ -995,6 +820,245 @@
           "name": "valid_openshift_versions",
           "description": "The supported openshift versions on IBM Cloud.",
           "args": []
+        }
+      ]
+    },
+    "ibm_function_action": {
+      "name": "ibm_function_action",
+      "type": "data",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/function_action.html",
+      "groupName": "Function Data Sources",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, string) The name of the action.",
+          "args": []
+        }
+      ],
+      "attrs": []
+    },
+    "ibm_function_package": {
+      "name": "ibm_function_package",
+      "type": "data",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/function_package.html",
+      "groupName": "Function Data Sources",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, string) The name of the package.",
+          "args": []
+        }
+      ],
+      "attrs": []
+    },
+    "ibm_function_rule": {
+      "name": "ibm_function_rule",
+      "type": "data",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/function_rule.html",
+      "groupName": "Function Data Sources",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, string) The name of the rule.",
+          "args": []
+        }
+      ],
+      "attrs": []
+    },
+    "ibm_function_trigger": {
+      "name": "ibm_function_trigger",
+      "type": "data",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/function_trigger.html",
+      "groupName": "Function Data Sources",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, string) The name of the trigger.",
+          "args": []
+        }
+      ],
+      "attrs": []
+    },
+    "ibm_iam_service_id": {
+      "name": "ibm_iam_service_id",
+      "type": "data",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/iam_service_id.html",
+      "groupName": "Identity & Access Data Sources",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, string) Name of the serviceID.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "service_ids",
+          "description": "A nested block list of IAM ServiceIDs. Nested service_ids blocks have the following structure:\n\n\nid - The unique identifier of the serviceID.\nbound_to -  bound to of the serviceID.\ncrn -  crn of the serviceID.\ndescription -  description of the serviceID.\nversion -  version of the serviceID.\nlocked -  lock state of the serviceID.",
+          "args": [
+            {
+              "name": "id",
+              "description": "The unique identifier of the serviceID.",
+              "args": []
+            },
+            {
+              "name": "bound_to",
+              "description": "bound to of the serviceID.",
+              "args": []
+            },
+            {
+              "name": "crn",
+              "description": "crn of the serviceID.",
+              "args": []
+            },
+            {
+              "name": "description",
+              "description": "description of the serviceID.",
+              "args": []
+            },
+            {
+              "name": "version",
+              "description": "version of the serviceID.",
+              "args": []
+            },
+            {
+              "name": "locked",
+              "description": "lock state of the serviceID.",
+              "args": []
+            }
+          ]
+        }
+      ]
+    },
+    "ibm_iam_service_policy": {
+      "name": "ibm_iam_service_policy",
+      "type": "data",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/iam_service_policy.html",
+      "groupName": "Identity & Access Data Sources",
+      "args": [
+        {
+          "name": "iam_service_id",
+          "description": "(Required, string) The UUID of the serviceID.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "policies",
+          "description": "A nested block describing IAM Policies assigned to serviceID. Nested policies blocks have the following structure:\n\n\nid - The unique identifier of the IAM service policy.The id is composed of <iam_service_id>/<service_policy_id>\nroles -  Roles assigned to the policy.\nresources -  A nested block describing the resources in the policy.\n\n\nservice - Service name of the policy definition. \nresource_instance_id - ID of resource instance of the policy definition.\nregion - Region of the policy definition.\nresource_type - Resource type of the policy definition.\nresource - Resource of the policy definition.\nresource_group_id - The ID of the resource group.",
+          "args": [
+            {
+              "name": "id",
+              "description": "The unique identifier of the IAM service policy.The id is composed of <iam_service_id>/<service_policy_id>",
+              "args": []
+            },
+            {
+              "name": "roles",
+              "description": "Roles assigned to the policy.",
+              "args": []
+            },
+            {
+              "name": "resources",
+              "description": "A nested block describing the resources in the policy.\n\n\nservice - Service name of the policy definition. \nresource_instance_id - ID of resource instance of the policy definition.\nregion - Region of the policy definition.\nresource_type - Resource type of the policy definition.\nresource - Resource of the policy definition.\nresource_group_id - The ID of the resource group.",
+              "args": []
+            },
+            {
+              "name": "service",
+              "description": "Service name of the policy definition.",
+              "args": []
+            },
+            {
+              "name": "resource_instance_id",
+              "description": "ID of resource instance of the policy definition.",
+              "args": []
+            },
+            {
+              "name": "region",
+              "description": "Region of the policy definition.",
+              "args": []
+            },
+            {
+              "name": "resource_type",
+              "description": "Resource type of the policy definition.",
+              "args": []
+            },
+            {
+              "name": "resource",
+              "description": "Resource of the policy definition.",
+              "args": []
+            },
+            {
+              "name": "resource_group_id",
+              "description": "The ID of the resource group.",
+              "args": []
+            }
+          ]
+        }
+      ]
+    },
+    "ibm_iam_user_policy": {
+      "name": "ibm_iam_user_policy",
+      "type": "data",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/iam_user_policy.html",
+      "groupName": "Identity & Access Data Sources",
+      "args": [
+        {
+          "name": "ibm_id",
+          "description": "(Required, string) The ibm id or email of user.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "policies",
+          "description": "A nested block describing IAM Policies assigned to user. Nested policies blocks have the following structure:\n\n\nid - The unique identifier of the IAM user policy.The id is composed of <ibm_id>/<user_policy_id>\nroles -  Roles assigned to the policy.\nresources -  A nested block describing the resources in the policy.\n\n\nservice - Service name of the policy definition. \nresource_instance_id - ID of resource instance of the policy definition.\nregion - Region of the policy definition.\nresource_type - Resource type of the policy definition.\nresource - Resource of the policy definition.\nresource_group_id - The ID of the resource group.",
+          "args": [
+            {
+              "name": "id",
+              "description": "The unique identifier of the IAM user policy.The id is composed of <ibm_id>/<user_policy_id>",
+              "args": []
+            },
+            {
+              "name": "roles",
+              "description": "Roles assigned to the policy.",
+              "args": []
+            },
+            {
+              "name": "resources",
+              "description": "A nested block describing the resources in the policy.\n\n\nservice - Service name of the policy definition. \nresource_instance_id - ID of resource instance of the policy definition.\nregion - Region of the policy definition.\nresource_type - Resource type of the policy definition.\nresource - Resource of the policy definition.\nresource_group_id - The ID of the resource group.",
+              "args": []
+            },
+            {
+              "name": "service",
+              "description": "Service name of the policy definition.",
+              "args": []
+            },
+            {
+              "name": "resource_instance_id",
+              "description": "ID of resource instance of the policy definition.",
+              "args": []
+            },
+            {
+              "name": "region",
+              "description": "Region of the policy definition.",
+              "args": []
+            },
+            {
+              "name": "resource_type",
+              "description": "Resource type of the policy definition.",
+              "args": []
+            },
+            {
+              "name": "resource",
+              "description": "Resource of the policy definition.",
+              "args": []
+            },
+            {
+              "name": "resource_group_id",
+              "description": "The ID of the resource group.",
+              "args": []
+            }
+          ]
         }
       ]
     },
@@ -1778,11 +1842,550 @@
         }
       ]
     },
+    "ibm_resource_group": {
+      "name": "ibm_resource_group",
+      "type": "data",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/resource_group.html",
+      "groupName": "Resource Management Data Sources",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Optional, string) The name of the IBM Cloud resource group. You can retrieve the value by running the ibmcloud resource groups command in the IBM Cloud CLI.\nNOTE: Conflicts with is_default.",
+          "args": []
+        },
+        {
+          "name": "is_default",
+          "description": "(Optional, boolean) Specifies whether you want to import default resource group. The default value is false.\nNOTE: Conflicts with name.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier of the resource group.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_resource_instance": {
+      "name": "ibm_resource_instance",
+      "type": "data",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/resource_instance.html",
+      "groupName": "Resource Management Data Sources",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, string) The name of the resource instance.",
+          "args": []
+        },
+        {
+          "name": "resource_group_id",
+          "description": "(Optional, string) The id of the resource group where the resource instance exists. If not provided it takes the default resource group.",
+          "args": []
+        },
+        {
+          "name": "location",
+          "description": "(Optional, string) The location or the environment in which instance exists.",
+          "args": []
+        },
+        {
+          "name": "service",
+          "description": "(Optional, string) The service type of the instance. You can retrieve the value by running the ibmcloud catalog service-marketplace or ibmcloud catalog search command in the IBM Cloud CLI.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier of the resource instance.",
+          "args": []
+        },
+        {
+          "name": "status",
+          "description": "The status of resource instance.",
+          "args": []
+        },
+        {
+          "name": "plan",
+          "description": "The plan for the service offering used by this resource instance.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_resource_key": {
+      "name": "ibm_resource_key",
+      "type": "data",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/resource_key.html",
+      "groupName": "Resource Management Data Sources",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, string) The name of the resource key. You can retrieve the value by running the ibmcloud resource service-keys command in the IBM Cloud CLI.",
+          "args": []
+        },
+        {
+          "name": "resource_instance_id",
+          "description": "(Optional, string) The id of the resource instance that the resource key is associated with. You can retrieve the value by running the ibmcloud resource service-instances command in the IBM Cloud CLI.\nNOTE: Conflicts with resource_alias_id.",
+          "args": []
+        },
+        {
+          "name": "resource_alias_id",
+          "description": "(Optional, string) The id of the resource alias that the resource key is associated with. You can retrieve the value by running the ibmcloud resource service-alias command in the IBM Cloud CLI.\nNOTE: Conflicts with resource_instance_id.",
+          "args": []
+        },
+        {
+          "name": "most_recent",
+          "description": "(Optional, boolean) If there are multiple resource keys, you can set this argument to true to import only the most recently created key.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier of the resource key.",
+          "args": []
+        },
+        {
+          "name": "credentials",
+          "description": "The credentials associated with the key.",
+          "args": []
+        },
+        {
+          "name": "role",
+          "description": "The user role.",
+          "args": []
+        },
+        {
+          "name": "status",
+          "description": "Status of resource key.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_resource_quota": {
+      "name": "ibm_resource_quota",
+      "type": "data",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/resource_quota.html",
+      "groupName": "Resource Management Data Sources",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, string) The name of the quota for the IBM Cloud resource. You can retrieve the value by running the ibmcloud resource quotas command in the IBM Cloud CLI.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier of the quota.",
+          "args": []
+        },
+        {
+          "name": "type",
+          "description": "Type of the quota.",
+          "args": []
+        },
+        {
+          "name": "max_apps",
+          "description": "Defines the total app limit.",
+          "args": []
+        },
+        {
+          "name": "max_instances_per_app",
+          "description": "Defines the total instances limit per app.",
+          "args": []
+        },
+        {
+          "name": "max_app_instance_memory",
+          "description": "Defines the total memory of app instance.",
+          "args": []
+        },
+        {
+          "name": "total_app_memory",
+          "description": "Defines the total memory for app.",
+          "args": []
+        },
+        {
+          "name": "max_service_instances",
+          "description": "Defines the total service instances limit.",
+          "args": []
+        },
+        {
+          "name": "vsi_limit",
+          "description": "Defines the VSI limit.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_pi_image": {
+      "name": "ibm_pi_image",
+      "type": "data",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/pi_image.html",
+      "groupName": "Power Virtual Server Data Sources",
+      "args": [
+        {
+          "name": "pi_image_name",
+          "description": "(Required, string) The name of the image.",
+          "args": []
+        },
+        {
+          "name": "pi_cloud_instance_id",
+          "description": "(Required, string) The service instance associated with the account.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier for this image.",
+          "args": []
+        },
+        {
+          "name": "state",
+          "description": "The state for this image.",
+          "args": []
+        },
+        {
+          "name": "size",
+          "description": "The size of the image.",
+          "args": []
+        },
+        {
+          "name": "architecture",
+          "description": "The architecture for this image.",
+          "args": []
+        },
+        {
+          "name": "operatingsystem",
+          "description": "The operating system for this image.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_pi_images": {
+      "name": "ibm_pi_images",
+      "type": "data",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/pi_images.html",
+      "groupName": "Power Virtual Server Data Sources",
+      "args": [],
+      "attrs": [
+        {
+          "name": "images",
+          "description": "List of all images in the IBM Power Virtual Server Cloud.\n\n\nname - The name for this image.\nid - The unique identifier for this image\nstate - The state of the operating system.\nhref - The href  of this image.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_pi_instance": {
+      "name": "ibm_pi_instance",
+      "type": "data",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/pi_instance.html",
+      "groupName": "Power Virtual Server Data Sources",
+      "args": [
+        {
+          "name": "pi_instance_name",
+          "description": "(Required, string) The name of the instance.",
+          "args": []
+        },
+        {
+          "name": "pi_cloud_instance_id",
+          "description": "(Required, string) The service instance associated with the account",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier for this instance.",
+          "args": []
+        },
+        {
+          "name": "address",
+          "description": "The address associated with this instance.",
+          "args": []
+        },
+        {
+          "name": "state",
+          "description": "The state of the instance.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_pi_key": {
+      "name": "ibm_pi_key",
+      "type": "data",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/pi_key.html",
+      "groupName": "Power Virtual Server Data Sources",
+      "args": [
+        {
+          "name": "pi_key_name",
+          "description": "(Required, string) The name of the key.",
+          "args": []
+        },
+        {
+          "name": "pi_cloud_instance_id",
+          "description": "(Required, string) The service instance associated with the account",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier for this instance.",
+          "args": []
+        },
+        {
+          "name": "creationdate",
+          "description": "The creation date.",
+          "args": []
+        },
+        {
+          "name": "sshkey",
+          "description": "The SSH RSA key.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_pi_network": {
+      "name": "ibm_pi_network",
+      "type": "data",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/pi_network.html",
+      "groupName": "Power Virtual Server Data Sources",
+      "args": [
+        {
+          "name": "pi_network_name",
+          "description": "(Required, string) The name of the network.",
+          "args": []
+        },
+        {
+          "name": "pi_cloud_instance_id",
+          "description": "(Required, string) The service instance associated with the account",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier for this network.",
+          "args": []
+        },
+        {
+          "name": "gateway_ip",
+          "description": "The gateway for this network.",
+          "args": []
+        },
+        {
+          "name": "available_ip_count",
+          "description": "The available IPs for this network.",
+          "args": []
+        },
+        {
+          "name": "used_ip_count",
+          "description": "The IPs that are in use for this network.",
+          "args": []
+        },
+        {
+          "name": "used_ip_percent",
+          "description": "The used ip in percent.",
+          "args": []
+        },
+        {
+          "name": "vlan_type",
+          "description": "The type of vlan for this network.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_pi_public_network": {
+      "name": "ibm_pi_public_network",
+      "type": "data",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/pi_public_network.html",
+      "groupName": "Power Virtual Server Data Sources",
+      "args": [
+        {
+          "name": "pi_network_name",
+          "description": "(Required, string) The name of the network.",
+          "args": []
+        },
+        {
+          "name": "pi_cloud_instance_id",
+          "description": "(Required, string) The service instance associated with the account",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "networkid",
+          "description": "The unique identifier for this network.",
+          "args": []
+        },
+        {
+          "name": "type",
+          "description": "The network type for this network.",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "The name of the network.",
+          "args": []
+        },
+        {
+          "name": "vlanid",
+          "description": "The VLAN id for the network.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_pi_tenant": {
+      "name": "ibm_pi_tenant",
+      "type": "data",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/pi_tenant.html",
+      "groupName": "Power Virtual Server Data Sources",
+      "args": [
+        {
+          "name": "pi_cloud_instance_id",
+          "description": "(Required, string) The service instance associated with the account",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "tenantid",
+          "description": "The unique identifier for this tenant.",
+          "args": []
+        },
+        {
+          "name": "creationdate",
+          "description": "The date on which the tenant was created.",
+          "args": []
+        },
+        {
+          "name": "enabled",
+          "description": "Indicates whether the tenant is enabled.",
+          "args": []
+        },
+        {
+          "name": "tenantname",
+          "description": "The name of the tenant.",
+          "args": []
+        },
+        {
+          "name": "cloudinstances",
+          "description": "Lists the regions and instance IDs this tenant owns.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_pi_volume": {
+      "name": "ibm_pi_volume",
+      "type": "data",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/pi_volume.html",
+      "groupName": "Power Virtual Server Data Sources",
+      "args": [
+        {
+          "name": "pi_volume_name",
+          "description": "(Required, string) The name of the volume.",
+          "args": []
+        },
+        {
+          "name": "pi_cloud_instance_id",
+          "description": "(Required, string) The service instance associated with the account",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier for this volume.",
+          "args": []
+        },
+        {
+          "name": "type",
+          "description": "The disk type for this volume.",
+          "args": []
+        },
+        {
+          "name": "state",
+          "description": "The state of the volume.",
+          "args": []
+        },
+        {
+          "name": "bootable",
+          "description": "If this volume is bootable or not.",
+          "args": []
+        },
+        {
+          "name": "size",
+          "description": "The size of this volume.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_pi_instance_volumes": {
+      "name": "ibm_pi_instance_volumes",
+      "type": "data",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/pi_instance_volumes.html",
+      "groupName": "Power Virtual Server Data Sources",
+      "args": [
+        {
+          "name": "pi_instance_name",
+          "description": "(Required, string) The name of the instance whose volumes to retrieve.",
+          "args": []
+        },
+        {
+          "name": "pi_cloud_instance_id",
+          "description": "(Required, string) The service instance associated with the account.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier for this volume.",
+          "args": []
+        },
+        {
+          "name": "type",
+          "description": "The disk type for this volume.",
+          "args": []
+        },
+        {
+          "name": "state",
+          "description": "The state of the volume.",
+          "args": []
+        },
+        {
+          "name": "bootable",
+          "description": "If this volume is bootable or not.",
+          "args": []
+        },
+        {
+          "name": "size",
+          "description": "The size of this volume.",
+          "args": []
+        },
+        {
+          "name": "shareable",
+          "description": "If this volume is shareable or not.",
+          "args": []
+        },
+        {
+          "name": "href",
+          "description": "The href of this volume.",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "The name of this volume.",
+          "args": []
+        }
+      ]
+    },
     "ibm_is_image": {
       "name": "ibm_is_image",
       "type": "data",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/is_image.html",
-      "groupName": "VPC Services Data Sources",
+      "groupName": "Virtual Private Cloud NextGen Services Data Sources",
       "args": [
         {
           "name": "name",
@@ -1827,7 +2430,7 @@
       "name": "ibm_is_images",
       "type": "data",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/is_images.html",
-      "groupName": "VPC Services Data Sources",
+      "groupName": "Virtual Private Cloud NextGen Services Data Sources",
       "args": [],
       "attrs": [
         {
@@ -1841,7 +2444,7 @@
       "name": "ibm_is_instance_profile",
       "type": "data",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/is_instance_profile.html",
-      "groupName": "VPC Services Data Sources",
+      "groupName": "Virtual Private Cloud NextGen Services Data Sources",
       "args": [
         {
           "name": "name",
@@ -1861,7 +2464,7 @@
       "name": "ibm_is_instance_profiles",
       "type": "data",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/is_instance_profiles.html",
-      "groupName": "VPC Services Data Sources",
+      "groupName": "Virtual Private Cloud NextGen Services Data Sources",
       "args": [],
       "attrs": [
         {
@@ -1875,7 +2478,7 @@
       "name": "ibm_is_region",
       "type": "data",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/is_region.html",
-      "groupName": "VPC Services Data Sources",
+      "groupName": "Virtual Private Cloud NextGen Services Data Sources",
       "args": [
         {
           "name": "name",
@@ -1900,7 +2503,7 @@
       "name": "ibm_is_ssh_key",
       "type": "data",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/is_ssh_key.html",
-      "groupName": "VPC Services Data Sources",
+      "groupName": "Virtual Private Cloud NextGen Services Data Sources",
       "args": [
         {
           "name": "name",
@@ -1940,7 +2543,7 @@
       "name": "ibm_is_subnet",
       "type": "data",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/is_subnet.html",
-      "groupName": "VPC Services Data Sources",
+      "groupName": "Virtual Private Cloud NextGen Services Data Sources",
       "args": [
         {
           "name": "identifier",
@@ -2015,7 +2618,7 @@
       "name": "ibm_is_vpc",
       "type": "data",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/is_vpc.html",
-      "groupName": "VPC Services Data Sources",
+      "groupName": "Virtual Private Cloud NextGen Services Data Sources",
       "args": [
         {
           "name": "name",
@@ -2060,7 +2663,7 @@
       "name": "ibm_is_zone",
       "type": "data",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/is_zone.html",
-      "groupName": "VPC Services Data Sources",
+      "groupName": "Virtual Private Cloud NextGen Services Data Sources",
       "args": [
         {
           "name": "name",
@@ -2085,7 +2688,7 @@
       "name": "ibm_is_zones",
       "type": "data",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/is_zones.html",
-      "groupName": "VPC Services Data Sources",
+      "groupName": "Virtual Private Cloud NextGen Services Data Sources",
       "args": [
         {
           "name": "region",
@@ -2102,609 +2705,6 @@
         {
           "name": "zones",
           "description": "The list of zones in a region.",
-          "args": []
-        }
-      ]
-    },
-    "ibm_function_action": {
-      "name": "ibm_function_action",
-      "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/function_action.html",
-      "groupName": "Functions Data Sources",
-      "args": [
-        {
-          "name": "name",
-          "description": "(Required, string) The name of the action.",
-          "args": []
-        }
-      ],
-      "attrs": []
-    },
-    "ibm_function_package": {
-      "name": "ibm_function_package",
-      "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/function_package.html",
-      "groupName": "Functions Data Sources",
-      "args": [
-        {
-          "name": "name",
-          "description": "(Required, string) The name of the package.",
-          "args": []
-        }
-      ],
-      "attrs": []
-    },
-    "ibm_function_rule": {
-      "name": "ibm_function_rule",
-      "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/function_rule.html",
-      "groupName": "Functions Data Sources",
-      "args": [
-        {
-          "name": "name",
-          "description": "(Required, string) The name of the rule.",
-          "args": []
-        }
-      ],
-      "attrs": []
-    },
-    "ibm_function_trigger": {
-      "name": "ibm_function_trigger",
-      "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/function_trigger.html",
-      "groupName": "Functions Data Sources",
-      "args": [
-        {
-          "name": "name",
-          "description": "(Required, string) The name of the trigger.",
-          "args": []
-        }
-      ],
-      "attrs": []
-    },
-    "ibm_iam_service_id": {
-      "name": "ibm_iam_service_id",
-      "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/iam_service_id.html",
-      "groupName": "Identity & Access Data Sources",
-      "args": [
-        {
-          "name": "name",
-          "description": "(Required, string) Name of the serviceID.",
-          "args": []
-        }
-      ],
-      "attrs": [
-        {
-          "name": "service_ids",
-          "description": "A nested block list of IAM ServiceIDs. Nested service_ids blocks have the following structure:\n\n\nid - The unique identifier of the serviceID.\nbound_to -  bound to of the serviceID.\ncrn -  crn of the serviceID.\ndescription -  description of the serviceID.\nversion -  version of the serviceID.\nlocked -  lock state of the serviceID.",
-          "args": [
-            {
-              "name": "id",
-              "description": "The unique identifier of the serviceID.",
-              "args": []
-            },
-            {
-              "name": "bound_to",
-              "description": "bound to of the serviceID.",
-              "args": []
-            },
-            {
-              "name": "crn",
-              "description": "crn of the serviceID.",
-              "args": []
-            },
-            {
-              "name": "description",
-              "description": "description of the serviceID.",
-              "args": []
-            },
-            {
-              "name": "version",
-              "description": "version of the serviceID.",
-              "args": []
-            },
-            {
-              "name": "locked",
-              "description": "lock state of the serviceID.",
-              "args": []
-            }
-          ]
-        }
-      ]
-    },
-    "ibm_iam_service_policy": {
-      "name": "ibm_iam_service_policy",
-      "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/iam_service_policy.html",
-      "groupName": "Identity & Access Data Sources",
-      "args": [
-        {
-          "name": "iam_service_id",
-          "description": "(Required, string) The UUID of the serviceID.",
-          "args": []
-        }
-      ],
-      "attrs": [
-        {
-          "name": "policies",
-          "description": "A nested block describing IAM Policies assigned to serviceID. Nested policies blocks have the following structure:\n\n\nid - The unique identifier of the IAM service policy.The id is composed of <iam_service_id>/<service_policy_id>\nroles -  Roles assigned to the policy.\nresources -  A nested block describing the resources in the policy.\n\n\nservice - Service name of the policy definition. \nresource_instance_id - ID of resource instance of the policy definition.\nregion - Region of the policy definition.\nresource_type - Resource type of the policy definition.\nresource - Resource of the policy definition.\nresource_group_id - The ID of the resource group.",
-          "args": [
-            {
-              "name": "id",
-              "description": "The unique identifier of the IAM service policy.The id is composed of <iam_service_id>/<service_policy_id>",
-              "args": []
-            },
-            {
-              "name": "roles",
-              "description": "Roles assigned to the policy.",
-              "args": []
-            },
-            {
-              "name": "resources",
-              "description": "A nested block describing the resources in the policy.\n\n\nservice - Service name of the policy definition. \nresource_instance_id - ID of resource instance of the policy definition.\nregion - Region of the policy definition.\nresource_type - Resource type of the policy definition.\nresource - Resource of the policy definition.\nresource_group_id - The ID of the resource group.",
-              "args": []
-            },
-            {
-              "name": "service",
-              "description": "Service name of the policy definition.",
-              "args": []
-            },
-            {
-              "name": "resource_instance_id",
-              "description": "ID of resource instance of the policy definition.",
-              "args": []
-            },
-            {
-              "name": "region",
-              "description": "Region of the policy definition.",
-              "args": []
-            },
-            {
-              "name": "resource_type",
-              "description": "Resource type of the policy definition.",
-              "args": []
-            },
-            {
-              "name": "resource",
-              "description": "Resource of the policy definition.",
-              "args": []
-            },
-            {
-              "name": "resource_group_id",
-              "description": "The ID of the resource group.",
-              "args": []
-            }
-          ]
-        }
-      ]
-    },
-    "ibm_iam_user_policy": {
-      "name": "ibm_iam_user_policy",
-      "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/iam_user_policy.html",
-      "groupName": "Identity & Access Data Sources",
-      "args": [
-        {
-          "name": "ibm_id",
-          "description": "(Required, string) The ibm id or email of user.",
-          "args": []
-        }
-      ],
-      "attrs": [
-        {
-          "name": "policies",
-          "description": "A nested block describing IAM Policies assigned to user. Nested policies blocks have the following structure:\n\n\nid - The unique identifier of the IAM user policy.The id is composed of <ibm_id>/<user_policy_id>\nroles -  Roles assigned to the policy.\nresources -  A nested block describing the resources in the policy.\n\n\nservice - Service name of the policy definition. \nresource_instance_id - ID of resource instance of the policy definition.\nregion - Region of the policy definition.\nresource_type - Resource type of the policy definition.\nresource - Resource of the policy definition.\nresource_group_id - The ID of the resource group.",
-          "args": [
-            {
-              "name": "id",
-              "description": "The unique identifier of the IAM user policy.The id is composed of <ibm_id>/<user_policy_id>",
-              "args": []
-            },
-            {
-              "name": "roles",
-              "description": "Roles assigned to the policy.",
-              "args": []
-            },
-            {
-              "name": "resources",
-              "description": "A nested block describing the resources in the policy.\n\n\nservice - Service name of the policy definition. \nresource_instance_id - ID of resource instance of the policy definition.\nregion - Region of the policy definition.\nresource_type - Resource type of the policy definition.\nresource - Resource of the policy definition.\nresource_group_id - The ID of the resource group.",
-              "args": []
-            },
-            {
-              "name": "service",
-              "description": "Service name of the policy definition.",
-              "args": []
-            },
-            {
-              "name": "resource_instance_id",
-              "description": "ID of resource instance of the policy definition.",
-              "args": []
-            },
-            {
-              "name": "region",
-              "description": "Region of the policy definition.",
-              "args": []
-            },
-            {
-              "name": "resource_type",
-              "description": "Resource type of the policy definition.",
-              "args": []
-            },
-            {
-              "name": "resource",
-              "description": "Resource of the policy definition.",
-              "args": []
-            },
-            {
-              "name": "resource_group_id",
-              "description": "The ID of the resource group.",
-              "args": []
-            }
-          ]
-        }
-      ]
-    },
-    "ibm_pi_image": {
-      "name": "ibm_pi_image",
-      "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/pi_image.html",
-      "groupName": "Power IaaS Data Sources",
-      "args": [
-        {
-          "name": "pi_image_name",
-          "description": "(Required, string) The name of the image.",
-          "args": []
-        },
-        {
-          "name": "pi_cloud_instance_id",
-          "description": "(Required, string) The service instance associated with the account.",
-          "args": []
-        }
-      ],
-      "attrs": [
-        {
-          "name": "id",
-          "description": "The unique identifier for this image.",
-          "args": []
-        },
-        {
-          "name": "state",
-          "description": "The state for this image.",
-          "args": []
-        },
-        {
-          "name": "size",
-          "description": "The size of the image.",
-          "args": []
-        },
-        {
-          "name": "architecture",
-          "description": "The architecture for this image.",
-          "args": []
-        },
-        {
-          "name": "operatingsystem",
-          "description": "The operating system for this image.",
-          "args": []
-        }
-      ]
-    },
-    "ibm_pi_images": {
-      "name": "ibm_pi_images",
-      "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/pi_images.html",
-      "groupName": "Power IaaS Data Sources",
-      "args": [],
-      "attrs": [
-        {
-          "name": "images",
-          "description": "List of all images in the IBM Power Virtual Server Cloud.\n\n\nname - The name for this image.\nid - The unique identifier for this image\nstate - The state of the operating system.\nhref - The href  of this image.",
-          "args": []
-        }
-      ]
-    },
-    "ibm_pi_instance": {
-      "name": "ibm_pi_instance",
-      "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/pi_instance.html",
-      "groupName": "Power IaaS Data Sources",
-      "args": [
-        {
-          "name": "pi_instance_name",
-          "description": "(Required, string) The name of the instance.",
-          "args": []
-        },
-        {
-          "name": "pi_cloud_instance_id",
-          "description": "(Required, string) The service instance associated with the account",
-          "args": []
-        }
-      ],
-      "attrs": [
-        {
-          "name": "id",
-          "description": "The unique identifier for this instance.",
-          "args": []
-        },
-        {
-          "name": "address",
-          "description": "The address associated with this instance.",
-          "args": []
-        },
-        {
-          "name": "state",
-          "description": "The state of the instance.",
-          "args": []
-        }
-      ]
-    },
-    "ibm_pi_key": {
-      "name": "ibm_pi_key",
-      "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/pi_key.html",
-      "groupName": "Power IaaS Data Sources",
-      "args": [
-        {
-          "name": "pi_key_name",
-          "description": "(Required, string) The name of the key.",
-          "args": []
-        },
-        {
-          "name": "pi_cloud_instance_id",
-          "description": "(Required, string) The service instance associated with the account",
-          "args": []
-        }
-      ],
-      "attrs": [
-        {
-          "name": "id",
-          "description": "The unique identifier for this instance.",
-          "args": []
-        },
-        {
-          "name": "creationdate",
-          "description": "The creation date.",
-          "args": []
-        },
-        {
-          "name": "sshkey",
-          "description": "The SSH RSA key.",
-          "args": []
-        }
-      ]
-    },
-    "ibm_pi_network": {
-      "name": "ibm_pi_network",
-      "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/pi_network.html",
-      "groupName": "Power IaaS Data Sources",
-      "args": [
-        {
-          "name": "pi_network_name",
-          "description": "(Required, string) The name of the network.",
-          "args": []
-        },
-        {
-          "name": "pi_cloud_instance_id",
-          "description": "(Required, string) The service instance associated with the account",
-          "args": []
-        }
-      ],
-      "attrs": [
-        {
-          "name": "id",
-          "description": "The unique identifier for this network.",
-          "args": []
-        },
-        {
-          "name": "gateway_ip",
-          "description": "The gateway for this network.",
-          "args": []
-        },
-        {
-          "name": "available_ip_count",
-          "description": "The available IPs for this network.",
-          "args": []
-        },
-        {
-          "name": "used_ip_count",
-          "description": "The IPs that are in use for this network.",
-          "args": []
-        },
-        {
-          "name": "used_ip_percent",
-          "description": "The used ip in percent.",
-          "args": []
-        },
-        {
-          "name": "vlan_type",
-          "description": "The type of vlan for this network.",
-          "args": []
-        }
-      ]
-    },
-    "ibm_pi_public_network": {
-      "name": "ibm_pi_public_network",
-      "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/pi_public_network.html",
-      "groupName": "Power IaaS Data Sources",
-      "args": [
-        {
-          "name": "pi_network_name",
-          "description": "(Required, string) The name of the network.",
-          "args": []
-        },
-        {
-          "name": "pi_cloud_instance_id",
-          "description": "(Required, string) The service instance associated with the account",
-          "args": []
-        }
-      ],
-      "attrs": [
-        {
-          "name": "networkid",
-          "description": "The unique identifier for this network.",
-          "args": []
-        },
-        {
-          "name": "type",
-          "description": "The network type for this network.",
-          "args": []
-        },
-        {
-          "name": "name",
-          "description": "The name of the network.",
-          "args": []
-        },
-        {
-          "name": "vlanid",
-          "description": "The VLAN id for the network.",
-          "args": []
-        }
-      ]
-    },
-    "ibm_pi_tenant": {
-      "name": "ibm_pi_tenant",
-      "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/pi_tenant.html",
-      "groupName": "Power IaaS Data Sources",
-      "args": [
-        {
-          "name": "pi_cloud_instance_id",
-          "description": "(Required, string) The service instance associated with the account",
-          "args": []
-        }
-      ],
-      "attrs": [
-        {
-          "name": "tenantid",
-          "description": "The unique identifier for this tenant.",
-          "args": []
-        },
-        {
-          "name": "creationdate",
-          "description": "The date on which the tenant was created.",
-          "args": []
-        },
-        {
-          "name": "enabled",
-          "description": "Indicates whether the tenant is enabled.",
-          "args": []
-        },
-        {
-          "name": "tenantname",
-          "description": "The name of the tenant.",
-          "args": []
-        },
-        {
-          "name": "cloudinstances",
-          "description": "Lists the regions and instance IDs this tenant owns.",
-          "args": []
-        }
-      ]
-    },
-    "ibm_pi_volume": {
-      "name": "ibm_pi_volume",
-      "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/pi_volume.html",
-      "groupName": "Power IaaS Data Sources",
-      "args": [
-        {
-          "name": "pi_volume_name",
-          "description": "(Required, string) The name of the volume.",
-          "args": []
-        },
-        {
-          "name": "pi_cloud_instance_id",
-          "description": "(Required, string) The service instance associated with the account",
-          "args": []
-        }
-      ],
-      "attrs": [
-        {
-          "name": "id",
-          "description": "The unique identifier for this volume.",
-          "args": []
-        },
-        {
-          "name": "type",
-          "description": "The disk type for this volume.",
-          "args": []
-        },
-        {
-          "name": "state",
-          "description": "The state of the volume.",
-          "args": []
-        },
-        {
-          "name": "bootable",
-          "description": "If this volume is bootable or not.",
-          "args": []
-        },
-        {
-          "name": "size",
-          "description": "The size of this volume.",
-          "args": []
-        }
-      ]
-    },
-    "ibm_pi_instance_volumes": {
-      "name": "ibm_pi_instance_volumes",
-      "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/d/pi_instance_volumes.html",
-      "groupName": "Power IaaS Data Sources",
-      "args": [
-        {
-          "name": "pi_instance_name",
-          "description": "(Required, string) The name of the instance whose volumes to retrieve.",
-          "args": []
-        },
-        {
-          "name": "pi_cloud_instance_id",
-          "description": "(Required, string) The service instance associated with the account.",
-          "args": []
-        }
-      ],
-      "attrs": [
-        {
-          "name": "id",
-          "description": "The unique identifier for this volume.",
-          "args": []
-        },
-        {
-          "name": "type",
-          "description": "The disk type for this volume.",
-          "args": []
-        },
-        {
-          "name": "state",
-          "description": "The state of the volume.",
-          "args": []
-        },
-        {
-          "name": "bootable",
-          "description": "If this volume is bootable or not.",
-          "args": []
-        },
-        {
-          "name": "size",
-          "description": "The size of this volume.",
-          "args": []
-        },
-        {
-          "name": "shareable",
-          "description": "If this volume is shareable or not.",
-          "args": []
-        },
-        {
-          "name": "href",
-          "description": "The href of this volume.",
-          "args": []
-        },
-        {
-          "name": "name",
-          "description": "The name of this volume.",
           "args": []
         }
       ]
@@ -2957,156 +2957,6 @@
         {
           "name": "id",
           "description": "The unique identifier of the org.",
-          "args": []
-        }
-      ]
-    },
-    "ibm_resource_group": {
-      "name": "ibm_resource_group",
-      "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/resource_group.html",
-      "groupName": "Cloud Foundry Resources",
-      "args": [
-        {
-          "name": "name",
-          "description": "(Required, string)The name of the resource group.",
-          "args": []
-        },
-        {
-          "name": "quota_id",
-          "description": "(Removed, string) The id of the quota.You can refer to a quota by name using a data source.",
-          "args": []
-        },
-        {
-          "name": "tags",
-          "description": "(Optional, array of strings) Tags associated with the resource group instance.\nNOTE: Tags are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
-          "args": []
-        }
-      ],
-      "attrs": [
-        {
-          "name": "id",
-          "description": "The unique identifier of the new resource group.",
-          "args": []
-        },
-        {
-          "name": "default",
-          "description": "Specifies whether its default resource group or not.",
-          "args": []
-        },
-        {
-          "name": "state",
-          "description": "State of the resource group.",
-          "args": []
-        }
-      ]
-    },
-    "ibm_resource_instance": {
-      "name": "ibm_resource_instance",
-      "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/resource_instance.html",
-      "groupName": "Cloud Foundry Resources",
-      "args": [
-        {
-          "name": "name",
-          "description": "(Required, string) A descriptive name used to identify the resource instance.",
-          "args": []
-        },
-        {
-          "name": "service",
-          "description": "(Required, string) The name of the service offering. You can retrieve the value by running the ibmcloud catalog service-marketplace or ibmcloud catalog search command in the IBM Cloud CLI.",
-          "args": []
-        },
-        {
-          "name": "plan",
-          "description": "(Required, string) The name of the plan type supported by service. You can retrieve the value by running the ibmcloud catalog service <servicename> command in the IBM Cloud CLI.",
-          "args": []
-        },
-        {
-          "name": "location",
-          "description": "(Required, string) Target location or environment to create the resource instance.",
-          "args": []
-        },
-        {
-          "name": "resource_group_id",
-          "description": "(Optional, string) The ID of the resource group where you want to create the service. You can retrieve the value from data source ibm_resource_group. If not provided creates the service in default resource group.",
-          "args": []
-        },
-        {
-          "name": "tags",
-          "description": "(Optional, array of strings) Tags associated with the instance.",
-          "args": []
-        },
-        {
-          "name": "parameters",
-          "description": "(Optional, map) Arbitrary parameters to create instance. The value must be a JSON object.",
-          "args": []
-        }
-      ],
-      "attrs": [
-        {
-          "name": "id",
-          "description": "The unique identifier of the new resource instance.",
-          "args": []
-        },
-        {
-          "name": "status",
-          "description": "Status of resource instance.",
-          "args": []
-        }
-      ]
-    },
-    "ibm_resource_key": {
-      "name": "ibm_resource_key",
-      "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/resource_key.html",
-      "groupName": "Cloud Foundry Resources",
-      "args": [
-        {
-          "name": "name",
-          "description": "(Required, string) A descriptive name used to identify a resource key.",
-          "args": []
-        },
-        {
-          "name": "role",
-          "description": "(Required, string) Name of the user role. Valid roles are Writer, Reader, Manager, Administrator, Operator, Viewer, Editor.",
-          "args": []
-        },
-        {
-          "name": "parameters",
-          "description": "(Optional, map) Arbitrary parameters to pass. Must be a JSON object.",
-          "args": []
-        },
-        {
-          "name": "resource_instance_id",
-          "description": "(Optional, string) The id of the resource instance associated with the resource key.\nNOTE: Conflicts with resource_alias_id.",
-          "args": []
-        },
-        {
-          "name": "resource_alias_id",
-          "description": "(Optional, string) The id of the resource alias associated with the resource key.\nNOTE: Conflicts with resource_instance_id.",
-          "args": []
-        },
-        {
-          "name": "tags",
-          "description": "(Optional, array of strings) Tags associated with the resource key instance.\nNOTE: Tags are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
-          "args": []
-        }
-      ],
-      "attrs": [
-        {
-          "name": "id",
-          "description": "The unique identifier of the new resource key.",
-          "args": []
-        },
-        {
-          "name": "credentials",
-          "description": "The credentials associated with the key.",
-          "args": []
-        },
-        {
-          "name": "status",
-          "description": "Status of resource key.",
           "args": []
         }
       ]
@@ -3910,96 +3760,6 @@
         {
           "name": "worker_count",
           "description": "Number of workers attached to this zone.",
-          "args": []
-        }
-      ]
-    },
-    "ibm_cos_bucket": {
-      "name": "ibm_cos_bucket",
-      "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/cos_bucket.html",
-      "groupName": "Cloud Object Storage (COS) Resources",
-      "args": [
-        {
-          "name": "bucket_name",
-          "description": "(Required, string) The name of the bucket.",
-          "args": []
-        },
-        {
-          "name": "resource_instance_id",
-          "description": "(Required, string) The id of Cloud Object Storage instance.",
-          "args": []
-        },
-        {
-          "name": "key_protect",
-          "description": "(Optional, bool) CRN of the Key Protect instance where there a root key is already provisioned. Authorization required: Docs",
-          "args": []
-        },
-        {
-          "name": "single_site_location",
-          "description": "(Optional,string) Location if single site bucket is desired. Accepted values: ‘ams03’, 'che01’, 'hkg02’, 'mel01’, 'mex01’, 'mil01’, 'mon01’, 'osl01’, 'sjc04’, 'sao01’, 'seo01’, 'tor01’ Conflicts with: region_location, cross_region_location",
-          "args": []
-        },
-        {
-          "name": "region_location",
-          "description": "(Optional,string) Location if regional bucket is desired. Accepted values: 'au-syd’, 'eu-de’, 'eu-gb’, 'jp-tok’, 'us-east’, 'us-south’ Conflicts with: single_site_location, cross_region_location",
-          "args": []
-        },
-        {
-          "name": "cross_region_location",
-          "description": "(Optional,string) Location if cross regional bucket is desired. Accepted values: 'us’, 'eu’, 'ap’ Conflicts with: single_site_location, region_location",
-          "args": []
-        },
-        {
-          "name": "",
-          "description": "One of the location option must be present.",
-          "args": []
-        },
-        {
-          "name": "storage_class",
-          "description": "(Required, string) Storage class of the bucket. Accepted values: 'standard’, 'vault’, 'cold’, 'flex’",
-          "args": []
-        }
-      ],
-      "attrs": [
-        {
-          "name": "id",
-          "description": "The ID of the bucket.",
-          "args": []
-        },
-        {
-          "name": "crn",
-          "description": "The CRN of the bucket.",
-          "args": []
-        },
-        {
-          "name": "resource_instance_id",
-          "description": "The id of Cloud Object Storage instance.",
-          "args": []
-        },
-        {
-          "name": "key_protect",
-          "description": "CRN of the Key Protect instance where there a root key is already provisioned.",
-          "args": []
-        },
-        {
-          "name": "single_site_location",
-          "description": "Location if single site bucket was created.",
-          "args": []
-        },
-        {
-          "name": "region_location",
-          "description": "Location if regional bucket was created.",
-          "args": []
-        },
-        {
-          "name": "cross_region_location",
-          "description": "Location if cross regional bucket was created.",
-          "args": []
-        },
-        {
-          "name": "storage_class",
-          "description": "Storage class of the bucket.",
           "args": []
         }
       ]
@@ -5969,6 +5729,36 @@
         }
       ]
     },
+    "ibm_dns_reverse-record": {
+      "name": "ibm_dns_reverse-record",
+      "type": "resource",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/dns_reverse_record.html",
+      "groupName": "Infrastructure Resources",
+      "args": [
+        {
+          "name": "ipaddress",
+          "description": "(Required, string) The IP address or a hostname of a domain’s resource record.",
+          "args": []
+        },
+        {
+          "name": "hostname",
+          "description": "(Required, string) The host defined by a reverse record.",
+          "args": []
+        },
+        {
+          "name": "ttl",
+          "description": "(Optional, integer) The time to live (TTL) duration, expressed in seconds, of a resource record. Default value is 604800 seconds.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier of reverse dns record.",
+          "args": []
+        }
+      ]
+    },
     "ibm_dns_record": {
       "name": "ibm_dns_record",
       "type": "resource",
@@ -7745,11 +7535,510 @@
       ],
       "attrs": []
     },
+    "ibm_cos_bucket": {
+      "name": "ibm_cos_bucket",
+      "type": "resource",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/cos_bucket.html",
+      "groupName": "Object Storage Resources",
+      "args": [
+        {
+          "name": "bucket_name",
+          "description": "(Required, string) The name of the bucket.",
+          "args": []
+        },
+        {
+          "name": "resource_instance_id",
+          "description": "(Required, string) The id of Cloud Object Storage instance.",
+          "args": []
+        },
+        {
+          "name": "key_protect",
+          "description": "(Optional, bool) CRN of the Key Protect instance where there a root key is already provisioned. Authorization required: Docs",
+          "args": []
+        },
+        {
+          "name": "single_site_location",
+          "description": "(Optional,string) Location if single site bucket is desired. Accepted values: ‘ams03’, 'che01’, 'hkg02’, 'mel01’, 'mex01’, 'mil01’, 'mon01’, 'osl01’, 'sjc04’, 'sao01’, 'seo01’, 'tor01’ Conflicts with: region_location, cross_region_location",
+          "args": []
+        },
+        {
+          "name": "region_location",
+          "description": "(Optional,string) Location if regional bucket is desired. Accepted values: 'au-syd’, 'eu-de’, 'eu-gb’, 'jp-tok’, 'us-east’, 'us-south’ Conflicts with: single_site_location, cross_region_location",
+          "args": []
+        },
+        {
+          "name": "cross_region_location",
+          "description": "(Optional,string) Location if cross regional bucket is desired. Accepted values: 'us’, 'eu’, 'ap’ Conflicts with: single_site_location, region_location",
+          "args": []
+        },
+        {
+          "name": "",
+          "description": "One of the location option must be present.",
+          "args": []
+        },
+        {
+          "name": "storage_class",
+          "description": "(Required, string) Storage class of the bucket. Accepted values: 'standard’, 'vault’, 'cold’, 'flex’",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The ID of the bucket.",
+          "args": []
+        },
+        {
+          "name": "crn",
+          "description": "The CRN of the bucket.",
+          "args": []
+        },
+        {
+          "name": "resource_instance_id",
+          "description": "The id of Cloud Object Storage instance.",
+          "args": []
+        },
+        {
+          "name": "key_protect",
+          "description": "CRN of the Key Protect instance where there a root key is already provisioned.",
+          "args": []
+        },
+        {
+          "name": "single_site_location",
+          "description": "Location if single site bucket was created.",
+          "args": []
+        },
+        {
+          "name": "region_location",
+          "description": "Location if regional bucket was created.",
+          "args": []
+        },
+        {
+          "name": "cross_region_location",
+          "description": "Location if cross regional bucket was created.",
+          "args": []
+        },
+        {
+          "name": "storage_class",
+          "description": "Storage class of the bucket.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_pi_instance": {
+      "name": "ibm_pi_instance",
+      "type": "resource",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/pi_instance.html",
+      "groupName": "Power Virtual Server Resources",
+      "args": [
+        {
+          "name": "pi_instance_name",
+          "description": "(Required, string) The name of the VM.",
+          "args": []
+        },
+        {
+          "name": "pi_creation_date",
+          "description": "(Required, string) The date on which the VM was created.",
+          "args": []
+        },
+        {
+          "name": "pi_key_pair_name",
+          "description": "(Required, string) The name of the Power Virtual Server Cloud SSH key to used to login to the VM.",
+          "args": []
+        },
+        {
+          "name": "pi_image_id",
+          "description": "(Required, string) The name of the image to deploy (e.g., 7200-03-03).",
+          "args": []
+        },
+        {
+          "name": "pi_processors",
+          "description": "(Required, float) The number of vCPUs to assign to the VM (as visibile within the guest operating system).",
+          "args": []
+        },
+        {
+          "name": "pi_proc_type",
+          "description": "(Required, string) The type of processor mode in which the VM will run (shared/dedicated).",
+          "args": []
+        },
+        {
+          "name": "pi_memory",
+          "description": "(Required, float) The amount of memory (GB) to assign to the VM.",
+          "args": []
+        },
+        {
+          "name": "pi_sys_type",
+          "description": "(Required, string) The type of system on which to create the VM (s922/e880/any).",
+          "args": []
+        },
+        {
+          "name": "pi_volume_ids",
+          "description": "(Required, list(string)) The list of volume IDs to attach to the VM at creation time.",
+          "args": []
+        },
+        {
+          "name": "pi_network_ids",
+          "description": "(Required, list(string)) The list of network IDs assigned to the VM.",
+          "args": []
+        },
+        {
+          "name": "pi_migratable",
+          "description": "(Required, boolean) Dictates whether the VM can be migrated (e.g., for server maintenance).",
+          "args": []
+        },
+        {
+          "name": "pi_cloud_instance_id",
+          "description": "(Required, string) The cloud_instance_id for this account.",
+          "args": []
+        },
+        {
+          "name": "pi_user_data",
+          "description": "(Optional, string) The base64-encoded form of the user data (cloud-init) to pass to the VM at creation time.",
+          "args": []
+        },
+        {
+          "name": "pi_public_network",
+          "description": "(Optional, boolean) Dictates whether the VM will be attached to a public network (true/false); default is false.",
+          "args": []
+        },
+        {
+          "name": "pi_replicants",
+          "description": "(Optional, float) Specifies the number of VMs to deploy; default is 1.",
+          "args": []
+        },
+        {
+          "name": "pi_replication_policy",
+          "description": "(Optional, string) Specifies the replication policy (e.g., none).",
+          "args": []
+        },
+        {
+          "name": "pi_replication_scheme",
+          "description": "(Optional, string) Specifies the replicate scheme (prefix/suffix).",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "pi_instance_id",
+          "description": "(string) The unique identifier of the instance.",
+          "args": []
+        },
+        {
+          "name": "pi_disk_size",
+          "description": "(int) The size (GB) of the root disk.",
+          "args": []
+        },
+        {
+          "name": "pi_instance_status",
+          "description": "(string) The status of the VM.",
+          "args": []
+        },
+        {
+          "name": "pi_minproc",
+          "description": "(float) The minimum number of processors the VM can have.",
+          "args": []
+        },
+        {
+          "name": "pi_addresses",
+          "description": "(Required, list(map[string])) A list of addresses assigned to the VM.",
+          "args": []
+        },
+        {
+          "name": "pi_instance_progress",
+          "description": "(float) Specifies the overall progress of the VM deployment process.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_pi_key": {
+      "name": "ibm_pi_key",
+      "type": "resource",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/pi_key.html",
+      "groupName": "Power Virtual Server Resources",
+      "args": [
+        {
+          "name": "pi_key_name",
+          "description": "(Required, int) The key name.",
+          "args": []
+        },
+        {
+          "name": "pi_ssh_key",
+          "description": "(Required, string) The value of the ssh key.",
+          "args": []
+        },
+        {
+          "name": "pi_cloud_instance_id",
+          "description": "(Required, string) The cloud_instance_id for this account.",
+          "args": []
+        }
+      ],
+      "attrs": []
+    },
+    "ibm_pi_network": {
+      "name": "ibm_pi_network",
+      "type": "resource",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/pi_network.html",
+      "groupName": "Power Virtual Server Resources",
+      "args": [
+        {
+          "name": "pi_network_name",
+          "description": "(Required, string) The name of the network.",
+          "args": []
+        },
+        {
+          "name": "pi_network_dns",
+          "description": "(Required, list(strings)) List of DNS entries for the network.",
+          "args": []
+        },
+        {
+          "name": "pi_network_cidr",
+          "description": "(Required, string) The network CIDR.",
+          "args": []
+        },
+        {
+          "name": "pi_network_type",
+          "description": "(Required, string) The type of network (e.g., pub-vlan, vlan).",
+          "args": []
+        },
+        {
+          "name": "pi_network_gateway",
+          "description": "(Optional, string) The network gateway address.",
+          "args": []
+        },
+        {
+          "name": "pi_network_available_ip_count",
+          "description": "(Optional, float) The number of available IP addresses.",
+          "args": []
+        },
+        {
+          "name": "pi_network_used_ip_count",
+          "description": "(Optional, float) The number of used IP addresses.",
+          "args": []
+        },
+        {
+          "name": "pi_network_used_ip_percent",
+          "description": "(Optional, float) The percentage of IP addresses used.",
+          "args": []
+        },
+        {
+          "name": "pi_cloud_instance_id",
+          "description": "(Required, string) The cloud_instance_id for this account.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "networkid",
+          "description": "The unique identifier (string) of the network.",
+          "args": []
+        },
+        {
+          "name": "vlanid",
+          "description": "The unique identifier (int) of the network VLAN.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_pi_volume": {
+      "name": "ibm_pi_volume",
+      "type": "resource",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/pi_volume.html",
+      "groupName": "Power Virtual Server Resources",
+      "args": [
+        {
+          "name": "pi_volume_size",
+          "description": "(Required, int) The size for this volume.",
+          "args": []
+        },
+        {
+          "name": "pi_volume_name",
+          "description": "(Required, string) The name of this volume.",
+          "args": []
+        },
+        {
+          "name": "pi_volume_type",
+          "description": "(Required, string) The volume type - Only two values are supported (ssd/standard).",
+          "args": []
+        },
+        {
+          "name": "pi_volume_shareable",
+          "description": "(Required, boolean) If the volume can be shared or not (true/false).",
+          "args": []
+        },
+        {
+          "name": "pi_cloud_instance_id",
+          "description": "(Required, string) The cloud_instance_id for this account.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier of the volume.",
+          "args": []
+        },
+        {
+          "name": "status",
+          "description": "The status of the volume.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_resource_group": {
+      "name": "ibm_resource_group",
+      "type": "resource",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/resource_group.html",
+      "groupName": "Resource Management Services Resources",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, string)The name of the resource group.",
+          "args": []
+        },
+        {
+          "name": "quota_id",
+          "description": "(Removed, string) The id of the quota.You can refer to a quota by name using a data source.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, array of strings) Tags associated with the resource group instance.\nNOTE: Tags are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier of the new resource group.",
+          "args": []
+        },
+        {
+          "name": "default",
+          "description": "Specifies whether its default resource group or not.",
+          "args": []
+        },
+        {
+          "name": "state",
+          "description": "State of the resource group.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_resource_instance": {
+      "name": "ibm_resource_instance",
+      "type": "resource",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/resource_instance.html",
+      "groupName": "Resource Management Services Resources",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, string) A descriptive name used to identify the resource instance.",
+          "args": []
+        },
+        {
+          "name": "service",
+          "description": "(Required, string) The name of the service offering. You can retrieve the value by running the ibmcloud catalog service-marketplace or ibmcloud catalog search command in the IBM Cloud CLI.",
+          "args": []
+        },
+        {
+          "name": "plan",
+          "description": "(Required, string) The name of the plan type supported by service. You can retrieve the value by running the ibmcloud catalog service <servicename> command in the IBM Cloud CLI.",
+          "args": []
+        },
+        {
+          "name": "location",
+          "description": "(Required, string) Target location or environment to create the resource instance.",
+          "args": []
+        },
+        {
+          "name": "resource_group_id",
+          "description": "(Optional, string) The ID of the resource group where you want to create the service. You can retrieve the value from data source ibm_resource_group. If not provided creates the service in default resource group.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, array of strings) Tags associated with the instance.",
+          "args": []
+        },
+        {
+          "name": "parameters",
+          "description": "(Optional, map) Arbitrary parameters to create instance. The value must be a JSON object.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier of the new resource instance.",
+          "args": []
+        },
+        {
+          "name": "status",
+          "description": "Status of resource instance.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_resource_key": {
+      "name": "ibm_resource_key",
+      "type": "resource",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/resource_key.html",
+      "groupName": "Resource Management Services Resources",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, string) A descriptive name used to identify a resource key.",
+          "args": []
+        },
+        {
+          "name": "role",
+          "description": "(Required, string) Name of the user role. Valid roles are Writer, Reader, Manager, Administrator, Operator, Viewer, Editor.",
+          "args": []
+        },
+        {
+          "name": "parameters",
+          "description": "(Optional, map) Arbitrary parameters to pass. Must be a JSON object.",
+          "args": []
+        },
+        {
+          "name": "resource_instance_id",
+          "description": "(Optional, string) The id of the resource instance associated with the resource key.\nNOTE: Conflicts with resource_alias_id.",
+          "args": []
+        },
+        {
+          "name": "resource_alias_id",
+          "description": "(Optional, string) The id of the resource alias associated with the resource key.\nNOTE: Conflicts with resource_instance_id.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, array of strings) Tags associated with the resource key instance.\nNOTE: Tags are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier of the new resource key.",
+          "args": []
+        },
+        {
+          "name": "credentials",
+          "description": "The credentials associated with the key.",
+          "args": []
+        },
+        {
+          "name": "status",
+          "description": "Status of resource key.",
+          "args": []
+        }
+      ]
+    },
     "ibm_is_floating_ip": {
       "name": "ibm_is_floating_ip",
       "type": "resource",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/is_floating_ip.html",
-      "groupName": "VPC Services Resources",
+      "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
           "name": "name",
@@ -7794,7 +8083,7 @@
       "name": "ibm_is_ike_policy",
       "type": "resource",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/is_ike_policy.html",
-      "groupName": "VPC Services Resources",
+      "groupName": "Virtual Private Cloud Classic Services Resources",
       "args": [
         {
           "name": "name",
@@ -7864,7 +8153,7 @@
       "name": "ibm_is_ipsec_policy",
       "type": "resource",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/is_ipsec_policy.html",
-      "groupName": "VPC Services Resources",
+      "groupName": "Virtual Private Cloud Classic Services Resources",
       "args": [
         {
           "name": "name",
@@ -7929,7 +8218,7 @@
       "name": "ibm_is_instance",
       "type": "resource",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/is_instance.html",
-      "groupName": "VPC Services Resources",
+      "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
           "name": "name",
@@ -8159,7 +8448,7 @@
       "name": "ibm_is_public_gateway",
       "type": "resource",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/is_public_gateway.html",
-      "groupName": "VPC Services Resources",
+      "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
           "name": "name",
@@ -8215,7 +8504,7 @@
       "name": "ibm_is_vpc",
       "type": "resource",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/is_vpc.html",
-      "groupName": "VPC Services Resources",
+      "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
           "name": "default_network_acl",
@@ -8275,7 +8564,7 @@
       "name": "ibm_is_vpc_address_prefix",
       "type": "resource",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/is_vpc_address_prefix.html",
-      "groupName": "VPC Services Resources",
+      "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
           "name": "name",
@@ -8311,11 +8600,56 @@
         }
       ]
     },
+    "ibm_is_vpc_route": {
+      "name": "ibm_is_vpc_route",
+      "type": "resource",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/is_vpc_route.html",
+      "groupName": "Virtual Private Cloud Classic Services Resources",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, string) The route name.",
+          "args": []
+        },
+        {
+          "name": "vpc",
+          "description": "(Required, string) The vpc id.",
+          "args": []
+        },
+        {
+          "name": "zone",
+          "description": "(Required, string) Name of the zone.",
+          "args": []
+        },
+        {
+          "name": "destination",
+          "description": "(Required, string) The destination of the route.",
+          "args": []
+        },
+        {
+          "name": "next_hop",
+          "description": "(Required, string) The next hop of the route.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The id of the route. The id is composed of <vpc_id>/<vpc_route_id>",
+          "args": []
+        },
+        {
+          "name": "status",
+          "description": "The status of the VPC Route.",
+          "args": []
+        }
+      ]
+    },
     "ibm_is_network_acl": {
       "name": "ibm_is_network_acl",
       "type": "resource",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/is_network_acl.html",
-      "groupName": "VPC Services Resources",
+      "groupName": "Virtual Private Cloud Classic Services Resources",
       "args": [
         {
           "name": "name",
@@ -8437,7 +8771,7 @@
       "name": "ibm_is_security_group",
       "type": "resource",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/is_security_group.html",
-      "groupName": "VPC Services Resources",
+      "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
           "name": "name",
@@ -8518,7 +8852,7 @@
       "name": "ibm_is_security_group_rule",
       "type": "resource",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/is_security_group_rule.html",
-      "groupName": "VPC Services Resources",
+      "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
           "name": "group",
@@ -8573,7 +8907,7 @@
       "name": "ibm_is_security_group_network_interface_attachment",
       "type": "resource",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/is_security_group_network_interface_attachment.html",
-      "groupName": "VPC Services Resources",
+      "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
           "name": "security_group",
@@ -8690,7 +9024,7 @@
       "name": "ibm_is_subnet",
       "type": "resource",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/is_subnet.html",
-      "groupName": "VPC Services Resources",
+      "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
           "name": "ipv4_cidr_block",
@@ -8765,7 +9099,7 @@
       "name": "ibm_is_ssh_key",
       "type": "resource",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/is_ssh_key.html",
-      "groupName": "VPC Services Resources",
+      "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
           "name": "name",
@@ -8810,7 +9144,7 @@
       "name": "ibm_is_vpn_gateway",
       "type": "resource",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/is_vpn_gateway.html",
-      "groupName": "VPC Services Resources",
+      "groupName": "Virtual Private Cloud Classic Services Resources",
       "args": [
         {
           "name": "name",
@@ -8850,7 +9184,7 @@
       "name": "ibm_is_vpn_gateway_connection",
       "type": "resource",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/is_vpn_gateway_connection.html",
-      "groupName": "VPC Services Resources",
+      "groupName": "Virtual Private Cloud Classic Services Resources",
       "args": [
         {
           "name": "name",
@@ -8930,7 +9264,7 @@
       "name": "ibm_is_lb",
       "type": "resource",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/is_lb.html",
-      "groupName": "VPC Services Resources",
+      "groupName": "Virtual Private Cloud Classic Services Resources",
       "args": [
         {
           "name": "name",
@@ -8995,7 +9329,7 @@
       "name": "ibm_is_lb_listener",
       "type": "resource",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/is_lb_listener.html",
-      "groupName": "VPC Services Resources",
+      "groupName": "Virtual Private Cloud Classic Services Resources",
       "args": [
         {
           "name": "lb",
@@ -9045,7 +9379,7 @@
       "name": "ibm_is_lb_pool",
       "type": "resource",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/is_lb_pool.html",
-      "groupName": "VPC Services Resources",
+      "groupName": "Virtual Private Cloud Classic Services Resources",
       "args": [
         {
           "name": "name",
@@ -9125,7 +9459,7 @@
       "name": "ibm_is_lb_pool_member",
       "type": "resource",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/is_lb_pool_member.html",
-      "groupName": "VPC Services Resources",
+      "groupName": "Virtual Private Cloud Classic Services Resources",
       "args": [
         {
           "name": "pool",
@@ -9175,7 +9509,7 @@
       "name": "ibm_is_volume",
       "type": "resource",
       "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/is_volume.html",
-      "groupName": "VPC Services Resources",
+      "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
           "name": "name",
@@ -9232,265 +9566,6 @@
         {
           "name": "crn",
           "description": "The CRN for the volume.",
-          "args": []
-        }
-      ]
-    },
-    "ibm_pi_instance": {
-      "name": "ibm_pi_instance",
-      "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/pi_instance.html",
-      "groupName": "Power IaaS Resources",
-      "args": [
-        {
-          "name": "pi_instance_name",
-          "description": "(Required, string) The name of the VM.",
-          "args": []
-        },
-        {
-          "name": "pi_creation_date",
-          "description": "(Required, string) The date on which the VM was created.",
-          "args": []
-        },
-        {
-          "name": "pi_key_pair_name",
-          "description": "(Required, string) The name of the Power Virtual Server Cloud SSH key to used to login to the VM.",
-          "args": []
-        },
-        {
-          "name": "pi_image_id",
-          "description": "(Required, string) The name of the image to deploy (e.g., 7200-03-03).",
-          "args": []
-        },
-        {
-          "name": "pi_processors",
-          "description": "(Required, float) The number of vCPUs to assign to the VM (as visibile within the guest operating system).",
-          "args": []
-        },
-        {
-          "name": "pi_proc_type",
-          "description": "(Required, string) The type of processor mode in which the VM will run (shared/dedicated).",
-          "args": []
-        },
-        {
-          "name": "pi_memory",
-          "description": "(Required, float) The amount of memory (GB) to assign to the VM.",
-          "args": []
-        },
-        {
-          "name": "pi_sys_type",
-          "description": "(Required, string) The type of system on which to create the VM (s922/e880/any).",
-          "args": []
-        },
-        {
-          "name": "pi_volume_ids",
-          "description": "(Required, list(string)) The list of volume IDs to attach to the VM at creation time.",
-          "args": []
-        },
-        {
-          "name": "pi_network_ids",
-          "description": "(Required, list(string)) The list of network IDs assigned to the VM.",
-          "args": []
-        },
-        {
-          "name": "pi_migratable",
-          "description": "(Required, boolean) Dictates whether the VM can be migrated (e.g., for server maintenance).",
-          "args": []
-        },
-        {
-          "name": "pi_cloud_instance_id",
-          "description": "(Required, string) The cloud_instance_id for this account.",
-          "args": []
-        },
-        {
-          "name": "pi_user_data",
-          "description": "(Optional, string) The base64-encoded form of the user data (cloud-init) to pass to the VM at creation time.",
-          "args": []
-        },
-        {
-          "name": "pi_public_network",
-          "description": "(Optional, boolean) Dictates whether the VM will be attached to a public network (true/false); default is false.",
-          "args": []
-        },
-        {
-          "name": "pi_replicants",
-          "description": "(Optional, float) Specifies the number of VMs to deploy; default is 1.",
-          "args": []
-        },
-        {
-          "name": "pi_replication_policy",
-          "description": "(Optional, string) Specifies the replication policy (e.g., none).",
-          "args": []
-        },
-        {
-          "name": "pi_replication_scheme",
-          "description": "(Optional, string) Specifies the replicate scheme (prefix/suffix).",
-          "args": []
-        }
-      ],
-      "attrs": [
-        {
-          "name": "pi_instance_id",
-          "description": "(string) The unique identifier of the instance.",
-          "args": []
-        },
-        {
-          "name": "pi_disk_size",
-          "description": "(int) The size (GB) of the root disk.",
-          "args": []
-        },
-        {
-          "name": "pi_instance_status",
-          "description": "(string) The status of the VM.",
-          "args": []
-        },
-        {
-          "name": "pi_minproc",
-          "description": "(float) The minimum number of processors the VM can have.",
-          "args": []
-        },
-        {
-          "name": "pi_addresses",
-          "description": "(Required, list(map[string])) A list of addresses assigned to the VM.",
-          "args": []
-        },
-        {
-          "name": "pi_instance_progress",
-          "description": "(float) Specifies the overall progress of the VM deployment process.",
-          "args": []
-        }
-      ]
-    },
-    "ibm_pi_key": {
-      "name": "ibm_pi_key",
-      "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/pi_key.html",
-      "groupName": "Power IaaS Resources",
-      "args": [
-        {
-          "name": "pi_key_name",
-          "description": "(Required, int) The key name.",
-          "args": []
-        },
-        {
-          "name": "pi_ssh_key",
-          "description": "(Required, string) The value of the ssh key.",
-          "args": []
-        },
-        {
-          "name": "pi_cloud_instance_id",
-          "description": "(Required, string) The cloud_instance_id for this account.",
-          "args": []
-        }
-      ],
-      "attrs": []
-    },
-    "ibm_pi_network": {
-      "name": "ibm_pi_network",
-      "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/pi_network.html",
-      "groupName": "Power IaaS Resources",
-      "args": [
-        {
-          "name": "pi_network_name",
-          "description": "(Required, string) The name of the network.",
-          "args": []
-        },
-        {
-          "name": "pi_network_dns",
-          "description": "(Required, list(strings)) List of DNS entries for the network.",
-          "args": []
-        },
-        {
-          "name": "pi_network_cidr",
-          "description": "(Required, string) The network CIDR.",
-          "args": []
-        },
-        {
-          "name": "pi_network_type",
-          "description": "(Required, string) The type of network (e.g., pub-vlan, vlan).",
-          "args": []
-        },
-        {
-          "name": "pi_network_gateway",
-          "description": "(Optional, string) The network gateway address.",
-          "args": []
-        },
-        {
-          "name": "pi_network_available_ip_count",
-          "description": "(Optional, float) The number of available IP addresses.",
-          "args": []
-        },
-        {
-          "name": "pi_network_used_ip_count",
-          "description": "(Optional, float) The number of used IP addresses.",
-          "args": []
-        },
-        {
-          "name": "pi_network_used_ip_percent",
-          "description": "(Optional, float) The percentage of IP addresses used.",
-          "args": []
-        },
-        {
-          "name": "pi_cloud_instance_id",
-          "description": "(Required, string) The cloud_instance_id for this account.",
-          "args": []
-        }
-      ],
-      "attrs": [
-        {
-          "name": "networkid",
-          "description": "The unique identifier (string) of the network.",
-          "args": []
-        },
-        {
-          "name": "vlanid",
-          "description": "The unique identifier (int) of the network VLAN.",
-          "args": []
-        }
-      ]
-    },
-    "ibm_pi_volume": {
-      "name": "ibm_pi_volume",
-      "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v0.18.0/r/pi_volume.html",
-      "groupName": "Power IaaS Resources",
-      "args": [
-        {
-          "name": "pi_volume_size",
-          "description": "(Required, int) The size for this volume.",
-          "args": []
-        },
-        {
-          "name": "pi_volume_name",
-          "description": "(Required, string) The name of this volume.",
-          "args": []
-        },
-        {
-          "name": "pi_volume_type",
-          "description": "(Required, string) The volume type - Only two values are supported (ssd/standard).",
-          "args": []
-        },
-        {
-          "name": "pi_volume_shareable",
-          "description": "(Required, boolean) If the volume can be shared or not (true/false).",
-          "args": []
-        },
-        {
-          "name": "pi_cloud_instance_id",
-          "description": "(Required, string) The cloud_instance_id for this account.",
-          "args": []
-        }
-      ],
-      "attrs": [
-        {
-          "name": "id",
-          "description": "The unique identifier of the volume.",
-          "args": []
-        },
-        {
-          "name": "status",
-          "description": "The status of the volume.",
           "args": []
         }
       ]
