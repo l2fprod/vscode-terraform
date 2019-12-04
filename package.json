@@ -282,7 +282,7 @@
     "vscode:prepublish": "npm install --no-save && npm run gulp -- --require-appinsights-key",
     "test": "gulp test",
     "integration-test": "node ./out/test/run-test.js",
-    "publish": "npm run clean && vsce publish",
+    "publish": "npm run clean && vsce publish patch",
     "package": "npm run clean && vsce package"
   },
   "devDependencies": {
