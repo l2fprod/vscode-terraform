@@ -3,7 +3,7 @@
     "ibm_account": {
       "name": "ibm_account",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/account.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/account.html",
       "groupName": "Cloud Foundry Data Sources",
       "args": [
         {
@@ -49,7 +49,7 @@
     "ibm_app": {
       "name": "ibm_app",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/app.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/app.html",
       "groupName": "Cloud Foundry Data Sources",
       "args": [
         {
@@ -134,7 +134,7 @@
     "ibm_app_domain_private": {
       "name": "ibm_app_domain_private",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/app_domain_private.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/app_domain_private.html",
       "groupName": "Cloud Foundry Data Sources",
       "args": [
         {
@@ -154,7 +154,7 @@
     "ibm_app_domain_shared": {
       "name": "ibm_app_domain_shared",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/app_domain_shared.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/app_domain_shared.html",
       "groupName": "Cloud Foundry Data Sources",
       "args": [
         {
@@ -174,7 +174,7 @@
     "ibm_app_route": {
       "name": "ibm_app_route",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/app_route.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/app_route.html",
       "groupName": "Cloud Foundry Data Sources",
       "args": [
         {
@@ -214,7 +214,7 @@
     "ibm_org": {
       "name": "ibm_org",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/org.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/org.html",
       "groupName": "Cloud Foundry Data Sources",
       "args": [
         {
@@ -234,7 +234,7 @@
     "ibm_org_quota": {
       "name": "ibm_org_quota",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/org_quota.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/org_quota.html",
       "groupName": "Cloud Foundry Data Sources",
       "args": [
         {
@@ -309,7 +309,7 @@
     "ibm_service_instance": {
       "name": "ibm_service_instance",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/service_instance.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/service_instance.html",
       "groupName": "Cloud Foundry Data Sources",
       "args": [
         {
@@ -349,7 +349,7 @@
     "ibm_service_key": {
       "name": "ibm_service_key",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/service_key.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/service_key.html",
       "groupName": "Cloud Foundry Data Sources",
       "args": [
         {
@@ -384,7 +384,7 @@
     "ibm_service_plan": {
       "name": "ibm_service_plan",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/service_plan.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/service_plan.html",
       "groupName": "Cloud Foundry Data Sources",
       "args": [
         {
@@ -409,7 +409,7 @@
     "ibm_space": {
       "name": "ibm_space",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/space.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/space.html",
       "groupName": "Cloud Foundry Data Sources",
       "args": [
         {
@@ -449,7 +449,7 @@
     "ibm_cis": {
       "name": "ibm_cis",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/cis.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/cis.html",
       "groupName": "Cloud Internet Services Data Sources",
       "args": [
         {
@@ -484,7 +484,7 @@
     "ibm_cis_domain": {
       "name": "ibm_cis_domain",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/cis_domain.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/cis_domain.html",
       "groupName": "Cloud Internet Services Data Sources",
       "args": [
         {
@@ -529,7 +529,7 @@
     "ibm_cis_ip_addresses": {
       "name": "ibm_cis_ip_addresses",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/cis_ip_addresses.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/cis_ip_addresses.html",
       "groupName": "Cloud Internet Services Data Sources",
       "args": [],
       "attrs": [
@@ -548,7 +548,7 @@
     "ibm_container_cluster": {
       "name": "ibm_container_cluster",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/container_cluster.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/container_cluster.html",
       "groupName": "Container Data Sources",
       "args": [
         {
@@ -725,7 +725,7 @@
     "ibm_container_cluster_config": {
       "name": "ibm_container_cluster_config",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/container_cluster_config.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/container_cluster_config.html",
       "groupName": "Container Data Sources",
       "args": [
         {
@@ -800,7 +800,7 @@
     "ibm_container_cluster_worker": {
       "name": "ibm_container_cluster_worker",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/container_cluster_worker.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/container_cluster_worker.html",
       "groupName": "Container Data Sources",
       "args": [
         {
@@ -875,7 +875,7 @@
     "ibm_container_cluster_versions": {
       "name": "ibm_container_cluster_versions",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/container_cluster_versions.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/container_cluster_versions.html",
       "groupName": "Container Data Sources",
       "args": [
         {
@@ -925,7 +925,7 @@
     "ibm_container_vpc_cluster": {
       "name": "ibm_container_vpc_cluster",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/container_vpc_cluster.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/container_vpc_cluster.html",
       "groupName": "Container Data Sources",
       "args": [
         {
@@ -1101,7 +1101,7 @@
     "ibm_container_vpc_cluster_worker": {
       "name": "ibm_container_vpc_cluster_worker",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/container_vpc_cluster_worker.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/container_vpc_cluster_worker.html",
       "groupName": "Container Data Sources",
       "args": [
         {
@@ -1156,7 +1156,7 @@
     "ibm_database": {
       "name": "ibm_database",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/database.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/database.html",
       "groupName": "Database Data Sources",
       "args": [
         {
@@ -1236,7 +1236,7 @@
     "ibm_function_action": {
       "name": "ibm_function_action",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/function_action.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/function_action.html",
       "groupName": "Function Data Sources",
       "args": [
         {
@@ -1250,7 +1250,7 @@
     "ibm_function_package": {
       "name": "ibm_function_package",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/function_package.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/function_package.html",
       "groupName": "Function Data Sources",
       "args": [
         {
@@ -1264,7 +1264,7 @@
     "ibm_function_rule": {
       "name": "ibm_function_rule",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/function_rule.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/function_rule.html",
       "groupName": "Function Data Sources",
       "args": [
         {
@@ -1278,7 +1278,7 @@
     "ibm_function_trigger": {
       "name": "ibm_function_trigger",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/function_trigger.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/function_trigger.html",
       "groupName": "Function Data Sources",
       "args": [
         {
@@ -1292,7 +1292,7 @@
     "ibm_iam_auth_token": {
       "name": "ibm_iam_auth_token",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/iam_auth_token.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/iam_auth_token.html",
       "groupName": "Identity & Access Data Sources",
       "args": [],
       "attrs": [
@@ -1321,7 +1321,7 @@
     "ibm_iam_service_id": {
       "name": "ibm_iam_service_id",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/iam_service_id.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/iam_service_id.html",
       "groupName": "Identity & Access Data Sources",
       "args": [
         {
@@ -1372,7 +1372,7 @@
     "ibm_iam_service_policy": {
       "name": "ibm_iam_service_policy",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/iam_service_policy.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/iam_service_policy.html",
       "groupName": "Identity & Access Data Sources",
       "args": [
         {
@@ -1438,7 +1438,7 @@
     "ibm_iam_user_policy": {
       "name": "ibm_iam_user_policy",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/iam_user_policy.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/iam_user_policy.html",
       "groupName": "Identity & Access Data Sources",
       "args": [
         {
@@ -1504,7 +1504,7 @@
     "ibm_compute_bare_metal": {
       "name": "ibm_compute_bare_metal",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/compute_bare_metal.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/compute_bare_metal.html",
       "groupName": "Classic Infrastructure Data Sources",
       "args": [
         {
@@ -1679,7 +1679,7 @@
     "ibm_compute_image_template": {
       "name": "ibm_compute_image_template",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/compute_image_template.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/compute_image_template.html",
       "groupName": "Classic Infrastructure Data Sources",
       "args": [
         {
@@ -1699,7 +1699,7 @@
     "ibm_compute_placement_group": {
       "name": "ibm_compute_placement_group",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/compute_placement_group.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/compute_placement_group.html",
       "groupName": "Classic Infrastructure Data Sources",
       "args": [
         {
@@ -1755,7 +1755,7 @@
     "ibm_compute_ssh_key": {
       "name": "ibm_compute_ssh_key",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/compute_ssh_key.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/compute_ssh_key.html",
       "groupName": "Classic Infrastructure Data Sources",
       "args": [
         {
@@ -1795,7 +1795,7 @@
     "ibm_compute_vm_instance": {
       "name": "ibm_compute_vm_instance",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/compute_vm_instance.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/compute_vm_instance.html",
       "groupName": "Classic Infrastructure Data Sources",
       "args": [
         {
@@ -1920,7 +1920,7 @@
     "ibm_dns_domain": {
       "name": "ibm_dns_domain",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/dns_domain.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/dns_domain.html",
       "groupName": "Classic Infrastructure Data Sources",
       "args": [
         {
@@ -1940,7 +1940,7 @@
     "ibm_dns_domain_registration": {
       "name": "ibm_dns_domain_registration",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/dns_domain_registration.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/dns_domain_registration.html",
       "groupName": "Classic Infrastructure Data Sources",
       "args": [
         {
@@ -1960,7 +1960,7 @@
     "ibm_dns_secondary": {
       "name": "ibm_dns_secondary",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/dns_secondary.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/dns_secondary.html",
       "groupName": "Classic Infrastructure Data Sources",
       "args": [
         {
@@ -2000,7 +2000,7 @@
     "ibm_lbaas": {
       "name": "ibm_lbaas",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/lbaas.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/lbaas.html",
       "groupName": "Classic Infrastructure Data Sources",
       "args": [
         {
@@ -2014,7 +2014,7 @@
     "ibm_network_vlan": {
       "name": "ibm_network_vlan",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/network_vlan.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/network_vlan.html",
       "groupName": "Classic Infrastructure Data Sources",
       "args": [
         {
@@ -2070,7 +2070,7 @@
     "ibm_security_group": {
       "name": "ibm_security_group",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/security_group.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/security_group.html",
       "groupName": "Classic Infrastructure Data Sources",
       "args": [
         {
@@ -2105,7 +2105,7 @@
     "ibm_kp_key": {
       "name": "ibm_kp_key",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/kp_key.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/kp_key.html",
       "groupName": "Key Protect Data Sources",
       "args": [
         {
@@ -2130,7 +2130,7 @@
     "ibm_resource_group": {
       "name": "ibm_resource_group",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/resource_group.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/resource_group.html",
       "groupName": "Resource Management Data Sources",
       "args": [
         {
@@ -2155,7 +2155,7 @@
     "ibm_resource_instance": {
       "name": "ibm_resource_instance",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/resource_instance.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/resource_instance.html",
       "groupName": "Resource Management Data Sources",
       "args": [
         {
@@ -2200,7 +2200,7 @@
     "ibm_resource_key": {
       "name": "ibm_resource_key",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/resource_key.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/resource_key.html",
       "groupName": "Resource Management Data Sources",
       "args": [
         {
@@ -2250,7 +2250,7 @@
     "ibm_resource_quota": {
       "name": "ibm_resource_quota",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/resource_quota.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/resource_quota.html",
       "groupName": "Resource Management Data Sources",
       "args": [
         {
@@ -2305,7 +2305,7 @@
     "ibm_pi_image": {
       "name": "ibm_pi_image",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/pi_image.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/pi_image.html",
       "groupName": "Power Virtual Server Data Sources",
       "args": [
         {
@@ -2350,7 +2350,7 @@
     "ibm_pi_images": {
       "name": "ibm_pi_images",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/pi_images.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/pi_images.html",
       "groupName": "Power Virtual Server Data Sources",
       "args": [],
       "attrs": [
@@ -2364,7 +2364,7 @@
     "ibm_pi_instance": {
       "name": "ibm_pi_instance",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/pi_instance.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/pi_instance.html",
       "groupName": "Power Virtual Server Data Sources",
       "args": [
         {
@@ -2430,7 +2430,7 @@
     "ibm_pi_instance_ip": {
       "name": "ibm_pi_instance_ip",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/pi_instance_ip.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/pi_instance_ip.html",
       "groupName": "Power Virtual Server Data Sources",
       "args": [
         {
@@ -2460,7 +2460,7 @@
     "ibm_pi_key": {
       "name": "ibm_pi_key",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/pi_key.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/pi_key.html",
       "groupName": "Power Virtual Server Data Sources",
       "args": [
         {
@@ -2495,7 +2495,7 @@
     "ibm_pi_network": {
       "name": "ibm_pi_network",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/pi_network.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/pi_network.html",
       "groupName": "Power Virtual Server Data Sources",
       "args": [
         {
@@ -2550,7 +2550,7 @@
     "ibm_pi_public_network": {
       "name": "ibm_pi_public_network",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/pi_public_network.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/pi_public_network.html",
       "groupName": "Power Virtual Server Data Sources",
       "args": [
         {
@@ -2590,7 +2590,7 @@
     "ibm_pi_tenant": {
       "name": "ibm_pi_tenant",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/pi_tenant.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/pi_tenant.html",
       "groupName": "Power Virtual Server Data Sources",
       "args": [
         {
@@ -2630,7 +2630,7 @@
     "ibm_pi_volume": {
       "name": "ibm_pi_volume",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/pi_volume.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/pi_volume.html",
       "groupName": "Power Virtual Server Data Sources",
       "args": [
         {
@@ -2675,7 +2675,7 @@
     "ibm_pi_instance_volumes": {
       "name": "ibm_pi_instance_volumes",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/pi_instance_volumes.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/pi_instance_volumes.html",
       "groupName": "Power Virtual Server Data Sources",
       "args": [
         {
@@ -2735,7 +2735,7 @@
     "ibm_is_image": {
       "name": "ibm_is_image",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/is_image.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/is_image.html",
       "groupName": "Virtual Private Cloud NextGen Services Data Sources",
       "args": [
         {
@@ -2780,7 +2780,7 @@
     "ibm_is_images": {
       "name": "ibm_is_images",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/is_images.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/is_images.html",
       "groupName": "Virtual Private Cloud NextGen Services Data Sources",
       "args": [],
       "attrs": [
@@ -2794,7 +2794,7 @@
     "ibm_is_instance_profile": {
       "name": "ibm_is_instance_profile",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/is_instance_profile.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/is_instance_profile.html",
       "groupName": "Virtual Private Cloud NextGen Services Data Sources",
       "args": [
         {
@@ -2814,7 +2814,7 @@
     "ibm_is_instance_profiles": {
       "name": "ibm_is_instance_profiles",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/is_instance_profiles.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/is_instance_profiles.html",
       "groupName": "Virtual Private Cloud NextGen Services Data Sources",
       "args": [],
       "attrs": [
@@ -2828,7 +2828,7 @@
     "ibm_is_region": {
       "name": "ibm_is_region",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/is_region.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/is_region.html",
       "groupName": "Virtual Private Cloud NextGen Services Data Sources",
       "args": [
         {
@@ -2853,7 +2853,7 @@
     "ibm_is_ssh_key": {
       "name": "ibm_is_ssh_key",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/is_ssh_key.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/is_ssh_key.html",
       "groupName": "Virtual Private Cloud NextGen Services Data Sources",
       "args": [
         {
@@ -2893,7 +2893,7 @@
     "ibm_is_subnet": {
       "name": "ibm_is_subnet",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/is_subnet.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/is_subnet.html",
       "groupName": "Virtual Private Cloud NextGen Services Data Sources",
       "args": [
         {
@@ -2968,7 +2968,7 @@
     "ibm_is_vpc": {
       "name": "ibm_is_vpc",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/is_vpc.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/is_vpc.html",
       "groupName": "Virtual Private Cloud NextGen Services Data Sources",
       "args": [
         {
@@ -3013,7 +3013,7 @@
     "ibm_is_zone": {
       "name": "ibm_is_zone",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/is_zone.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/is_zone.html",
       "groupName": "Virtual Private Cloud NextGen Services Data Sources",
       "args": [
         {
@@ -3038,7 +3038,7 @@
     "ibm_is_zones": {
       "name": "ibm_is_zones",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/is_zones.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/is_zones.html",
       "groupName": "Virtual Private Cloud NextGen Services Data Sources",
       "args": [
         {
@@ -3063,7 +3063,7 @@
     "ibm_schematics_workspace": {
       "name": "ibm_schematics_workspace",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/schematics_workspace.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/schematics_workspace.html",
       "groupName": "Schematics Data Sources",
       "args": [
         {
@@ -3123,7 +3123,7 @@
     "ibm_schematics_output": {
       "name": "ibm_schematics_output",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/schematics_output.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/schematics_output.html",
       "groupName": "Schematics Data Sources",
       "args": [
         {
@@ -3153,7 +3153,7 @@
     "ibm_schematics_state": {
       "name": "ibm_schematics_state",
       "type": "data",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/d/schematics_state.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/d/schematics_state.html",
       "groupName": "Schematics Data Sources",
       "args": [
         {
@@ -3185,7 +3185,7 @@
     "ibm_cos_bucket": {
       "name": "ibm_cos_bucket",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/cos_bucket.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/cos_bucket.html",
       "groupName": "Object Storage Resources",
       "args": [
         {
@@ -3275,7 +3275,7 @@
     "ibm_app": {
       "name": "ibm_app",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/app.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/app.html",
       "groupName": "Cloud Foundry Resources",
       "args": [
         {
@@ -3375,7 +3375,7 @@
     "ibm_app_domain_private": {
       "name": "ibm_app_domain_private",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/app_domain_private.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/app_domain_private.html",
       "groupName": "Cloud Foundry Resources",
       "args": [
         {
@@ -3405,7 +3405,7 @@
     "ibm_app_domain_shared": {
       "name": "ibm_app_domain_shared",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/app_domain_shared.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/app_domain_shared.html",
       "groupName": "Cloud Foundry Resources",
       "args": [
         {
@@ -3435,7 +3435,7 @@
     "ibm_app_route": {
       "name": "ibm_app_route",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/app_route.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/app_route.html",
       "groupName": "Cloud Foundry Resources",
       "args": [
         {
@@ -3480,7 +3480,7 @@
     "ibm_org": {
       "name": "ibm_org",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/org.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/org.html",
       "groupName": "Cloud Foundry Resources",
       "args": [
         {
@@ -3525,7 +3525,7 @@
     "ibm_service_instance": {
       "name": "ibm_service_instance",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/service_instance.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/service_instance.html",
       "groupName": "Cloud Foundry Resources",
       "args": [
         {
@@ -3590,7 +3590,7 @@
     "ibm_service_key": {
       "name": "ibm_service_key",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/service_key.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/service_key.html",
       "groupName": "Cloud Foundry Resources",
       "args": [
         {
@@ -3630,7 +3630,7 @@
     "ibm_space": {
       "name": "ibm_space",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/space.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/space.html",
       "groupName": "Cloud Foundry Resources",
       "args": [
         {
@@ -3675,7 +3675,7 @@
     "ibm_cis": {
       "name": "ibm_cis",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/cis.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/cis.html",
       "groupName": "Cloud Internet Services Resources",
       "args": [
         {
@@ -3720,7 +3720,7 @@
     "ibm_cis_domain": {
       "name": "ibm_cis_domain",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/cis_domain.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/cis_domain.html",
       "groupName": "Cloud Internet Services Resources",
       "args": [
         {
@@ -3739,7 +3739,7 @@
     "ibm_cis_domain_settings": {
       "name": "ibm_cis_domain_settings",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/cis_domain_settings.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/cis_domain_settings.html",
       "groupName": "Cloud Internet Services Resources",
       "args": [
         {
@@ -3788,7 +3788,7 @@
     "ibm_cis_dns_record": {
       "name": "ibm_cis_dns_record",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/cis_dns_record.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/cis_dns_record.html",
       "groupName": "Cloud Internet Services Resources",
       "args": [
         {
@@ -3837,7 +3837,7 @@
     "ibm_cis_global_load_balancer": {
       "name": "ibm_cis_global_load_balancer",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/cis_global_load_balancer.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/cis_global_load_balancer.html",
       "groupName": "Cloud Internet Services Resources",
       "args": [
         {
@@ -3886,7 +3886,7 @@
     "ibm_cis_healthcheck": {
       "name": "ibm_cis_healthcheck",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/cis_healthcheck.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/cis_healthcheck.html",
       "groupName": "Cloud Internet Services Resources",
       "args": [
         {
@@ -3945,7 +3945,7 @@
     "ibm_cis_origin_pool": {
       "name": "ibm_cis_origin_pool",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/cis_origin_pool.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/cis_origin_pool.html",
       "groupName": "Cloud Internet Services Resources",
       "args": [
         {
@@ -3999,7 +3999,7 @@
     "ibm_container_alb": {
       "name": "ibm_container_alb",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/container_alb.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/container_alb.html",
       "groupName": "Container Resources",
       "args": [
         {
@@ -4054,7 +4054,7 @@
     "ibm_container_alb_cert": {
       "name": "ibm_container_alb_cert",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/container_alb_cert.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/container_alb_cert.html",
       "groupName": "Container Resources",
       "args": [
         {
@@ -4114,7 +4114,7 @@
     "ibm_container_bind_service": {
       "name": "ibm_container_bind_service",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/container_bind_service.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/container_bind_service.html",
       "groupName": "Container Resources",
       "args": [
         {
@@ -4209,7 +4209,7 @@
     "ibm_container_cluster": {
       "name": "ibm_container_cluster",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/container_cluster.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/container_cluster.html",
       "groupName": "Container Resources",
       "args": [
         {
@@ -4462,7 +4462,7 @@
     "ibm_container_cluster_feature": {
       "name": "ibm_container_cluster_feature",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/container_cluster_feature.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/container_cluster_feature.html",
       "groupName": "Container Resources",
       "args": [
         {
@@ -4522,7 +4522,7 @@
     "ibm_container_worker_pool": {
       "name": "ibm_container_worker_pool",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/container_worker_pool.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/container_worker_pool.html",
       "groupName": "Container Resources",
       "args": [
         {
@@ -4597,7 +4597,7 @@
     "ibm_container_worker_pool_zone_attachment": {
       "name": "ibm_container_worker_pool_zone_attachment",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/container_worker_pool_zone_attachment.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/container_worker_pool_zone_attachment.html",
       "groupName": "Container Resources",
       "args": [
         {
@@ -4652,7 +4652,7 @@
     "ibm_container_vpc_alb": {
       "name": "ibm_container_vpc_alb",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/container_vpc_alb.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/container_vpc_alb.html",
       "groupName": "Container Resources",
       "args": [
         {
@@ -4722,7 +4722,7 @@
     "ibm_container_vpc_cluster": {
       "name": "ibm_container_vpc_cluster",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/container_vpc_cluster.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/container_vpc_cluster.html",
       "groupName": "Container Resources",
       "args": [
         {
@@ -4778,7 +4778,7 @@
         },
         {
           "name": "worker_count",
-          "description": "(Optional, Forces new resource,Int) The number of worker nodes per zone in the default worker pool. Default value '1’.",
+          "description": "(Optional, Int) The number of worker nodes per zone in the default worker pool. Default value '1’.",
           "args": []
         },
         {
@@ -4838,7 +4838,7 @@
     "ibm_container_vpc_worker_pool": {
       "name": "ibm_container_vpc_worker_pool",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/container_vpc_worker_pool.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/container_vpc_worker_pool.html",
       "groupName": "Container Resources",
       "args": [
         {
@@ -4858,7 +4858,7 @@
         },
         {
           "name": "worker_count",
-          "description": "(Required, Forces new resource, Int) The number of worker nodes per zone in the worker pool.",
+          "description": "(Required, Int) The number of worker nodes per zone in the worker pool.",
           "args": []
         },
         {
@@ -4904,7 +4904,7 @@
     "ibm_database": {
       "name": "ibm_database",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/database.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/database.html",
       "groupName": "Database Resources",
       "args": [
         {
@@ -4968,6 +4968,11 @@
           "args": []
         },
         {
+          "name": "remote_leader_id",
+          "description": "(Optional, string) A CRN of the leader database to make the replica(read-only) deployment. The leader database must have been created by a database deployment with the same service ID. A read-only replica is set up to replicate all of your data from the leader deployment to the replica deployment using asynchronous replication. See the documentation related to Read-only Replicas here. https://cloud.ibm.com/docs/services/databases-for-postgresql?topic=databases-for-postgresql-read-only-replicas",
+          "args": []
+        },
+        {
           "name": "key_protect_key",
           "description": "(Optional, string) The CRN of a Key Protect key, which is then used for disk encryption. A key protect CRN is in the format crn:v1:<…>:key:.",
           "args": []
@@ -5024,7 +5029,7 @@
     "ibm_function_action": {
       "name": "ibm_function_action",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/function_action.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/function_action.html",
       "groupName": "Function Resources",
       "args": [
         {
@@ -5110,7 +5115,7 @@
     "ibm_function_package": {
       "name": "ibm_function_package",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/function_package.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/function_package.html",
       "groupName": "Function Resources",
       "args": [
         {
@@ -5144,7 +5149,7 @@
     "ibm_function_rule": {
       "name": "ibm_function_rule",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/function_rule.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/function_rule.html",
       "groupName": "Function Resources",
       "args": [
         {
@@ -5168,7 +5173,7 @@
     "ibm_function_trigger": {
       "name": "ibm_function_trigger",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/function_trigger.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/function_trigger.html",
       "groupName": "Function Resources",
       "args": [
         {
@@ -5208,7 +5213,7 @@
     "ibm_iam_access_group": {
       "name": "ibm_iam_access_group",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/iam_access_group.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/iam_access_group.html",
       "groupName": "Identity & Access Resources",
       "args": [
         {
@@ -5243,7 +5248,7 @@
     "ibm_iam_access_group_members": {
       "name": "ibm_iam_access_group_members",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/iam_access_group_members.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/iam_access_group_members.html",
       "groupName": "Identity & Access Resources",
       "args": [
         {
@@ -5289,7 +5294,7 @@
     "ibm_iam_access_group_policy": {
       "name": "ibm_iam_access_group_policy",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/iam_access_group_policy.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/iam_access_group_policy.html",
       "groupName": "Identity & Access Resources",
       "args": [
         {
@@ -5370,7 +5375,7 @@
     "ibm_iam_authorization_policy": {
       "name": "ibm_iam_authorization_policy",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/iam_authorization_policy.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/iam_authorization_policy.html",
       "groupName": "Identity & Access Resources",
       "args": [
         {
@@ -5430,7 +5435,7 @@
     "ibm_iam_authorization_policy_detach": {
       "name": "ibm_iam_authorization_policy_detach",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/iam_authorization_policy_detach.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/iam_authorization_policy_detach.html",
       "groupName": "Identity & Access Resources",
       "args": [
         {
@@ -5444,7 +5449,7 @@
     "ibm_iam_service_id": {
       "name": "ibm_iam_service_id",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/iam_service_id.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/iam_service_id.html",
       "groupName": "Identity & Access Resources",
       "args": [
         {
@@ -5484,7 +5489,7 @@
     "ibm_iam_service_policy": {
       "name": "ibm_iam_service_policy",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/iam_service_policy.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/iam_service_policy.html",
       "groupName": "Identity & Access Resources",
       "args": [
         {
@@ -5565,7 +5570,7 @@
     "ibm_iam_user_policy": {
       "name": "ibm_iam_user_policy",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/iam_user_policy.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/iam_user_policy.html",
       "groupName": "Identity & Access Resources",
       "args": [
         {
@@ -5646,7 +5651,7 @@
     "ibm_iam_user_invite": {
       "name": "ibm_iam_user_invite",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/iam_user_invite.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/iam_user_invite.html",
       "groupName": "Identity & Access Resources",
       "args": [
         {
@@ -5731,7 +5736,7 @@
     "ibm_cdn": {
       "name": "ibm_cdn",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/cdn.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/cdn.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [],
       "attrs": [
@@ -5750,7 +5755,7 @@
     "ibm_compute_autoscale_group": {
       "name": "ibm_compute_autoscale_group",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/compute_autoscale_group.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/compute_autoscale_group.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -5825,7 +5830,7 @@
     "ibm_compute_autoscale_policy": {
       "name": "ibm_compute_autoscale_policy",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/compute_autoscale_policy.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/compute_autoscale_policy.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -5875,7 +5880,7 @@
     "ibm_compute_bare_metal": {
       "name": "ibm_compute_bare_metal",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/compute_bare_metal.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/compute_bare_metal.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [],
       "attrs": [
@@ -5929,7 +5934,7 @@
     "ibm_compute_dedicated_host": {
       "name": "ibm_compute_dedicated_host",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/compute_dedicated_host.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/compute_dedicated_host.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -5999,7 +6004,7 @@
     "ibm_compute_monitor": {
       "name": "ibm_compute_monitor",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/compute_monitor.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/compute_monitor.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -6054,7 +6059,7 @@
     "ibm_compute_placement_group": {
       "name": "ibm_compute_placement_group",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/compute_placement_group.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/compute_placement_group.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -6094,7 +6099,7 @@
     "ibm_compute_provisioning_hook": {
       "name": "ibm_compute_provisioning_hook",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/compute_provisioning_hook.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/compute_provisioning_hook.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -6124,7 +6129,7 @@
     "ibm_compute_ssh_key": {
       "name": "ibm_compute_ssh_key",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/compute_ssh_key.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/compute_ssh_key.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -6164,7 +6169,7 @@
     "ibm_compute_ssl_certificate": {
       "name": "ibm_compute_ssl_certificate",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/compute_ssl_certificate.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/compute_ssl_certificate.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -6239,7 +6244,7 @@
     "ibm_compute_user": {
       "name": "ibm_compute_user",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/compute_user.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/compute_user.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -6344,7 +6349,7 @@
     "ibm_compute_vm_instance": {
       "name": "ibm_compute_vm_instance",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/compute_vm_instance.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/compute_vm_instance.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -6629,7 +6634,7 @@
     "ibm_dns_domain": {
       "name": "ibm_dns_domain",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/dns_domain.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/dns_domain.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -6669,7 +6674,7 @@
     "ibm_dns_domain_registration_nameservers": {
       "name": "ibm_dns_domain_registration_nameservers",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/dns_domain_registration_nameservers.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/dns_domain_registration_nameservers.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -6704,7 +6709,7 @@
     "ibm_dns_secondary": {
       "name": "ibm_dns_secondary",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/dns_secondary.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/dns_secondary.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -6749,7 +6754,7 @@
     "ibm_dns_reverse-record": {
       "name": "ibm_dns_reverse-record",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/dns_reverse_record.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/dns_reverse_record.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -6779,7 +6784,7 @@
     "ibm_dns_record": {
       "name": "ibm_dns_record",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/dns_record.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/dns_record.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -6884,7 +6889,7 @@
     "ibm_firewall": {
       "name": "ibm_firewall",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/firewall.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/firewall.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -6939,7 +6944,7 @@
     "ibm_multivlan-firewall": {
       "name": "ibm_multivlan-firewall",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/multivlan_firewall.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/multivlan_firewall.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -7014,7 +7019,7 @@
     "ibm_firewall_policy": {
       "name": "ibm_firewall_policy",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/firewall_policy.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/firewall_policy.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -7083,7 +7088,7 @@
     "ibm_hardware_firewall_shared": {
       "name": "ibm_hardware_firewall_shared",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/hardware_firewall_shared.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/hardware_firewall_shared.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [],
       "attrs": []
@@ -7091,7 +7096,7 @@
     "ibm_ipsec_vpn": {
       "name": "ibm_ipsec_vpn",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/ipsec_vpn.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/ipsec_vpn.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -7166,7 +7171,7 @@
     "ibm_lb": {
       "name": "ibm_lb",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/lb.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/lb.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -7236,7 +7241,7 @@
     "ibm_lbaas": {
       "name": "ibm_lbaas",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/lbaas.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/lbaas.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -7326,7 +7331,7 @@
     "ibm_lbaas_health_monitor": {
       "name": "ibm_lbaas_health_monitor",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/lbaas_health_monitor.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/lbaas_health_monitor.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -7375,7 +7380,7 @@
     "ibm_lbaas_server_instance_attachment": {
       "name": "ibm_lbaas_server_instance_attachment",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/lbaas_server_instance_attachment.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/lbaas_server_instance_attachment.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -7404,7 +7409,7 @@
     "ibm_lb_service": {
       "name": "ibm_lb_service",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/lb_service.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/lb_service.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -7448,7 +7453,7 @@
     "ibm_lb_service_group": {
       "name": "ibm_lb_service_group",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/lb_service_group.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/lb_service_group.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -7503,7 +7508,7 @@
     "ibm_lb_vpx": {
       "name": "ibm_lb_vpx",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/lb_vpx.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/lb_vpx.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -7583,7 +7588,7 @@
     "ibm_lb_vpx_ha": {
       "name": "ibm_lb_vpx_ha",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/lb_vpx_ha.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/lb_vpx_ha.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -7618,7 +7623,7 @@
     "ibm_lb_vpx_service": {
       "name": "ibm_lb_vpx_service",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/lb_vpx_service.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/lb_vpx_service.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -7678,7 +7683,7 @@
     "ibm_lb_vpx_vip": {
       "name": "ibm_lb_vpx_vip",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/lb_vpx_vip.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/lb_vpx_vip.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -7738,7 +7743,7 @@
     "ibm_network_gateway": {
       "name": "ibm_network_gateway",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/network_gateway.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/network_gateway.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -7985,7 +7990,7 @@
     "ibm_network_gateway_vlan_association": {
       "name": "ibm_network_gateway_vlan_association",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/network_gateway_vlan_association.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/network_gateway_vlan_association.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -8015,7 +8020,7 @@
     "ibm_network_interface_sg_attachment": {
       "name": "ibm_network_interface_sg_attachment",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/network_interface_sg_attachment.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/network_interface_sg_attachment.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -8039,7 +8044,7 @@
     "ibm_network_public_ip": {
       "name": "ibm_network_public_ip",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/network_public_ip.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/network_public_ip.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -8074,7 +8079,7 @@
     "ibm_network_vlan": {
       "name": "ibm_network_vlan",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/network_vlan.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/network_vlan.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -8139,7 +8144,7 @@
     "ibm_network_vlan_spanning": {
       "name": "ibm_network_vlan_spanning",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/network_vlan_spanning.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/network_vlan_spanning.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -8159,7 +8164,7 @@
     "ibm_object_storage_account": {
       "name": "ibm_object_storage_account",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/object_storage_account.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/object_storage_account.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [],
       "attrs": []
@@ -8167,7 +8172,7 @@
     "ibm_security_group": {
       "name": "ibm_security_group",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/security_group.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/security_group.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -8192,7 +8197,7 @@
     "ibm_security_group_rule": {
       "name": "ibm_security_group_rule",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/security_group_rule.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/security_group_rule.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -8247,7 +8252,7 @@
     "ibm_storage_block": {
       "name": "ibm_storage_block",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/storage_block.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/storage_block.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -8347,7 +8352,7 @@
     "ibm_storage_evault": {
       "name": "ibm_storage_evault",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/storage_evault.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/storage_evault.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -8402,7 +8407,7 @@
     "ibm_storage_file": {
       "name": "ibm_storage_file",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/storage_file.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/storage_file.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -8497,7 +8502,7 @@
     "ibm_subnet": {
       "name": "ibm_subnet",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/subnet.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/subnet.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -8546,7 +8551,7 @@
     "ibm_ssl_certificate": {
       "name": "ibm_ssl_certificate",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/ssl_certificate.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/ssl_certificate.html",
       "groupName": "Classic Infrastructure Resources",
       "args": [
         {
@@ -8630,7 +8635,7 @@
     "ibm_certificate_manager_import": {
       "name": "ibm_certificate_manager_import",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/certificate_manager_import.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/certificate_manager_import.html",
       "groupName": "Certificate Manager Resources",
       "args": [
         {
@@ -8702,10 +8707,100 @@
         }
       ]
     },
+    "ibm_certificate_manager_order": {
+      "name": "ibm_certificate_manager_order",
+      "type": "resource",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/certificate_manager_order.html",
+      "groupName": "Certificate Manager Resources",
+      "args": [
+        {
+          "name": "certificate_manager_instance_id",
+          "description": "(Required,ForceNew,string) The CRN-based service instance ID.",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "(Required,string) The display name for the ordered certificate.",
+          "args": []
+        },
+        {
+          "name": "description",
+          "description": "(Optional),string The optional description for the ordered certificate.",
+          "args": []
+        },
+        {
+          "name": "domains",
+          "description": "(Required,ForeceNew,List) An array of valid domains for the issued certificate. The first domain is the primary domain. Additional domains are secondary domains.",
+          "args": []
+        },
+        {
+          "name": "rotate_keys",
+          "description": "(Optional,string) Default: False.",
+          "args": []
+        },
+        {
+          "name": "domain_validation_method",
+          "description": "(Optional,Default,string) Allowable values dns-01]",
+          "args": []
+        },
+        {
+          "name": "dns_provider_instance_crn",
+          "description": "(Optional,string) The CRN-based instance ID of the IBM Cloud Internet Services instance that manages the domains. If not present, Certificate Manager assumes a v4 or above Callback URL notifications channel with domain validation exists.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The Id of the Certificate",
+          "args": []
+        },
+        {
+          "name": "issuer",
+          "description": "The issuer of the certificate.",
+          "args": []
+        },
+        {
+          "name": "begins_on",
+          "description": "The creation date of the certificate in Unix epoch time.",
+          "args": []
+        },
+        {
+          "name": "expires_on",
+          "description": "The expiration date of the certificate in Unix epoch time.",
+          "args": []
+        },
+        {
+          "name": "imported",
+          "description": "Indicates whether a certificate has a imported or not.",
+          "args": []
+        },
+        {
+          "name": "status",
+          "description": "The status of certificate. Possible values: [active,inactive,expired,revoked,valid,pending,failed]",
+          "args": []
+        },
+        {
+          "name": "has_previous",
+          "description": "Indicates whether a certificate has a previous version.",
+          "args": []
+        },
+        {
+          "name": "key_algorithm",
+          "description": "Key Algorithm. Allowable values: [rsaEncryption 2048 bit rsaEncryption 4096 bit] Default: [rsaEncryption 2048 bit]",
+          "args": []
+        },
+        {
+          "name": "algorithm",
+          "description": "Algorithm. Allowable values: [sha256WithRSAEncryption]Default: [sha256WithRSAEncryption]",
+          "args": []
+        }
+      ]
+    },
     "ibm_pi_image": {
       "name": "ibm_pi_image",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/pi_image.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/pi_image.html",
       "groupName": "Power Virtual Server Resources",
       "args": [
         {
@@ -8735,7 +8830,7 @@
     "ibm_pi_instance": {
       "name": "ibm_pi_instance",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/pi_instance.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/pi_instance.html",
       "groupName": "Power Virtual Server Resources",
       "args": [
         {
@@ -8891,7 +8986,7 @@
     "ibm_pi_key": {
       "name": "ibm_pi_key",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/pi_key.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/pi_key.html",
       "groupName": "Power Virtual Server Resources",
       "args": [
         {
@@ -8915,7 +9010,7 @@
     "ibm_pi_network": {
       "name": "ibm_pi_network",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/pi_network.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/pi_network.html",
       "groupName": "Power Virtual Server Resources",
       "args": [
         {
@@ -8980,7 +9075,7 @@
     "ibm_pi_volume": {
       "name": "ibm_pi_volume",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/pi_volume.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/pi_volume.html",
       "groupName": "Power Virtual Server Resources",
       "args": [
         {
@@ -9025,7 +9120,7 @@
     "ibm_kp_key": {
       "name": "ibm_kp_key",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/kp_key.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/kp_key.html",
       "groupName": "Key Protect Service Resources",
       "args": [
         {
@@ -9085,7 +9180,7 @@
     "ibm_resource_group": {
       "name": "ibm_resource_group",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/resource_group.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/resource_group.html",
       "groupName": "Resource Management Services Resources",
       "args": [
         {
@@ -9125,7 +9220,7 @@
     "ibm_resource_instance": {
       "name": "ibm_resource_instance",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/resource_instance.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/resource_instance.html",
       "groupName": "Resource Management Services Resources",
       "args": [
         {
@@ -9190,7 +9285,7 @@
     "ibm_resource_key": {
       "name": "ibm_resource_key",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/resource_key.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/resource_key.html",
       "groupName": "Resource Management Services Resources",
       "args": [
         {
@@ -9245,7 +9340,7 @@
     "ibm_is_floating_ip": {
       "name": "ibm_is_floating_ip",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/is_floating_ip.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/is_floating_ip.html",
       "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
@@ -9261,6 +9356,11 @@
         {
           "name": "zone",
           "description": "(Optional, Forces new resource, string) Name of the target zone. \nNOTE: Conflicts with target.",
+          "args": []
+        },
+        {
+          "name": "resource_group",
+          "description": "(Optional, Forces new resource, string) The resource group ID where the floating ip to be created",
           "args": []
         }
       ],
@@ -9290,7 +9390,7 @@
     "ibm_is_ike_policy": {
       "name": "ibm_is_ike_policy",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/is_ike_policy.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/is_ike_policy.html",
       "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
@@ -9360,7 +9460,7 @@
     "ibm_is_ipsec_policy": {
       "name": "ibm_is_ipsec_policy",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/is_ipsec_policy.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/is_ipsec_policy.html",
       "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
@@ -9425,7 +9525,7 @@
     "ibm_is_instance": {
       "name": "ibm_is_instance",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/is_instance.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/is_instance.html",
       "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
@@ -9486,6 +9586,11 @@
         {
           "name": "resource_group",
           "description": "(Optional, Forces new resource, string) The resource group ID for this instance.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, array of strings) Tags associated with the instance.",
           "args": []
         }
       ],
@@ -9646,6 +9751,11 @@
           ]
         },
         {
+          "name": "volume_attachments",
+          "description": "A nested block describing the volume attachments.\nNested volume_attachments block have the following structure:\n\n\nid - The id of the volume attachment\nname -  The name of the volume attachment\nvolume_id - The id of the volume attachment’s volume\nvolume_name -  The name of the volume attachment’s volume\nvolume_crn -  The CRN of the volume attachment’s volume",
+          "args": []
+        },
+        {
           "name": "resource_controller_url",
           "description": "The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance.",
           "args": []
@@ -9655,7 +9765,7 @@
     "ibm_is_public_gateway": {
       "name": "ibm_is_public_gateway",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/is_public_gateway.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/is_public_gateway.html",
       "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
@@ -9711,7 +9821,7 @@
     "ibm_is_vpc": {
       "name": "ibm_is_vpc",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/is_vpc.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/is_vpc.html",
       "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
@@ -9776,7 +9886,7 @@
     "ibm_is_vpc_address_prefix": {
       "name": "ibm_is_vpc_address_prefix",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/is_vpc_address_prefix.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/is_vpc_address_prefix.html",
       "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
@@ -9816,8 +9926,8 @@
     "ibm_is_vpc_route": {
       "name": "ibm_is_vpc_route",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/is_vpc_route.html",
-      "groupName": "Virtual Private Cloud Classic Services Resources",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/is_vpc_route.html",
+      "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
           "name": "name",
@@ -9861,7 +9971,7 @@
     "ibm_is_network_acl": {
       "name": "ibm_is_network_acl",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/is_network_acl.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/is_network_acl.html",
       "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
@@ -9988,7 +10098,7 @@
     "ibm_is_security_group": {
       "name": "ibm_is_security_group",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/is_security_group.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/is_security_group.html",
       "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
@@ -10069,7 +10179,7 @@
     "ibm_is_security_group_rule": {
       "name": "ibm_is_security_group_rule",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/is_security_group_rule.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/is_security_group_rule.html",
       "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
@@ -10124,7 +10234,7 @@
     "ibm_is_security_group_network_interface_attachment": {
       "name": "ibm_is_security_group_network_interface_attachment",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/is_security_group_network_interface_attachment.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/is_security_group_network_interface_attachment.html",
       "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
@@ -10241,7 +10351,7 @@
     "ibm_is_subnet": {
       "name": "ibm_is_subnet",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/is_subnet.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/is_subnet.html",
       "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
@@ -10321,7 +10431,7 @@
     "ibm_is_ssh_key": {
       "name": "ibm_is_ssh_key",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/is_ssh_key.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/is_ssh_key.html",
       "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
@@ -10332,6 +10442,11 @@
         {
           "name": "public_key",
           "description": "(Required, Forces new resource, string) The public SSH key.",
+          "args": []
+        },
+        {
+          "name": "resource_group",
+          "description": "(Optional, Forces new resource, string) The resource group ID where the SSH key to be created.",
           "args": []
         }
       ],
@@ -10366,7 +10481,7 @@
     "ibm_is_image": {
       "name": "ibm_is_image",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/is_images.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/is_images.html",
       "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
@@ -10376,12 +10491,22 @@
         },
         {
           "name": "href",
-          "description": "(Required, string) The path of an image to be uploaded.",
+          "description": "(Required, string) The path(SQL URL of COS Bucket Object) of an image to be uploaded.",
           "args": []
         },
         {
           "name": "operating_system",
           "description": "(Required, string) Description of underlying OS of an image.",
+          "args": []
+        },
+        {
+          "name": "resource_group",
+          "description": "(Optional, Forces new resource, string) The resource group ID for this image.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, array of strings) Tags associated with the image.",
           "args": []
         }
       ],
@@ -10431,7 +10556,7 @@
     "ibm_is_vpn_gateway": {
       "name": "ibm_is_vpn_gateway",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/is_vpn_gateway.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/is_vpn_gateway.html",
       "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
@@ -10447,6 +10572,11 @@
         {
           "name": "resource_group",
           "description": "(Optional, Forces new resource, string) The resource group where the VPN gateway to be created.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, array of strings) Tags associated with the VPN Gateway.",
           "args": []
         }
       ],
@@ -10476,7 +10606,7 @@
     "ibm_is_vpn_gateway_connection": {
       "name": "ibm_is_vpn_gateway_connection",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/is_vpn_gateway_connection.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/is_vpn_gateway_connection.html",
       "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
@@ -10556,7 +10686,7 @@
     "ibm_is_lb": {
       "name": "ibm_is_lb",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/is_lb.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/is_lb.html",
       "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
@@ -10577,6 +10707,11 @@
         {
           "name": "resource_group",
           "description": "(Optional, Forces new resource, string) The resource group where the load balancer to be created.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, array of strings) Tags associated with the load balancer.",
           "args": []
         }
       ],
@@ -10621,7 +10756,7 @@
     "ibm_is_lb_listener": {
       "name": "ibm_is_lb_listener",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/is_lb_listener.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/is_lb_listener.html",
       "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
@@ -10671,7 +10806,7 @@
     "ibm_is_lb_pool": {
       "name": "ibm_is_lb_pool",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/is_lb_pool.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/is_lb_pool.html",
       "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
@@ -10751,7 +10886,7 @@
     "ibm_is_lb_pool_member": {
       "name": "ibm_is_lb_pool_member",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/is_lb_pool_member.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/is_lb_pool_member.html",
       "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
@@ -10801,7 +10936,7 @@
     "ibm_is_volume": {
       "name": "ibm_is_volume",
       "type": "resource",
-      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.1.0/r/is_volume.html",
+      "url": "https://ibm-cloud.github.io/tf-ibm-docs/v1.2.0/r/is_volume.html",
       "groupName": "Virtual Private Cloud NextGen Services Resources",
       "args": [
         {
@@ -10842,6 +10977,11 @@
         {
           "name": "resource_controller_url",
           "description": "The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, array of strings) Tags associated with the volume.",
           "args": []
         }
       ],
