@@ -2386,6 +2386,11 @@
           "name": "key_protect_id",
           "description": "(Required, String) The ID of the Key Protect service instance.",
           "args": []
+        },
+        {
+          "name": "key_name",
+          "description": "(Optional, String) The name of the key. Only the keys with matching name will be retrieved.",
+          "args": []
         }
       ],
       "attrs": [
@@ -7804,6 +7809,310 @@
         }
       ]
     },
+    "ibm_is_instance": {
+      "name": "ibm_is_instance",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Optional, String) The instance name.",
+          "args": []
+        },
+        {
+          "name": "vpc",
+          "description": "(Required, String) The ID of the VPC where you want to create the instance.",
+          "args": []
+        },
+        {
+          "name": "zone",
+          "description": "(Required, String) The name of the VPC zone where you want to create the instance.",
+          "args": []
+        },
+        {
+          "name": "profile",
+          "description": "(Required, String) The name of the profile that you want to use for your instance. To list supported profiles, run `ibmcloud is instance-profiles`.",
+          "args": []
+        },
+        {
+          "name": "image",
+          "description": "(Required, String) The ID of the virtual server image that you want to use. To list supported images, run `ibmcloud is images`.",
+          "args": []
+        },
+        {
+          "name": "boot_volume",
+          "description": "(Optional, List) A list of boot volumes for an instance.",
+          "args": [
+            {
+              "name": "name",
+              "description": "(Optional, String) The name of the boot volume.",
+              "args": []
+            },
+            {
+              "name": "encryption",
+              "description": "(Optional, String) The type of encryption to use for the boot volume.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "keys",
+          "description": "(Required, List) A comma separated list of SSH keys that you want to add to your instance.",
+          "args": []
+        },
+        {
+          "name": "primary_network_interface",
+          "description": "(Required, List) A nested block describing the primary network interface of this instance. Only one primary network interface can be specified for an instance.",
+          "args": [
+            {
+              "name": "name",
+              "description": "(Optional, String) The name of the network interface.",
+              "args": []
+            },
+            {
+              "name": "subnet",
+              "description": "(Required, String) The ID of the subnet.",
+              "args": []
+            },
+            {
+              "name": "security_groups",
+              "description": "(Optional, List of strings) A comma separated list of security groups to add to the primary network interface.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "network_interfaces",
+          "description": "(Optional, List) A list of additional network interfaces that are set up for the instance.",
+          "args": [
+            {
+              "name": "name",
+              "description": "(Optional, String) The name of the network interface.",
+              "args": []
+            },
+            {
+              "name": "subnet",
+              "description": "(Required, String) The ID of the subnet.",
+              "args": []
+            },
+            {
+              "name": "security_groups",
+              "description": "(Optional, List of strings) A comma separated list of security groups to add to the primary network interface.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "volumes",
+          "description": "(Optional, List) A comma separated list of volume IDs to attach to the instance.",
+          "args": []
+        },
+        {
+          "name": "user_data",
+          "description": "(Optional, String) User data to transfer to the instance.",
+          "args": []
+        },
+        {
+          "name": "resource_group",
+          "description": "(Optional, String) The ID of the resource gorup where you want to create the instance.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, Array of strings) A list of tags that you want to add to your instance. Tags can help you find your instance more easily later.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The ID of the instance.",
+          "args": []
+        },
+        {
+          "name": "memory",
+          "description": "The amount of memory that is allocated to the instance in gigabytes.",
+          "args": []
+        },
+        {
+          "name": "status",
+          "description": "The status of the instance.",
+          "args": []
+        },
+        {
+          "name": "vcpu",
+          "description": "A list of virtual CPUs that are allocated to the instance.",
+          "args": [
+            {
+              "name": "architecture",
+              "description": "The architecture of the CPU.",
+              "args": []
+            },
+            {
+              "name": "count",
+              "description": "The number of virtual CPUS that are assigned to the instance.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "gpu",
+          "description": "A list of GPUs that are assigned to the instance.",
+          "args": [
+            {
+              "name": "cores",
+              "description": "The number of cores of the GPU.",
+              "args": []
+            },
+            {
+              "name": "count",
+              "description": "The count of the GPU.",
+              "args": []
+            },
+            {
+              "name": "manufacture",
+              "description": "The manufacturer of the GPU.",
+              "args": []
+            },
+            {
+              "name": "memory",
+              "description": "The amount of memory of the GPU in gigabytes.",
+              "args": []
+            },
+            {
+              "name": "model",
+              "description": "The model of the GPU.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "primary_network_interface",
+          "description": "A list of primary network interfaces that are attached to the instance.",
+          "args": [
+            {
+              "name": "id",
+              "description": "The ID of the primary network interface.",
+              "args": []
+            },
+            {
+              "name": "name",
+              "description": "The name of the primary network interface.",
+              "args": []
+            },
+            {
+              "name": "security_groups",
+              "description": "A list of security groups that are used in the primary network interface.",
+              "args": []
+            },
+            {
+              "name": "primary_ipv4_address",
+              "description": "The primary IPv4 address.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "network_interfaces",
+          "description": "A list of additional network interfaces that are attached to the instance.",
+          "args": [
+            {
+              "name": "id",
+              "description": "The ID of the network interface.",
+              "args": []
+            },
+            {
+              "name": "name",
+              "description": "The name of the network interface.",
+              "args": []
+            },
+            {
+              "name": "subnet",
+              "description": "The ID of the subnet.",
+              "args": []
+            },
+            {
+              "name": "security_groups",
+              "description": "A list of security groups that are used in the network interface.",
+              "args": []
+            },
+            {
+              "name": "primary_ipv4_address",
+              "description": "The primary IPv4 address.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "boot_volume",
+          "description": "A list of boot volumes that the instance uses.",
+          "args": [
+            {
+              "name": "name",
+              "description": "The name of the boot volume.",
+              "args": []
+            },
+            {
+              "name": "size",
+              "description": "The capacity of the volume in gigabytes.",
+              "args": []
+            },
+            {
+              "name": "iops",
+              "description": "The number of input and output operations per second of the volume.",
+              "args": []
+            },
+            {
+              "name": "profile",
+              "description": "The profile of the volume.",
+              "args": []
+            },
+            {
+              "name": "encryption",
+              "description": "The type of encryption that is used for the boot volume.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "volume_attachments",
+          "description": "A list of volume attachments for the instance.",
+          "args": [
+            {
+              "name": "id",
+              "description": "The ID of the volume attachment.",
+              "args": []
+            },
+            {
+              "name": "name",
+              "description": "The name of the volume attachment.",
+              "args": []
+            },
+            {
+              "name": "volume_id",
+              "description": "The ID of the volume that is used in the volume attachment.",
+              "args": []
+            },
+            {
+              "name": "volume_name",
+              "description": "The name of the volume that is used in the volume attachment.",
+              "args": []
+            },
+            {
+              "name": "volume_crn",
+              "description": "The CRN of the volume that is used in the volume attachment.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "resource_controller_url",
+          "description": "The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance.",
+          "args": []
+        }
+      ]
+    },
     "ibm_is_ipsec_policy": {
       "name": "ibm_is_ipsec_policy",
       "type": "resource",
@@ -8315,6 +8624,51 @@
         {
           "name": "status",
           "description": "The provisioning status of your public gateway.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_is_route": {
+      "name": "ibm_is_route",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, String) The name of the route.",
+          "args": []
+        },
+        {
+          "name": "vpc",
+          "description": "(Required, String) The ID of the VPC.",
+          "args": []
+        },
+        {
+          "name": "zone",
+          "description": "(Required, String) The name of the VPC zone where you want to create the route.",
+          "args": []
+        },
+        {
+          "name": "destination",
+          "description": "(Required, String) The destionation IP address of the route.",
+          "args": []
+        },
+        {
+          "name": "next_hop",
+          "description": "(Required, String) The next hop of the route.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The ID of the route. The id is composed of `<vpc_id>/<vpc_route_id>`.",
+          "args": []
+        },
+        {
+          "name": "status",
+          "description": "The status of the VPC route.",
           "args": []
         }
       ]
