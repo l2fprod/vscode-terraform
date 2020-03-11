@@ -300,12 +300,12 @@
       "attrs": [
         {
           "name": "ipv4_cidrs",
-          "description": "The IPv4 address ranges that are used by CIS for name servers.",
+          "description": "The IPv4 address ranges that the CIS proxy uses and that you can reference to configure and whitelist IP addresses in firewalls, network ACLs, and security groups.",
           "args": []
         },
         {
           "name": "ipv6_cidrs",
-          "description": "The IPv6 address ranges that are used by CIS for name servers.",
+          "description": "The IPv6 address ranges that the CIS proxy uses and that you can reference to configure and whitelist IP addresses in firewalls, network ACLs, and security groups.",
           "args": []
         }
       ]
@@ -1202,6 +1202,16 @@
           "args": []
         },
         {
+          "name": "ingress_hostname",
+          "description": "The hostname that was assigned to your Ingress subdomain.",
+          "args": []
+        },
+        {
+          "name": "ingress_secret",
+          "description": "The name of the Kubernetes secret that was created for your Ingress subdomain.",
+          "args": []
+        },
+        {
           "name": "kube_version",
           "description": "The Kubernetes version of the cluster, including the major.minor version.",
           "args": []
@@ -1650,12 +1660,12 @@
             },
             {
               "name": "memory",
-              "description": "The maximum memory for the action, specified in MBs. Default value: `256`.",
+              "description": "The maximum memory for the action, specified in megabytes. Default value: `256`.",
               "args": []
             },
             {
               "name": "log_size",
-              "description": "The maximum log size for the action, specified in MBs. Default value: `10`.",
+              "description": "The maximum log size for the action, specified in megabytes. Default value: `10`.",
               "args": []
             }
           ]
@@ -1671,7 +1681,7 @@
             },
             {
               "name": "init",
-              "description": "When using `nodejs`, the optional zipfile reference.",
+              "description": "When using `nodejs`, the optional reference to the compressed file.",
               "args": []
             },
             {
@@ -2944,7 +2954,7 @@
         },
         {
           "name": "processors",
-          "description": "The number of processors taht are allocated to the instance.",
+          "description": "The number of processors that are allocated to the instance.",
           "args": []
         },
         {
@@ -3014,7 +3024,7 @@
         },
         {
           "name": "ipoctet",
-          "description": "The ipoctet of the network that is attached to this instance.",
+          "description": "The IP octet of the network that is attached to this instance.",
           "args": []
         }
       ]
@@ -3504,7 +3514,7 @@
         },
         {
           "name": "template_id",
-          "description": "(Required, String) The of the template that the workspace uses.",
+          "description": "(Required, String) The ID of the template that the workspace uses. This value must be set to `${data.ibm_schematics_workspace.vpc.template_id.0}`.",
           "args": []
         }
       ],
@@ -4107,7 +4117,7 @@
         },
         {
           "name": "source_service_account",
-          "description": "(Optional, String) The GUID of the account where the source servie is provisioned.",
+          "description": "(Optional, String) The GUID of the account where the source service is provisioned.",
           "args": []
         }
       ],
@@ -4132,7 +4142,7 @@
       "args": [
         {
           "name": "authorization_policy_id",
-          "description": "(Requried, String) The authorization policy ID.",
+          "description": "(Required, String) The authorization policy ID.",
           "args": []
         }
       ],
@@ -4569,7 +4579,7 @@
         },
         {
           "name": "status",
-          "description": "The status of the domain. Valid values are `active`, `pending`, `initializing`, `moved`, `deleted`, and `deactivated. After creation, the status remains pending until the DNS Registrar is updated with the CIS name servers, exported in the `name_servers` variable.",
+          "description": "The status of the domain. Valid values are `active`, `pending`, `initializing`, `moved`, `deleted`, and `deactivated`. After creation, the status remains pending until the DNS Registrar is updated with the CIS name servers, exported in the `name_servers` variable.",
           "args": []
         },
         {
@@ -4579,7 +4589,7 @@
         },
         {
           "name": "original_name_servers",
-          "description": "The name servers that were used when the domain was orginally registered with the DNS Registrar.",
+          "description": "The name servers that were used when the domain was first registered with the DNS Registrar.",
           "args": []
         }
       ]
@@ -4752,7 +4762,7 @@
         },
         {
           "name": "description",
-          "description": "(Optional, String) A description for your healthcheck.",
+          "description": "(Optional, String) A description for your health check.",
           "args": []
         }
       ],
@@ -4764,12 +4774,12 @@
         },
         {
           "name": "created_on",
-          "description": "The RFC3339 timestamp of when the healthcheck was created.",
+          "description": "The RFC3339 timestamp of when the health check was created.",
           "args": []
         },
         {
           "name": "modified_on",
-          "description": "The RFC3339 timestamp of when the healthcheck was last modified.",
+          "description": "The RFC3339 timestamp of when the health check was last modified.",
           "args": []
         }
       ]
@@ -4802,7 +4812,7 @@
         },
         {
           "name": "enabled",
-          "description": "(Required, Boolean) If set to **true**, this pool is enabled and can receive incoming network traffic. Disabled pools do not receive network traffic and are excluded from healthchecks. Disabling a pool causes any load balancers that use the pool to failover to the next pool (if applicable).",
+          "description": "(Required, Boolean) If set to **true**, this pool is enabled and can receive incoming network traffic. Disabled pools do not receive network traffic and are excluded from health checks. Disabling a pool causes any load balancers that use the pool to failover to the next pool (if applicable).",
           "args": []
         },
         {
@@ -5776,12 +5786,12 @@
         },
         {
           "name": "service_instance_id",
-          "description": "(Optional, String) The ID of the service that you want to bind to the clustesr. If you specify this parameter, do not specify `service_instance_name` at the same time.",
+          "description": "(Optional, String) The ID of the service that you want to bind to the cluster. If you specify this parameter, do not specify `service_instance_name` at the same time.",
           "args": []
         },
         {
           "name": "service_instance_name",
-          "description": "(Optional, String) The name of the service that you want to bind to the clustesr. If you specify this parameter, do not specify `service_instance_id` at the same time.",
+          "description": "(Optional, String) The name of the service that you want to bind to the cluster. If you specify this parameter, do not specify `service_instance_id` at the same time.",
           "args": []
         },
         {
@@ -5841,7 +5851,7 @@
         },
         {
           "name": "kube_version",
-          "description": "(Optional, String) The Kubernetes version that you want to set up in your cluster. If the version is not specified, the [default version in IBM Cloud Kubernetes Service](/docs/containers?topic=containers-cs_versions) is used.",
+          "description": "(Optional, String) The Kubernetes or OpenShift version that you want to set up in your cluster. If the version is not specified, the default version in [IBM Cloud Kubernetes Service](/docs/containers?topic=containers-cs_versions) or [{{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_versions#version_types) is used. For example, to specify Kubernetes version 1.16, enter `1.16`. For OpenShift clusters, you can specify version `3.11_openshift` or `4.3.1_openshift`.",
           "args": []
         },
         {
@@ -5856,12 +5866,12 @@
         },
         {
           "name": "no_subnet",
-          "description": "(Optional, Boolean) If set to **true**, no portable subnet is created during cluster creation. The portable subnet is used to provide portable IP addresses for the Ingress subdomain and Kubernetes load balancer servics. If set to **false**, a portable subnet is created by default. The default is **false**.",
+          "description": "(Optional, Boolean) If set to **true**, no portable subnet is created during cluster creation. The portable subnet is used to provide portable IP addresses for the Ingress subdomain and Kubernetes load balancer services. If set to **false**, a portable subnet is created by default. The default is **false**.",
           "args": []
         },
         {
           "name": "public_service_endpoint",
-          "description": "(Optional, Boolean) If set to **true**, your cluster is set up with a public service endpoint. You can use the public service endpoint to access the Kubernetes master from the public network. To use service endpoints, your account must be enabled for [Virtual Reouting and Forwarding (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf). For more information, see [Worker-to-master and user-to-master communication: Service endpoints](/docs/containers?topic=containers-plan_clusters#workeruser-master). If set to **false**, the public service endpoint is disabled for your cluster.",
+          "description": "(Optional, Boolean) If set to **true**, your cluster is set up with a public service endpoint. You can use the public service endpoint to access the Kubernetes master from the public network. To use service endpoints, your account must be enabled for [Virtual Routing and Forwarding (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf). For more information, see [Worker-to-master and user-to-master communication: Service endpoints](/docs/containers?topic=containers-plan_clusters#workeruser-master). If set to **false**, the public service endpoint is disabled for your cluster.",
           "args": []
         },
         {
@@ -5871,7 +5881,7 @@
         },
         {
           "name": "private_service_endpoint",
-          "description": "(Optional, Boolean) If set to **true**, your cluster is set up with a private service endpoint. When the private service endpoint is enabled, communication between the Kubernetes and the worker nodes is established over the private network. If you enable the private service endpoint, you cannot disable it later. To use service endpoints, your account must be enabled for [Virtual Reouting and Forwarding (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf). For more information, see [Worker-to-master and user-to-master communication: Service endpoints](/docs/containers?topic=containers-plan_clusters#workeruser-master). If set to **false**, the private service endpoint is disabled and all communication to the Kubernetes master must go through the public network.",
+          "description": "(Optional, Boolean) If set to **true**, your cluster is set up with a private service endpoint. When the private service endpoint is enabled, communication between the Kubernetes and the worker nodes is established over the private network. If you enable the private service endpoint, you cannot disable it later. To use service endpoints, your account must be enabled for [Virtual Routing and Forwarding (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf). For more information, see [Worker-to-master and user-to-master communication: Service endpoints](/docs/containers?topic=containers-plan_clusters#workeruser-master). If set to **false**, the private service endpoint is disabled and all communication to the Kubernetes master must go through the public network.",
           "args": []
         },
         {
@@ -5917,7 +5927,7 @@
         },
         {
           "name": "worker_num",
-          "description": "(Optional, Integer) The number of worker nodes in your cluster. This attribute creates a standalone worker node that is not associated with a worker pool.",
+          "description": "(Optional, Integer) The number of worker nodes in your cluster. This attribute creates a worker node that is not associated with a worker pool.",
           "args": []
         }
       ],
@@ -5953,7 +5963,7 @@
             },
             {
               "name": "alb_ip",
-              "description": "BYOIP VIP to use for application load balancer (ALB). Currently supported only for private application load balancer (ALB).",
+              "description": "The virtual IP address that you want to use for your application load balancer (ALB). Currently supported only for private application load balancer (ALB).",
               "args": []
             },
             {
@@ -6117,17 +6127,17 @@
       "args": [
         {
           "name": "cluster",
-          "description": "(Reequired, String) The name or ID of the cluster for which you want to enable or disabled a feature. To find the name or ID, use the `ibmcloud ks cluster ls` command.",
+          "description": "(Required, String) The name or ID of the cluster for which you want to enable or disabled a feature. To find the name or ID, use the `ibmcloud ks cluster ls` command.",
           "args": []
         },
         {
           "name": "public_service_endpoint",
-          "description": "(Optional, Boolean) Enable(**true**) or disable (**false**) the public service endpoint for your cluster. You can use the public service endpoint to access the Kubernetes master from the public network. To use service endpoints, your account must be enabled for [Virtual Reouting and Forwarding (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf). For more information, see [Worker-to-master and user-to-master communication: Service endpoints](/docs/containers?topic=containers-plan_clusters#workeruser-master).",
+          "description": "(Optional, Boolean) Enable(**true**) or disable (**false**) the public service endpoint for your cluster. You can use the public service endpoint to access the Kubernetes master from the public network. To use service endpoints, your account must be enabled for [Virtual Routing and Forwarding (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf). For more information, see [Worker-to-master and user-to-master communication: Service endpoints](/docs/containers?topic=containers-plan_clusters#workeruser-master).",
           "args": []
         },
         {
           "name": "private_service_endpoint",
-          "description": "(Optional, Boolean) Enable (**true**) or disable (**false**) the private service endpoint for your cluster. When the private service endpoint is enabled, communication between the Kubernetes and the worker nodes is established over the private network. If you enable the private service endpoint, you cannot disable it later. To use service endpoints, your account must be enabled for [Virtual Reouting and Forwarding (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf). For more information, see [Worker-to-master and user-to-master communication: Service endpoints](/docs/containers?topic=containers-plan_clusters#workeruser-master).",
+          "description": "(Optional, Boolean) Enable (**true**) or disable (**false**) the private service endpoint for your cluster. When the private service endpoint is enabled, communication between the Kubernetes and the worker nodes is established over the private network. If you enable the private service endpoint, you cannot disable it later. To use service endpoints, your account must be enabled for [Virtual Routing and Forwarding (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf). For more information, see [Worker-to-master and user-to-master communication: Service endpoints](/docs/containers?topic=containers-plan_clusters#workeruser-master).",
           "args": []
         },
         {
@@ -6300,6 +6310,11 @@
           "name": "tags",
           "description": "(Optional, Array of strings) A list of tags that you want to associate with your VPC cluster. **Note**: For users on account to add tags to a resource, they must be assigned the [appropriate permissions](/docs/resources?topic=resources-access).",
           "args": []
+        },
+        {
+          "name": "wait_till",
+          "description": "(Optional, String) The creation of a cluster can take a few minutes (for virtual servers) or even hours (for bare metal servers) to complete. To avoid long wait times when you run your Terraform code, you can specify the stage when you want Terraform to mark the cluster resource creation as completed. Depending on what stage you choose, the cluster creation might not be fully completed and continues to run in the background. However, your Terraform code can continue to run without waiting for the cluster to be fully created. Supported stages are: <ul><li><strong>MasterNodeReady</strong>: Terraform marks the creation of your cluster complete when the cluster master is in a <code>ready</code> state.</li><li><strong>OneWorkerNodeReady</strong>: Terraform marks the creation of your cluster complete when the master and at least one worker node are in a <code>ready</code> state.</li><li><strong>IngressReady</strong>: Terraform marks the creation of your cluster complete when the cluster master and all worker nodes are in a <code>ready</code> state, and the Ingress subdomain is fully set up.</li></ul> If you do not specify this option, <code>IngressReady</code> is used by default. You can set this option only when the cluster is created. If this option is set during a cluster update or deletion, the parameter is ignored by the Terraform provider.",
+          "args": []
         }
       ],
       "attrs": [
@@ -6311,6 +6326,16 @@
         {
           "name": "crn",
           "description": "The CRN of the VPC cluster.",
+          "args": []
+        },
+        {
+          "name": "ingress_hostname",
+          "description": "The hostname that was assigned to your Ingress subdomain.",
+          "args": []
+        },
+        {
+          "name": "ingress_secret",
+          "description": "The name of the Ingress secret that was created for you and that the Ingress subdomain uses.",
           "args": []
         },
         {
@@ -6475,7 +6500,7 @@
         },
         {
           "name": "labels",
-          "description": "(Optional, Map) A list of labels tha tyou want to add to your worker pool. The labels can help you find the worker pool more easily later.",
+          "description": "(Optional, Map) A list of labels that you want to add to your worker pool. The labels can help you find the worker pool more easily later.",
           "args": []
         },
         {
@@ -6676,7 +6701,7 @@
         },
         {
           "name": "location",
-          "description": "(Required, String) The location where you want to deploy your instance. The location must match the `region` parameter that you specify in the `provider` block of your Terraform configuraiton file.",
+          "description": "(Required, String) The location where you want to deploy your instance. The location must match the `region` parameter that you specify in the `provider` block of your Terraform configuration file.",
           "args": []
         },
         {
@@ -6701,7 +6726,7 @@
         },
         {
           "name": "adminpassword",
-          "description": "(Optional, String) The password for the database administrator. If not specified, the password is unitialised and the user ID cannot be used. In this case, addditional users must be specified in a `user` block.",
+          "description": "(Optional, String) The password for the database administrator. If not specified, an empty string is provided for the password and the user ID cannot be used. In this case, additional users must be specified in a `user` block.",
           "args": []
         },
         {
@@ -6800,7 +6825,7 @@
         },
         {
           "name": "connectionstrings",
-          "description": "A list of connection strings for the database for each user ID. For more information about how to use connection strings, see the [documentation](/docs/services/databases-for-postgresql?topic=databases-for-postgresql-connection-strings). The results are returned in pairs of the userid and string: `connectionstrings.1.name = admin connectionstrings.1.string = postgres://admin:$PASSWORD@79226bd4-4076-4873-b5ce-b1dba48ff8c4.b8a5e798d2d04f2e860e54e5d042c915.databases.appdomain.cloud:32554/ibmclouddb?sslmode=verify-full` Individual string parameters can be retrieved using TF vars and outputs `connectionstrings.x.hosts.x.port` and `connectionstrings.x.hosts.x.host`",
+          "description": "A list of connection strings for the database for each user ID. For more information about how to use connection strings, see the [documentation](/docs/services/databases-for-postgresql?topic=databases-for-postgresql-connection-strings). The results are returned in pairs of the userid and string: `connectionstrings.1.name = admin connectionstrings.1.string = postgres://admin:$PASSWORD@79226bd4-4076-4873-b5ce-b1dba48ff8c4.b8a5e798d2d04f2e860e54e5d042c915.databases.appdomain.cloud:32554/ibmclouddb?sslmode=verify-full` Individual string parameters can be retrieved using Terraform variables and outputs `connectionstrings.x.hosts.x.port` and `connectionstrings.x.hosts.x.host`",
           "args": []
         }
       ]
@@ -7031,7 +7056,7 @@
       "args": [
         {
           "name": "name",
-          "description": "(Reuired, String) The name of the rule.",
+          "description": "(Required, String) The name of the rule.",
           "args": []
         },
         {
@@ -7352,16 +7377,16 @@
         },
         {
           "name": "access_groups",
-          "description": "(Optional, List) A comma seperated list of access group IDs.",
+          "description": "(Optional, List) A comma separated list of access group IDs.",
           "args": []
         },
         {
           "name": "classic_infra_roles",
-          "description": "(Optional, Map) A nested block describing the classic infrastrucre roles for the inviting users. </br></br>**Note**: If you have an IBM Cloud Lite account, you cannot set classic infrastructure roles. For more information about Lite accounts, see [What's available?](/docs/account?topic=account-accounts#lite-account-features).",
+          "description": "(Optional, Map) A nested block describing the classic infrastructure roles for the inviting users. </br></br>**Note**: If you have an IBM Cloud Lite account, you cannot set classic infrastructure roles. For more information about Lite accounts, see [What's available?](/docs/account?topic=account-accounts#lite-account-features).",
           "args": [
             {
               "name": "permissions",
-              "description": "(Optional, List) A comma seperated list of classic infrastructure permissions.",
+              "description": "(Optional, List) A comma separated list of classic infrastructure permissions.",
               "args": []
             },
             {
@@ -7373,7 +7398,7 @@
         },
         {
           "name": "iam_policy",
-          "description": "(Optional, List) A nested block describing the IAM Polocies for invited users.",
+          "description": "(Optional, List) A nested block describing the IAM policies for invited users.",
           "args": [
             {
               "name": "resources",
@@ -9629,6 +9654,317 @@
         {
           "name": "id",
           "description": "The unique identifier of the Cloud Foundry organization.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_pi_image": {
+      "name": "ibm_pi_image",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Power Systems resources",
+      "args": [
+        {
+          "name": "pi_image_name",
+          "description": "(Required, String) The name of the image.",
+          "args": []
+        },
+        {
+          "name": "pi_image_id",
+          "description": "(Required, String) The ID of the image.",
+          "args": []
+        },
+        {
+          "name": "pi_cloud_instance_id",
+          "description": "(Required, String) The cloud_instance_id for this account.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier of the image.",
+          "args": []
+        },
+        {
+          "name": "image_id",
+          "description": "The unique identifier of the image.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_pi_instance": {
+      "name": "ibm_pi_instance",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Power Systems resources",
+      "args": [
+        {
+          "name": "pi_cloud_instance_id",
+          "description": "(Required, String) The cloud instance ID of your account.",
+          "args": []
+        },
+        {
+          "name": "pi_image_id",
+          "description": "(Required, String) The ID of the image that you want to use for your Power Systems Virtual Server instance. The image determines the operating system that is installed in your instance. To list available images, run the `ibmcloud pi images` command.",
+          "args": []
+        },
+        {
+          "name": "pi_instance_name",
+          "description": "(Required, String) The name of the Power Systems Virtual Server instance.",
+          "args": []
+        },
+        {
+          "name": "pi_key_pair_name",
+          "description": "(Required, String) The name of the SSH key that you want to use to access your Power Systems Virtual Server instance. The SSH key must be uploaded to IBM Cloud.",
+          "args": []
+        },
+        {
+          "name": "pi_memory",
+          "description": "(Required, Float) The amount of memory that you want to assign to your instance in gigabytes.",
+          "args": []
+        },
+        {
+          "name": "pi_network_ids",
+          "description": "(Required, String) The list of network IDs that you want to assign to the instance.",
+          "args": []
+        },
+        {
+          "name": "pi_processors",
+          "description": "(Required, Float) The number of vCPUs to assign to the VM (as visibile within the guest operating system).",
+          "args": []
+        },
+        {
+          "name": "pi_proc_type",
+          "description": "(Required, String) The type of processor mode in which the VM will run (shared/dedicated).",
+          "args": []
+        },
+        {
+          "name": "pi_replicants",
+          "description": "(Optional, Float) The number of instances that you want to provision with the same configuration. If this parameter is not set,  `1` is used by default.",
+          "args": []
+        },
+        {
+          "name": "pi_replication_policy",
+          "description": "(Optional, String) The replication policy that you want to use. If this parameter is not set, `none` is used by default.",
+          "args": []
+        },
+        {
+          "name": "pi_replication_scheme",
+          "description": "(Optional, String) The replication scheme that you want to set (prefix/suffix).",
+          "args": []
+        },
+        {
+          "name": "pi_sys_type",
+          "description": "(Required, String) The type of system on which to create the VM (s922/e880/any).",
+          "args": []
+        },
+        {
+          "name": "pi_user_data",
+          "description": "(Optional, String) The base64-encoded form of the user data (cloud-init) to pass to the instance during creation.",
+          "args": []
+        },
+        {
+          "name": "pi_volume_ids",
+          "description": "(Required, String) The list of volume IDs that you want to attach to the instance during creation.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "addresses",
+          "description": "A list of addresses that are assigned to the instance.",
+          "args": [
+            {
+              "name": "ip",
+              "description": "The IP address of the instance.",
+              "args": []
+            },
+            {
+              "name": "macaddress",
+              "description": "The MAC address of the instance.",
+              "args": []
+            },
+            {
+              "name": "networkid",
+              "description": "The network ID of the instance.",
+              "args": []
+            },
+            {
+              "name": "network_name",
+              "description": "The network name of the instance.",
+              "args": []
+            },
+            {
+              "name": "type",
+              "description": "The type of network.",
+              "args": []
+            },
+            {
+              "name": "externalip",
+              "description": "The external IP address of the instance.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "instance_id",
+          "description": "The unique identifier of the instance.",
+          "args": []
+        },
+        {
+          "name": "progress",
+          "description": "Specifies the overall progress of the instance deployment process in percentage.",
+          "args": []
+        },
+        {
+          "name": "status",
+          "description": "The status of the instance.",
+          "args": []
+        },
+        {
+          "name": "health_status",
+          "description": "The health status of the VM.",
+          "args": []
+        },
+        {
+          "name": "migratable",
+          "description": "Indicates if the VM is migratable or not.",
+          "args": []
+        },
+        {
+          "name": "min_processors",
+          "description": "The minimum number of processors that the instance can have.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_pi_key": {
+      "name": "ibm_pi_key",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Power Systems resources",
+      "args": [
+        {
+          "name": "pi_cloud_instance_id",
+          "description": "(Required, String) The cloud instance ID for this account.",
+          "args": []
+        },
+        {
+          "name": "pi_ssh_key",
+          "description": "(Required, String) The value of the public SSH key.",
+          "args": []
+        },
+        {
+          "name": "pi_creation_date",
+          "description": "(Optional, String) The date when the SSH key was created.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier of the key. The ID is composed of `<power_instance_id>/<key_name>`.",
+          "args": []
+        },
+        {
+          "name": "key_id",
+          "description": "The unique identifier of the key.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_pi_network": {
+      "name": "ibm_pi_network",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Power Systems resources",
+      "args": [
+        {
+          "name": "pi_cloud_instance_id",
+          "description": "(Required, String) The cloud instance ID for this account.",
+          "args": []
+        },
+        {
+          "name": "pi_network_name",
+          "description": "(Required, String) The name of the network.",
+          "args": []
+        },
+        {
+          "name": "pi_network_type",
+          "description": "(Required, String) The type of network that you want to create, such as `pub-vlan` or `vlan`.",
+          "args": []
+        },
+        {
+          "name": "pi_dns",
+          "description": "(Optional, List of strings) List of DNS entries for the network. Required for `vlan` network type.",
+          "args": []
+        },
+        {
+          "name": "pi_cidr",
+          "description": "(Optional, String) The network CIDR. Required for `vlan` network type.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "networkid",
+          "description": "The unique identifier of the network.",
+          "args": []
+        },
+        {
+          "name": "vlanid",
+          "description": "The ID of the VLAN that your network is attached to.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_pi_volume": {
+      "name": "ibm_pi_volume",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Power Systems resources",
+      "args": [
+        {
+          "name": "pi_cloud_instance_id",
+          "description": "(Required, String) The cloud instance ID for this account.",
+          "args": []
+        },
+        {
+          "name": "pi_volume_name",
+          "description": "(Required, String) The name of the volume.",
+          "args": []
+        },
+        {
+          "name": "pi_volume_shareable",
+          "description": "(Required, Boolean) If set to **true**, the volume can be shared across Power Systems Virtual Server instances. If set to **false**, you can attach it only to one instance.",
+          "args": []
+        },
+        {
+          "name": "pi_volume_size",
+          "description": "(Required, Integer) The size of the volume in gigabytes.",
+          "args": []
+        },
+        {
+          "name": "pi_volume_type",
+          "description": "(Required, String) The type of volume that you want to create. Supported values are `ssd`, `standard`, `tier1`, and `tier3`.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier of the volume. The ID is composed of `<power_instance_id>/<volume_id>`.",
+          "args": []
+        },
+        {
+          "name": "status",
+          "description": "The status of the volume.",
+          "args": []
+        },
+        {
+          "name": "volume_id",
+          "description": "The unique identifier of the volume.",
           "args": []
         }
       ]
