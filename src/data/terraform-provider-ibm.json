@@ -1510,7 +1510,7 @@
           "args": []
         },
         {
-          "name": "id",
+          "name": "crn",
           "description": "The unique identifier of the new database instance (CRN).",
           "args": []
         },
