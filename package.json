@@ -3,7 +3,7 @@
   "name": "terraform-fork",
   "displayName": "Terraform (forked)",
   "description": "Forked to include IBM Cloud provider. Syntax highlighting, linting, formatting, and validation for Hashicorp's Terraform",
-  "version": "1.4.17",
+  "version": "1.4.18",
   "publisher": "l2fprod",
   "license": "BSD-3-Clause",
   "engines": {
