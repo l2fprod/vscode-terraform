@@ -5445,7 +5445,7 @@
         },
         {
           "name": "private_security_group_ids",
-          "description": "(Optional, Array of integers) The ids of security groups to apply on the private interface.This attribute can't be updated. This is provided so that you can apply security groups to  your VSI right from the beginning, the first time it comes up. If you would like to add or remove security groups in the future to this VSI then you should consider using `ibm_network_interface_sg_attachment` resource. If you use this attribute in addition to `ibm_network_interface_sg_attachment` resource you might experience errors. So use one of these consistently for a particular VSI.",
+          "description": "(Optional, Array of integers) The IDs of security groups to apply on the private interface. This attribute can't be updated. You can can use this parameter to add a security groups to your virtual server instance when you create it. If you want to add or remove security groups later, you must use the `ibm_network_interface_sg_attachment` resource. If you use this attribute in addition to `ibm_network_interface_sg_attachment` resource you might experience errors. So use one of these consistently for a particular virtual server instance.",
           "args": []
         },
         {
@@ -5455,12 +5455,12 @@
         },
         {
           "name": "private_vlan_id",
-          "description": "(Optional, Integer) The private VLAN ID for the private network interface of the instance. You can find accepted values in the [VLAN doc](https://cloud.ibm.com/classic/network/vlans). Click the desired VLAN and note the ID number in the browser URL. You can also refer to a VLAN by name using a data source. **NOTE**: Conflicts with `datacenter_choice`.",
+          "description": "(Optional, Integer) The private VLAN ID for the private network interface of the instance. You can find accepted values in the [VLAN doc](https://cloud.ibm.com/classic/network/vlans). Click the VLAN that you want to use and note the ID number in the browser URL. You can also refer to a VLAN by name using a data source. **NOTE**: Conflicts with `datacenter_choice`.",
           "args": []
         },
         {
           "name": "public_security_group_ids",
-          "description": "(Optional, Array of integers) The ids of security groups to apply on the public interface.This attribute can't be updated. This is provided so that you can apply security groups to  your VSI right from the beginning, the first time it comes up. If you would like to add or remove security groups in the future to this VSI then you should consider using `ibm_network_interface_sg_attachment` resource. If you use this attribute in addition to `ibm_network_interface_sg_attachment` resource, you might experience errors. So use one of these consistently for a particular VSI.",
+          "description": "(Optional, Array of integers) The ids of security groups to apply on the public interface.This attribute can't be updated. You can can use this parameter to add a security groups to your virtual server instance when you create it. If you want to add or remove security groups later, you must use the `ibm_network_interface_sg_attachment` resource. If you use this attribute in addition to `ibm_network_interface_sg_attachment` resource, you might experience errors. So use one of these consistently for a particular virtual server instance.",
           "args": []
         },
         {
@@ -5559,12 +5559,12 @@
             },
             {
               "name": "public_vlan_id",
-              "description": "(Optional, String) The public VLAN ID for the public network interface of the instance. Accepted values are in the [VLAN doc](https://cloud.ibm.com/classic/network/vlans). Click the desired VLAN and note the ID number in the browser URL. You can also refer to a VLAN by name using a data source.",
+              "description": "(Optional, String) The public VLAN ID for the public network interface of the instance. Accepted values are in the [VLAN doc](https://cloud.ibm.com/classic/network/vlans). Click the VLAN that you want to use and note the ID number in the browser URL. You can also refer to a VLAN by name using a data source.",
               "args": []
             },
             {
               "name": "private_vlan_id",
-              "description": "(Optional, String) The private VLAN ID for the private network interface of the instance. You can find accepted values in the [VLAN doc](https://cloud.ibm.com/classic/network/vlans). Click the desired VLAN and note the ID number in the browser URL. You can also refer to a VLAN by name using a data source.  **NOTE**: Conflicts with `datacenter`, `private_vlan_id`, `public_vlan_id`, `placement_group_name` and `placement_group_id`.",
+              "description": "(Optional, String) The private VLAN ID for the private network interface of the instance. You can find accepted values in the [VLAN doc](https://cloud.ibm.com/classic/network/vlans). Click the VLAN that you want to use and note the ID number in the browser URL. You can also refer to a VLAN by name using a data source.  **NOTE**: Conflicts with `datacenter`, `private_vlan_id`, `public_vlan_id`, `placement_group_name` and `placement_group_id`.",
               "args": []
             }
           ]
@@ -6760,6 +6760,11 @@
           "args": []
         },
         {
+          "name": "guid",
+          "description": "(Optional, String) The unique identifier of the database instance.",
+          "args": []
+        },
+        {
           "name": "remote_leader_id",
           "description": "(Optional, String) A CRN of the leader database to make the replica(read-only) deployment. The leader database must have been created by a database deployment with the same service ID. A read-only replica is set up to replicate all of your data from the leader deployment to the replica deployment using asynchronous replication. For more information, see [Configuring Read-only Replicas](/docs/services/databases-for-postgresql?topic=databases-for-postgresql-read-only-replicas).",
           "args": []
@@ -6936,23 +6941,23 @@
               "name": "code",
               "description": "(Optional, String) When not using the `blackbox` executable, the code to execute.       **NOTE**: Conflicts with `exec.components`, `exec.image`.",
               "args": []
+            },
+            {
+              "name": "kind",
+              "description": "(Required, String) The type of action. You can find supported kinds in the [IBM Cloud Functions docs](/docs/openwhisk?topic=cloud-functions-runtimes).",
+              "args": []
+            },
+            {
+              "name": "main",
+              "description": "(Optional, String) The name of the action entry point (function or fully-qualified method name, when applicable).       **NOTE**: Conflicts with `exec.components`, `exec.image`.",
+              "args": []
+            },
+            {
+              "name": "components",
+              "description": "(Optional, String) The list of fully qualified actions. **NOTE**: Conflicts with `exec.code`, `exec.image`.",
+              "args": []
             }
           ]
-        },
-        {
-          "name": "kind",
-          "description": "(Required, String) The type of action. You can find supported kinds in the [IBM Cloud Functions docs](/docs/openwhisk?topic=cloud-functions-runtimes).",
-          "args": []
-        },
-        {
-          "name": "main",
-          "description": "(Optional, String) The name of the action entry point (function or fully-qualified method name, when applicable).       **NOTE**: Conflicts with `exec.components`, `exec.image`.",
-          "args": []
-        },
-        {
-          "name": "components",
-          "description": "(Optional, String) The list of fully qualified actions. **NOTE**: Conflicts with `exec.code`, `exec.image`.",
-          "args": []
         },
         {
           "name": "publish",
