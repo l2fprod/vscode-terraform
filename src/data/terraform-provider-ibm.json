@@ -226,7 +226,12 @@
       "attrs": [
         {
           "name": "id",
-          "description": "The unique identifier of your instance.",
+          "description": "The CRN of your instance.",
+          "args": []
+        },
+        {
+          "name": "guid",
+          "description": "The unique identifier of the instance.",
           "args": []
         },
         {
@@ -1491,6 +1496,11 @@
       "attrs": [
         {
           "name": "id",
+          "description": "The CRN of the Cloud Databases instance.",
+          "args": []
+        },
+        {
+          "name": "guid",
           "description": "The unique identifier of the Cloud Databases instance.",
           "args": []
         },
@@ -1507,11 +1517,6 @@
         {
           "name": "status",
           "description": "The status of the Cloud Databases instance.",
-          "args": []
-        },
-        {
-          "name": "crn",
-          "description": "The unique identifier of the new database instance (CRN).",
           "args": []
         },
         {
@@ -4459,6 +4464,11 @@
       "attrs": [
         {
           "name": "id",
+          "description": "The CRN of the IBM Cloud Internet Services instance.",
+          "args": []
+        },
+        {
+          "name": "guid",
           "description": "The unique identifier of the IBM Cloud Internet Services instance.",
           "args": []
         },
@@ -6810,7 +6820,7 @@
       "attrs": [
         {
           "name": "id",
-          "description": "The unique identifier of the database instance (CRN).",
+          "description": "The CRN of the database instance.",
           "args": []
         },
         {
