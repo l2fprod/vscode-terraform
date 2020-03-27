@@ -2315,6 +2315,22 @@
           "args": []
         },
         {
+          "name": "cse_source_addresses",
+          "description": "A list of the cloud service endpoints that are associated with your VPC, including their source IP address and zone.",
+          "args": [
+            {
+              "name": "address",
+              "description": "The IP address of the cloud service endpoint.",
+              "args": []
+            },
+            {
+              "name": "zone_name",
+              "description": "The zone where the cloud service endpoint is located.",
+              "args": []
+            }
+          ]
+        },
+        {
           "name": "default_network_acl",
           "description": "The ID of the default network access control list (ACL) that was set up for the VPC.",
           "args": []
@@ -3519,7 +3535,7 @@
         },
         {
           "name": "template_id",
-          "description": "(Required, String) The ID of the template that the workspace uses. This value must be set to `${data.ibm_schematics_workspace.vpc.template_id.0}`.",
+          "description": "(Required, String) The ID of the template that the workspace uses. This value must be set to `data.ibm_schematics_workspace.vpc.template_id.0`.",
           "args": []
         }
       ],
@@ -5846,7 +5862,7 @@
         },
         {
           "name": "disk_encryption",
-          "description": "(Optional, Boolean) If set to **true**, the worker node disks are set up with an AES 256-bit encryption. If set to **false**, the disk encryption for the worker node is disabled. For more information, see [Encrypted disks](docs/containers?topic=containers-security#encrypted_disk).",
+          "description": "(Optional, Boolean) If set to **true**, the worker node disks are set up with an AES 256-bit encryption. If set to **false**, the disk encryption for the worker node is disabled. For more information, see [Encrypted disks](/docs/containers?topic=containers-security#encrypted_disk).",
           "args": []
         },
         {
@@ -9251,6 +9267,22 @@
           "name": "status",
           "description": "The provisioning status of your VPC.",
           "args": []
+        },
+        {
+          "name": "cse_source_addresses",
+          "description": "A list of the cloud service endpoints that are associated with your VPC, including their source IP address and zone.",
+          "args": [
+            {
+              "name": "address",
+              "description": "The IP address of the cloud service endpoint.",
+              "args": []
+            },
+            {
+              "name": "zone_name",
+              "description": "The zone where the cloud service endpoint is located.",
+              "args": []
+            }
+          ]
         }
       ]
     },
@@ -9453,6 +9485,11 @@
         {
           "name": "encrypted_nonce",
           "description": "(Optional, String) The encrypted nonce value that verifies your request to import a key to Key Protect. This value must be encrypted by using the key that you want to import to the service. To retrieve a nonce, use the `ibmcloud kp import-token get` command. Then, encrypt the value by running `ibmcloud kp import-token encrypt-nonce`. Only for imported root key.",
+          "args": []
+        },
+        {
+          "name": "force_delete",
+          "description": "(Optional, Boolean) If set to **true**, Key Protect forces the deletion of a root or standard key, even if this key is still in use, such as to protect an IBM Cloud Object Storage bucket. Note that the key cannot be deleted if the protected cloud resource is set up with a retention policy. Successful deletion includes the removal of any registrations that are associated with the key. Default value: **false**.",
           "args": []
         },
         {
