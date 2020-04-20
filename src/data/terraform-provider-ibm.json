@@ -1843,6 +1843,99 @@
         }
       ]
     },
+    "ibm_iam_access_group": {
+      "name": "ibm_iam_access_group",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Identity & Access (IAM) data sources",
+      "args": [
+        {
+          "name": "access_group_name",
+          "description": "(Optional, String) The name of the access group that you want to retrieve details for. If no access group is specified, all access groups that exist in the IBM Cloud account are returned.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "groups",
+          "description": "A list of IAM access groups that are set up for an IBM Cloud account.",
+          "args": [
+            {
+              "name": "id",
+              "description": "The ID of the IAM access group.",
+              "args": []
+            },
+            {
+              "name": "name",
+              "description": "The name of the IAM access group.",
+              "args": []
+            },
+            {
+              "name": "description",
+              "description": "The description of the IAM access group.",
+              "args": []
+            },
+            {
+              "name": "ibm_ids",
+              "description": "A list of IBMiDs that belong to the access group.",
+              "args": []
+            },
+            {
+              "name": "iam_service_ids",
+              "description": "A list of service IDs that belong to the access group.",
+              "args": []
+            },
+            {
+              "name": "rules",
+              "description": "A list of dynamic rules that are applied to the IAM access group.",
+              "args": [
+                {
+                  "name": "name",
+                  "description": "The name of the dynamic rule.",
+                  "args": []
+                },
+                {
+                  "name": "expiration",
+                  "description": "The number of hours that authenticated users can work in IBM Cloud before they must refresh their access.",
+                  "args": []
+                },
+                {
+                  "name": "identity_provider",
+                  "description": "The URI of your identity provider. This is the SAML \"entityId\" field, which is sometimes referred to as the issuer ID, for the identity provider as part of the federation configuration for onboarding with IBMid.",
+                  "args": []
+                },
+                {
+                  "name": "conditions",
+                  "description": "A list of conditions that the rule must satisfy.",
+                  "args": [
+                    {
+                      "name": "claim",
+                      "description": "The key value to evaluate the condition against. The key depends on what key-value pairs your identity provider provides. For example, your identity provider might include a key that is named `blueGroups` and that holds all the user groups that have access. To apply a condition for a specific user group within the `blueGroups` key, you specify `blueGroups` as your claim and add the value that you are looking for in `conditions.value`.",
+                      "args": []
+                    },
+                    {
+                      "name": "operator",
+                      "description": "The operation to perform on the claim. Supported values are `EQUALS`, `QUALS_IGNORE_CASE`, `IN`, `NOT_EQUALS_IGNORE_CASE`, `NOT_EQUALS`, and `CONTAINS`.",
+                      "args": []
+                    },
+                    {
+                      "name": "value",
+                      "description": "The value that the claim is compared to using the `groups.rules.conditions.operator`.",
+                      "args": []
+                    }
+                  ]
+                },
+                {
+                  "name": "rule_id",
+                  "description": "The ID of the dynamic rule.",
+                  "args": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "ibm_iam_auth_token": {
       "name": "ibm_iam_auth_token",
       "type": "data",
@@ -2296,6 +2389,86 @@
         }
       ]
     },
+    "ibm_is_subnets": {
+      "name": "ibm_is_subnets",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "VPC infrastructure data sources (Gen 1 compute)",
+      "args": [],
+      "attrs": [
+        {
+          "name": "subnets",
+          "description": "A list of subnets in the IBM Cloud account.",
+          "args": [
+            {
+              "name": "name",
+              "description": "The name of the subnet.",
+              "args": []
+            },
+            {
+              "name": "id",
+              "description": "The ID of the subnet.",
+              "args": []
+            },
+            {
+              "name": "ipv4_cidr_block",
+              "description": "The IPv4 CIDR block of this subnet.",
+              "args": []
+            },
+            {
+              "name": "ipv6_cidr_block",
+              "description": "The IPv6 CIDR block of this subnet.",
+              "args": []
+            },
+            {
+              "name": "status",
+              "description": "The status of the subnet.",
+              "args": []
+            },
+            {
+              "name": "crn",
+              "description": "The CRN of the subnet.",
+              "args": []
+            },
+            {
+              "name": "available_ipv4_address_count",
+              "description": "The number of IPv4 addresses that are available in the subnet.",
+              "args": []
+            },
+            {
+              "name": "total_ipv4_address_count",
+              "description": "The total number of IPv4 addresses in the subnet.",
+              "args": []
+            },
+            {
+              "name": "network_acl",
+              "description": "The access control list (ACL) that is attached to the subnet.",
+              "args": []
+            },
+            {
+              "name": "public_gateway",
+              "description": "If set to **true**, a public gateway is attached to the subnet. If set to **false**, no public gateway for this subnet exists.",
+              "args": []
+            },
+            {
+              "name": "resource_group",
+              "description": "The resource group that the subnet belongs to.",
+              "args": []
+            },
+            {
+              "name": "vpc",
+              "description": "The ID of the VPC that this subnet belongs to.",
+              "args": []
+            },
+            {
+              "name": "zone",
+              "description": "The zone where the subnet was created.",
+              "args": []
+            }
+          ]
+        }
+      ]
+    },
     "ibm_is_vpc": {
       "name": "ibm_is_vpc",
       "type": "data",
@@ -2312,6 +2485,11 @@
         {
           "name": "classic_access",
           "description": "Indicates whether this VPC is set up with a connection to classic IBM Cloud infrastructure.",
+          "args": []
+        },
+        {
+          "name": "crn",
+          "description": "The CRN of the VPC.",
           "args": []
         },
         {
@@ -2344,6 +2522,37 @@
           "name": "resource_group",
           "description": "The resource group ID where the VPC was created.",
           "args": []
+        },
+        {
+          "name": "subnets",
+          "description": "A list of subnets that are attached to a VPC.",
+          "args": [
+            {
+              "name": "name",
+              "description": "The name of the subnet.",
+              "args": []
+            },
+            {
+              "name": "id",
+              "description": "The ID of the subnet.",
+              "args": []
+            },
+            {
+              "name": "status",
+              "description": "The status of the subnet.",
+              "args": []
+            },
+            {
+              "name": "total_ipv4_address_count",
+              "description": "The total number of IPv4 addresses in the subnet.",
+              "args": []
+            },
+            {
+              "name": "available_ipv4_address_count",
+              "description": "The number of IPv4 addresses in the subnet that are available for you to be used.",
+              "args": []
+            }
+          ]
         },
         {
           "name": "status",
@@ -2974,6 +3183,26 @@
           "args": []
         },
         {
+          "name": "min_processors",
+          "description": "The minimum number of processors that must be allocated to the instance.",
+          "args": []
+        },
+        {
+          "name": "max_processors",
+          "description": "The maximum number of processors that can be allocated to the instance without shutting down or rebooting the LPAR.",
+          "args": []
+        },
+        {
+          "name": "min_memory",
+          "description": "The minimum amount of memory that must be allocated to the instance.",
+          "args": []
+        },
+        {
+          "name": "max_memory",
+          "description": "The maximum amount of memory that can be allocated to the instance without shutting down or rebooting the LPAR.",
+          "args": []
+        },
+        {
           "name": "processors",
           "description": "The number of processors that are allocated to the instance.",
           "args": []
@@ -3535,7 +3764,7 @@
         },
         {
           "name": "template_id",
-          "description": "(Required, String) The ID of the template that the workspace uses. This value must be set to `data.ibm_schematics_workspace.vpc.template_id.0`.",
+          "description": "(Required, String) The ID of the template that the workspace uses. This value must be retrieved from the `ibm_schematics_workspace` data source and set to `data.ibm_schematics_workspace.vpc.template_id.0`.",
           "args": []
         }
       ],
@@ -3886,6 +4115,111 @@
         {
           "name": "version",
           "description": "The version of the access group policy.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_api_gateway_endpoint": {
+      "name": "ibm_api_gateway_endpoint",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "API Gateway resources",
+      "args": [
+        {
+          "name": "service_instance_crn",
+          "description": "(Required, String) The CRN of the service instance.",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "(Required, String) The name of the API Gateway endpoint. This value is optional when you create an API Gateway endpoint, but required when you update the endpoint.",
+          "args": []
+        },
+        {
+          "name": "managed",
+          "description": "(Optional, Boolean) If set to **true**, the endpoint is online. If set to **false**, the endpoint is offline. The default value is false. Note that the API endpoint cannot be shared if this value is set to **false**.",
+          "args": []
+        },
+        {
+          "name": "open_api_doc_name",
+          "description": "(Required, String) The API document that represents the endpoint.",
+          "args": []
+        },
+        {
+          "name": "routes",
+          "description": "(Optional, List) The routes that you can invoke for an endpoint.",
+          "args": []
+        },
+        {
+          "name": "provider_id",
+          "description": "(Optional, String) The provider ID of an API endpoint. Supported values are `user-defined`, and `whisk`. The default value is `user-defined`.",
+          "args": []
+        },
+        {
+          "name": "type",
+          "description": "(Optional, String) The type of action that is performed on the API endpoint. Supported values are `share`, `unshare`, `manage`, and `unmanage`. The default value is `unshare`. Note that endpoint actions are performed by using the `type` parameter after the endpoint is created. As a consequence, endpoint actions are invoked during an endpoint update only.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The ID of the endpoint. The ID is composed of `<service_instance_crn>//<endpoint_ID>`.",
+          "args": []
+        },
+        {
+          "name": "endpoint_id",
+          "description": "The ID of the endpoint, also referred to as the artifact ID.",
+          "args": []
+        },
+        {
+          "name": "shared",
+          "description": "The shared status of an endpoint.",
+          "args": []
+        },
+        {
+          "name": "base_path",
+          "description": "The base path of an endpoint. Note that base paths must be unique.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_api_gateway_endpoint_subscription": {
+      "name": "ibm_api_gateway_endpoint_subscription",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "API Gateway resources",
+      "args": [
+        {
+          "name": "artifact_id",
+          "description": "(Required, String) The ID of an API endpoint.",
+          "args": []
+        },
+        {
+          "name": "client_id",
+          "description": "(Required, String) The API key to generate an API key for the subscription. The generated API key represents the ID of a subscription.",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "(Required, String) The name for an API key.",
+          "args": []
+        },
+        {
+          "name": "client_secret",
+          "description": "(Optional, String) The secret of the API key.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The ID of the subscription. The ID is composed of `<artifact_id>//<client_id>`.",
+          "args": []
+        },
+        {
+          "name": "secret_provided",
+          "description": "If set to **true**, the client secret is provided. If set to **false**, the client secret is not provided.",
           "args": []
         }
       ]
@@ -4540,6 +4874,11 @@
           "name": "proxied",
           "description": "(Optional, Boolean) Indicates if the record receives origin protection by IBM Cloud Internet Services. The default value is **false**.",
           "args": []
+        },
+        {
+          "name": "ttl",
+          "description": "(Optional, Integer) The time to live (TTL) in seconds for how long the resolved DNS record entry is cached before the IP address of the DNS entry must be looked up again. If your global load balancer is proxied, this value is automatically set and cannot be changed. If your global load balancer is unproxied, you can enter a value that is 120 or greater.",
+          "args": []
         }
       ],
       "attrs": [
@@ -4556,6 +4895,11 @@
         {
           "name": "proxiable",
           "description": "Indicates if the record can be proxied.",
+          "args": []
+        },
+        {
+          "name": "record_id",
+          "description": "The DNS record ID.",
           "args": []
         },
         {
@@ -4675,6 +5019,78 @@
         }
       ]
     },
+    "ibm_cis_firewall": {
+      "name": "ibm_cis_firewall",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Internet services resources",
+      "args": [
+        {
+          "name": "cis_id",
+          "description": "(Required, String) The ID of the IBM Cloud Internet Services instance where you want to create the firewall.",
+          "args": []
+        },
+        {
+          "name": "domain_id",
+          "description": "(Required, String) The ID of the domain where you want to apply the firewall rules.",
+          "args": []
+        },
+        {
+          "name": "firewall_type",
+          "description": "(Required, String) The type of firewall that you want to create for your domain. Supported values are `lockdowns`, `access_rules`, and `ua_rules`. Consider the following information when choosing your firewall type: <ul><li><strong><code>access_rules</code></strong>: Access rules allow, challenge, or block requests to your website. You can apply access rules to one domain only or all domains in the same service instance.</li><li><strong><code>ua_rules</code></strong>: Apply firewall rules only if the user agent that is used by the client matches the user agent that you defined. </li><li><strong><code>lockdowns</code></strong>: Allow access to your domain for specific IP addresses or IP address ranges only. If you choose this firewall type, you must define your firewall rules in the `lockdown` input parameter.</li></ul>",
+          "args": []
+        },
+        {
+          "name": "lockdown",
+          "description": "(Required for `lockdowns` firewall, List of firewall rules) A list of firewall rules that you want to create for your `lockdowns` firewall. You can specify one item in this list only.",
+          "args": [
+            {
+              "name": "paused",
+              "description": "(Required, Boolean) If set to **true**, the firewall rule is disabled. If set to **false**, the firewall rule is enabled.",
+              "args": []
+            },
+            {
+              "name": "description",
+              "description": "(Optional, String) A description for your firewall rule.",
+              "args": []
+            },
+            {
+              "name": "priority",
+              "description": "(Optional, Integer) The priority of the firewall rule. A low number is associated with a high priority.",
+              "args": []
+            },
+            {
+              "name": "urls",
+              "description": "(Required, List of URLs) A list of URLs that you want to include in your firewall rule. You can specify wildcard URLs. The URL pattern is escaped before use.",
+              "args": []
+            },
+            {
+              "name": "configurations",
+              "description": "(Required, List of IP addresses) A list of IP address or CIDR ranges that you want to allow access to the URLs that you defined in `lockdown.urls`.",
+              "args": [
+                {
+                  "name": "target",
+                  "description": "(Optional, String) Specify if you want to target an `ip` or `ip_range`.",
+                  "args": []
+                },
+                {
+                  "name": "value",
+                  "description": "(Optional, String) The IP address or IP address range that you want to target. Make sure that the value that you enter here matches the type of target that you specified in `lockdown.configurations.target`.",
+                  "args": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "attrs": [
+        {
+          "name": "lockdown_id",
+          "description": "The ID of the firewall that you created.",
+          "args": []
+        }
+      ]
+    },
     "ibm_cis_global_load_balancer": {
       "name": "ibm_cis_global_load_balancer",
       "type": "resource",
@@ -4712,8 +5128,18 @@
           "args": []
         },
         {
+          "name": "enabled",
+          "description": "(Optional, Boolean) If set to **true**, the load balancer is enabled and can receive network traffic. If set to **false**, the load balancer is not enabled.",
+          "args": []
+        },
+        {
           "name": "proxied",
           "description": "(Optional, Boolean) Indicates if the host name receives origin protection by IBM Cloud Internet Services. The default value is **false**.",
+          "args": []
+        },
+        {
+          "name": "ttl",
+          "description": "(Optional, Integer) The time to live (TTL) in seconds for how long the load balancer must cache a resolved IP address for a DNS entry before the load balancer must look up the IP address again. If your global load balancer is proxied, this value is automatically set and cannot be changed. If your global load balancer is unproxied, you can enter a value that is 120 or greater.",
           "args": []
         }
       ],
@@ -4747,6 +5173,11 @@
       "groupName": "Internet services resources",
       "args": [
         {
+          "name": "allow_insecure",
+          "description": "(Optional, Boolean) If set to **true**, the certificate is not validated when the health check uses HTTPS. If set to **false**, the certificate is validated, even if the health check uses HTTPS. The default value is **false**.",
+          "args": []
+        },
+        {
           "name": "cis_id",
           "description": "(Required, String) The ID of the IBM Cloud Internet Services instance.",
           "args": []
@@ -4762,6 +5193,11 @@
           "args": []
         },
         {
+          "name": "follow_redirects",
+          "description": "(Optional, Boolean) If set to **true**, a redirect is followed when a redirect is returned by the origin pool. Is set to **false**, redirects from the origin pool are not followed.",
+          "args": []
+        },
+        {
           "name": "method",
           "description": "(Optional, String) The HTTP method to use for the health check. Default: `GET`.",
           "args": []
@@ -4774,6 +5210,11 @@
         {
           "name": "path",
           "description": "(Optional, String) The endpoint path to health check against. Default: `/`.",
+          "args": []
+        },
+        {
+          "name": "port",
+          "description": "(Optional, Integer) The TCP port number that you want to use for the health check.",
           "args": []
         },
         {
@@ -4828,8 +5269,24 @@
         },
         {
           "name": "origins",
-          "description": "(Required, Array) A list of origins within this pool. Traffic directed to this pool is balanced across all currently healthy origins, provided the pool itself is healthy. It’s a complex value. See description below.",
-          "args": []
+          "description": "(Required, List of origins) A list of origin servers within this pool. Traffic directed to this pool is balanced across all currently healthy origins, provided the pool itself is healthy.",
+          "args": [
+            {
+              "name": "name",
+              "description": "(Required, String) The name of the origin server.",
+              "args": []
+            },
+            {
+              "name": "address",
+              "description": "(Required, String) The IPv4 or IPv6 address of the origin server. You can also provide a hostname for the origin that is publicly accessible. Make sure that the hostname resolves to the origin server, and is not proxied by IBM Cloud Internet Services.",
+              "args": []
+            },
+            {
+              "name": "enabled",
+              "description": "(Optional, Boolean) If set to **true**, the origin sever is enabled within the origin pool. If set to **false**, the origin server is not enabled. Disabled origin servers cannot receive incoming network traffic and are excluded from IBM Cloud Internet Services health checks.",
+              "args": []
+            }
+          ]
         },
         {
           "name": "description",
@@ -4872,6 +5329,22 @@
           "name": "modified_on",
           "description": "The RFC3339 timestamp of when the origin pool was last modified.",
           "args": []
+        },
+        {
+          "name": "health",
+          "description": "The status of the origin pool.",
+          "args": []
+        },
+        {
+          "name": "origins",
+          "description": "A list of origin servers that belong to the load balancer pool.",
+          "args": [
+            {
+              "name": "healthy",
+              "description": "If set to **true**, the origin server is healthy. If set to **false**, the origin server is not healthy.",
+              "args": []
+            }
+          ]
         }
       ]
     },
@@ -5188,7 +5661,7 @@
         },
         {
           "name": "storage_groups",
-          "description": "(Optional, List of objects) Configurations for RAID and partition. For more information on configuring `storage_groups`, refer to [Ordering RAID Through API](https://sldn.softlayer.com/blog/hansKristian/Ordering-RAID-through-API).",
+          "description": "(Optional, List of objects) Configurations for RAID and partition.",
           "args": [
             {
               "name": "array_type_id",
@@ -6877,6 +7350,51 @@
       "args": [],
       "attrs": []
     },
+    "ibm_dns_permitted_network": {
+      "name": "ibm_dns_permitted_network",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "DNS service resources",
+      "args": [
+        {
+          "name": "instance_id",
+          "description": "(Required, String) The ID of the IBM Cloud DNS service instance where you want to add a permitted network.",
+          "args": []
+        },
+        {
+          "name": "zone_id",
+          "description": "(Requried, String) The ID of the private DNS zone where you want to add the permitted network.",
+          "args": []
+        },
+        {
+          "name": "vpc_crn",
+          "description": "(Required, String) The CRN of the VPC that you want to add as a permitted network.",
+          "args": []
+        },
+        {
+          "name": "type",
+          "description": "(Required, String) The type of permitted network that you want to add. Supported values are `vpc`.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier of the DNS private network. The ID is composed of `<instance_ID>/<zone_ID>/<permitted_network_ID>`.",
+          "args": []
+        },
+        {
+          "name": "created_on",
+          "description": "The time when the permitted network was added to the DNS.",
+          "args": []
+        },
+        {
+          "name": "modified_on",
+          "description": "The time when the permitted network was modified.",
+          "args": []
+        }
+      ]
+    },
     "ibm_dns_record": {
       "name": "ibm_dns_record",
       "type": "resource",
@@ -6884,6 +7402,96 @@
       "groupName": "Classic infrastructure resources",
       "args": [],
       "attrs": []
+    },
+    "ibm_dns_resource_record": {
+      "name": "ibm_dns_resource_record",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "DNS service resources",
+      "args": [
+        {
+          "name": "instance_id",
+          "description": "(Required, String) The ID of the IBM Cloud DNS service instance where you want to create the DNS record.",
+          "args": []
+        },
+        {
+          "name": "zone_id",
+          "description": "(Required, String) The ID of the DNS zone where you want to create a DNS record.",
+          "args": []
+        },
+        {
+          "name": "type",
+          "description": "(Required, String) The type of DNS record that you want to create. Supported values are `A`, `AAAA`, `CNAME`, `PTR`, `TXT`, `MX`, and `SRV`.",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "(Required, String) The name of the DNS record.",
+          "args": []
+        },
+        {
+          "name": "ttl",
+          "description": "(Optional, Integer) The time to live (TTL) in minutes that the resolved DNS record is cached before the associated IP address must be retrieved again. The minimum TTL must be 1 minute and can be 12 hours at a maximum. If no value is specified, 15 minutes is used by default. To find the default TTL values for each record type, see [Adding DNS records](https://cloud.ibm.com/docs/dns-svcs?topic=dns-svcs-managing-dns-records#adding-dns-records).",
+          "args": []
+        },
+        {
+          "name": "preference",
+          "description": "(Required for `MX` records, Integer) If you create an `MX` record, enter the preference of the record.",
+          "args": []
+        },
+        {
+          "name": "priority",
+          "description": "(Required for `SRV` records, Integer) If you create an `SRV` record, enter the priority of the record.",
+          "args": []
+        },
+        {
+          "name": "weight",
+          "description": "(Required for `SRV` records, Integer) If you create an `SRV` record, enter the weight of the record. The weight is considered when multiple records with the same priority exist. A higher value is associated with a higher weight and a higher chance of being considered among records with the same priority.",
+          "args": []
+        },
+        {
+          "name": "port",
+          "description": "(Required for `SRV` records, Integer) If you create an `SRV` record, enter the TCP or UDP port of the target server.",
+          "args": []
+        },
+        {
+          "name": "service",
+          "description": "(Required for `SRV` records, String) If you create an `SRV` record, enter the name of the desired service. The name must start with an underscore (`_`).",
+          "args": []
+        },
+        {
+          "name": "protocol",
+          "description": "(Required for `SRV` records, String) If you create an `SRV` record, enter the name of the desired protocol.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier of the DNS record. The ID is composed of `<instance_id>/<zone_id>/<dns_record_id>`.",
+          "args": []
+        },
+        {
+          "name": "zone_id",
+          "description": "The ID of the zone where the DNS record was created.",
+          "args": []
+        },
+        {
+          "name": "resource_record_id",
+          "description": "The ID of the DNS record.",
+          "args": []
+        },
+        {
+          "name": "created_on",
+          "description": "The time when the DNS record was created.",
+          "args": []
+        },
+        {
+          "name": "modified_on",
+          "description": "The time when the DNS record was modified.",
+          "args": []
+        }
+      ]
     },
     "ibm_dns_reverse_record": {
       "name": "ibm_dns_reverse_record",
@@ -6900,6 +7508,61 @@
       "groupName": "Classic infrastructure resources",
       "args": [],
       "attrs": []
+    },
+    "ibm_dns_zone": {
+      "name": "ibm_dns_zone",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "DNS service resources",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Requierd, String) The name of the DNS zone that you want to create.",
+          "args": []
+        },
+        {
+          "name": "instance_id",
+          "description": "(Required, String) The ID of the IBM Cloud DNS service instance where you want to create a DNS zone.",
+          "args": []
+        },
+        {
+          "name": "description",
+          "description": "(Optional, String) The description of the DNS zone.",
+          "args": []
+        },
+        {
+          "name": "label",
+          "description": "(Optional, String) The label of the DNS zone.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The ID of the DNS zone. The ID is composed of `<instance_id>/<zone_id>`.",
+          "args": []
+        },
+        {
+          "name": "zone_id",
+          "description": "The ID of the zone that is associated with the DNS zone.",
+          "args": []
+        },
+        {
+          "name": "created_on",
+          "description": "The time when the DNS zone was created.",
+          "args": []
+        },
+        {
+          "name": "modified_on",
+          "description": "The time when the DNS zone was updated.",
+          "args": []
+        },
+        {
+          "name": "state",
+          "description": "The state of the DNS zone.",
+          "args": []
+        }
+      ]
     },
     "ibm_firewall": {
       "name": "ibm_firewall",
@@ -7229,6 +7892,67 @@
         {
           "name": "version",
           "description": "The version of the access group.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_iam_access_group_dynamic_rule": {
+      "name": "ibm_iam_access_group_dynamic_rule",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Identity & Access (IAM) resources",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, String) The name of the dynamic rule for the IAM access group.",
+          "args": []
+        },
+        {
+          "name": "access_group_id",
+          "description": "(Required, String) The ID of the access group.",
+          "args": []
+        },
+        {
+          "name": "expiration",
+          "description": "(Required, Integer) The number of hours that authenticated users can work in IBM Cloud before they must refresh their access. This value must be between 1 and 24.",
+          "args": []
+        },
+        {
+          "name": "identity_provider",
+          "description": "(Required, String) Enter the URI for your identity provider. This is the SAML \"entityId\" field, which is sometimes referred to as the issuer ID, for the identity provider as part of the federation configuration for onboarding with IBMid. Example: `https://idp.example.org/SAML2`.",
+          "args": []
+        },
+        {
+          "name": "conditions",
+          "description": "(Required, List of rule conditions) A list of conditions that the rule must satisfy.",
+          "args": [
+            {
+              "name": "claim",
+              "description": "(Required, String) The key value to evaluate the condition against. The key that you enter depends on what key-value pairs your identity provider provides. For example, your identity provider might include a key that is named `blueGroups` and that holds all the user groups that have access. To apply a condition for a specific user group within the `blueGroups` key, you specify `blueGroups` as your claim and add the value that you are looking for in `conditions.value`.",
+              "args": []
+            },
+            {
+              "name": "operator",
+              "description": "(Required, String) The operation to perform on the claim. Supported values are `EQUALS`, `EQUALS_IGNORE_CASE`, `IN`, `NOT_EQUALS_IGNORE_CASE`, `NOT_EQUALS`, and `CONTAINS`.",
+              "args": []
+            },
+            {
+              "name": "value",
+              "description": "(Required, String) The value that the claim is compared to using the `conditions.operator`.",
+              "args": []
+            }
+          ]
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier of the dynamic rule. The ID is composed of `<access_group_ID>/<rule_ID>`.",
+          "args": []
+        },
+        {
+          "name": "rule_id",
+          "description": "The ID of the rule.",
           "args": []
         }
       ]
@@ -8349,6 +9073,92 @@
         }
       ]
     },
+    "ibm_is_lb_listener_policy": {
+      "name": "ibm_is_lb_listener_policy",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "args": [
+        {
+          "name": "lb",
+          "description": "(Required, String) The ID of the load balancer for which you want to create a load balancer listener policy.",
+          "args": []
+        },
+        {
+          "name": "listener",
+          "description": "(Required, String) The ID of the load balancer listener.",
+          "args": []
+        },
+        {
+          "name": "action",
+          "description": "(Required, String) The action that you want to specify for your policy. Supported values are `forward`, `redirect`, and `reject`.",
+          "args": []
+        },
+        {
+          "name": "priority",
+          "description": "(Required, Integer) The priority of the load balancer policy. Low values indicate a high priority. The value must be between 1 and 10.",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "(Optional, String) The name for the load balancer policy. Names must be unique within a load balancer listener.",
+          "args": []
+        },
+        {
+          "name": "rules",
+          "description": "(Required, List of policy rules) A list of rules that you want to apply to your load balancer policy. Note that rules can be created only. You cannot update the rules for a load balancer policy.",
+          "args": [
+            {
+              "name": "condition",
+              "description": "(Required, String) The condition that you want to apply to your rule. Supported values are `contains`, `equals`, and `matches_regex`.",
+              "args": []
+            },
+            {
+              "name": "type",
+              "description": "(Required, String) The data type where you want to apply the rule condition. Supported values are `header`, `hostname`,  and `path`",
+              "args": []
+            },
+            {
+              "name": "value",
+              "description": "(Required, Integer) The value that must be found in the HTTP header, hostname or path to apply the load balancer listener rule. The value that you define can be between 1 and 128 characters long.",
+              "args": []
+            },
+            {
+              "name": "field",
+              "description": "(Required, Integer) If you selected `header` as the data type where you want to apply the rule condition, enter the name of the HTTP header that you want to check. The name of the header can be between 1 and 128 characters long.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "target_id",
+          "description": "(Optional, Integer) When `action` is set to **forward**, specify the ID of the load balancer pool that the load balancer forwards network traffic to.",
+          "args": []
+        },
+        {
+          "name": "target_url",
+          "description": "(Optional, Integer) When `action` is set to **redirect**, specify the URL that is used in the redirect response.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The ID of the load balancer listener policy. The ID is composed of `<lb_ID>/<listener_ID>/<policy_ID>`.",
+          "args": []
+        },
+        {
+          "name": "status",
+          "description": "The status of the load balancer listener policy.",
+          "args": []
+        },
+        {
+          "name": "policy_id",
+          "description": "The ID of the load balancer listener policy.",
+          "args": []
+        }
+      ]
+    },
     "ibm_is_lb_pool": {
       "name": "ibm_is_lb_pool",
       "type": "resource",
@@ -8493,6 +9303,11 @@
         {
           "name": "vpc",
           "description": "(Optional, String) The VPC ID. This parameter is required if you want to create a network ACL for a Gen 2 VPC.",
+          "args": []
+        },
+        {
+          "name": "resource_group",
+          "description": "(Optional, String) The ID of the resource group where you want to create the network ACL.",
           "args": []
         },
         {
@@ -8845,7 +9660,7 @@
         },
         {
           "name": "port_speed",
-          "description": "The network interface port speed in Mbp.",
+          "description": "The network interface port speed in Mbps.",
           "args": []
         },
         {
@@ -9103,7 +9918,12 @@
         },
         {
           "name": "public_gateway",
-          "description": "(Optional, String) The ID of the public gateway for the subnet.",
+          "description": "(Optional, String) The ID of the public gateway for the subnet that you want to attach. You create the public gateway by using the [`ibm_is_public_gateway` resource](#provider-public-gateway).",
+          "args": []
+        },
+        {
+          "name": "resource_group",
+          "description": "(Optional, String) The ID of the resource group where you want to create the subnet.",
           "args": []
         },
         {
@@ -9168,7 +9988,7 @@
         },
         {
           "name": "iops",
-          "description": "(Optional, Integer) The bandwidth for the volume.",
+          "description": "(Required for `custom` storage profiles only, Integer) The total input/ output operations per second (IOPS) for your storage. This value is required for `custom` storage profiles only.",
           "args": []
         },
         {
@@ -9249,6 +10069,11 @@
       ],
       "attrs": [
         {
+          "name": "crn",
+          "description": "The CRN of the VPC.",
+          "args": []
+        },
+        {
           "name": "default_security_group",
           "description": "The unique identifier of the default security group that was created for your VPC.",
           "args": []
@@ -9262,6 +10087,37 @@
           "name": "resource_controller_url",
           "description": "The URL of the IBM Cloud dashboard that you can use to explore and view details about the VPC.",
           "args": []
+        },
+        {
+          "name": "subnets",
+          "description": "A list of subnets that are attached to a VPC.",
+          "args": [
+            {
+              "name": "name",
+              "description": "The name of the subnet.",
+              "args": []
+            },
+            {
+              "name": "id",
+              "description": "The ID of the subnet.",
+              "args": []
+            },
+            {
+              "name": "status",
+              "description": "The status of the subnet.",
+              "args": []
+            },
+            {
+              "name": "total_ipv4_address_count",
+              "description": "The total number of IPv4 addresses in the subnet.",
+              "args": []
+            },
+            {
+              "name": "available_ipv4_address_count",
+              "description": "The number of IPv4 addresses in the subnet that are available for you to be used.",
+              "args": []
+            }
+          ]
         },
         {
           "name": "status",
@@ -9885,8 +10741,23 @@
           "args": []
         },
         {
+          "name": "max_processors",
+          "description": "The maximum number of processors that can be allocated to the instance with shutting down or rebooting the LPAR.",
+          "args": []
+        },
+        {
           "name": "min_processors",
           "description": "The minimum number of processors that the instance can have.",
+          "args": []
+        },
+        {
+          "name": "min_memory",
+          "description": "The minimum memory that was allocated to the instance.",
+          "args": []
+        },
+        {
+          "name": "max_memory",
+          "description": "The maximum amount of memory that can be allocated to the instance without shutting down or rebotting the LPAR.",
           "args": []
         }
       ]
@@ -10139,7 +11010,7 @@
         },
         {
           "name": "parameters",
-          "description": "(Optional, Map) Arbitrary parameters to pass. Must be a JSON object.",
+          "description": "(Optional, Map) Arbitrary parameters to pass to the resource in JSON format. If you want to create service credentials by using the private service endpoint, include the `service-endpoints =  \"private\"` parameter.",
           "args": []
         },
         {
