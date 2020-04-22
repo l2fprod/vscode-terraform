@@ -10255,7 +10255,7 @@
         },
         {
           "name": "preshared_key",
-          "description": "(Optional, String) The preshared key.",
+          "description": "(Required, String) The preshared key.",
           "args": []
         },
         {
