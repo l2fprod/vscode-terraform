@@ -211,6 +211,107 @@
         }
       ]
     },
+    "ibm_certificate_manager_certificates": {
+      "name": "ibm_certificate_manager_certificates",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Certificate Manager data sources",
+      "args": [
+        {
+          "name": "certificate_manager_instance_id",
+          "description": "(Required, String) The CRN of the Certificate Manager service instance.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The ID of the certificate that is managed in Certificate Manager. The ID is composed of `<certificate_manager_instance_ID>:<certificate_ID>`.",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "The name of the certificate.",
+          "args": []
+        },
+        {
+          "name": "domains",
+          "description": "A list of domains that the certificate is associated with. The first domain is referred to as the primary domain. Any additional domains are referred to as secondary domains.",
+          "args": []
+        },
+        {
+          "name": "issuer",
+          "description": "The issuer of the certificate.",
+          "args": []
+        },
+        {
+          "name": "begins_on",
+          "description": "The timestamp when the certificate was created in Unix epoch time format.",
+          "args": []
+        },
+        {
+          "name": "expires_on",
+          "description": "The date when the certificate expires in Unix epoch time format.",
+          "args": []
+        },
+        {
+          "name": "imported",
+          "description": "If set to **true**, the certificate is imported.",
+          "args": []
+        },
+        {
+          "name": "status",
+          "description": "The status of the certificate.",
+          "args": []
+        },
+        {
+          "name": "has_previous",
+          "description": "If set to **true**, the certificate has a previous version.",
+          "args": []
+        },
+        {
+          "name": "key_algorithm",
+          "description": "The key algorithm of the certificate.",
+          "args": []
+        },
+        {
+          "name": "algorithm",
+          "description": "The algorithm that is used for the certificate.",
+          "args": []
+        },
+        {
+          "name": "serial_number",
+          "description": "The serial number of the certificate.",
+          "args": []
+        },
+        {
+          "name": "issuance_info",
+          "description": "The issuance information of the certificate.",
+          "args": [
+            {
+              "name": "status",
+              "description": "The status of the certificate.",
+              "args": []
+            },
+            {
+              "name": "ordered_on",
+              "description": "The date when the certificate was ordered.",
+              "args": []
+            },
+            {
+              "name": "code",
+              "description": "The code of the certificate.",
+              "args": []
+            },
+            {
+              "name": "additional_info",
+              "description": "Any additional information for the certificate.",
+              "args": []
+            }
+          ]
+        }
+      ]
+    },
     "ibm_cis": {
       "name": "ibm_cis",
       "type": "data",
@@ -4197,7 +4298,7 @@
         },
         {
           "name": "client_id",
-          "description": "(Required, String) The API key to generate an API key for the subscription. The generated API key represents the ID of a subscription.",
+          "description": "(Optional, String) The API key to generate an API key for the subscription. The generated API key represents the ID of a subscription.",
           "args": []
         },
         {
@@ -4208,6 +4309,11 @@
         {
           "name": "client_secret",
           "description": "(Optional, String) The secret of the API key.",
+          "args": []
+        },
+        {
+          "name": "generate_secret",
+          "description": "(Optional, Boolean) If set to **true**, the secret key is auto-generated. If set to **false**, the secret key is not auto-generated.",
           "args": []
         }
       ],
@@ -7269,6 +7375,16 @@
           "args": []
         },
         {
+          "name": "point_in_time_recovery_deployment_id",
+          "description": "(Optional, String) The ID of the source deployment that you want to recover back to.",
+          "args": []
+        },
+        {
+          "name": "point_in_time_recovery_time",
+          "description": "(Optional, String) The timestamp in UTC format that you want to restore to. To retrieve the timestamp, run the `ibmcloud cdb postgresql earliest-pitr-timestamp <deployment name or CRN>` command. For more information, see [Point-in-time Recovery](/docs/databases-for-postgresql?topic=databases-for-postgresql-pitr).",
+          "args": []
+        },
+        {
           "name": "service_endpoints",
           "description": "(Optional, String) Specify if you want to enable the public, private, or both service endpoints. Supported values are `public`, `private`, or `public-and-private`. The default is `public`.",
           "args": []
@@ -9155,6 +9271,66 @@
         {
           "name": "policy_id",
           "description": "The ID of the load balancer listener policy.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_is_lb_listener_policy_rule": {
+      "name": "ibm_is_lb_listener_policy_rule",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "args": [
+        {
+          "name": "lb",
+          "description": "(Required, String) The ID of the load balancer for which you want to create a listener policy rule.",
+          "args": []
+        },
+        {
+          "name": "listener",
+          "description": "(Required, String) The ID of the load balancer listener for which you want to create a policy rule.",
+          "args": []
+        },
+        {
+          "name": "policy",
+          "description": "(Required, String) The ID of the load balancer listener policy for which you want to create a policy rule.",
+          "args": []
+        },
+        {
+          "name": "condition",
+          "description": "(Required, String) The condition that you want to apply to your rule. Supported values are `contains`, `equals`, and `matches_regex`.",
+          "args": []
+        },
+        {
+          "name": "type",
+          "description": "(Required, String) The object where you want to apply the rule. Supported values are `header`, `hostname`, and `path`.",
+          "args": []
+        },
+        {
+          "name": "value",
+          "description": "(Required, String) The value that must match the rule condition. The value can be between 1 and 128 characters long.",
+          "args": []
+        },
+        {
+          "name": "field",
+          "description": "(Optional, String) If you set `type` to `header`, enter the HTTP header field where you want to apply the rule condition.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The ID of the load balancer listener policy rule. The ID is composed of ` <loadbalancer_ID>/<listener_ID>/<policy>ID>`.",
+          "args": []
+        },
+        {
+          "name": "status",
+          "description": "The status of the load balancer listener.",
+          "args": []
+        },
+        {
+          "name": "rule",
+          "description": "The ID of the rule",
           "args": []
         }
       ]
