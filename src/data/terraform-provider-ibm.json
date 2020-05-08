@@ -4577,6 +4577,16 @@
           "args": []
         },
         {
+          "name": "source_resource_group_id",
+          "description": "(Optional, String) The ID of the resource group from which you want to allow access to IBM Cloud services in another resource group.",
+          "args": []
+        },
+        {
+          "name": "target_resource_group_id",
+          "description": "(Optional, String) The ID of the resource group that holds the IBM Cloud services that you want to allow access to.",
+          "args": []
+        },
+        {
           "name": "source_service_account",
           "description": "(Optional, String) The GUID of the account where the source service is provisioned.",
           "args": []
@@ -6445,6 +6455,11 @@
           "args": []
         },
         {
+          "name": "entitlement",
+          "description": "(Optional, String) If you purchased an IBM Cloud Cloud Pak that includes an entitlement to run worker nodes that are installed with OpenShift Container Platform, enter `cloud_pak` to create your cluster with that entitlement so that you are not charged twice for the {{site.data.keyword.openshiftshort}} license. Note that this option can be set only when you create the cluster. After the cluster is created, the cost for the {{site.data.keyword.openshiftshort}} license occurred and you cannot disable this charge.",
+          "args": []
+        },
+        {
           "name": "hardware",
           "description": "(Optional, String) The level of hardware isolation for your worker node. Use `dedicated` to have available physical resources dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. This option is available for virtual machine worker node flavors only.",
           "args": []
@@ -7096,6 +7111,11 @@
         {
           "name": "disk_encryption",
           "description": "(Optional, Boolean) If set to **true**, the worker node disks are set up with an AES 256-bit encryption. If set to **false**, the disk encryption for the worker node is disabled. For more information, see [Encrypted disks](docs/containers?topic=containers-security#encrypted_disk).",
+          "args": []
+        },
+        {
+          "name": "entitlement",
+          "description": "(Optional, String) If you purchased an IBM Cloud Cloud Pak that includes an entitlement to run worker nodes that are installed with OpenShift Container Platform, enter `cloud_pak` to create your worker pool with that entitlement so that you are not charged twice for the {{site.data.keyword.openshiftshort}} license. Note that this option can be set only when you create the worker pool. After the worker pool is created, the cost for the {{site.data.keyword.openshiftshort}} license automatically occures when you add worker nodes to your worker pool.",
           "args": []
         },
         {
