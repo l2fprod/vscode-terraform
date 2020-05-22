@@ -9413,12 +9413,7 @@
         },
         {
           "name": "session_persistence_type",
-          "description": "(Optional, String) The session persistence type. Supported values are `source_ip`, `http_cookie`, and `app_cookie`.",
-          "args": []
-        },
-        {
-          "name": "session_persistence_cookie_name",
-          "description": "(Optional, String) Session persistence cookie name. This option is applicable when `sessio_persistence_type` is set.",
+          "description": "(Optional, String) The session persistence type. Only `source_ip` is supported.",
           "args": []
         }
       ],
@@ -11141,7 +11136,7 @@
         },
         {
           "name": "service",
-          "description": "(Required, String) The name of the service offering. You can retrieve the value by running the `ibmcloud catalog service-marketplace` or `ibmcloud catalog search` command.",
+          "description": "(Required, String) The name of the service offering. You can retrieve the value by installing the `catalogs-management` CLI plug-in and running the `ibmcloud catalog service-marketplace` or `ibmcloud catalog search` command.",
           "args": []
         },
         {
