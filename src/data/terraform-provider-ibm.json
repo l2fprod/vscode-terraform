@@ -4149,77 +4149,6 @@
     }
   },
   "resource": {
-    "ibm_access_group_policy": {
-      "name": "ibm_access_group_policy",
-      "type": "resource",
-      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "Identity & Access (IAM) resources",
-      "args": [
-        {
-          "name": "access_group_id",
-          "description": "(Required, String) The ID of the access group.",
-          "args": []
-        },
-        {
-          "name": "resources",
-          "description": "(Optional, List) A nested block describing the resource of this policy.",
-          "args": [
-            {
-              "name": "service",
-              "description": "(Optional, String) The service name of the policy definition.  You can retrieve the value by running the `ibmcloud catalog service-marketplace` or `ibmcloud catalog search`.",
-              "args": []
-            },
-            {
-              "name": "resource_instance_id",
-              "description": "(Optional, String) The ID of resource instance of the policy definition.",
-              "args": []
-            },
-            {
-              "name": "region",
-              "description": "(Optional, String) The region of the policy definition.",
-              "args": []
-            },
-            {
-              "name": "resource_type",
-              "description": "(Optional, String) The resource type of the policy definition.",
-              "args": []
-            },
-            {
-              "name": "resource",
-              "description": "(Optional, String) The resource of the policy definition.",
-              "args": []
-            },
-            {
-              "name": "attributes",
-              "description": "(Optional, Map) Set resource attributes in the form of `name=value,name=value`.  If you set this option, do not specify `account_management` at the same time.",
-              "args": []
-            }
-          ]
-        },
-        {
-          "name": "account_management",
-          "description": "(Optional, Boolean) Gives access to all account management services if set to `true`. Default value `false`. If you set this option, do not specify `resources` at the same time.",
-          "args": []
-        },
-        {
-          "name": "tags",
-          "description": "(Optional, Array of Strings) A list of tags that you want to add to the access group policy. Tags are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
-          "args": []
-        }
-      ],
-      "attrs": [
-        {
-          "name": "id",
-          "description": "The unique identifier of the access group policy. The ID is composed of `<access_group_id>/<access_group_policy_id>`.",
-          "args": []
-        },
-        {
-          "name": "version",
-          "description": "The version of the access group policy.",
-          "args": []
-        }
-      ]
-    },
     "ibm_api_gateway_endpoint": {
       "name": "ibm_api_gateway_endpoint",
       "type": "resource",
@@ -7110,7 +7039,7 @@
         },
         {
           "name": "disk_encryption",
-          "description": "(Optional, Boolean) If set to **true**, the worker node disks are set up with an AES 256-bit encryption. If set to **false**, the disk encryption for the worker node is disabled. For more information, see [Encrypted disks](docs/containers?topic=containers-security#encrypted_disk).",
+          "description": "(Optional, Boolean) If set to **true**, the worker node disks are set up with an AES 256-bit encryption. If set to **false**, the disk encryption for the worker node is disabled. For more information, see [Encrypted disks](/docs/containers?topic=containers-security#encrypted_disk).",
           "args": []
         },
         {
@@ -7217,6 +7146,11 @@
         {
           "name": "resource_group_id",
           "description": "(Optional, String) The ID of the resource group where your cluster is provisioned into. To list resource groups, run `ibmcloud resource groups` or use the `ibm_resource_group` data source.",
+          "args": []
+        },
+        {
+          "name": "wait_till_albs",
+          "description": "(Optional, Boolean) When you add a zone to a worker pool, worker nodes are provisioned in that zone with the configuration that you defined in your worker pool. This process and enabling the ALBs on those workere nodes can take a few minutes to complete. To avoid long wait times when you run your Terraform code, you can specify the stage when you want Terraform to mark the zone attachment complete. Set to **true** to wait until all worker nodes are successfully provisioned in the zone that you added to your worker pool and all ALBs are available and healthy. If you want the worker node creation and ALB enablement to continue in the background, set this option to **false**.",
           "args": []
         },
         {
@@ -7531,6 +7465,73 @@
         }
       ]
     },
+    "ibm_dns_permitted_networks": {
+      "name": "ibm_dns_permitted_networks",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "DNS service data sources",
+      "args": [
+        {
+          "name": "instance_id",
+          "description": "(Required, String) The ID of the private DNS service instance where you created permitted networks.",
+          "args": []
+        },
+        {
+          "name": "zone_id",
+          "description": "(Required, String) The ID of the zone where you added the permitted networks.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "permitted_networks",
+          "description": "A list of all permitted networks that were created for a zone in your private DNS instance.",
+          "args": [
+            {
+              "name": "created_on",
+              "description": "The date and time when the permitted network was created.",
+              "args": []
+            },
+            {
+              "name": "modified_on",
+              "description": "The date and time when the permitted network was updated.",
+              "args": []
+            },
+            {
+              "name": "permitted_network",
+              "description": "A list of VPC CRNs that are associated with the permitted network.",
+              "args": [
+                {
+                  "name": "vpc_crn",
+                  "description": "The CRN of the VPC that the permitted network belongs to.",
+                  "args": []
+                }
+              ]
+            },
+            {
+              "name": "permitted_network_id",
+              "description": "The ID of the permitted network.",
+              "args": []
+            },
+            {
+              "name": "state",
+              "description": "The state of the permitted network.",
+              "args": []
+            },
+            {
+              "name": "type",
+              "description": "The type of the permitted network.",
+              "args": []
+            },
+            {
+              "name": "zone_id",
+              "description": "The ID of the zone where you added the permitted network.",
+              "args": []
+            }
+          ]
+        }
+      ]
+    },
     "ibm_dns_record": {
       "name": "ibm_dns_record",
       "type": "resource",
@@ -7567,7 +7568,7 @@
         },
         {
           "name": "ttl",
-          "description": "(Optional, Integer) The time to live (TTL) in minutes that the resolved DNS record is cached before the associated IP address must be retrieved again. The minimum TTL must be 1 minute and can be 12 hours at a maximum. If no value is specified, 15 minutes is used by default. To find the default TTL values for each record type, see [Adding DNS records](https://cloud.ibm.com/docs/dns-svcs?topic=dns-svcs-managing-dns-records#adding-dns-records).",
+          "description": "(Optional, Integer) The time to live (TTL) in minutes that the resolved DNS record is cached before the associated IP address must be retrieved again. The minimum TTL must be 1 minute and can be 12 hours at a maximum. If no value is specified, 15 minutes is used by default. To find the default TTL values for each record type, see [Adding DNS records](/docs/dns-svcs?topic=dns-svcs-managing-dns-records#adding-dns-records).",
           "args": []
         },
         {
@@ -7626,6 +7627,52 @@
           "name": "modified_on",
           "description": "The time when the DNS record was modified.",
           "args": []
+        }
+      ]
+    },
+    "ibm_dns_resource_records": {
+      "name": "ibm_dns_resource_records",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "DNS service data sources",
+      "args": [
+        {
+          "name": "instance_id",
+          "description": "(Required, String) The ID of the private DNS service instance.",
+          "args": []
+        },
+        {
+          "name": "zone_id",
+          "description": "(Required, String) The ID of the zone that you added to the private DNS service instance.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "dns_resource_records",
+          "description": "A list of all private domain name service resource records.",
+          "args": [
+            {
+              "name": "id",
+              "description": "The unique identifier of the private DNS resource record.",
+              "args": []
+            },
+            {
+              "name": "name",
+              "description": "The name of a private DNS resource record.",
+              "args": []
+            },
+            {
+              "name": "type",
+              "description": "The type of the private DNS resource record. Supported values are `A`, `AAAA`, `CNAME`, `PTR`, `TXT`, `MX`, and `SRV`.",
+              "args": []
+            },
+            {
+              "name": "ttl",
+              "description": "The time-to-live value of the DNS resource record.",
+              "args": []
+            }
+          ]
         }
       ]
     },
@@ -7700,6 +7747,67 @@
         }
       ]
     },
+    "ibm_dns_zones": {
+      "name": "ibm_dns_zones",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "DNS service data sources",
+      "args": [
+        {
+          "name": "instance_id",
+          "description": "(Required, String) The ID of the private DNS service instance.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "dns_zones",
+          "description": "A List of zones that you added to your private DNS service instance.",
+          "args": [
+            {
+              "name": "zones_id",
+              "description": "The ID of the zone.",
+              "args": []
+            },
+            {
+              "name": "instance_id",
+              "description": "The ID of the private DNS service instance where you added the zone.",
+              "args": []
+            },
+            {
+              "name": "description",
+              "description": "The description of the zone.",
+              "args": []
+            },
+            {
+              "name": "name",
+              "description": "The name of the zone.",
+              "args": []
+            },
+            {
+              "name": "label",
+              "description": "The label of the zone.",
+              "args": []
+            },
+            {
+              "name": "created_on",
+              "description": "The date and time when the zone was added to the private DNS service instance.",
+              "args": []
+            },
+            {
+              "name": "modified_on",
+              "description": "The date and time when the zone was updated.",
+              "args": []
+            },
+            {
+              "name": "state",
+              "description": "The state of the zone.",
+              "args": []
+            }
+          ]
+        }
+      ]
+    },
     "ibm_firewall": {
       "name": "ibm_firewall",
       "type": "resource",
@@ -7769,7 +7877,7 @@
             },
             {
               "name": "kind",
-              "description": "(Required, String) The type of action. You can find supported kinds in the [IBM Cloud Functions docs](/docs/openwhisk?topic=cloud-functions-runtimes).",
+              "description": "(Required, String) The type of action. You can find supported kinds in the [IBM Cloud Functions docs](/docs/openwhisk?topic=openwhisk-runtimes).",
               "args": []
             },
             {
@@ -8131,6 +8239,117 @@
               "args": []
             }
           ]
+        }
+      ]
+    },
+    "ibm_iam_access_group_policy": {
+      "name": "ibm_iam_access_group_policy",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Identity & Access (IAM) resources",
+      "args": [
+        {
+          "name": "access_group_id",
+          "description": "(Required, String) The ID of the access group.",
+          "args": []
+        },
+        {
+          "name": "resources",
+          "description": "(Optional, List) A nested block describing the resource of this policy.",
+          "args": [
+            {
+              "name": "service",
+              "description": "(Optional, String) The service name that you want to include in your policy definition. For account management services, you can find supported values in the [documentation](/docs/iam?topic=iam-account-services#api-acct-mgmt). For other services, run the `ibmcloud catalog service-marketplace` command and retrieve the value from the **Name** column of your CLI output.",
+              "args": []
+            },
+            {
+              "name": "resource_instance_id",
+              "description": "(Optional, String) The ID of resource instance of the policy definition.",
+              "args": []
+            },
+            {
+              "name": "region",
+              "description": "(Optional, String) The region of the policy definition.",
+              "args": []
+            },
+            {
+              "name": "resource_type",
+              "description": "(Optional, String) The resource type of the policy definition.",
+              "args": []
+            },
+            {
+              "name": "resource",
+              "description": "(Optional, String) The resource of the policy definition.",
+              "args": []
+            },
+            {
+              "name": "attributes",
+              "description": "(Optional, Map) Set resource attributes in the form of `name=value,name=value`.  If you set this option, do not specify `account_management` at the same time.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "account_management",
+          "description": "(Optional, Boolean) Gives access to all account management services if set to `true`. Default value `false`. If you set this option, do not specify `resources` at the same time.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, Array of Strings) A list of tags that you want to add to the access group policy. Tags are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier of the access group policy. The ID is composed of `<access_group_id>/<access_group_policy_id>`.",
+          "args": []
+        },
+        {
+          "name": "version",
+          "description": "The version of the access group policy.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_iam_custom_role": {
+      "name": "ibm_iam_custom_role",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Identity & Access (IAM) resources",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, String) The name of the custom role.",
+          "args": []
+        },
+        {
+          "name": "display_name",
+          "description": "(Required, String) The display name of the custom role.",
+          "args": []
+        },
+        {
+          "name": "description",
+          "description": "(Optional, String) The description of the custom role. Make sure to include information about the level of access this role assignment gives a user.",
+          "args": []
+        },
+        {
+          "name": "actions",
+          "description": "(Required, Array of strings) A list of action IDs that you want to add to your custom role. The action IDs vary by service. To retrieve supported action IDs, follow the [documentation](/docs/iam?topic=iam-custom-roles) to create the custom role from the UI.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The ID of the custom role.",
+          "args": []
+        },
+        {
+          "name": "crn",
+          "description": "The CRN of the custom role.",
+          "args": []
         }
       ]
     },
@@ -10829,6 +11048,11 @@
           "args": []
         },
         {
+          "name": "pi_pin_policy",
+          "description": "(Optional, String) Select the pinning policy for your Power Systems Virtual Server instance. Supported values are `soft`, `hard`, and `none`. You can choose to soft pin (`soft`) or hard pin (`hard`) a virtual server to the physical host where it runs. When you soft pin an instance for high availability, the instance automatically migrates back to the original host once the host is back to its operating state. If the instance has a licensing restriction with the host, the hard pin option restricts the movement of the instance during remote restart, automated remote restart, DRO, and live partition migration. The default pinning policy is `none`.",
+          "args": []
+        },
+        {
           "name": "pi_processors",
           "description": "(Required, Float) The number of vCPUs to assign to the VM (as visibile within the guest operating system).",
           "args": []
@@ -10907,6 +11131,11 @@
           ]
         },
         {
+          "name": "id",
+          "description": "The unique identifier of the instance. The ID is composed of `<power_instance_id>/<instance_id>`.",
+          "args": []
+        },
+        {
           "name": "instance_id",
           "description": "The unique identifier of the instance.",
           "args": []
@@ -10949,6 +11178,11 @@
         {
           "name": "max_memory",
           "description": "The maximum amount of memory that can be allocated to the instance without shutting down or rebotting the LPAR.",
+          "args": []
+        },
+        {
+          "name": "pin_policy",
+          "description": "The pinning policy of the instance.",
           "args": []
         }
       ]
