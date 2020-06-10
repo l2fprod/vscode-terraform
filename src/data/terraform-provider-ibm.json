@@ -416,6 +416,174 @@
         }
       ]
     },
+    "ibm_cis_rate_limit": {
+      "name": "ibm_cis_rate_limit",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Internet Services data sources",
+      "args": [
+        {
+          "name": "cis_id",
+          "description": "(Required, String) The ID of the IBM Cloud Internet Services instance where you created the rate limiting rule.",
+          "args": []
+        },
+        {
+          "name": "domain_id",
+          "description": "(Required, String) The ID of the domain where you created the rate limiting rule.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The record ID of the rate limiting rule in the format `<rule_ID>:<domain_ID>:<cis_ID>`.",
+          "args": []
+        },
+        {
+          "name": "rule_id",
+          "description": "The ID of the rate limiting rule.",
+          "args": []
+        },
+        {
+          "name": "threshold",
+          "description": "The number of requests received within a specific time period (`period`) before connections to the domain are refused. The threshold value can be between 2 and 1000000.",
+          "args": []
+        },
+        {
+          "name": "period",
+          "description": "The period of time in seconds where incoming requests to a domain are counted. If the number of requests exceeds the `threshold`, then connections to the domain are refused. The `period` value can be between 1 and 3600.",
+          "args": []
+        },
+        {
+          "name": "match",
+          "description": "A list of characteristics that incoming network traffic must match to be counted towards the `threshold`.",
+          "args": [
+            {
+              "name": "request",
+              "description": "A list of characteristics that the incoming request must match to be counted towards the `threshold`. If no list is provided, all incoming requests are counted towards the `threshold`.",
+              "args": [
+                {
+                  "name": "url",
+                  "description": "The URL that the request uses. Wildcard domains are expanded to match applicable traffic, query strings are not matched. If `*` is returned, the rule is applied to all URLs. The maximum length of this value can be 1024.",
+                  "args": []
+                },
+                {
+                  "name": "schemes",
+                  "description": "The scheme of the request that determines the desired protocol. Supported values are `HTTPS`, `HTTP,HTTPS`, and `ALL`.",
+                  "args": []
+                },
+                {
+                  "name": "methods",
+                  "description": "The HTTP methods that the incoming request can use to be counted towards the `threshold`. Supported values are `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD`, and `ALL`. You can also combine multiple methods and separate them with a comma. For example `POST,PUT`.",
+                  "args": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "response",
+          "description": "A list of HTTP responses that outgoing packets must match before they can be returned to the client. If an incoming request matches the request criteria, but the reponse does not match the response criteria, then the request packet is not counted towards the `threshold`.",
+          "args": [
+            {
+              "name": "status",
+              "description": "The HTTP status code that the response must have so that the request is counted towards the `threshold`. The value can be between 100 and 999.",
+              "args": []
+            },
+            {
+              "name": "header",
+              "description": "A list of HTTP response headers that the response packet must match so that the original request is counted towards the `threshold`.",
+              "args": [
+                {
+                  "name": "name",
+                  "description": "The name of the HTTP response header.",
+                  "args": []
+                },
+                {
+                  "name": "op",
+                  "description": "The operator that applied to your HTTP response header. Supported values are `eq` (equals) and `ne` (not equals).",
+                  "args": []
+                },
+                {
+                  "name": "value",
+                  "description": "The value that the HTTP response header must match.",
+                  "args": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "action",
+          "description": "A list of actions that you want to perform when incoming requests exceed the specified `threshold`.",
+          "args": [
+            {
+              "name": "mode",
+              "description": "The type of action that you want to perform. Supported values are `simulate`, `ban`, `challenge`, or `js_challenge`. For more information about each type, see [Configure response](/docs/cis?topic=cis-cis-rate-limiting#rate-limiting-configure-response).",
+              "args": []
+            },
+            {
+              "name": "timeout",
+              "description": "The time to wait in seconds before the action is performed. The timeout must be equal to or greater than the `period` and is valid only for actions of type `simulate` or `ban`. The value can be between 10 and 86400.",
+              "args": []
+            },
+            {
+              "name": "response",
+              "description": "A list of information that you want to return to the client, such as the `content-type` and specific body information. The information provided in this parameter overrides the default HTML error page that is returned to the client. This option is valid only for actions of type `simulate` or `ban`.",
+              "args": [
+                {
+                  "name": "content_type",
+                  "description": "The `content-type` of the body that you want to return. Supported values are `text/plain`, `text/xml`, and `application/json`.",
+                  "args": []
+                },
+                {
+                  "name": "body",
+                  "description": "The body of the reponse that you want to return to the client. The information must match the `action.response.content_type` that you specified. The value can have a maximum length of 1024.",
+                  "args": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "disabled",
+          "description": "If set to **true**, rate limiting is disabled for the domain.",
+          "args": []
+        },
+        {
+          "name": "description",
+          "description": "The description for your rate limiting rule.",
+          "args": []
+        },
+        {
+          "name": "correlate",
+          "description": "If provided, NAT-based rate limiting is enabled.",
+          "args": [
+            {
+              "name": "by",
+              "description": "If set to `nat`, NAT-based rate limiting is enabled.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "bypass",
+          "description": "A list of key-value pairs that, when matched, allow the rate limiting rule to be ignored.",
+          "args": [
+            {
+              "name": "name",
+              "description": "The name of the key that you want to apply. Supported values are `url`.",
+              "args": []
+            },
+            {
+              "name": "value",
+              "description": "The value of the key that you want to match. When `bypass.name` is set to `url`, `bypass.value` contains the URL that you want to exclude from the rate limiting rule.",
+              "args": []
+            }
+          ]
+        }
+      ]
+    },
     "ibm_compute_bare_metal": {
       "name": "ibm_compute_bare_metal",
       "type": "data",
@@ -5393,6 +5561,163 @@
         }
       ]
     },
+    "ibm_cis_rate_limit": {
+      "name": "ibm_cis_rate_limit",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Internet services resources",
+      "args": [
+        {
+          "name": "cis_id",
+          "description": "(Required, String) The ID of the IBM Cloud Internet Services instance.",
+          "args": []
+        },
+        {
+          "name": "domain_id",
+          "description": "(Required, String) The ID of the domain where you want to add a rate limit.",
+          "args": []
+        },
+        {
+          "name": "threshold",
+          "description": "(Required, Integer) The number of requests received within a specific time period (`period`) before connections to the domain are refused. The threshold value must be between 2 and 1000000.",
+          "args": []
+        },
+        {
+          "name": "period",
+          "description": "(Required, Integer) The period of time in seconds where incoming requests to a domain are counted. If the number of requests exceeds the `threshold`, then connections to the domain are refused. The `period` value must be between 1 and 3600.",
+          "args": []
+        },
+        {
+          "name": "match",
+          "description": "(Optional, List of matching rules) A list of characteristics that incoming network traffic must match to be counted towards the `threshold`.",
+          "args": [
+            {
+              "name": "request",
+              "description": "(Optional, List of request characteristics) A list of characteristics that the incoming request must match to be counted towards the `threshold`. If this list is not provided, all incoming requests are counted towards the `threshold`.",
+              "args": [
+                {
+                  "name": "url",
+                  "description": "(Optional, String) The URL that the request uses. Wildcard domains are expanded to match applicable traffic, query strings are not matched. You can use `*` to apply the rule to all URLs. The maximum length of this value can be 1024.",
+                  "args": []
+                },
+                {
+                  "name": "schemes",
+                  "description": "(Optional, Set of strings) The scheme of the request that determines the desired protocol. Supported values are `HTTPS`, `HTTP,HTTPS`, and `ALL`.",
+                  "args": []
+                },
+                {
+                  "name": "methods",
+                  "description": "(Optional, Set of strings) The HTTP methods that the incoming request can use to be counted towards the `threshold`. Supported values are `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD`, and `ALL`. You can also combine multiple methods and seperate them with a comma. For example `POST,PUT`.",
+                  "args": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "response",
+          "description": "(Optional, List of HTTP responses) A list of HTTP responses that outgoing packets must match before they can be returned to the client. If an incoming request matches the request criteria, but the reponse does not match the response criteria, then the request packet is not counted towards the `threshold`.",
+          "args": [
+            {
+              "name": "status",
+              "description": "(Optional, Set of integers) The HTTP status that the response must have so that the request is counted towards the `threshold`. You can specify one (`403`) or multiple (`401,403`) HTTP response codes. The value that you enter must be between 100 and 999.",
+              "args": []
+            },
+            {
+              "name": "header",
+              "description": "(Optional, List of response headers) A list of HTTP response headers that the response packet must match so that the original request is counted towards the `threshold`.",
+              "args": [
+                {
+                  "name": "name",
+                  "description": "(Optional, String) The name of the HTTP response header.",
+                  "args": []
+                },
+                {
+                  "name": "op",
+                  "description": "(Optional, String) The operator that you want to apply to your HTTP response header. Supported values are `eq` (equals) and `ne` (not equals).",
+                  "args": []
+                },
+                {
+                  "name": "value",
+                  "description": "(Optional, String) The value that the HTTP response header must match.",
+                  "args": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "action",
+          "description": "(Required, List of actions) A list of actions that you want to perform when incoming requests exceed the specified `threshold`.",
+          "args": [
+            {
+              "name": "mode",
+              "description": "(Required, String) The type of action that you want to perform. Supported values are `simulate`, `ban`, `challenge`, or `js_challenge`. For more information about each type, see [Configure response](/docs/cis?topic=cis-cis-rate-limiting#rate-limiting-configure-response).",
+              "args": []
+            },
+            {
+              "name": "timeout",
+              "description": "(Optional, Integer) The time to wait in seconds before the action is performed. The timeout must be equal or greater than the `period` and can be provided only for actions of type `simulate` or `ban`. The value that you enter must be between 10 and 86400.",
+              "args": []
+            },
+            {
+              "name": "response",
+              "description": "(Optional, List of reponse information) A list of information that you want to return to the client, such as the `content-type` and specific body information. The information provided in this parameter overrides the default HTML error page that is returned to the client. You can use this option only for actions of type `simulate` or `ban`.",
+              "args": [
+                {
+                  "name": "content_type",
+                  "description": "(Optional, String) The `content-type` of the body that you want to return. Supported values are `text/plain`, `text/xml`, and `application/json`.",
+                  "args": []
+                },
+                {
+                  "name": "body",
+                  "description": "(Optional, String) The body of the reponse that you want to return to the client. The information that you provide must match the `action.response.content_type` that you specified. The value that you enter can have a maximum length of 1024.",
+                  "args": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "disabled",
+          "description": "(Optional, Boolean) Set to **true** to disable rate limiting for a domain and **false** to enable rate limiting.",
+          "args": []
+        },
+        {
+          "name": "description",
+          "description": "(Optional, String) Enter a description for your rate limiting rule.",
+          "args": []
+        },
+        {
+          "name": "correlate",
+          "description": "(Optional, List of NAT-based rate limits) Enable NAT-based rate limiting.",
+          "args": [
+            {
+              "name": "by",
+              "description": "(Optional, String) Enter `nat` to enable NAT-based rate limiting.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "bypass",
+          "description": "(Optional, List of bypass criteria) A list of key-value pairs that, when matched, allow the rate limiting rule to be ignored. For example, use this option if you want to ignore the rate limiting for certain URLs.",
+          "args": [
+            {
+              "name": "name",
+              "description": "(Optional, String) The name of the key that you want to apply. Supported values are `url`.",
+              "args": []
+            },
+            {
+              "name": "value",
+              "description": "(Optional, String) The value of the key that you want to match. When `bypass.name` is set to `url`, `bypass.value` must be set to the URL that you want to exclude from the rate limiting rule.",
+              "args": []
+            }
+          ]
+        }
+      ],
+      "attrs": []
+    },
     "ibm_compute_autoscale_group": {
       "name": "ibm_compute_autoscale_group",
       "type": "resource",
@@ -9909,51 +10234,6 @@
         }
       ]
     },
-    "ibm_is_route": {
-      "name": "ibm_is_route",
-      "type": "resource",
-      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 1 compute)",
-      "args": [
-        {
-          "name": "name",
-          "description": "(Required, String) The name of the route.",
-          "args": []
-        },
-        {
-          "name": "vpc",
-          "description": "(Required, String) The ID of the VPC.",
-          "args": []
-        },
-        {
-          "name": "zone",
-          "description": "(Required, String) The name of the VPC zone where you want to create the route.",
-          "args": []
-        },
-        {
-          "name": "destination",
-          "description": "(Required, String) The destionation IP address of the route.",
-          "args": []
-        },
-        {
-          "name": "next_hop",
-          "description": "(Required, String) The next hop of the route.",
-          "args": []
-        }
-      ],
-      "attrs": [
-        {
-          "name": "id",
-          "description": "The ID of the route. The id is composed of `<vpc_id>/<vpc_route_id>`.",
-          "args": []
-        },
-        {
-          "name": "status",
-          "description": "The status of the VPC route.",
-          "args": []
-        }
-      ]
-    },
     "ibm_is_security_group": {
       "name": "ibm_is_security_group",
       "type": "resource",
@@ -10588,6 +10868,51 @@
         {
           "name": "has_subnets",
           "description": "Indicates whether subnets exist with addresses from this prefix.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_is_vpc_route": {
+      "name": "ibm_is_vpc_route",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, String) The name of the route that you want to create.",
+          "args": []
+        },
+        {
+          "name": "vpc",
+          "description": "(Requied, String) The ID of the VPC where you want to create the route.",
+          "args": []
+        },
+        {
+          "name": "zone",
+          "description": "(Required, String) The name of the VPC zone where you want to create the route.",
+          "args": []
+        },
+        {
+          "name": "destination",
+          "description": "(Required, String) The destination IP address or CIDR that network traffic from your VPC must match to be routed to the `next_hop`.",
+          "args": []
+        },
+        {
+          "name": "next_hop",
+          "description": "(Required, String) The IP address where network traffic is sent next.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The ID of the VPC route. The ID is composed of `<vpc_id>/<vpc_route_id>`.",
+          "args": []
+        },
+        {
+          "name": "status",
+          "description": "The status of the VPC route.",
           "args": []
         }
       ]
