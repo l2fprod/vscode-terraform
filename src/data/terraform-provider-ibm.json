@@ -487,7 +487,7 @@
           "args": [
             {
               "name": "status",
-              "description": "The HTTP status code that the response must have so that the request is counted towards the `threshold`. The value can be between 100 and 999.",
+              "description": "The HTTP status code that the response must have so that the request is counted towards the `threshold`. The value can be between 100 and 999. If you want to use multiple response codes, you must separate them with a comma, such as `401,403`.",
               "args": []
             },
             {
@@ -2807,6 +2807,11 @@
               "args": []
             },
             {
+              "name": "zone",
+              "description": "The zone that the subnet belongs to.",
+              "args": []
+            },
+            {
               "name": "status",
               "description": "The status of the subnet.",
               "args": []
@@ -4944,6 +4949,11 @@
           "args": []
         },
         {
+          "name": "key_algorithm",
+          "description": "(Optional, String) The encryption algorithm key that you want to use for your certificate. Supported values are `rsaEncryption 2048 bit`, and `rsaEncryption 4096 bit`. If you do not provide an algorithm, `rsaEncryption 2048 bit` is used by default.",
+          "args": []
+        },
+        {
           "name": "dns_provider_instance_crn",
           "description": "(Optional, String) The CRN-based instance ID of the IBM Cloud Internet Services instance that manages the domains. If not present, Certificate Manager assumes that a `v4` or above Callback URL notifications channel with domain validation exists.",
           "args": []
@@ -5195,7 +5205,7 @@
         },
         {
           "name": "waf",
-          "description": "(Optional, String) Allowed values: `off`, `on`.",
+          "description": "(Optional, String) Enable a web application firewall (WAF). Supported values are `off` and `on`.",
           "args": []
         },
         {
@@ -5215,12 +5225,102 @@
         },
         {
           "name": "opportunistic_encryption",
-          "description": "(Optional, String) Allowed values: `off`, and `on`.",
+          "description": "(Optional, String) Supported values are `off` and `on`.",
           "args": []
         },
         {
           "name": "cname_flattening",
-          "description": "(Optional, String) Allowed values: `flatten_at_root`, `flatten_all`, and `flatten_none`.",
+          "description": "(Optional, String) Supported values are `flatten_at_root`, `flatten_all`, and `flatten_none`.",
+          "args": []
+        },
+        {
+          "name": "always_use_https",
+          "description": "(Optional, String) Supported values are `off` and `on`.",
+          "args": []
+        },
+        {
+          "name": "ipv6",
+          "description": "(Optional, String) Supported values are `off` and `on`.",
+          "args": []
+        },
+        {
+          "name": "browser_check",
+          "description": "(Optional, String) Enable a client browser check to look for common HTTP headers that are used by malicious users. If HTTP headers are found,  access to your website is blocked. Supported values are `off` and `on`.",
+          "args": []
+        },
+        {
+          "name": "hotlink_protection",
+          "description": "(Optional, String) Supported values are `off` and `on`.",
+          "args": []
+        },
+        {
+          "name": "http2",
+          "description": "(Optional, String) Supported values are `off` and `on`.",
+          "args": []
+        },
+        {
+          "name": "image_load_optimization",
+          "description": "(Optional, String) Supported values are `off` and `on`.",
+          "args": []
+        },
+        {
+          "name": "image_size_optimization",
+          "description": "(Optional, String) Supported values are `lossless`,  `off`, and `lossy`.",
+          "args": []
+        },
+        {
+          "name": "ip_geolocation",
+          "description": "(Optional, String) Supported values are `off` and `on`.",
+          "args": []
+        },
+        {
+          "name": "origin_error_page_pass_thru",
+          "description": "(Optional, String) Supported values are `off` and `on`.",
+          "args": []
+        },
+        {
+          "name": "brotli",
+          "description": "(Optional, String) Supported values are `off` and `on`.",
+          "args": []
+        },
+        {
+          "name": "pseudo_ipv4",
+          "description": "(Optional, String) Supported values are `overwrite_header`, `off`, and `add_header`.",
+          "args": []
+        },
+        {
+          "name": "prefetch_preload",
+          "description": "(Optional, String) Supported values are `off` and `on`.",
+          "args": []
+        },
+        {
+          "name": "response_buffering",
+          "description": "(Optional, String) Supported values are `off` and `on`.",
+          "args": []
+        },
+        {
+          "name": "script_load_optimization",
+          "description": "(Optional, String) Supported values are `off` and `on`.",
+          "args": []
+        },
+        {
+          "name": "server_side_exclude",
+          "description": "(Optional, String) Supported values are `off` and `on`.",
+          "args": []
+        },
+        {
+          "name": "tls_client_auth",
+          "description": "(Optional, String) Supported values are `off` and `on`.",
+          "args": []
+        },
+        {
+          "name": "true_client_ip_header",
+          "description": "(Optional, String) Supported values are `off` and `on`.",
+          "args": []
+        },
+        {
+          "name": "websockets",
+          "description": "(Optional, String) Supported values are `off` and `on`.",
           "args": []
         }
       ],
@@ -9142,7 +9242,7 @@
         },
         {
           "name": "encryption_algorithm",
-          "description": "(Required, String) Enter the algorithm that you want to use to encrypt data. Available options are: `3des`, `aes128`, or `aes256`.",
+          "description": "(Required, String) Enter the algorithm that you want to use to encrypt data. Available options are: `triple_des`, `aes128`, or `aes256`.",
           "args": []
         },
         {
@@ -9586,7 +9686,7 @@
         },
         {
           "name": "encryption_algorithm",
-          "description": "(Required, String) Enter the algorithm that you want to use to encrypt data. Available options are: `3des`, `aes128`, or `aes256`.",
+          "description": "(Required, String) Enter the algorithm that you want to use to encrypt data. Available options are: `triple_des`, `aes128`, or `aes256`.",
           "args": []
         },
         {
