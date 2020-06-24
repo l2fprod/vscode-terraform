@@ -2234,6 +2234,87 @@
         }
       ]
     },
+    "ibm_iam_role_actions": {
+      "name": "ibm_iam_role_actions",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Identity & Access (IAM) data sources",
+      "args": [
+        {
+          "name": "service",
+          "description": "(Required, String) The name of the IBM Cloud service for which you want to list supported actions. For account management services, you can find supported values in the [documentation](/docs/iam?topic=iam-account-services#api-acct-mgmt). For other services, run the `ibmcloud catalog service-marketplace` command and retrieve the value from the **Name** column of your CLI output.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier of the service.",
+          "args": []
+        },
+        {
+          "name": "manager",
+          "description": "A list of supported actions that require the **Manager** service access role.",
+          "args": []
+        },
+        {
+          "name": "reader",
+          "description": "A list of supported actions that require the **Reader** service access role.",
+          "args": []
+        },
+        {
+          "name": "reader_plus",
+          "description": "A list of supported actions that require the **Reader plus** service access role.",
+          "args": []
+        },
+        {
+          "name": "writer",
+          "description": "A list of supported actions that require the **Writer** service access role.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_iam_roles": {
+      "name": "ibm_iam_roles",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Identity & Access (IAM) data sources",
+      "args": [
+        {
+          "name": "service",
+          "description": "(Required, String) The name of the IBM Cloud service for which you want to list supported IAM roles. For account management services, you can find supported values in the [documentation](/docs/iam?topic=iam-account-services#api-acct-mgmt). For other services, run the `ibmcloud catalog service-marketplace` command and retrieve the value from the **Name** column of your CLI output.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The ID of your IBM Cloud account.",
+          "args": []
+        },
+        {
+          "name": "roles",
+          "description": "A list of supported IAM service access, platform, and custom roles for an IBM Cloud service.",
+          "args": [
+            {
+              "name": "name",
+              "description": "The name of the role.",
+              "args": []
+            },
+            {
+              "name": "description",
+              "description": "The description of the role.",
+              "args": []
+            },
+            {
+              "name": "type",
+              "description": "The type of role. Supported values are `service`, `platform`, and `custom`.",
+              "args": []
+            }
+          ]
+        }
+      ]
+    },
     "ibm_iam_service_id": {
       "name": "ibm_iam_service_id",
       "type": "data",
@@ -4046,6 +4127,11 @@
         {
           "name": "output_values",
           "description": "A list of Terraform output values that were exported for the workspace. All map entries are listed as key-value pairs.",
+          "args": []
+        },
+        {
+          "name": "output_json",
+          "description": "The output values of a Schematics workspace in JSON format.",
           "args": []
         },
         {
@@ -7251,8 +7337,18 @@
           ]
         },
         {
+          "name": "cos_instance_crn",
+          "description": "(Required for VPC Gen 2 {{site.data.keyword.openshiftlong_notm}} clusters only, String) The CRN ID of a standard IBM Cloud Object Storage service instance to back up the internal registry of your cluster. To list the CRN of existing instances, run `ibmcloud resource service-instances --long` and find the **ID** of your object storage instance. To create a standard object storage instance, run `ibmcloud resource service-instance-create cloud-object-storage standard global` and note its **ID**.",
+          "args": []
+        },
+        {
           "name": "disable_public_service_endpoint",
           "description": "(Optional, Boolean) Disable the public service endpoint to prevent public access to the Kubernetes master. Default value 'true’.",
+          "args": []
+        },
+        {
+          "name": "entitlement",
+          "description": "(Optional, String) If you purchased an IBM Cloud Cloud Pak that includes an entitlement to run worker nodes that are installed with OpenShift Container Platform, enter `cloud_pak` to create your cluster with that entitlement so that you are not charged twice for the OpenShift license. Note that this option can be set only when you create the cluster. After the cluster is created, the cost for the OpenShift license occurred and you cannot disable this charge.",
           "args": []
         },
         {
@@ -7604,6 +7700,32 @@
       "groupName": "Object Storage resources",
       "args": [
         {
+          "name": "activity_tracking",
+          "description": "(Optional, Object to enable auditing with {{site.data.keyword.cloudaccesstrailfull_notm}}) Configure your {{site.data.keyword.cloudaccesstrailfull_notm}} service instance and the type of events that you want to send to your service to audit activity against your bucket. For a list of supported actions, see [Bucket actions](/docs/cloud-object-storage?topic=cloud-object-storage-at-events#at-actions-mngt-2).",
+          "args": [
+            {
+              "name": "read_data_events",
+              "description": "(Required, Boolean) If set to **true**, all read events against a bucket are sent to your {{site.data.keyword.cloudaccesstrailfull_notm}} service instance.",
+              "args": []
+            },
+            {
+              "name": "write_data_events",
+              "description": "(Required, Boolean) If set to **true**, all write events against a bucket are sent to your {{site.data.keyword.cloudaccesstrailfull_notm}} service instance.",
+              "args": []
+            },
+            {
+              "name": "activity_tracker_crn",
+              "description": "(Required, String) The CRN of your {{site.data.keyword.cloudaccesstrailfull_notm}} service instance that you want to send your events to. This value is required only when you configure your instance for the first time.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "allowed_ip",
+          "description": "(Optional, Array of strings) A list of IPv4 or IPv6 addresses in CIDR notation that you want to allow access to your IBM Cloud Object Storage bucket.",
+          "args": []
+        },
+        {
           "name": "bucket_name",
           "description": "(Required, String) The name of the bucket.",
           "args": []
@@ -7617,6 +7739,22 @@
           "name": "key_protect",
           "description": "(Optional, String) The CRN of the IBM Key Protect instance where your root key is stored. You use this root key to encrypt data that is sent and stored in IBM Cloud Object Storage. Before you can enable IBM Key Protect encryption, you must provision an instance of IBM Key Protect and authorize the service to access IBM Cloud Object Storage. For more information, see [Server-Side Encryption with IBM Key Protect or Hyper Protect Crypto Services (SSE-KP)](/docs/services/cloud-object-storage?topic=cloud-object-storage-encryption#encryption-kp).",
           "args": []
+        },
+        {
+          "name": "metrics_monitoring",
+          "description": "(Optional, Object to enable metrics tracking with {{site.data.keyword.mon_full_notm}}) Set up your {{site.data.keyword.mon_full_notm}} service instance to receive metrics for your IBM Cloud Object Storage bucket.",
+          "args": [
+            {
+              "name": "usage_metrics_enabled",
+              "description": "(Optional, Boolean) If set to **true**, all metrics are sent to your {{site.data.keyword.mon_full_notm}} service instance.",
+              "args": []
+            },
+            {
+              "name": "metrics_monitoring_crn",
+              "description": "(Required, String) The CRN of the {{site.data.keyword.mon_full_notm}} service instance that you want to send metrics to. This value is required only when you configure your instance for the first time.",
+              "args": []
+            }
+          ]
         },
         {
           "name": "resource_instance_id",
@@ -10314,8 +10452,19 @@
       "attrs": [
         {
           "name": "floating_ip",
-          "description": "A collection of floating IP addresses that are bound to the public gateway. Every floating IP address is listed with the floating IP `id` and `address`.",
-          "args": []
+          "description": "A list of floating IP addresses that are assigned to the public gateway.",
+          "args": [
+            {
+              "name": "id",
+              "description": "The unique identifier that was assigned to the floating IP address.",
+              "args": []
+            },
+            {
+              "name": "address",
+              "description": "The IP address that was assigned to the public gatway.",
+              "args": []
+            }
+          ]
         },
         {
           "name": "id",
@@ -10788,7 +10937,7 @@
         },
         {
           "name": "encryption_key",
-          "description": "(Optional, String) The key to use for encrypting this volume.",
+          "description": "(Optional, String) The key to use for encrypting this volume. This parameter is supported in VPC Gen 1 only.",
           "args": []
         },
         {
@@ -10800,14 +10949,14 @@
           "name": "resource_controller_url",
           "description": "(Optional, String) The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance.",
           "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, List of strings) A list of tags that you want to add to your volume. Tags can help you find your volume more easily later.",
+          "args": []
         }
       ],
       "attrs": [
-        {
-          "name": "tags",
-          "description": "A list of tags that you want to add to your volume. Tags can help you find your volume more easily later.",
-          "args": []
-        },
         {
           "name": "id",
           "description": "The unique identifier of the volume.",
