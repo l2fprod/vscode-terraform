@@ -1804,6 +1804,11 @@
           "args": []
         },
         {
+          "name": "connectionstrings",
+          "description": "List of connection strings by userid for the database. For information about how to use connection strings, see the [documentation](/docs/databases-for-postgresql?topic=databases-for-postgresql-connection-strings). The results are returned in pairs of the userid and string: `connectionstrings.1.name = admin connectionstrings.1.string = postgres://admin:$PASSWORD@12345aa1-1111-1111-a1aa-a1aaa11aa1a1.a1a1a111a1a11a1a111a111a1a111a111.databases.appdomain.cloud:32554/ibmclouddb?sslmode=verify-full`",
+          "args": []
+        },
+        {
           "name": "whitelist",
           "description": "A list of whitelisted IP addresses or ranges.",
           "args": []
@@ -4723,90 +4728,6 @@
         }
       ]
     },
-    "ibm_authorization_policy": {
-      "name": "ibm_authorization_policy",
-      "type": "resource",
-      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "Identity & Access (IAM) resources",
-      "args": [
-        {
-          "name": "source_service_name",
-          "description": "(Required, String) The source service name.",
-          "args": []
-        },
-        {
-          "name": "target_service_name",
-          "description": "(Required, String) The target service name.",
-          "args": []
-        },
-        {
-          "name": "roles",
-          "description": "(Required, List) A comma separated list of roles.",
-          "args": []
-        },
-        {
-          "name": "source_resource_instance_id",
-          "description": "(Optional, String) The source resource instance ID.",
-          "args": []
-        },
-        {
-          "name": "target_resource_instance_id",
-          "description": "(Optional, String) The target resource instance ID.",
-          "args": []
-        },
-        {
-          "name": "source_resource_type",
-          "description": "(Optional, String) The resource type of the source service.",
-          "args": []
-        },
-        {
-          "name": "target_resource_type",
-          "description": "(Optional, String) The resource type of the target service.",
-          "args": []
-        },
-        {
-          "name": "source_resource_group_id",
-          "description": "(Optional, String) The ID of the resource group from which you want to allow access to IBM Cloud services in another resource group.",
-          "args": []
-        },
-        {
-          "name": "target_resource_group_id",
-          "description": "(Optional, String) The ID of the resource group that holds the IBM Cloud services that you want to allow access to.",
-          "args": []
-        },
-        {
-          "name": "source_service_account",
-          "description": "(Optional, String) The GUID of the account where the source service is provisioned.",
-          "args": []
-        }
-      ],
-      "attrs": [
-        {
-          "name": "id",
-          "description": "The unique identifier of the authorization policy.",
-          "args": []
-        },
-        {
-          "name": "version",
-          "description": "The version of the authorization policy.",
-          "args": []
-        }
-      ]
-    },
-    "ibm_authorization_policy_detach": {
-      "name": "ibm_authorization_policy_detach",
-      "type": "resource",
-      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "Identity & Access (IAM) resources",
-      "args": [
-        {
-          "name": "authorization_policy_id",
-          "description": "(Required, String) The authorization policy ID.",
-          "args": []
-        }
-      ],
-      "attrs": []
-    },
     "ibm_cdn": {
       "name": "ibm_cdn",
       "type": "resource",
@@ -6335,7 +6256,48 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "datacenter",
+          "description": "(Required, String) The data center in which the dedicated host resides.",
+          "args": []
+        },
+        {
+          "name": "hostname",
+          "description": "(Required, String) The host name of dedicated host.",
+          "args": []
+        },
+        {
+          "name": "domain",
+          "description": "(Required, String) The domain of dedicated host..",
+          "args": []
+        },
+        {
+          "name": "router_hostname",
+          "description": "(Required, String) The hostname of the primary router associated with the dedicated host.",
+          "args": []
+        },
+        {
+          "name": "hourly_billing",
+          "description": "(Optional, Boolean) The billing type for the host. When set to `true`, the dedicated host is billed on hourly usage. Otherwise, the dedicated host is billed on a monthly basis. The default value is `true`.",
+          "args": []
+        },
+        {
+          "name": "flavor",
+          "description": "(Optional, String) The flavor of dedicated host. Default value `56_CORES_X_242_RAM_X_1_4_TB`. [Log in to the IBM-Cloud Infrastructure (SoftLayer) API to see available flavor types](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/813/getItems.json). Use your API as the password to log in. Log in and find the key called `keyName`.",
+          "args": []
+        },
+        {
+          "name": "wait_time_minutes",
+          "description": "(Optional, Integer) The duration, expressed in minutes, to wait for the dedicated host to become available before declaring it as created. The default value is `90`.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, Array of String) Tags associated with the dedicated host.",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_compute_monitor": {
@@ -6343,7 +6305,43 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "guest_id",
+          "description": "(Required, Integer) The ID of the virtual guest you want to monitor.",
+          "args": []
+        },
+        {
+          "name": "ip_address",
+          "description": "(Optional, String) The IP address you want to monitor.",
+          "args": []
+        },
+        {
+          "name": "query_type_id",
+          "description": "(Required, Integer) The ID of the query type.",
+          "args": []
+        },
+        {
+          "name": "response_action_id",
+          "description": "(Required,, Integer) The ID of the response action to take if the monitor fails. Accepted values are `1` or `2`.",
+          "args": []
+        },
+        {
+          "name": "wait_cycles",
+          "description": "(Optional, Integer) The number of five-minute cycles to wait before the response action is taken.",
+          "args": []
+        },
+        {
+          "name": "notified_users",
+          "description": "(Optional, Array of Integers) The list of user IDs that will be notified.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, Array of Integers) Tags associated with the monitoring instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_compute_placement_group": {
@@ -6351,7 +6349,33 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, String) The descriptive name used to identify a placement group.",
+          "args": []
+        },
+        {
+          "name": "datacenter",
+          "description": "(Required, String) The datacenter in which you want to provision the placement group.",
+          "args": []
+        },
+        {
+          "name": "pod",
+          "description": "(Required, String) The data center pod where you want to create the placement group. To find the pod, run `ibmcloud sl placement-group create-options` and select one of the **Backend Router ID** for the data center where you want to create the placement group.",
+          "args": []
+        },
+        {
+          "name": "rule",
+          "description": "(Optional, String) The rule of the placement group. Default `SPREAD`.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, Array of Strings) Tags associated with the placement group.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_compute_provisioning_hook": {
@@ -6375,7 +6399,28 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "certificate",
+          "description": "(Required, String) The certificate provided publicly to clients requesting identity credentials.",
+          "args": []
+        },
+        {
+          "name": "intermediate_certificate",
+          "description": "(Optional, String) The certificate from the intermediate certificate authority, or chain certificate, that completes the chain of trust. Required when clients only trust the root certificate.",
+          "args": []
+        },
+        {
+          "name": "private_key",
+          "description": "(Required, String) The private key in the key/certificate pair.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, Array of Strings) Tags associated with the security certificates instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_compute_user": {
@@ -6896,7 +6941,7 @@
         },
         {
           "name": "entitlement",
-          "description": "(Optional, String) If you purchased an IBM Cloud Cloud Pak that includes an entitlement to run worker nodes that are installed with OpenShift Container Platform, enter `cloud_pak` to create your cluster with that entitlement so that you are not charged twice for the {{site.data.keyword.openshiftshort}} license. Note that this option can be set only when you create the cluster. After the cluster is created, the cost for the {{site.data.keyword.openshiftshort}} license occurred and you cannot disable this charge.",
+          "description": "(Optional, String) If you purchased an IBM Cloud Cloud Pak that includes an entitlement to run worker nodes that are installed with OpenShift Container Platform, enter `entitlement` to create your cluster with that entitlement so that you are not charged twice for the {{site.data.keyword.openshiftshort}} license. Note that this option can be set only when you create the cluster. After the cluster is created, the cost for the {{site.data.keyword.openshiftshort}} license occurred and you cannot disable this charge.",
           "args": []
         },
         {
@@ -6945,8 +6990,18 @@
           "args": []
         },
         {
+          "name": "private_vlan_id",
+          "description": "(Optional, String) The ID of the private VLAN that you want to use for your worker nodes. You can retrieve the VLAN ID with the `ibmcloud ks vlans --zone <zone>` command. </br></br> * **Free clusters**: If you want to provision a free cluster, you do not need to enter a private VLAN ID. Your cluster is automatically connected to a private VLAN that is owned by IBM. </br> * **Standard clusters**: If you create a standard cluster and you have an existing private VLAN ID for the zone where you plan to set up worker nodes, you must enter the VLAN ID. To retrieve the ID, run `ibmcloud ks vlans --zone <zone>`. If you do not have an existing private VLAN ID, do not specify this option. A private VLAN is created automatically for you.",
+          "args": []
+        },
+        {
           "name": "resource_group_id",
           "description": "(Optional, String) The ID of the resource group where you want to provision your cluster. To retrieve the ID, use the  `ibm_resource_group` data source. If no value is provided, the cluster is automatically provisioned into the `default` resource group.",
+          "args": []
+        },
+        {
+          "name": "subnet_id",
+          "description": "(Optional, String) The ID of an existing subnet that you want to use for your worker nodes. To find existing subnets, run `ibmcloud ks subnets`.",
           "args": []
         },
         {
@@ -6957,11 +7012,6 @@
         {
           "name": "update_all_workers",
           "description": "(Optional, Boolean) If set to **true**, the Kubernetes version of the worker nodes is updated along with the Kubernetes version of the cluster that you specify in `kube_version`.",
-          "args": []
-        },
-        {
-          "name": "wait_time_minutes",
-          "description": "(Optional, Integer) The number of minutes to wait for the cluster to become available before declaring it as created. You can also use this option to specify the number of minutes to wait for no active transactions before an update or deletion of the cluster is performed. If this option is not specified, `90` is used by default.",
           "args": []
         },
         {
@@ -7209,6 +7259,11 @@
           "name": "reload_workers",
           "description": "(Optional, Boolean) If set to **true**, your worker nodes are reloaded after the feature is enabled. If set to **false**, no reload of the worker nodes is performed.",
           "args": []
+        },
+        {
+          "name": "resource_group_id",
+          "description": "(Optional, String) The ID of the resource group that your cluster belongs to. You can retrieve the resource group by using the `ibm_resource_group` data source.",
+          "args": []
         }
       ],
       "attrs": [
@@ -7337,18 +7392,8 @@
           ]
         },
         {
-          "name": "cos_instance_crn",
-          "description": "(Required for VPC Gen 2 {{site.data.keyword.openshiftlong_notm}} clusters only, String) The CRN ID of a standard IBM Cloud Object Storage service instance to back up the internal registry of your cluster. To list the CRN of existing instances, run `ibmcloud resource service-instances --long` and find the **ID** of your object storage instance. To create a standard object storage instance, run `ibmcloud resource service-instance-create cloud-object-storage standard global` and note its **ID**.",
-          "args": []
-        },
-        {
           "name": "disable_public_service_endpoint",
           "description": "(Optional, Boolean) Disable the public service endpoint to prevent public access to the Kubernetes master. Default value 'true’.",
-          "args": []
-        },
-        {
-          "name": "entitlement",
-          "description": "(Optional, String) If you purchased an IBM Cloud Cloud Pak that includes an entitlement to run worker nodes that are installed with OpenShift Container Platform, enter `cloud_pak` to create your cluster with that entitlement so that you are not charged twice for the OpenShift license. Note that this option can be set only when you create the cluster. After the cluster is created, the cost for the OpenShift license occurred and you cannot disable this charge.",
           "args": []
         },
         {
@@ -7379,6 +7424,11 @@
         {
           "name": "tags",
           "description": "(Optional, Array of strings) A list of tags that you want to associate with your VPC cluster. **Note**: For users on account to add tags to a resource, they must be assigned the [appropriate permissions](/docs/resources?topic=resources-access).",
+          "args": []
+        },
+        {
+          "name": "cos_instance_crn",
+          "description": "(Optional, String) Required for OpenShift clusters only. The standard cloud object storage instance CRN to back up the internal registry in your OpenShift on VPC Gen 2 cluster.",
           "args": []
         },
         {
@@ -7537,6 +7587,11 @@
           "name": "resource_group_id",
           "description": "(Optional, String) The ID of the resource group. To retrieve the ID, run `ibmcloud resource groups` or use the `ibm_resource_group` data source. If no value is provided, the `default` resource group is used.",
           "args": []
+        },
+        {
+          "name": "entitlement",
+          "description": "(Optional, String) The {{site.data.keyword.openshiftshort}} cluster entitlement avoids incurred OCP license charges and use cloud pak with OCP licence entitlement to add the {{site.data.keyword.openshiftshort}} cluster worker pool. **Note** <ul><li> It is set as one time creation of the worker pool. There is no impacts on any modification.</li><li> Set the argument to `entitlement` only when you use cluster with a cloud pak that has an {{site.data.keyword.openshiftshort}} entitlement </li></ul>",
+          "args": []
         }
       ],
       "attrs": [
@@ -7565,7 +7620,7 @@
         },
         {
           "name": "entitlement",
-          "description": "(Optional, String) If you purchased an IBM Cloud Cloud Pak that includes an entitlement to run worker nodes that are installed with OpenShift Container Platform, enter `cloud_pak` to create your worker pool with that entitlement so that you are not charged twice for the {{site.data.keyword.openshiftshort}} license. Note that this option can be set only when you create the worker pool. After the worker pool is created, the cost for the {{site.data.keyword.openshiftshort}} license automatically occures when you add worker nodes to your worker pool.",
+          "description": "(Optional, String) If you purchased an IBM Cloud Cloud Pak that includes an entitlement to run worker nodes that are installed with OpenShift Container Platform, enter `entitlement` to create your worker pool with that entitlement so that you are not charged twice for the {{site.data.keyword.openshiftshort}} license. ** Note ** that this option can be set only when you create the worker pool. After the worker pool is created, the cost for the {{site.data.keyword.openshiftshort}} license automatically occures when you add worker nodes to your worker pool.",
           "args": []
         },
         {
@@ -7678,6 +7733,11 @@
           "name": "worker_pool",
           "description": "(Required, String) The name or ID of the worker pool to which you want to add a zone.",
           "args": []
+        },
+        {
+          "name": "zone",
+          "description": "(Required, String) The name of the zone that you want to attach to the worker pool. To list available zones, run `ibmcloud ks zones`.",
+          "args": []
         }
       ],
       "attrs": [
@@ -7737,7 +7797,7 @@
         },
         {
           "name": "key_protect",
-          "description": "(Optional, String) The CRN of the IBM Key Protect instance where your root key is stored. You use this root key to encrypt data that is sent and stored in IBM Cloud Object Storage. Before you can enable IBM Key Protect encryption, you must provision an instance of IBM Key Protect and authorize the service to access IBM Cloud Object Storage. For more information, see [Server-Side Encryption with IBM Key Protect or Hyper Protect Crypto Services (SSE-KP)](/docs/services/cloud-object-storage?topic=cloud-object-storage-encryption#encryption-kp).",
+          "description": "(Optional, String) The CRN of the IBM Key Protect instance where your root key is stored. You use this root key to encrypt data that is sent and stored in IBM Cloud Object Storage. Before you can enable IBM Key Protect encryption, you must provision an instance of IBM Key Protect and authorize the service to access IBM Cloud Object Storage. For more information, see [Server-Side Encryption with IBM Key Protect or Hyper Protect Crypto Services (SSE-KP)](/docs/cloud-object-storage?topic=cloud-object-storage-encryption#encryption-kp).",
           "args": []
         },
         {
@@ -7962,7 +8022,7 @@
         },
         {
           "name": "connectionstrings",
-          "description": "A list of connection strings for the database for each user ID. For more information about how to use connection strings, see the [documentation](/docs/services/databases-for-postgresql?topic=databases-for-postgresql-connection-strings). The results are returned in pairs of the userid and string: `connectionstrings.1.name = admin connectionstrings.1.string = postgres://admin:$PASSWORD@79226bd4-4076-4873-b5ce-b1dba48ff8c4.b8a5e798d2d04f2e860e54e5d042c915.databases.appdomain.cloud:32554/ibmclouddb?sslmode=verify-full` Individual string parameters can be retrieved using Terraform variables and outputs `connectionstrings.x.hosts.x.port` and `connectionstrings.x.hosts.x.host`",
+          "description": "A list of connection strings for the database for each user ID. For more information about how to use connection strings, see the [documentation](/docs/databases-for-postgresql?topic=databases-for-postgresql-connection-strings). The results are returned in pairs of the userid and string: `connectionstrings.1.name = admin connectionstrings.1.string = postgres://admin:$PASSWORD@79226bd4-4076-4873-b5ce-b1dba48ff8c4.b8a5e798d2d04f2e860e54e5d042c915.databases.appdomain.cloud:32554/ibmclouddb?sslmode=verify-full` Individual string parameters can be retrieved using Terraform variables and outputs `connectionstrings.x.hosts.x.port` and `connectionstrings.x.hosts.x.host`",
           "args": []
         }
       ]
@@ -7972,7 +8032,23 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, String) The domain's name, including the top-level domain. For example, \"example.com\". When the domain is created, proper `NS` and `SOA` records are created automatically for the domain.",
+          "args": []
+        },
+        {
+          "name": "target",
+          "description": "(Optional, String) The primary target IP address to which the domain resolves. When the domain is created, an `A` record with a host value of `@` and a data-target value of the IP address are provided and associated with the new domain",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, Array of Strings) Tags associated with the DNS domain instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_dns_domain_registration_nameservers": {
@@ -8100,7 +8176,98 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "data",
+          "description": "(Required, String) The IP address or a hostname of a domain's resource record. Fully qualified host and domain name data must end with the `.` character.",
+          "args": []
+        },
+        {
+          "name": "domain_id",
+          "description": "(Required, Integer) The ID for the domain associated with the resource record.",
+          "args": []
+        },
+        {
+          "name": "expire",
+          "description": "(Optional, Integer) The duration, expressed in seconds, that a secondary name server (or servers) holds a zone before it is no longer considered authoritative.",
+          "args": []
+        },
+        {
+          "name": "host",
+          "description": "(Required, String) The host defined by a resource record. The `@` symbol denotes a wildcard.",
+          "args": []
+        },
+        {
+          "name": "minimum_ttl",
+          "description": "(Optional, Integer) The duration, expressed in seconds, that a domain's resource records are valid. This is also known as a minimum time to live (TTL), and can be overridden by an individual resource record's TTL.",
+          "args": []
+        },
+        {
+          "name": "mx_priority",
+          "description": "(Optional, Integer) The priority of the mail exchanger that delivers mail for a domain. This is useful in cases where a domain has more than one mail exchanger. A lower number denotes a higher priority, and mail will attempt to deliver through the highest priority exchanger before moving to lower priority exchangers. The default value is `0`.",
+          "args": []
+        },
+        {
+          "name": "refresh",
+          "description": "(Optional, Integer) The duration, expressed in seconds, that a secondary name server waits to check the domain's primary name server for a new copy of a DNS zone. If a zone file has changed, the secondary DNS server updates its copy of the zone to match the primary DNS server's zone.",
+          "args": []
+        },
+        {
+          "name": "responsible_person",
+          "description": "(Required, String) The email address of the person responsible for a domain. Replace the `@` symbol in the address with a `.`. For example: root@example.org would be expressed as `root.example.org.`.",
+          "args": []
+        },
+        {
+          "name": "retry",
+          "description": "(Optional, Integer) The duration, expressed in seconds, that the domain's primary name server (or servers) waits before attempting to refresh the domain's zone with the secondary name server. A failed attempt to refresh by a secondary name server triggers the retry action.",
+          "args": []
+        },
+        {
+          "name": "ttl",
+          "description": "(Required, Integer) The time to live (TTL) duration, expressed in seconds, of a resource record. A name server uses TTL to determine how long to cache a resource record. An SOA record's TTL value defines the domain's overall TTL.",
+          "args": []
+        },
+        {
+          "name": "type",
+          "description": "(Required, String) The type of domain resource record. Accepted values are as follows: `a` for address records, `aaaa` for address records, `cname` for canonical name records, `mx` for mail exchanger records, `ptr` for pointer records in reverse domains, `spf` for sender policy framework records, `srv` for service records.",
+          "args": []
+        },
+        {
+          "name": "txt",
+          "description": "(Optional, String) Used for text records.",
+          "args": []
+        },
+        {
+          "name": "service",
+          "description": "(Required, String) `SRV` records only. The symbolic name of the service.",
+          "args": []
+        },
+        {
+          "name": "protocol",
+          "description": "(Required, String) `SRV` records only. The protocol of the service that you want to use, such as `TCP` or `UDP`.",
+          "args": []
+        },
+        {
+          "name": "port",
+          "description": "(Required, Integer) `SRV` records only. The TCP or UDP port on which the service will be found.",
+          "args": []
+        },
+        {
+          "name": "priority",
+          "description": "(Required, Integer) `SRV` records only. The priority of the target host. The lowest numerical value is given the highest priority. The default value is `0`.",
+          "args": []
+        },
+        {
+          "name": "weight",
+          "description": "(Required, Integer) `SRV` records only. A relative weight for records that have the same priority. The default value is `0`.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, Array of Strings) Tags associated with the DNS domain record instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_dns_resource_record": {
@@ -8244,7 +8411,23 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "ipaddress",
+          "description": "(Required, String) The IP address or a hostname of a domain's resource record.",
+          "args": []
+        },
+        {
+          "name": "hostname",
+          "description": "(Required, String) The host defined by a reverse record.",
+          "args": []
+        },
+        {
+          "name": "ttl",
+          "description": "(Optional, Integer) The time to live (TTL) duration, expressed in seconds, of a resource record. Default value is 604800 seconds.",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_dns_secondary": {
@@ -8252,7 +8435,28 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "zone_name",
+          "description": "(Required, String) The name of the zone that is transferred.",
+          "args": []
+        },
+        {
+          "name": "transfer_frequency",
+          "description": "(Required, Integer) Signifies how often a secondary DNS zone should be transferred in minutes.",
+          "args": []
+        },
+        {
+          "name": "master_ip_address",
+          "description": "(Required, String) The IP address of the master name server where a secondary DNS zone is transferred from.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, Array of Strings) Tags associated with the DNS secondary instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_dns_zone": {
@@ -8376,7 +8580,28 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "firewall_type",
+          "description": "(Optional, String) Specifies the type of firewall to create. Valid options are HARDWARE_FIREWALL_DEDICATED or FORTIGATE_SECURITY_APPLIANCE. Defaults to HARDWARE_FIREWALL_DEDICATED",
+          "args": []
+        },
+        {
+          "name": "ha_enabled",
+          "description": "(Required, Boolean) Specifies whether the local load balancer needs to be HA-enabled.",
+          "args": []
+        },
+        {
+          "name": "public_vlan_id",
+          "description": "(Required, Integer) The target public VLAN ID that you want the firewall to protect. You can find accepted values [here](https://cloud.ibm.com/classic/network/vlans). Click the VLAN that you want to use and note the ID number in the resulting URL. You can also refer to a VLAN by name using a data source.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, Array of Strings) Set tags on the firewall. Permitted characters include: A-Z, 0-9, whitespace, `_` (underscore), `-` (hyphen), `.` (period), and `:` (colon). All other characters are removed.",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_firewall_policy": {
@@ -8384,7 +8609,69 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "firewall_id",
+          "description": "(Required, Integer) The device ID for the target hardware firewall.",
+          "args": []
+        },
+        {
+          "name": "rules",
+          "description": "(Required, Array) The firewall rules. At least one rule is required.",
+          "args": [
+            {
+              "name": "action",
+              "description": "(Required, String) Specifies whether traffic is allowed when rules are matched. Accepted values are `permit` or `deny`.",
+              "args": []
+            },
+            {
+              "name": "src_ip_address",
+              "description": "(Required, String) Specifies either a specific IP address or the network address for a specific subnet.",
+              "args": []
+            },
+            {
+              "name": "src_ip_cidr",
+              "description": "(Required, String) Specifies the standard CIDR notation for the selected source. `32` implements the rule for a single IP while, for example, `24` implements the rule for 256 IPs.",
+              "args": []
+            },
+            {
+              "name": "dst_ip_address",
+              "description": "(Required, String) Accepted values are `any`, a specific IP address, or the network address for a specific subnet.",
+              "args": []
+            },
+            {
+              "name": "dst_ip_cidr",
+              "description": "(Required, String) Specifies the standard CIDR notation for the selected destination.",
+              "args": []
+            },
+            {
+              "name": "dst_port_range_start",
+              "description": "(Optional, String) The start of the range of ports for TCP and UDP. Accepted values are `1`-`65535`.",
+              "args": []
+            },
+            {
+              "name": "dst_port_range_end",
+              "description": "(Optional, String) The end of the range of ports for TCP and UDP. Accepted values are `1`-`65535`.",
+              "args": []
+            },
+            {
+              "name": "notes",
+              "description": "(Optional, Strings) Descriptive text about the rule.",
+              "args": []
+            },
+            {
+              "name": "protocol",
+              "description": "(Required, String) The protocol for the rule. Accepted values are `tcp`,`udp`,`icmp`,`gre`,`pptp`,`ah`, or `esp`.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, Array of Strings) Tags associated with the firewall policy instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_function_action": {
@@ -8817,6 +9104,11 @@
           "args": []
         },
         {
+          "name": "roles",
+          "description": "(Required, List) A comma separated list of roles. Valid roles are `Writer`, `Reader`, `Manager`, `Administrator`, `Operator`, `Viewer`, and `Editor`.",
+          "args": []
+        },
+        {
           "name": "resources",
           "description": "(Optional, List) A nested block describing the resource of this policy.",
           "args": [
@@ -8843,6 +9135,11 @@
             {
               "name": "resource",
               "description": "(Optional, String) The resource of the policy definition.",
+              "args": []
+            },
+            {
+              "name": "resource_group_id",
+              "description": "(Optional, String) The ID of the resource group. To retrieve the ID, run `ibmcloud resource groups` or use the `ibm_resource_group` data source.",
               "args": []
             },
             {
@@ -8875,6 +9172,90 @@
           "args": []
         }
       ]
+    },
+    "ibm_iam_authorization_policy": {
+      "name": "ibm_iam_authorization_policy",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Identity & Access (IAM) resources",
+      "args": [
+        {
+          "name": "source_service_name",
+          "description": "(Required, String) The source service name.",
+          "args": []
+        },
+        {
+          "name": "target_service_name",
+          "description": "(Required, String) The target service name.",
+          "args": []
+        },
+        {
+          "name": "roles",
+          "description": "(Required, List) A comma separated list of roles.",
+          "args": []
+        },
+        {
+          "name": "source_resource_instance_id",
+          "description": "(Optional, String) The source resource instance ID.",
+          "args": []
+        },
+        {
+          "name": "target_resource_instance_id",
+          "description": "(Optional, String) The target resource instance ID.",
+          "args": []
+        },
+        {
+          "name": "source_resource_type",
+          "description": "(Optional, String) The resource type of the source service.",
+          "args": []
+        },
+        {
+          "name": "target_resource_type",
+          "description": "(Optional, String) The resource type of the target service.",
+          "args": []
+        },
+        {
+          "name": "source_resource_group_id",
+          "description": "(Optional, String) The ID of the resource group from which you want to allow access to IBM Cloud services in another resource group.",
+          "args": []
+        },
+        {
+          "name": "target_resource_group_id",
+          "description": "(Optional, String) The ID of the resource group that holds the IBM Cloud services that you want to allow access to.",
+          "args": []
+        },
+        {
+          "name": "source_service_account",
+          "description": "(Optional, String) The GUID of the account where the source service is provisioned.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier of the authorization policy.",
+          "args": []
+        },
+        {
+          "name": "version",
+          "description": "The version of the authorization policy.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_iam_authorization_policy_detach": {
+      "name": "ibm_iam_authorization_policy_detach",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Identity & Access (IAM) resources",
+      "args": [
+        {
+          "name": "authorization_policy_id",
+          "description": "(Required, String) The authorization policy ID.",
+          "args": []
+        }
+      ],
+      "attrs": []
     },
     "ibm_iam_custom_role": {
       "name": "ibm_iam_custom_role",
@@ -9390,7 +9771,7 @@
         },
         {
           "name": "key_lifetime",
-          "description": "(Optional, Integer) Enter the time in seconds that your encyrption key can be used before it expires. You must enter a number between 300 and 86400. If you do not specify this option, 28800 seconds is used.",
+          "description": "(Optional, Integer) Enter the time in seconds that your encryption key can be used before it expires. You must enter a number between 300 and 86400. If you do not specify this option, 28800 seconds is used.",
           "args": []
         },
         {
@@ -9829,7 +10210,7 @@
         },
         {
           "name": "key_lifetime",
-          "description": "(Optional, Integer) Enter the time in seconds that your encyrption key can be used before it expires. You must enter a number between 300 and 86400. If you do not specify this option, 3600 seconds is used.",
+          "description": "(Optional, Integer) Enter the time in seconds that your encryption key can be used before it expires. You must enter a number between 300 and 86400. If you do not specify this option, 3600 seconds is used.",
           "args": []
         },
         {
@@ -9888,6 +10269,11 @@
           "args": []
         },
         {
+          "name": "subnets",
+          "description": "(Required, Array) List of the subnets IDs to connect to the load balancer.",
+          "args": []
+        },
+        {
           "name": "type",
           "description": "(Optional, String) The type of the load balancer. Default value `public`. Supported values `public` and `private`.",
           "args": []
@@ -9899,7 +10285,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, List of strings) A list of tags that you want to add to your load balancer. Tags can help you find the load balanacer more easily later.",
+          "description": "(Optional, Array of strings) A list of tags that you want to add to your load balancer. Tags can help you find the load balancer more easily later.",
           "args": []
         }
       ],
@@ -10051,6 +10437,11 @@
         {
           "name": "target_id",
           "description": "(Optional, Integer) When `action` is set to **forward**, specify the ID of the load balancer pool that the load balancer forwards network traffic to.",
+          "args": []
+        },
+        {
+          "name": "target_http_status_code",
+          "description": "(Optional, Integer) When `action` is set to **redirect**, specify the HTTP response code that must be returned in the redirect response. Supported values are `301`, `302`, `303`, `307`, and `308`.",
           "args": []
         },
         {
@@ -10445,8 +10836,24 @@
         },
         {
           "name": "resource_group",
-          "description": "(Optional, String) Enter the ID of the resource group where you want to create the public gatewat. To list available resource groups, run `ibmcloud resource groups`. If you do not specify a resource group, the public gateway is created in the `default` resource group.",
+          "description": "(Optional, String) Enter the ID of the resource group where you want to create the public gateway. To list available resource groups, run `ibmcloud resource groups`. If you do not specify a resource group, the public gateway is created in the `default` resource group.",
           "args": []
+        },
+        {
+          "name": "floating_ip",
+          "description": "(Optional, List) A list of floating IP addresses that you want to assign to the public gateway.",
+          "args": [
+            {
+              "name": "id",
+              "description": "(Optional, String) The unique identifier of the floating IP address. If you specify this parameter, do not specify `floating_ip.address` at the same time.",
+              "args": []
+            },
+            {
+              "name": "address",
+              "description": "(Optional, String) The floating IP address. If you specify this parameter, do not specify `floating_ip.id` at the same time.",
+              "args": []
+            }
+          ]
         }
       ],
       "attrs": [
@@ -10469,11 +10876,6 @@
         {
           "name": "id",
           "description": "The unique identifier that was assigned to your public gateway.",
-          "args": []
-        },
-        {
-          "name": "resource_controller_url",
-          "description": "The URL of the IBM Cloud dashboard that you can use to explore and view details about the public gateway.",
           "args": []
         },
         {
@@ -10694,7 +11096,7 @@
         },
         {
           "name": "direction",
-          "description": "(Requried, String) The direction of the traffic either `inbound` or `outbound`.",
+          "description": "(Required, String) The direction of the traffic either `inbound` or `outbound`.",
           "args": []
         },
         {
@@ -10789,14 +11191,14 @@
           "name": "resource_group",
           "description": "(Optional, String) The resource group ID where the SSH is created.",
           "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(A list of tags that you want to add to your SSH key. Tags can help you find the SSH key more easily later., List of strings) No",
+          "args": []
         }
       ],
       "attrs": [
-        {
-          "name": "tags",
-          "description": "A list of tags that you want to add to your SSH key. Tags can help you find the SSH key more easily later.",
-          "args": []
-        },
         {
           "name": "id",
           "description": "The ID of the SSH key.",
@@ -10937,7 +11339,7 @@
         },
         {
           "name": "encryption_key",
-          "description": "(Optional, String) The key to use for encrypting this volume. This parameter is supported in VPC Gen 1 only.",
+          "description": "(Optional, String) The key to use for encrypting this volume.",
           "args": []
         },
         {
@@ -10952,7 +11354,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, List of strings) A list of tags that you want to add to your volume. Tags can help you find your volume more easily later.",
+          "description": "(A list of tags that you want to add to your volume. Tags can help you find your volume more easily later., List of strings) No",
           "args": []
         }
       ],
@@ -11366,7 +11768,43 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "connections",
+          "description": "(Required, Integer) The number of connections for the local load balancer. Only incremental upgrade is supported . For downgrade, please open the softlayer support ticket.",
+          "args": []
+        },
+        {
+          "name": "datacenter",
+          "description": "(Required, String) The data center for the local load balancer.",
+          "args": []
+        },
+        {
+          "name": "ha_enabled",
+          "description": "(Required, Boolean) Specifies whether the local load balancer must be HA-enabled.",
+          "args": []
+        },
+        {
+          "name": "security_certificate_id",
+          "description": "(Optional, Integer) The ID of the security certificate associated with the local load balancer.",
+          "args": []
+        },
+        {
+          "name": "dedicated",
+          "description": "(Optional, Boolean) Specifies whether the local load balancer must be dedicated. The default value is `false`.",
+          "args": []
+        },
+        {
+          "name": "ssl_offload",
+          "description": "(Optional, Boolean) Specifies the local load balancer SSL offload. If `true` start SSL acceleration on all SSL virtual services (those with a type of HTTPS). This action should be taken only after configuring an SSL certificate for the virtual IP. If `false` stop SSL acceleration on all SSL virtual services (those with a type of HTTPS). The default value is `false`.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, Array of Strings) Tags associated with the local load balancer instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_lb_service": {
@@ -11374,7 +11812,43 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "service_group_id",
+          "description": "(Required, Integer) The ID of the local load balancer service group.",
+          "args": []
+        },
+        {
+          "name": "ip_address_id",
+          "description": "(Required, Integer) The ID of the virtual server.",
+          "args": []
+        },
+        {
+          "name": "port",
+          "description": "(Required, Integer) The port for the local load balancer service.",
+          "args": []
+        },
+        {
+          "name": "enabled",
+          "description": "(Required, Integer) Specifies whether you want to enable the load balancer service. The default value is `false`.",
+          "args": []
+        },
+        {
+          "name": "health_check_type",
+          "description": "(Required, String) The health check type for the load balancer service.",
+          "args": []
+        },
+        {
+          "name": "weight",
+          "description": "(Required, Integer) The weight for the load balancer service.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, Arrya of Strings) Tags associated with the local load balancer service instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_lb_service_group": {
@@ -11382,7 +11856,43 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "load_balancer_id",
+          "description": "(Required, Integer) The ID of the local load balancer.",
+          "args": []
+        },
+        {
+          "name": "allocation",
+          "description": "(Required, Integer) The connection allocation for the load balancer service group.",
+          "args": []
+        },
+        {
+          "name": "port",
+          "description": "(Required, Integer) The port for the local load balancer service group.",
+          "args": []
+        },
+        {
+          "name": "routing_method",
+          "description": "(Required, String) The routing method for the load balancer group. For example, `CONSISTENT_HASH_IP`.",
+          "args": []
+        },
+        {
+          "name": "routing_type",
+          "description": "(Required, String) The routing type for the group.",
+          "args": []
+        },
+        {
+          "name": "timeout",
+          "description": "(Optional, Integer) The timeout value for connections from remote clients to the load balancer. Timeout values are only valid for HTTP service groups.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, Array of Strings) Tags associated with the local load balancer service group instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_lb_vpx": {
@@ -11390,7 +11900,58 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "datacenter",
+          "description": "(Required, String) The data center in which you want to provision the VPX load balancer. You can find accepted values in the [data center docs](http://www.softlayer.com/data-centers).",
+          "args": []
+        },
+        {
+          "name": "speed",
+          "description": "(Required, Integer) The speed, expressed in Mbps. Accepted values are `10`, `200`, and `1000`.",
+          "args": []
+        },
+        {
+          "name": "version",
+          "description": "(Required, String) The VPX load balancer version. Accepted values are `10.1`, `10.5`, `11.0`, `11.1` and `12.1`.",
+          "args": []
+        },
+        {
+          "name": "plan",
+          "description": "(Required, String) The VPX load balancer plan. Accepted values are `Standard` and `Platinum`.",
+          "args": []
+        },
+        {
+          "name": "ip_count",
+          "description": "(Required, Integer) The number of static public IP addresses assigned to the VPX load balancer. Accepted values are `1`,`2`, `4`, `8`, and `16`.",
+          "args": []
+        },
+        {
+          "name": "public_vlan_id",
+          "description": "(Optional, Integer) The public VLAN ID that is used for the public network interface of the VPX load balancer. You can find accepted values in the [VLAN docs](https://cloud.ibm.com/classic/network/vlans) by clicking the VLAN that you want to use and noting the ID in the resulting URL. You can also refer to a VLAN by name using a data source.",
+          "args": []
+        },
+        {
+          "name": "private_vlan_id",
+          "description": "(Optional, Integer) The private VLAN ID that is used for the private network interface of the VPX load balancer. You can find accepted values in the [VLAN docs](https://cloud.ibm.com/classic/network/vlans) by clicking the VLAN that you want to use and noting the ID in the resulting URL. You can also refer to a VLAN by name using a data source.",
+          "args": []
+        },
+        {
+          "name": "public_subnet",
+          "description": "(Optional, String) The public subnet that is used for the public network interface of the VPX load balancer. Accepted values are primary public networks. You can find accepted values in the [subnet docs](https://cloud.ibm.com/classic/network/subnets).",
+          "args": []
+        },
+        {
+          "name": "private_subnet",
+          "description": "(Optional, String) Public subnet that is used for the private network interface of the VPX load balancer. Accepted values are primary private networks. You can find accepted values in the [subnet docs](https://cloud.ibm.com/classic/network/subnets).",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, Array of strings) Tags associated with the VPX load balancer instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_lb_vpx_ha": {
@@ -11398,7 +11959,28 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "primary_id",
+          "description": "(Required, String) The ID of the primary NetScaler VPX.",
+          "args": []
+        },
+        {
+          "name": "secondary_id",
+          "description": "(Required, String) The ID of the secondary NetScaler VPX.",
+          "args": []
+        },
+        {
+          "name": "stay_secondary",
+          "description": "(Optional, Boolean) Specifies whether the secondary NetScaler VPX will  take over the service. Set this argument to `true` to prevent the secondary NetScaler VPX from taking over the service even if the primary NetScaler VPX fails. For additional details, see the [Citrix NetScaler docs](https://docs.citrix.com/en-us/netscaler/10-5/ns-system-wrapper-10-con/ns-nw-ha-intro-wrppr-con/ns-nw-ha-frcng-scndry-nd-sty-scndry-tsk.html) and the [Citrix support docs](https://support.citrix.com/article/CTX116748). The default value is `false`.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, Array of strings) Tags associated with the high availability NetScale VPX pair instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_lb_vpx_service": {
@@ -11406,7 +11988,53 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, String) The ID of the VPX load balancer service.",
+          "args": []
+        },
+        {
+          "name": "vip_id",
+          "description": "(Required, String) The ID of the VPX load balancer virtual IP address to which the service is assigned.",
+          "args": []
+        },
+        {
+          "name": "destination_ip_address",
+          "description": "(Required, String) The IP address of the server to which traffic directs. If you use NetScaler VPX 10.1, you must indicate a public IP address in an IBM Cloud Classic Infrastructure (SoftLayer) account. If you use NetScaler VPX 10.5, you can use any IP address.",
+          "args": []
+        },
+        {
+          "name": "destination_port",
+          "description": "(Required, Integer) The destination port of the server to which traffic directs.",
+          "args": []
+        },
+        {
+          "name": "weight",
+          "description": "(Required, Integer) The percentage of the total connection limit allocated to the load balancer between all your services. See the [IBM Cloud Classic Infrastructure (SoftLayer) API docs](http://sldn.softlayer.com/reference/datatypes/SoftLayer_Network_LoadBalancer_Service) for details.       **NOTE**: If you use NetScaler VPX 10.5, the weight value is ignored.",
+          "args": []
+        },
+        {
+          "name": "connection_limit",
+          "description": "(Required, Integer) The connection limit for this service. Acceptable values are `0`-`4294967294`. See the [Citrix NetScaler docs](https://docs.citrix.com/en-us/netscaler/11/reference/netscaler-command-reference/basic/service.html) for details.",
+          "args": []
+        },
+        {
+          "name": "health_check",
+          "description": "(Required, String) The health check type. See the [IBM Cloud Classic Infrastructure (SoftLayer) API docs](http://sldn.softlayer.com/reference/datatypes/SoftLayer_Network_LoadBalancer_Service) for details.",
+          "args": []
+        },
+        {
+          "name": "usip",
+          "description": "(Optional, String) Whether the service reports the source IP of the client to the service being load balanced. Acceptable values are `YES` or `NO`. The default value is `NO`. See the [Citrix NetScaler docs](https://developer-docs.citrix.com/projects/netscaler-nitro-api/en/11.0/configuration/basic/service/service) for more details.       **NOTE**: This argument is only available for VPX 10.5.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, Array of strings) Tags associated with the VPX load balancer service instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_lb_vpx_vip": {
@@ -11414,7 +12042,53 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, String) The ID of the VPX load balancer virtual IP address.",
+          "args": []
+        },
+        {
+          "name": "nad_controller_id",
+          "description": "(Required, Integer) The ID of the VPX load balancer that the virtual IP address is assigned to.",
+          "args": []
+        },
+        {
+          "name": "load_balancing_method",
+          "description": "(Required, String) See the [IBM Cloud Classic Infrastructure (SoftLayer) API docs](http://sldn.softlayer.com/reference/datatypes/SoftLayer_Network_LoadBalancer_VirtualIpAddress) for available methods. If you use NetScaler VPX 10.5, see the [Citrix docs](https://docs.citrix.com/en-us/netscaler/10-5/ns-tmg-wrapper-10-con/ns-lb-wrapper-con-10/ns-lb-customizing-lbalgorithms-wrapper-con.html) for additional methods that you can use.",
+          "args": []
+        },
+        {
+          "name": "persistence",
+          "description": "(Optional, String) Applies to NetScaler VPX 10.5 only. See the available persistence types in the [Citrix docs](https://docs.citrix.com/en-us/netscaler/10-5/ns-tmg-wrapper-10-con/ns-lb-wrapper-con-10/ns-lb-persistence-wrapper-con/ns-lb-persistence-about-con.html).",
+          "args": []
+        },
+        {
+          "name": "virtual_ip_address",
+          "description": "(Required, String) The public IP address for the VPX load balancer virtual IP.",
+          "args": []
+        },
+        {
+          "name": "source_port",
+          "description": "(Required, Integer) The source port for the VPX load balancer virtual IP address.",
+          "args": []
+        },
+        {
+          "name": "type",
+          "description": "(Required, String) The connection type for the VPX load balancer virtual IP address. Accepted values are `HTTP`, `FTP`, `TCP`, `UDP`, `DNS`, and `SSL`. If you set the type to `SSL`, then `security_certificate_id` provides certification for SSL offload services.",
+          "args": []
+        },
+        {
+          "name": "security_certificate_id",
+          "description": "(Optional, Integer) Applies to NetScaler VPX 10.5 only. The ID of a security certificate you want to use. This argument provides security certification for SSL offload services. For additional information, see the  [ibm_compute_ssl_certificate resource](#ssl-compute-cert).",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, Array of strings) Tags associated with the VPX load balancer virtual IP instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_lbaas": {
@@ -11422,7 +12096,89 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, String) The load balancer's name.",
+          "args": []
+        },
+        {
+          "name": "description",
+          "description": "(Optional, String) A description of the load balancer.",
+          "args": []
+        },
+        {
+          "name": "type",
+          "description": "(Optional, String) Specify whether this load balancer is a public or internal facing load balancer. Accepted values are `PUBLIC` or `PRIVATE`. The default is 'PUBLIC'.",
+          "args": []
+        },
+        {
+          "name": "subnets",
+          "description": "(Required, Array) The subnet where the load balancer will be provisioned. Only one subnet is supported.",
+          "args": []
+        },
+        {
+          "name": "protocols",
+          "description": "(Optional, Array) A nested block describing the protocols assigned to load balancer.",
+          "args": [
+            {
+              "name": "frontend_protocol",
+              "description": "(Required, String) The frontend protocol. Accepted values are 'TCP', 'HTTP', and 'HTTPS'.",
+              "args": []
+            },
+            {
+              "name": "frontend_port",
+              "description": "(Required, Integer) The frontend protocol port number. The port number must be in the range of 1-65535.",
+              "args": []
+            },
+            {
+              "name": "backend_protocol",
+              "description": "(Required, String) The backend protocol. Accepted values are 'TCP', 'HTTP', and 'HTTPS'.",
+              "args": []
+            },
+            {
+              "name": "backend_port",
+              "description": "(Required, Integer) The backend protocol port number. The port number must be in the range of 1-65535.",
+              "args": []
+            },
+            {
+              "name": "load_balancing_method",
+              "description": "(Optional, String) The load balancing algorithm. Accepted values are 'round_robin', 'weighted_round_robin', and 'least_connection'. The default is 'round_robin'.",
+              "args": []
+            },
+            {
+              "name": "session_stickiness",
+              "description": "(Optional, String) The SOURCE_IP for session stickiness.",
+              "args": []
+            },
+            {
+              "name": "max_conn",
+              "description": "(Optional, Integer) The maximum number of connections the listener can accept. The number must be 1-64000.",
+              "args": []
+            },
+            {
+              "name": "tls_certificate_id",
+              "description": "(Optional, Integer) The ID of the SSL/TLS certificate being used for a protocol. This ID should be specified when `frontend protocol` has a value of `HTTPS`.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "ssl_ciphers",
+          "description": "(Optional, list) The comma separated list of SSL Ciphers. You can find list of supported ciphers [SSL_offload](/docs/loadbalancer-service?topic=loadbalancer-service-ssl-offload-with-ibm-cloud-load-balancer).",
+          "args": []
+        },
+        {
+          "name": "use_system_public_ip_pool",
+          "description": "(Optional, Boolean) Applicable for public load balancer only. It specifies whether the public IP addresses are allocated from system public IP pool or public subnet from the account ordering the load balancer. Default Value is `true`.",
+          "args": []
+        },
+        {
+          "name": "wait_time_minutes",
+          "description": "(Required, Integer) The duration, expressed in minutes, to wait for the LBaaS instance to become available before declaring it as created. It is also the same amount of time waited for deletion to finish. The default value is `90`.",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_lbaas_health_monitor": {
@@ -11430,7 +12186,48 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "monitor_id",
+          "description": "(Required, String) Health Monitor unique identifier. The monitor id can be imported from either the `ibm_lbaas` resource or datasource. Example: `ibm_lbaas.lbaas.health_monitors.X.monitor_id` or `data.ibm_lbaas.lbaas.health_monitors.X.monitor_id`",
+          "args": []
+        },
+        {
+          "name": "lbaas_id",
+          "description": "(Required, String) LBaaS unique identifier",
+          "args": []
+        },
+        {
+          "name": "protocol",
+          "description": "(Required, String) Backends protocol",
+          "args": []
+        },
+        {
+          "name": "port",
+          "description": "(Required, Integer) Backends port",
+          "args": []
+        },
+        {
+          "name": "interval",
+          "description": "(Optional, Integer) Interval in seconds to perform",
+          "args": []
+        },
+        {
+          "name": "max_retries",
+          "description": "(Optional, Integer) Maximum retries",
+          "args": []
+        },
+        {
+          "name": "timeout",
+          "description": "(Optional, Integer) Health check methods timeout in",
+          "args": []
+        },
+        {
+          "name": "url_path",
+          "description": "(Optional, String) If monitor is \"HTTP\", this specifies URL path",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_lbaas_server_instance_attachment": {
@@ -11438,7 +12235,28 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "private_ip_address",
+          "description": "(Required, String) The private IP address of a load balancer member.",
+          "args": []
+        },
+        {
+          "name": "weight",
+          "description": "(Optional, Integer) The weight of a load balancer member.",
+          "args": []
+        },
+        {
+          "name": "lbaas_id",
+          "description": "(Required, String) The UUID of a load balancer.",
+          "args": []
+        },
+        {
+          "name": "depends_on",
+          "description": "(Required, String) the UUID of a load balancer",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_multivlan_firewall": {
@@ -11446,7 +12264,33 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "datacenter",
+          "description": "(Required, String) The data center in which the firewall appliance resides.",
+          "args": []
+        },
+        {
+          "name": "pod",
+          "description": "(Required, String) The pod in which the firewall resides",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "(Required, String) The name of the firewall device",
+          "args": []
+        },
+        {
+          "name": "firewall_type",
+          "description": "(Required, String) The type of the firewall device. Supported values include `FortiGate Security Appliance` and `FortiGate Firewall Appliance HA Option`.",
+          "args": []
+        },
+        {
+          "name": "addon_configuration",
+          "description": "(Required, List) ) The list of add-ons that are allowed. Allowed values are `FortiGate Security Appliance) - Web Filtering Add-on (High Availability)`,`FortiGate Security Appliance - NGFW Add-on (High Availability)`,`FortiGate Security Appliance - AV Add-on (High Availability)` or `FortiGate Security Appliance - Web Filtering Add-on`, `FortiGate Security Appliance - NGFW Add-on`,`FortiGate Security Appliance - AV Add-on`.",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_network_gateway": {
@@ -11454,7 +12298,170 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, String) The name of the gateway.",
+          "args": []
+        },
+        {
+          "name": "ssh_key_ids",
+          "description": "(Optional, List) The SSH key IDs to install on the gateway when the gateway gets created.",
+          "args": []
+        },
+        {
+          "name": "post_install_script_uri",
+          "description": "(Optional, String) The URI of the script to be downloaded and executed after the gateway installation is complete. Default value: `nil`.",
+          "args": []
+        },
+        {
+          "name": "members",
+          "description": "(Required, List) A nested block describing the hardware members of this network gateway.",
+          "args": [
+            {
+              "name": "hostname",
+              "description": "(Optional, String) Hostname of the member.",
+              "args": []
+            },
+            {
+              "name": "domain",
+              "description": "(Required, String) The domain of the member",
+              "args": []
+            },
+            {
+              "name": "notes",
+              "description": "(Optional, String) Descriptive text of up to 1000 characters about the member.",
+              "args": []
+            },
+            {
+              "name": "datacenter",
+              "description": "(Required, String) The data center in which you want to provision the member.",
+              "args": []
+            },
+            {
+              "name": "network_speed",
+              "description": "(Optional, Integer) The connection speed (in Mbps) for the member network components. Default value: `100`.",
+              "args": []
+            },
+            {
+              "name": "redundant_power_supply",
+              "description": "(Optional, Boolean) When the value is `true`, an additional power supply is provided. Default value: `false`",
+              "args": []
+            },
+            {
+              "name": "tcp_monitoring",
+              "description": "(Optional, Boolean) Whether to enable TCP monitoring for the member. Default value: `false`.",
+              "args": []
+            },
+            {
+              "name": "process_key_name",
+              "description": "(Optional, String) The process key name for the member. Default value:  `INTEL_SINGLE_XEON_1270_3_40_2`. Refer to the same attribute on the `ibm_compute_bare_metal` resource.",
+              "args": []
+            },
+            {
+              "name": "package_key_name",
+              "description": "(Optional, String) The key name for the network gateway package. You can find available package key names in the [SoftLayer API](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_GATEWAY\"}}}), using your API key as the password. Default value: `NETWORK_GATEWAY_APPLIANCE`. The default will allow to order Single Processor Multi-Core Servers. Use `2U_NETWORK_GATEWAY_APPLIANCE_1O_GBPS` for ordering Dual Processor Multi-Core Servers.",
+              "args": []
+            },
+            {
+              "name": "os_key_name",
+              "description": "(Optional, String) The os key name for member. Default value:  `OS_VYATTA_5600_5_X_UP_TO_1GBPS_SUBSCRIPTION_EDITION_64_BIT`. Refer to the same attribute on the `ibm_compute_bare_metal` resource.",
+              "args": []
+            },
+            {
+              "name": "redundant_network",
+              "description": "(Optional, Boolean) When the value is `true`, two physical network interfaces are provided with a bonding configuration. Default value: `false`.",
+              "args": []
+            },
+            {
+              "name": "unbonded_network",
+              "description": "(Optional, Boolean) When the value is `true`, two physical network interfaces are provided without a bonding configuration. Default value: `false`.",
+              "args": []
+            },
+            {
+              "name": "tags",
+              "description": "(Optional, Set) Tags associated with the VM instance. Permitted characters include: A-Z, 0-9, whitespace, `_` (underscore), `-` (hyphen), `.` (period), and `:` (colon). All other characters are removed.",
+              "args": []
+            },
+            {
+              "name": "public_bandwidth",
+              "description": "(Optional, Integer) Allowed public network traffic (in GB) per month. Default value: `20000`.",
+              "args": []
+            },
+            {
+              "name": "memory",
+              "description": "(Required, Integer) The amount of memory, expressed in megabytes, that you want to allocate.",
+              "args": []
+            },
+            {
+              "name": "storage_groups",
+              "description": "(Optional, List) A nested block describing the storage group for the member of the network gateway. Nested `storage_groups` blocks have the following structure:",
+              "args": [
+                {
+                  "name": "array_type_id",
+                  "description": "(Required, Integer) The ID of the array type.",
+                  "args": []
+                },
+                {
+                  "name": "hard_drives",
+                  "description": "(Required, List) The list of hard drive associated with the gateway member.",
+                  "args": []
+                },
+                {
+                  "name": "array_size",
+                  "description": "(Optional, Integer) The size of the array.",
+                  "args": []
+                },
+                {
+                  "name": "partition_template_id",
+                  "description": "(Optional, Integer) The partition template ID for the member.",
+                  "args": []
+                }
+              ]
+            },
+            {
+              "name": "ssh_key_ids",
+              "description": "(Optional, List) The SSH key IDs to install on the member.",
+              "args": []
+            },
+            {
+              "name": "post_install_script_uri",
+              "description": "(Optional, String) The URI of the script to be downloaded and executed on the member. Default value: `nil`.",
+              "args": []
+            },
+            {
+              "name": "user_metadata",
+              "description": "(Optional, String) Arbitrary data to be made available to the member.",
+              "args": []
+            },
+            {
+              "name": "disk_key_names",
+              "description": "(Optional, List) Provide the disk key name. Refer to the same attribute in the `ibm_compute_bare_metal` resource.",
+              "args": []
+            },
+            {
+              "name": "public_vlan_id",
+              "description": "(Optional, Integer) ID of the public VLAN.",
+              "args": []
+            },
+            {
+              "name": "private_vlan_id",
+              "description": "(Optional, Integer) ID of the private VLAN.       **NOTE**: If there are two members in this gateway, then both should have same value for `public_vlan_id` and `private_vlan_id`.",
+              "args": []
+            },
+            {
+              "name": "ipv6_enabled",
+              "description": "(Optional, Boolean) Whether to enable IPv6. Default value: `true`.",
+              "args": []
+            },
+            {
+              "name": "private_network_only",
+              "description": "(Optional, Boolean) Whether to enable a private network only. Default value: `false`.",
+              "args": []
+            }
+          ]
+        }
+      ],
       "attrs": []
     },
     "ibm_network_gateway_vlan_association": {
@@ -11462,7 +12469,23 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "gateway_id",
+          "description": "(Required, Integer) The ID of the network gateway.",
+          "args": []
+        },
+        {
+          "name": "network_vlan_id",
+          "description": "(Required, Integer) The ID of the network VLAN to associate with the network gateway.",
+          "args": []
+        },
+        {
+          "name": "bypass",
+          "description": "(Optional, Boolean) Indicates if the VLAN should be in bypass or routed mode. Default value: `true`.",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_network_interface_sg_attachment": {
@@ -11470,7 +12493,23 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "security_group_id",
+          "description": "(Required, Integer) The ID of the security group.",
+          "args": []
+        },
+        {
+          "name": "network_interface_id",
+          "description": "(Required, Integer) The ID of the network interface to which the security group must be applied.",
+          "args": []
+        },
+        {
+          "name": "soft_reboot",
+          "description": "(Optional, Boolean) Default `true`. If set to **true** and a reboot is required to apply the security group attachment for the virtual server instance, then a soft reboot is performed. If set to **false**, no reboot is performed. **Note**: A reboot is always required the first time a security group is applied to a network interface of a virtual server instance that was never rebooted before.",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_network_public_ip": {
@@ -11478,7 +12517,23 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "routes_to",
+          "description": "(Required, String) The destination IP address that the public IP routes traffic through. The destination IP address can be a public IP address of IBM resources in the same account, such as a public IP address of a VM or public virtual IP addresses of NetScaler VPXs.",
+          "args": []
+        },
+        {
+          "name": "notes",
+          "description": "(Optional, String) Descriptive text to associate with the public IP instance.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, Array of strings) Tags associated with the public IP instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_network_vlan": {
@@ -11486,7 +12541,38 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "datacenter",
+          "description": "(Required, String) The data center in which the VLAN resides.",
+          "args": []
+        },
+        {
+          "name": "type",
+          "description": "(Required, String) The type of VLAN. Accepted values are `PRIVATE` and `PUBLIC`.",
+          "args": []
+        },
+        {
+          "name": "subnet_size",
+          "description": "(Required, Integer) The size of the primary subnet for the VLAN. Accepted values are `8`, `16`, `32`, and `64`. This field has been removed.",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "(Optional, String) The name of the VLAN. Maximum length of 20 characters.",
+          "args": []
+        },
+        {
+          "name": "router_hostname",
+          "description": "(Optional, String) The hostname of the primary router associated with the VLAN.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, Array of strings) Tags associated with the VLAN. Permitted characters include: A-Z, 0-9, whitespace, `_` (underscore), `-` (hyphen), `.` (period), and `:` (colon). All other characters are removed.",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_network_vlan_spanning": {
@@ -12051,7 +13137,18 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, String) The descriptive name used to identify the security group.",
+          "args": []
+        },
+        {
+          "name": "description",
+          "description": "(Optional, String) Additional details to describe the security group.",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_security_group_rule": {
@@ -12059,7 +13156,48 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "direction",
+          "description": "(Required, String) The direction of traffic. Accepted values: `ingress` or `egress`.",
+          "args": []
+        },
+        {
+          "name": "ether_type",
+          "description": "(Optional, String) The IP version. Accepted values  (case sensitive): `IPv4` or `IPv6`. Default value: 'IPv4'.",
+          "args": []
+        },
+        {
+          "name": "port_range_min",
+          "description": "(Optional, Integer) The start of the port range for allowed traffic.",
+          "args": []
+        },
+        {
+          "name": "port_range_max",
+          "description": "(Optional, Integer) The end of the port range for allowed traffic.",
+          "args": []
+        },
+        {
+          "name": "protocol",
+          "description": "(Optional, String) The IP protocol type. Accepted values (case sensitive): `icmp`,`tcp`, or `udp`.",
+          "args": []
+        },
+        {
+          "name": "remote_group_id",
+          "description": "(Optional, Integer) The ID of the remote security group allowed as part of the rule.       **NOTE**: Conflicts with `remote_ip`.",
+          "args": []
+        },
+        {
+          "name": "remote_ip",
+          "description": "(Optional, String) The CIDR or IP address for allowed connections.       **NOTE**: Conflicts with `remote_group_id`.",
+          "args": []
+        },
+        {
+          "name": "security_group_id",
+          "description": "(Required, Integer) The ID of the security group this rule belongs to.",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_service_instance": {
@@ -12230,7 +13368,68 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "type",
+          "description": "(Required, String) The type of the storage. Accepted values are `Endurance` and `Performance`.",
+          "args": []
+        },
+        {
+          "name": "datacenter",
+          "description": "(Required, String) The data center where you want to provision the block storage instance.",
+          "args": []
+        },
+        {
+          "name": "capacity",
+          "description": "(Required, Integer) The amount of storage capacity you want to allocate, specified in gigabytes.",
+          "args": []
+        },
+        {
+          "name": "iops",
+          "description": "(Required, Float) The IOPS value for the storage. For supported values, see [Provisioning](/docs/BlockStorage?topic=BlockStorage-About#provisioning)",
+          "args": []
+        },
+        {
+          "name": "os_format_type",
+          "description": "(Required, String) The OS type used to format the storage space. This OS type must match the OS type that connects to the LUN. [Log in to the IBM Cloud Classic Infrastructure (SoftLayer) API to see available OS format types](https://api.softlayer.com/rest/v3/SoftLayer_Network_Storage_Iscsi_OS_Type/getAllObjects/). Use your API as the password to log in. Log in and find the key called `name`.",
+          "args": []
+        },
+        {
+          "name": "snapshot_capacity",
+          "description": "(Optional, Integer) The amount of snapshot capacity to allocate, specified in gigabytes.",
+          "args": []
+        },
+        {
+          "name": "allowed_virtual_guest_ids",
+          "description": "(Optional, Array of integers) The virtual guests that you want to give access to this instance. Virtual guests must be in the same data center as the block storage. You can also use this field to import the list of virtual guests that have access to this storage from the `block_storage_ids` argument in the `ibm_compute_vm_instance` resource.",
+          "args": []
+        },
+        {
+          "name": "allowed_hardware_ids",
+          "description": "(Optional, Array of integers) The bare metal servers that you want to give access to this instance. Bare metal servers must be in the same data center as the block storage. You can also use this field to import the list of bare metal servers that have access to this storage from the `block_storage_ids` argument in the `ibm_compute_bare_metal` resource.",
+          "args": []
+        },
+        {
+          "name": "allowed_ip_addresses",
+          "description": "(Optional, Array of strings) The IP addresses that you want to give access to this instance. IP addresses must be in the same data center as the block storage.",
+          "args": []
+        },
+        {
+          "name": "notes",
+          "description": "(Optional, Strings) A descriptive note that you want to associate with the block storage.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, Array of strings) Tags associated with the storage block instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "args": []
+        },
+        {
+          "name": "hourly_billing",
+          "description": "(Optional, Boolean) Set true to enable hourly billing.Default is false   **NOTE**: `Hourly billing` is only available in updated data centers with improved capabilities. Refer to the link to get the updated list of data centers. http://knowledgelayer.softlayer.com/articles/new-ibm-block-and-file-storage-location-and-features",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_storage_evault": {
@@ -12238,7 +13437,33 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "datacenter",
+          "description": "(Required, String) The data center where you want to provision the evault storage instance.",
+          "args": []
+        },
+        {
+          "name": "capacity",
+          "description": "(Required, Integer) The amount of storage capacity you want to allocate, specified in gigabytes.",
+          "args": []
+        },
+        {
+          "name": "virtual_instance_id",
+          "description": "(Optional, Integer) The id of the virtual instance.     **NOTE**: Conflicts with `hardware_instance_id`.",
+          "args": []
+        },
+        {
+          "name": "hardware_instance_id",
+          "description": "(Optional, Integer) The id of the hardware instance.     **NOTE**: Conflicts with `virtual_instance_id`.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, Array of strings) Tags associated with the storage evault instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_storage_file": {
@@ -12246,7 +13471,104 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "type",
+          "description": "(Required, String) The type of the storage. Accepted values are `Endurance` and `Performance`",
+          "args": []
+        },
+        {
+          "name": "datacenter",
+          "description": "(Required, String) The data center where you want to provision the file storage instance.",
+          "args": []
+        },
+        {
+          "name": "capacity",
+          "description": "(Required, Integer) The amount of storage capacity you want to allocate, expressed in gigabytes.",
+          "args": []
+        },
+        {
+          "name": "iops",
+          "description": "(Required, Float) The IOPS value for the storage instance. For supported values, see [Provisioning](/docs/FileStorage?topic=FileStorage-about#provisioning).",
+          "args": []
+        },
+        {
+          "name": "snapshot_capacity",
+          "description": "(Optional, Integer) The amount of snapshot capacity you want to allocate, expressed in gigabytes.",
+          "args": []
+        },
+        {
+          "name": "allowed_virtual_guest_ids",
+          "description": "(Optional, Array of integers) The virtual guests that you want to give access to this instance. Virtual guests must be in the same data center as the block storage. You can also use this field to import the list of virtual guests that have access to this storage from the `block_storage_ids` argument in the `ibm_compute_vm_instance` resource.",
+          "args": []
+        },
+        {
+          "name": "allowed_hardware_ids",
+          "description": "(Optional, Array of integers) The bare metal servers that you want to give access to this instance. Bare metal servers must be in the same data center as the block storage. You can also use this field to import the list of bare metal servers that have access to this storage from the `block_storage_ids` argument in the `ibm_compute_bare_metal` resource.",
+          "args": []
+        },
+        {
+          "name": "allowed_subnets",
+          "description": "(Optional, Array of integers) The subnets that you want to give access to this instance. Subnets must be in the same data center as the block storage.",
+          "args": []
+        },
+        {
+          "name": "allowed_ip_addresses",
+          "description": "(Optional, Array of strings) The IP addresses that you want to allow. IP addresses must be in the same data center as the block storage.",
+          "args": []
+        },
+        {
+          "name": "snapshot_schedule",
+          "description": "(Optional, Array) Applies only to Endurance storage. Specifies the parameters required for a snapshot schedule.",
+          "args": [
+            {
+              "name": "schedule_type",
+              "description": "(Optional, String) The snapshot schedule type. Accepted values are `HOURLY`, `WEEKLY`, and `DAILY`.",
+              "args": []
+            },
+            {
+              "name": "retention_count",
+              "description": "(Optional, Integer) The retention count for a snapshot schedule. Required for all types of `schedule_type`.",
+              "args": []
+            },
+            {
+              "name": "minute",
+              "description": "(Optional, Integer) The minute for a snapshot schedule. Required for all types of `schedule_type`.",
+              "args": []
+            },
+            {
+              "name": "hour",
+              "description": "(Optional, Integer) The hour for a snapshot schedule. Required if `schedule_type` is set to `DAILY` or `WEEKLY`.",
+              "args": []
+            },
+            {
+              "name": "day_of_week",
+              "description": "(Optional, String) The day of the week for a snapshot schedule. Required if the `schedule_type` is set to `WEEKLY`.",
+              "args": []
+            },
+            {
+              "name": "enable",
+              "description": "(Optional, Boolean) Whether to disable an existing snapshot schedule.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "notes",
+          "description": "(Optional, String) Descriptive text to associate with the file storage.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, Arrays of Strings) Tags associated with the file storage instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "args": []
+        },
+        {
+          "name": "hourly_billing",
+          "description": "(Optional, Boolean) Set true to enable hourly billing. Default is false.   **NOTE**: `Hourly billing` is only available in updated data centers with improved capabilities. Refer to the [link](/docs/FileStorage?topic=FileStorage-selectDC) to get the updated list of data centers.",
+          "args": []
+        }
+      ],
       "attrs": []
     },
     "ibm_subnet": {
@@ -12254,7 +13576,48 @@
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Classic infrastructure resources",
-      "args": [],
+      "args": [
+        {
+          "name": "private",
+          "description": "(Optional, Boolean) Specifies whether the network is public or private.",
+          "args": []
+        },
+        {
+          "name": "type",
+          "description": "(Required, String) The type of the subnet. Accepted values are `portable` and `static`.",
+          "args": []
+        },
+        {
+          "name": "ip_version",
+          "description": "(Optional, Integer) The IP version of the subnet. Accepted values are 4 and 6.",
+          "args": []
+        },
+        {
+          "name": "capacity",
+          "description": "(Required, Integer) The size of the subnet. <ul><li>Accepted values for a public portable IPv4 subnet are 4, 8, 16, and 32. </li><li> Accepted values for a private portable IPv4 subnet are 4, 8, 16, 32, and 64. </li><li>Accepted values for a public static IPv4 subnet are 1, 2, 4, 8, 16, and 32. </li><li>Accepted value for a public portable IPv6 subnet is 64. A /64 block is created and 2^64 IP addresses are provided. </li><li>Accepted value for a public static IPv6 subnet is 64. A /64 block is created and 2^64 IP addresses are provided.</li></ul>",
+          "args": []
+        },
+        {
+          "name": "vlan_id",
+          "description": "(Optional, Integer) The VLAN ID for portable subnet. You can configure both public and private VLAN ID. You can find accepted values in the [SoftLayer VLAN documentation](https://cloud.ibm.com/classic/network/vlans) by clicking the VLAN that you want and noting the ID in the resulting URL. You can also refer to a VLAN by name using a data source.",
+          "args": []
+        },
+        {
+          "name": "endpoint_ip",
+          "description": "(Optional, String) The target primary IP address for a static subnet. Only public IP addresses of virtual servers, bare metal servers, and netscaler VPXs can be configured as an `endpoint_ip`. The `static subnet` will be created on the VLAN where the `endpoint_ip` is located.",
+          "args": []
+        },
+        {
+          "name": "notes",
+          "description": "(Optional, String) Descriptive text or comments about the subnet.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, Array of Strings) Tags associated with the subnet instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "args": []
+        }
+      ],
       "attrs": []
     }
   }
