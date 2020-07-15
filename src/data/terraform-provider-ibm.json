@@ -6500,22 +6500,22 @@
         },
         {
           "name": "dedicated_host_id",
-          "description": "(Optional, Integer) Specifies [dedicated host](/docs/vsi?topic=virtual-servers-dedicated-virtual-servers) for the instance by its id. **NOTE**: Conflicts with `dedicated_acct_host_only`, `dedicated_host_name`, `placement_group_name` and `placement_group_id`.",
+          "description": "(Optional, Integer) Specifies [dedicated host](/docs/virtual-servers?topic=virtual-servers-dedicated-virtual-servers) for the instance by its id. **NOTE**: Conflicts with `dedicated_acct_host_only`, `dedicated_host_name`, `placement_group_name` and `placement_group_id`.",
           "args": []
         },
         {
           "name": "dedicated_host_name",
-          "description": "(Optional, String) Specifies [dedicated host](/docs/vsi?topic=virtual-servers-dedicated-virtual-servers) for the instance by its name. **NOTE**: Conflicts with `dedicated_acct_host_only`, `dedicated_host_id`, `placement_group_name` and `placement_group_id`.",
+          "description": "(Optional, String) Specifies [dedicated host](/docs/virtual-servers?topic=virtual-servers-dedicated-virtual-servers) for the instance by its name. **NOTE**: Conflicts with `dedicated_acct_host_only`, `dedicated_host_id`, `placement_group_name` and `placement_group_id`.",
           "args": []
         },
         {
           "name": "placement_group_id",
-          "description": "(Optional, Integer) Specifies [placement group](/docs/vsi?topic=virtual-servers-dedicated-virtual-servers) for the instance by its id. **NOTE**: Conflicts with `dedicated_acct_host_only`, `dedicated_host_name`, `dedicated_host_id` and `placement_group_name`.",
+          "description": "(Optional, Integer) Specifies [placement group](/docs/virtual-servers?topic=virtual-servers-dedicated-virtual-servers) for the instance by its id. **NOTE**: Conflicts with `dedicated_acct_host_only`, `dedicated_host_name`, `dedicated_host_id` and `placement_group_name`.",
           "args": []
         },
         {
           "name": "placement_group_name",
-          "description": "(Optional, String) Specifies [placement group](/docs/vsi?topic=virtual-servers-dedicated-virtual-servers) for the instance by its name.        **NOTE**: Conflicts with `dedicated_acct_host_only`, `dedicated_host_id`, `dedicated_host_name` and `placement_group_id`",
+          "description": "(Optional, String) Specifies [placement group](/docs/virtual-servers?topic=virtual-servers-dedicated-virtual-servers) for the instance by its name.        **NOTE**: Conflicts with `dedicated_acct_host_only`, `dedicated_host_id`, `dedicated_host_name` and `placement_group_id`",
           "args": []
         },
         {
@@ -7423,7 +7423,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of strings) A list of tags that you want to associate with your VPC cluster. **Note**: For users on account to add tags to a resource, they must be assigned the [appropriate permissions](/docs/resources?topic=resources-access).",
+          "description": "(Optional, Array of strings) A list of tags that you want to associate with your VPC cluster. **Note**: For users on account to add tags to a resource, they must be assigned the [appropriate permissions](/docs/resources?topic=resources-tag-access).",
           "args": []
         },
         {
@@ -7797,7 +7797,7 @@
         },
         {
           "name": "key_protect",
-          "description": "(Optional, String) The CRN of the IBM Key Protect instance where your root key is stored. You use this root key to encrypt data that is sent and stored in IBM Cloud Object Storage. Before you can enable IBM Key Protect encryption, you must provision an instance of IBM Key Protect and authorize the service to access IBM Cloud Object Storage. For more information, see [Server-Side Encryption with IBM Key Protect or Hyper Protect Crypto Services (SSE-KP)](/docs/cloud-object-storage?topic=cloud-object-storage-encryption#encryption-kp).",
+          "description": "(Optional, String) The CRN of the IBM Key Protect root key that you want to use to encrypt data that is sent and stored in IBM Cloud Object Storage. Before you can enable IBM Key Protect encryption, you must provision an instance of IBM Key Protect and authorize the service to access IBM Cloud Object Storage. For more information, see [Server-Side Encryption with IBM Key Protect or Hyper Protect Crypto Services (SSE-KP)](/docs/cloud-object-storage?topic=cloud-object-storage-encryption#encryption-kp).",
           "args": []
         },
         {
@@ -7933,7 +7933,7 @@
         },
         {
           "name": "key_protect_key",
-          "description": "(Optional, String) The CRN of a Key Protect root key that you want to use for disk encryption. A key protect CRN is in the format `crn:v1:<…>:key:`.",
+          "description": "(Optional, String) The CRN of a Key Protect root key that you want to use for disk encryption. A key protect CRN is in the format `crn:v1:<…>:key:`. You can specify the root key during the database creation only. After the database is created, you cannot update the root key.",
           "args": []
         },
         {
@@ -8532,7 +8532,7 @@
           "description": "A List of zones that you added to your private DNS service instance.",
           "args": [
             {
-              "name": "zones_id",
+              "name": "zone_id",
               "description": "The ID of the zone.",
               "args": []
             },
