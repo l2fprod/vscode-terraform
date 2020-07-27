@@ -9076,7 +9076,7 @@
       "attrs": [
         {
           "name": "id",
-          "description": "The unique identifier of the access group members. The ID is returned in the format `<iam_access_group_ID\\/<random_ID>`.",
+          "description": "The unique identifier of the access group members. The ID is returned in the format `<iam_access_group_ID>/<random_ID>`.",
           "args": []
         },
         {
