@@ -1115,11 +1115,6 @@
           "args": []
         },
         {
-          "name": "resource_controller_url",
-          "description": "The URL of the IBM Cloud dashboard that can be used to view details about this cluster.",
-          "args": []
-        },
-        {
           "name": "vlans",
           "description": "A list of VLANs that are attached to the cluster.",
           "args": [
@@ -1382,11 +1377,6 @@
         {
           "name": "public_vlan",
           "description": "The ID of the public VLAN that the worker node is attached to.",
-          "args": []
-        },
-        {
-          "name": "resource_controller_url",
-          "description": "TThe URL of the IBM Cloud dashboard that can be used to view details about the worker node.",
           "args": []
         },
         {
@@ -1905,12 +1895,22 @@
           "name": "name",
           "description": "(Required, String) The name of the action.",
           "args": []
+        },
+        {
+          "name": "namespace",
+          "description": "(Required, String) The name of the function namespace.",
+          "args": []
         }
       ],
       "attrs": [
         {
           "name": "id",
           "description": "The ID of the action.",
+          "args": []
+        },
+        {
+          "name": "namespace",
+          "description": "The name of the function namespace.",
           "args": []
         },
         {
@@ -1989,6 +1989,11 @@
           "name": "publish",
           "description": "Action visibility.",
           "args": []
+        },
+        {
+          "name": "action_id",
+          "description": "Action ID.",
+          "args": []
         }
       ]
     },
@@ -2002,12 +2007,22 @@
           "name": "name",
           "description": "(Required, String) The name of the package.",
           "args": []
+        },
+        {
+          "name": "namespace",
+          "description": "(Required, String) The name of the function namespace.",
+          "args": []
         }
       ],
       "attrs": [
         {
           "name": "id",
           "description": "The ID of the package.",
+          "args": []
+        },
+        {
+          "name": "namespace",
+          "description": "The name of the function namespace.",
           "args": []
         },
         {
@@ -2029,6 +2044,11 @@
           "name": "parameters",
           "description": "All parameters passed to the package, including those set by you or by IBM Cloud Functions.",
           "args": []
+        },
+        {
+          "name": "package_id",
+          "description": "The package ID.",
+          "args": []
         }
       ]
     },
@@ -2042,12 +2062,22 @@
           "name": "name",
           "description": "(Required, String) The name of the rule.",
           "args": []
+        },
+        {
+          "name": "namespace",
+          "description": "(Required, String) The name of the function namespace.",
+          "args": []
         }
       ],
       "attrs": [
         {
           "name": "id",
           "description": "The ID of the rule.",
+          "args": []
+        },
+        {
+          "name": "namespace",
+          "description": "The name of the function namespace.",
           "args": []
         },
         {
@@ -2074,6 +2104,11 @@
           "name": "action_name",
           "description": "The name of the action that the rule belongs to.",
           "args": []
+        },
+        {
+          "name": "rule_id",
+          "description": "The rule ID.",
+          "args": []
         }
       ]
     },
@@ -2087,12 +2122,22 @@
           "name": "name",
           "description": "(Required, String) The name of the trigger.",
           "args": []
+        },
+        {
+          "name": "namespace",
+          "description": "(Required, String) The name of the function namespace.",
+          "args": []
         }
       ],
       "attrs": [
         {
           "name": "id",
           "description": "The ID of the trigger.",
+          "args": []
+        },
+        {
+          "name": "namespace",
+          "description": "The name of the function namespace.",
           "args": []
         },
         {
@@ -2113,6 +2158,11 @@
         {
           "name": "parameters",
           "description": "All parameters passed to the trigger, including those set by you or by IBM Cloud Functions.",
+          "args": []
+        },
+        {
+          "name": "trigger_id",
+          "description": "The trigger ID.",
           "args": []
         }
       ]
@@ -2564,6 +2614,263 @@
         }
       ]
     },
+    "ibm_is_instance": {
+      "name": "ibm_is_instance",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "VPC infrastructure data sources (Gen 1 compute)",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, String) The name of the Virtual Servers for VPC instance that you want to retrieve.",
+          "args": []
+        },
+        {
+          "name": "private_key",
+          "description": "(Optional, String) The private key of an SSH key that you want to add to your Virtual Servers for VPC instance during creation in PEM format. SSH keys are used by virtual servers to identify a user or device through public-key cryptography. For more information about how to create SSH keys and upload them to IBM Cloud, see [Locating or generating your SSH key](/docs/vpc?topic=vpc-ssh-keys#locating-ssh-keys). The SSH key is used to decrypt the default administrator password in Windows if Windows is installed as the operating system on your Virtual Servers for VPC instance.",
+          "args": []
+        },
+        {
+          "name": "passphrase",
+          "description": "(Optional, String) The passphrase that you used when you created your SSH key. If you did not enter a passphrase when you created the SSH key, do not provide this input parameter.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The ID that was assigned to the Virtual Servers for VPC instance.",
+          "args": []
+        },
+        {
+          "name": "memory",
+          "description": "The amount of memory that was allocated to the instance.",
+          "args": []
+        },
+        {
+          "name": "status",
+          "description": "The status of the instance.",
+          "args": []
+        },
+        {
+          "name": "image",
+          "description": "The ID of the virtual server image that is used in the instance.",
+          "args": []
+        },
+        {
+          "name": "zone",
+          "description": "The zone where the instance was created.",
+          "args": []
+        },
+        {
+          "name": "vpc",
+          "description": "The ID of the VPC that the instance belongs to.",
+          "args": []
+        },
+        {
+          "name": "resource_group",
+          "description": "The name of the resource group where the instance was created.",
+          "args": []
+        },
+        {
+          "name": "vcpu",
+          "description": "A list of virtual CPUs that were allocated to the instance.",
+          "args": [
+            {
+              "name": "architecture",
+              "description": "The architecture of the virtual CPU.",
+              "args": []
+            },
+            {
+              "name": "count",
+              "description": "The number of virtual CPUs that are allocated to the instance.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "gpu",
+          "description": "A list of graphics processing units that are allocated to the instance.",
+          "args": [
+            {
+              "name": "cores",
+              "description": "The number of cores that are assigned to the GPU.",
+              "args": []
+            },
+            {
+              "name": "count",
+              "description": "The number of GPUs that are allocated to the instance.",
+              "args": []
+            },
+            {
+              "name": "manufacture",
+              "description": "The manufacturer of the GPU.",
+              "args": []
+            },
+            {
+              "name": "memory",
+              "description": "The amount of memory that was allocated to the GPU.",
+              "args": []
+            },
+            {
+              "name": "model",
+              "description": "The model of the GPU.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "primary_network_interface",
+          "description": "A list of primary network interfaces that were created for the instance.",
+          "args": [
+            {
+              "name": "id",
+              "description": "The ID of the primary network interface.",
+              "args": []
+            },
+            {
+              "name": "name",
+              "description": "The name of the primary network interface.",
+              "args": []
+            },
+            {
+              "name": "subnet",
+              "description": "The ID of the subnet that is used in the primary network interface.",
+              "args": []
+            },
+            {
+              "name": "security_groups",
+              "description": "A list of security groups that were created for the interface.",
+              "args": []
+            },
+            {
+              "name": "primary_ipv4_address",
+              "description": "The IPv4 address range that the subnet uses.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "network_interfaces",
+          "description": "A list of additional network interfaces that the instance uses.",
+          "args": [
+            {
+              "name": "id",
+              "description": "The ID of the additional network interface.",
+              "args": []
+            },
+            {
+              "name": "name",
+              "description": "The name of the additional network interface.",
+              "args": []
+            },
+            {
+              "name": "subnet",
+              "description": "The ID of the subnet that is used in the additional network interface.",
+              "args": []
+            },
+            {
+              "name": "security_groups",
+              "description": "A list of security groups that were created for the interface.",
+              "args": []
+            },
+            {
+              "name": "primary_ipv4_address",
+              "description": "The IPv4 address range that the subnet uses.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "boot_volume",
+          "description": "A list of boot volumes that were created for the instance.",
+          "args": [
+            {
+              "name": "id",
+              "description": "The ID of the boot volume attachment.",
+              "args": []
+            },
+            {
+              "name": "name",
+              "description": "The name of the boot volume.",
+              "args": []
+            },
+            {
+              "name": "device",
+              "description": "The name of the device that is associated with the boot volume.",
+              "args": []
+            },
+            {
+              "name": "volume_id",
+              "description": "The ID of the volume that is associated with the boot volume attachment.",
+              "args": []
+            },
+            {
+              "name": "volume_crn",
+              "description": "The CRN of the volume that is associated with the boot volume attachment.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "volume_attachments",
+          "description": "A list of volume attachments that were created for the instance.",
+          "args": [
+            {
+              "name": "id",
+              "description": "The ID of the volume attachment.",
+              "args": []
+            },
+            {
+              "name": "name",
+              "description": "The name of the volume attachment.",
+              "args": []
+            },
+            {
+              "name": "volume_id",
+              "description": "The ID of the volume that is associated with the volume attachment.",
+              "args": []
+            },
+            {
+              "name": "volume_name",
+              "description": "The name of the volume that is associated with the volume attachment.",
+              "args": []
+            },
+            {
+              "name": "crn",
+              "description": "The CRN of the volume that is associated with the volume attachment.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "resource_controller_url",
+          "description": "The URL of the IBM Cloud dashboard that you can use to see details for your instance.",
+          "args": []
+        },
+        {
+          "name": "password",
+          "description": "The password that you can use to access your instance.",
+          "args": []
+        },
+        {
+          "name": "keys",
+          "description": "A list of SSH keys that were added to the instance during creation.",
+          "args": [
+            {
+              "name": "id",
+              "description": "The ID of the SSH key.",
+              "args": []
+            },
+            {
+              "name": "name",
+              "description": "The name of the SSH key that you entered when you uploaded the key to IBM Cloud.",
+              "args": []
+            }
+          ]
+        }
+      ]
+    },
     "ibm_is_instance_profile": {
       "name": "ibm_is_instance_profile",
       "type": "data",
@@ -2604,6 +2911,196 @@
               "name": "family",
               "description": "The family that the profile belongs to. The family indicates what workloads are best suited for this type of profile. For more information, see [Profiles](/docs/vpc?topic=vpc-profiles).",
               "args": []
+            }
+          ]
+        }
+      ]
+    },
+    "ibm_is_instances": {
+      "name": "ibm_is_instances",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "VPC infrastructure data sources (Gen 1 compute)",
+      "args": [],
+      "attrs": [
+        {
+          "name": "instances",
+          "description": "A list of Virtual Servers for VPC instances that exist in your account.",
+          "args": [
+            {
+              "name": "id",
+              "description": "The ID that was assigned to the Virtual Servers for VPC instance.",
+              "args": []
+            },
+            {
+              "name": "memory",
+              "description": "The amount of memory that was allocated to the instance.",
+              "args": []
+            },
+            {
+              "name": "status",
+              "description": "The status of the instance.",
+              "args": []
+            },
+            {
+              "name": "image",
+              "description": "The ID of the virtual server image that is used in the instance.",
+              "args": []
+            },
+            {
+              "name": "zone",
+              "description": "The zone where the instance was created.",
+              "args": []
+            },
+            {
+              "name": "vpc",
+              "description": "The ID of the VPC that the instance belongs to.",
+              "args": []
+            },
+            {
+              "name": "resource_group",
+              "description": "The name of the resource group where the instance was created.",
+              "args": []
+            },
+            {
+              "name": "vcpu",
+              "description": "A list of virtual CPUs that were allocated to the instance.",
+              "args": [
+                {
+                  "name": "architecture",
+                  "description": "The architecture of the virtual CPU.",
+                  "args": []
+                },
+                {
+                  "name": "count",
+                  "description": "The number of virtual CPUs that are allocated to the instance.",
+                  "args": []
+                }
+              ]
+            },
+            {
+              "name": "primary_network_interface",
+              "description": "A list of primary network interfaces that were created for the instance.",
+              "args": [
+                {
+                  "name": "id",
+                  "description": "The ID of the primary network interface.",
+                  "args": []
+                },
+                {
+                  "name": "name",
+                  "description": "The name of the primary network interface.",
+                  "args": []
+                },
+                {
+                  "name": "subnet",
+                  "description": "The ID of the subnet that is used in the primary network interface.",
+                  "args": []
+                },
+                {
+                  "name": "security_groups",
+                  "description": "A list of security groups that were created for the interface.",
+                  "args": []
+                },
+                {
+                  "name": "primary_ipv4_address",
+                  "description": "The IPv4 address range that the subnet uses.",
+                  "args": []
+                }
+              ]
+            },
+            {
+              "name": "network_interfaces",
+              "description": "A list of additional network interfaces that the instance uses.",
+              "args": [
+                {
+                  "name": "id",
+                  "description": "The ID of the additional network interface.",
+                  "args": []
+                },
+                {
+                  "name": "name",
+                  "description": "The name of the additional network interface.",
+                  "args": []
+                },
+                {
+                  "name": "subnet",
+                  "description": "The ID of the subnet that is used in the additional network interface.",
+                  "args": []
+                },
+                {
+                  "name": "security_groups",
+                  "description": "A list of security groups that were created for the interface.",
+                  "args": []
+                },
+                {
+                  "name": "primary_ipv4_address",
+                  "description": "The IPv4 address range that the subnet uses.",
+                  "args": []
+                }
+              ]
+            },
+            {
+              "name": "boot_volume",
+              "description": "A list of boot volumes that were created for the instance.",
+              "args": [
+                {
+                  "name": "id",
+                  "description": "The ID of the boot volume attachment.",
+                  "args": []
+                },
+                {
+                  "name": "name",
+                  "description": "The name of the boot volume.",
+                  "args": []
+                },
+                {
+                  "name": "device",
+                  "description": "The name of the device that is associated with the boot volume.",
+                  "args": []
+                },
+                {
+                  "name": "volume_id",
+                  "description": "The ID of the volume that is associated with the boot volume attachment.",
+                  "args": []
+                },
+                {
+                  "name": "volume_crn",
+                  "description": "The CRN of the volume that is associated with the boot volume attachment.",
+                  "args": []
+                }
+              ]
+            },
+            {
+              "name": "volume_attachments",
+              "description": "A list of volume attachments that were created for the instance.",
+              "args": [
+                {
+                  "name": "id",
+                  "description": "The ID of the volume attachment.",
+                  "args": []
+                },
+                {
+                  "name": "name",
+                  "description": "The name of the volume attachment.",
+                  "args": []
+                },
+                {
+                  "name": "volume_id",
+                  "description": "The ID of the volume that is associated with the volume attachment.",
+                  "args": []
+                },
+                {
+                  "name": "volume_name",
+                  "description": "The name of the volume that is associated with the volume attachment.",
+                  "args": []
+                },
+                {
+                  "name": "crn",
+                  "description": "The CRN of the volume that is associated with the volume attachment.",
+                  "args": []
+                }
+              ]
             }
           ]
         }
@@ -2666,11 +3163,6 @@
           "name": "type",
           "description": "The cryptosystem that is used by the SSH key.",
           "args": []
-        },
-        {
-          "name": "resource_controller_url",
-          "description": "The URL of the IBM Cloud dashboard that you can use to view details about the SSH key.",
-          "args": []
         }
       ]
     },
@@ -2715,11 +3207,6 @@
         {
           "name": "public_gateway",
           "description": "The ID of the public gateway that is attached to the subnet.",
-          "args": []
-        },
-        {
-          "name": "resource_controller_url",
-          "description": "The URL of the IBM Cloud dashboard that you can use to view details about the subnet.",
           "args": []
         },
         {
@@ -2866,11 +3353,6 @@
         {
           "name": "default_network_acl",
           "description": "The ID of the default network access control list (ACL) that was set up for the VPC.",
-          "args": []
-        },
-        {
-          "name": "resource_controller_url",
-          "description": "The URL of the IBM Cloud dashboard that you can use to view details about the VPC.",
           "args": []
         },
         {
@@ -4003,6 +4485,16 @@
           "name": "plan",
           "description": "The service plan that is used for the service instance.",
           "args": []
+        },
+        {
+          "name": "guid",
+          "description": "The GUID of the resource instance.",
+          "args": []
+        },
+        {
+          "name": "extensions",
+          "description": "The extended metadata as a map associated with the resource instance.",
+          "args": []
         }
       ]
     },
@@ -4138,11 +4630,6 @@
           "name": "output_json",
           "description": "The output values of a Schematics workspace in JSON format.",
           "args": []
-        },
-        {
-          "name": "resource_controller_url",
-          "description": "The URL of the IBM Cloud dashboard that can be used to explore and view details about the workspace.",
-          "args": []
         }
       ]
     },
@@ -4167,11 +4654,6 @@
         {
           "name": "state_store",
           "description": "The URL to the location where the Terraform state file is stored.",
-          "args": []
-        },
-        {
-          "name": "resource_controller_url",
-          "description": "The URL of the IBM Cloud dashboard that can be used to explore and view details about the workspace.",
           "args": []
         }
       ]
@@ -4227,11 +4709,6 @@
         {
           "name": "resource_group",
           "description": "The resource group associated with the workspace.",
-          "args": []
-        },
-        {
-          "name": "resource_controller_url",
-          "description": "The URL of the IBM Cloud dashboard that can be used to explore and view details about the workspace.",
           "args": []
         }
       ]
@@ -7124,11 +7601,6 @@
           "args": []
         },
         {
-          "name": "resource_controller_url",
-          "description": "The URL of the IBM Cloud dashboard that can be used to view details about this cluster.",
-          "args": []
-        },
-        {
           "name": "server_url",
           "description": "The server URL.",
           "args": []
@@ -7402,6 +7874,11 @@
           "args": []
         },
         {
+          "name": "update_all_workers",
+          "description": "(Optional, Boolean) Set to true, if you want to update workers kube version with the cluster kube_version.",
+          "args": []
+        },
+        {
           "name": "pod_subnet",
           "description": "(Optional, String) Specify a custom subnet CIDR to provide private IP addresses for pods. The subnet must have a CIDR of at least `/23` or larger. For more information, see the [documentation](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#pod-subnet). Default value: `172.30.0.0/16`.",
           "args": []
@@ -7414,6 +7891,11 @@
         {
           "name": "worker_count",
           "description": "(Optional, Integer) The number of worker nodes per zone in the default worker pool. Default value `1`.",
+          "args": []
+        },
+        {
+          "name": "worker_labels",
+          "description": "(Optional, Map) Labels on all the workers in the default worker pool.",
           "args": []
         },
         {
@@ -7661,11 +8143,6 @@
           "args": []
         },
         {
-          "name": "resource_controller_url",
-          "description": "The URL of the IBM Cloud dashboard that can be used to view details about the worker pool.",
-          "args": []
-        },
-        {
           "name": "state",
           "description": "The state of the worker pool.",
           "args": []
@@ -7792,7 +8269,7 @@
         },
         {
           "name": "cross_region_location",
-          "description": "(Optional, String) The location for a cross-regional bucket. Supported values are `us`, `eu`, and `ap`. If you this parameter, do not set `single_site_location` or `region_location` at the same time.",
+          "description": "(Optional, String) The location for a cross-regional bucket. Supported values are `us`, `eu`, and `ap`. If you use this parameter, do not set `single_site_location` or `region_location` at the same time.",
           "args": []
         },
         {
@@ -8686,6 +9163,11 @@
           "args": []
         },
         {
+          "name": "namespace",
+          "description": "(Required, String) The name of the function namespace.",
+          "args": []
+        },
+        {
           "name": "limits",
           "description": "(Optional, List of objects) A nested block to describe assigned limits.",
           "args": [
@@ -8765,6 +9247,11 @@
           "args": []
         },
         {
+          "name": "namespace",
+          "description": "The name of the function namespace.",
+          "args": []
+        },
+        {
           "name": "version",
           "description": "Semantic version of the item.",
           "args": []
@@ -8778,6 +9265,11 @@
           "name": "parameters",
           "description": "All parameters passed to the action when the action is invoked, including those set by you or by IBM Cloud Functions.",
           "args": []
+        },
+        {
+          "name": "action_id",
+          "description": "The action ID.",
+          "args": []
         }
       ]
     },
@@ -8790,6 +9282,11 @@
         {
           "name": "name",
           "description": "(Required, String) The name of the package.",
+          "args": []
+        },
+        {
+          "name": "namespace",
+          "description": "(Required, String) The name of the function namespace.",
           "args": []
         },
         {
@@ -8820,6 +9317,11 @@
           "args": []
         },
         {
+          "name": "namespace",
+          "description": "The name of the function namespace.",
+          "args": []
+        },
+        {
           "name": "version",
           "description": "Semantic version of the item.",
           "args": []
@@ -8833,6 +9335,11 @@
           "name": "parameters",
           "description": "All parameters passed to the package, including those set by you or by IBM Cloud Functions.### Import`ibm_function_package` can be imported using the ID.Example:```$ terraform import ibm_function_package.sample hello```",
           "args": []
+        },
+        {
+          "name": "package_id",
+          "description": "The package ID.",
+          "args": []
         }
       ]
     },
@@ -8845,6 +9352,11 @@
         {
           "name": "name",
           "description": "(Required, String) The name of the rule.",
+          "args": []
+        },
+        {
+          "name": "namespace",
+          "description": "(Required, String) The name of the function namespace.",
           "args": []
         },
         {
@@ -8865,6 +9377,11 @@
           "args": []
         },
         {
+          "name": "namespace",
+          "description": "The name of the function namespace.",
+          "args": []
+        },
+        {
           "name": "publish",
           "description": "Rule visibility.",
           "args": []
@@ -8878,6 +9395,11 @@
           "name": "status",
           "description": "The status of the rule.",
           "args": []
+        },
+        {
+          "name": "rule_id",
+          "description": "The rule ID.",
+          "args": []
         }
       ]
     },
@@ -8890,6 +9412,11 @@
         {
           "name": "name",
           "description": "(Required, String) The name of the trigger.",
+          "args": []
+        },
+        {
+          "name": "namespace",
+          "description": "(Required, String) The name of the function namespace.",
           "args": []
         },
         {
@@ -8926,6 +9453,11 @@
           "args": []
         },
         {
+          "name": "namespace",
+          "description": "The name of the function namespace.",
+          "args": []
+        },
+        {
           "name": "publish",
           "description": "Trigger visibility.",
           "args": []
@@ -8943,6 +9475,11 @@
         {
           "name": "parameters",
           "description": "All parameters passed to the trigger, including those set by you or by IBM Cloud Functions.",
+          "args": []
+        },
+        {
+          "name": "trigger_id",
+          "description": "The trigger ID.",
           "args": []
         }
       ]
@@ -9732,11 +10269,6 @@
           "args": []
         },
         {
-          "name": "resource_controller_url",
-          "description": "The URL of the IBM Cloud dashboard that you can use to explore and view details about the floating IP address.",
-          "args": []
-        },
-        {
           "name": "status",
           "description": "The provisioning status of the floating IP address.",
           "args": []
@@ -9799,11 +10331,6 @@
         {
           "name": "negotiation_mode",
           "description": "The negotiation mode that was set for your IKE policy. Only `main` is supported.",
-          "args": []
-        },
-        {
-          "name": "resource_controller_url",
-          "description": "The URL of the IBM Cloud dashboard that you can use to explore and view details about the IKE policy.",
           "args": []
         },
         {
@@ -10184,11 +10711,6 @@
               "args": []
             }
           ]
-        },
-        {
-          "name": "resource_controller_url",
-          "description": "The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance.",
-          "args": []
         }
       ]
     },
@@ -10238,11 +10760,6 @@
         {
           "name": "id",
           "description": "The unique identifier of the IPSec policy that you created.",
-          "args": []
-        },
-        {
-          "name": "resource_controller_url",
-          "description": "The URL of the IBM Cloud dashboard that you can use to explore and view details about the IPSec policy.",
           "args": []
         },
         {
@@ -10318,11 +10835,6 @@
         {
           "name": "hostname",
           "description": "The fully qualified domain name assigned to this load balancer.",
-          "args": []
-        },
-        {
-          "name": "resource_controller_url",
-          "description": "The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance.",
           "args": []
         }
       ]
@@ -10800,11 +11312,6 @@
               "args": []
             }
           ]
-        },
-        {
-          "name": "resource_controller_url",
-          "description": "The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance.",
-          "args": []
         }
       ]
     },
@@ -10832,11 +11339,6 @@
         {
           "name": "tags",
           "description": "(Optional, Array of strings) Enter any tags that you want to associate with your VPC. Tags might help you find your VPC more easily after it is created. Separate multiple tags with a comma (`,`).",
-          "args": []
-        },
-        {
-          "name": "resource_group",
-          "description": "(Optional, String) Enter the ID of the resource group where you want to create the public gateway. To list available resource groups, run `ibmcloud resource groups`. If you do not specify a resource group, the public gateway is created in the `default` resource group.",
           "args": []
         },
         {
@@ -10958,11 +11460,6 @@
               "args": []
             }
           ]
-        },
-        {
-          "name": "resource_controller_url",
-          "description": "The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance.",
-          "args": []
         }
       ]
     },
@@ -11218,11 +11715,6 @@
           "name": "type",
           "description": "The cryptosystem used by this key.",
           "args": []
-        },
-        {
-          "name": "resource_controller_url",
-          "description": "The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance.",
-          "args": []
         }
       ]
     },
@@ -11263,11 +11755,6 @@
           "args": []
         },
         {
-          "name": "resource_group",
-          "description": "(Optional, String) The ID of the resource group where you want to create the subnet.",
-          "args": []
-        },
-        {
           "name": "vpc",
           "description": "(Required, String) The VPC ID.",
           "args": []
@@ -11297,11 +11784,6 @@
         {
           "name": "available_ipv4_address_count",
           "description": "The total number of available IPv4 addresses.",
-          "args": []
-        },
-        {
-          "name": "resource_controller_url",
-          "description": "The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance.",
           "args": []
         }
       ]
@@ -11422,11 +11904,6 @@
         {
           "name": "id",
           "description": "The unique identifier of the VPC that you created.",
-          "args": []
-        },
-        {
-          "name": "resource_controller_url",
-          "description": "The URL of the IBM Cloud dashboard that you can use to explore and view details about the VPC.",
           "args": []
         },
         {
@@ -11609,11 +12086,6 @@
         {
           "name": "public_ip_address",
           "description": "The IP address assigned to this VPN gateway.",
-          "args": []
-        },
-        {
-          "name": "resource_controller_url",
-          "description": "The URL of the IBM Cloud dashboard that can be used to explore and view details about this instance.",
           "args": []
         }
       ]
@@ -13057,11 +13529,6 @@
           "name": "parameters",
           "description": "(Optional, Map) Arbitrary parameters to create instance. The value must be a JSON object.",
           "args": []
-        },
-        {
-          "name": "guid",
-          "description": "(Optional, String) The GUID of the resource instance.",
-          "args": []
         }
       ],
       "attrs": [
@@ -13071,8 +13538,23 @@
           "args": []
         },
         {
+          "name": "guid",
+          "description": "The GUID of the resource instance.",
+          "args": []
+        },
+        {
           "name": "status",
           "description": "The status of resource instance.",
+          "args": []
+        },
+        {
+          "name": "extensions",
+          "description": "The extended metadata as a map associated with the resource instance.",
+          "args": []
+        },
+        {
+          "name": "dashboard_url",
+          "description": "The dashboard url of the new resource instance.",
           "args": []
         }
       ]
