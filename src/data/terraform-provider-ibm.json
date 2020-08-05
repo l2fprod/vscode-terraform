@@ -10862,7 +10862,7 @@
         },
         {
           "name": "default_pool",
-          "description": "(Optional, String) The load balancer pool unique identifier.",
+          "description": "(Required, String) The load balancer pool unique identifier.",
           "args": []
         },
         {
