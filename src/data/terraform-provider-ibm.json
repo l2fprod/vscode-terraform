@@ -11731,7 +11731,7 @@
         },
         {
           "name": "total_ipv4_address_count",
-          "description": "(Optional, String) The total number of IPv4 addresses.",
+          "description": "(Required, String) The total number of IPv4 addresses.",
           "args": []
         },
         {
