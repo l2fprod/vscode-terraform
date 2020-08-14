@@ -2198,7 +2198,7 @@
       "name": "ibm_event_streams_topic",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "Event Streams topic data sources",
+      "groupName": "Event Streams data sources",
       "args": [
         {
           "name": "resource_instance_id",
@@ -5503,7 +5503,7 @@
       "name": "ibm_tg_gateway",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 1 compute)",
+      "groupName": "Transit Gateway data sources",
       "args": [
         {
           "name": "name",
@@ -5598,7 +5598,7 @@
       "name": "ibm_tg_gateways",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 1 compute)",
+      "groupName": "Transit Gateway data sources",
       "args": [],
       "attrs": [
         {
@@ -5658,7 +5658,7 @@
       "name": "ibm_tg_location",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 1 compute)",
+      "groupName": "Transit Gateway data sources",
       "args": [
         {
           "name": "name",
@@ -5709,7 +5709,7 @@
       "name": "ibm_tg_locations",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 1 compute)",
+      "groupName": "Transit Gateway data sources",
       "args": [],
       "attrs": [
         {
@@ -9392,7 +9392,7 @@
       "name": "ibm_dl_connection",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "groupName": "Direct Link Gateway resources",
       "args": [
         {
           "name": "gateway",
@@ -9447,7 +9447,7 @@
       "name": "ibm_dl_gateway",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "groupName": "Direct Link Gateway resources",
       "args": [
         {
           "name": "name",
