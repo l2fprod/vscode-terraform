@@ -2114,6 +2114,520 @@
         }
       ]
     },
+    "ibm_dl_gateway": {
+      "name": "ibm_dl_gateway",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Direct Link Gateway data sources",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, String) The unique user-defined name for the gateway.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "bgp_asn",
+          "description": "Customer BGP ASN.",
+          "args": []
+        },
+        {
+          "name": "created_at",
+          "description": "The date and time resource is created.",
+          "args": []
+        },
+        {
+          "name": "crn",
+          "description": "The CRN of the gateway.",
+          "args": []
+        },
+        {
+          "name": "global",
+          "description": "Gateway with global routing as `true` can connect networks outside your associated region.",
+          "args": []
+        },
+        {
+          "name": "id",
+          "description": "The unique identifier of the gateway.",
+          "args": []
+        },
+        {
+          "name": "location_display_name",
+          "description": "Long name of the gateway location.",
+          "args": []
+        },
+        {
+          "name": "location_name",
+          "description": "The location name of the gateway.",
+          "args": []
+        },
+        {
+          "name": "metered",
+          "description": "Metered billing option. If set `true` gateway usage is billed per GB. Otherwise, flat rate is charged for the gateway.",
+          "args": []
+        },
+        {
+          "name": "operational_status",
+          "description": "The gateway operational status",
+          "args": []
+        },
+        {
+          "name": "resource_group",
+          "description": "The resource group identifier.",
+          "args": []
+        },
+        {
+          "name": "speed_mbps",
+          "description": "The gateway speed in MBPS.",
+          "args": []
+        },
+        {
+          "name": "type",
+          "description": "The gateway type.",
+          "args": []
+        },
+        {
+          "name": "bgp_base_cidr",
+          "description": "The BGP base CIDR.",
+          "args": []
+        },
+        {
+          "name": "bgp_cer_cidr",
+          "description": "The BGP customer edge router CIDR.",
+          "args": []
+        },
+        {
+          "name": "bgp_ibm_asn",
+          "description": "The {{site.data.keyword.IBM_notm}} BGP ASN.",
+          "args": []
+        },
+        {
+          "name": "bgp_ibm_cidr",
+          "description": "The {{site.data.keyword.IBM_notm}} BGP  CIDR.",
+          "args": []
+        },
+        {
+          "name": "bgp_status",
+          "description": "The gateway BGP status.",
+          "args": []
+        },
+        {
+          "name": "completion_notice_reject_reason",
+          "description": "The reason for completion notice rejection. Only included on a dedicated gateways type with a rejected completion notice.",
+          "args": []
+        },
+        {
+          "name": "cross_connect_router",
+          "description": "The cross connect router. Only included on a dedicated gateways type.",
+          "args": []
+        },
+        {
+          "name": "port",
+          "description": "The port identifier.",
+          "args": []
+        },
+        {
+          "name": "provider_api_managed",
+          "description": "Indicates the gateway is created through a provider portal. If set `true`, gateway can only be changed. If set `false`, gateway is deleted through the corresponding provider portal.",
+          "args": []
+        },
+        {
+          "name": "vlan",
+          "description": "The VLAN allocated for the gateway. Only set for connect gateways type created directly through the {{site.data.keyword.IBM_notm}} portal.",
+          "args": []
+        },
+        {
+          "name": "virtual_connections",
+          "description": "List of the specified gateway's virtual connections.",
+          "args": [
+            {
+              "name": "created_at",
+              "description": "The creation date and time resource.",
+              "args": []
+            },
+            {
+              "name": "id",
+              "description": "The unique identifier of the virtual connection. For example, `ef4dcbtyu1a-fee4-41c7-9e11-9cd99e65c1f4`",
+              "args": []
+            },
+            {
+              "name": "name",
+              "description": "The unique user-defined name of the only virtual connection in the gateway.",
+              "args": []
+            },
+            {
+              "name": "status",
+              "description": "The status of the virtual connection. Possible values are `pending`,`attached`,`approval_pending`,`rejected`,`expired`,`deleting`,`detached_by_network_pending`,`detached_by_network`.",
+              "args": []
+            },
+            {
+              "name": "type",
+              "description": "The virtual connection type. Possible values are `classic`,`vpc`.",
+              "args": []
+            },
+            {
+              "name": "network_id",
+              "description": "The unique identifier of the target network. For type `vpc`, virtual connections is the CRN of the target VPC. This field do not apply for type `classic` connections. For example, `crn:v1:bluemix:public:is:us-east:a/28e4d90ac7504be69447111122223333::vpc:aaa81ac8-5e96-42a0-a4b7-6c2e2dbb`",
+              "args": []
+            }
+          ]
+        }
+      ]
+    },
+    "ibm_dl_gateways": {
+      "name": "ibm_dl_gateways",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Direct Link Gateway data sources",
+      "args": [],
+      "attrs": [
+        {
+          "name": "gateways",
+          "description": "List of all the direct link gateways in the IBM Cloud infrastructure.",
+          "args": [
+            {
+              "name": "bgp_asn",
+              "description": "Customer BGP ASN.",
+              "args": []
+            },
+            {
+              "name": "created_at",
+              "description": "The date and time resource is created.",
+              "args": []
+            },
+            {
+              "name": "crn",
+              "description": "The CRN of the gateway.",
+              "args": []
+            },
+            {
+              "name": "global",
+              "description": "Gateway with global routing as `true` can connect networks outside your associated region.",
+              "args": []
+            },
+            {
+              "name": "id",
+              "description": "The unique identifier of the gateway.",
+              "args": []
+            },
+            {
+              "name": "location_display_name",
+              "description": "Long name of the gateway location.",
+              "args": []
+            },
+            {
+              "name": "location_name",
+              "description": "The location name of the gateway.",
+              "args": []
+            },
+            {
+              "name": "metered",
+              "description": "Metered billing option. If set `true` gateway usage is billed per GB. Otherwise, flat rate is charged for the gateway.",
+              "args": []
+            },
+            {
+              "name": "name",
+              "description": "The uniqure user defined name of the gateway.",
+              "args": []
+            },
+            {
+              "name": "operational_status",
+              "description": "The gateway operational status",
+              "args": []
+            },
+            {
+              "name": "resource_group",
+              "description": "The resource group identifier.",
+              "args": []
+            },
+            {
+              "name": "speed_mbps",
+              "description": "The gateway speed in MBPS.",
+              "args": []
+            },
+            {
+              "name": "type",
+              "description": "The gateway type.",
+              "args": []
+            },
+            {
+              "name": "bgp_base_cidr",
+              "description": "The BGP base CIDR.",
+              "args": []
+            },
+            {
+              "name": "bgp_cer_cidr",
+              "description": "The BGP customer edge router CIDR.",
+              "args": []
+            },
+            {
+              "name": "bgp_ibm_asn",
+              "description": "The {{site.data.keyword.IBM_notm}} BGP ASN.",
+              "args": []
+            },
+            {
+              "name": "bgp_ibm_cidr",
+              "description": "The {{site.data.keyword.IBM_notm}} BGP  CIDR.",
+              "args": []
+            },
+            {
+              "name": "bgp_status",
+              "description": "The gateway BGP status.",
+              "args": []
+            },
+            {
+              "name": "completion_notice_reject_reason",
+              "description": "The reason for completion notice rejection. Only included on a dedicated gateways type with a rejected completion notice.",
+              "args": []
+            },
+            {
+              "name": "cross_connect_router",
+              "description": "The cross connect router. Only included on a dedicated gateways type.",
+              "args": []
+            },
+            {
+              "name": "port",
+              "description": "The port identifier.",
+              "args": []
+            },
+            {
+              "name": "provider_api_managed",
+              "description": "Indicates the gateway is created through a provider portal. If set `true`, gateway can only be changed. If set `false`, gateway is deleted through the corresponding provider portal.",
+              "args": []
+            },
+            {
+              "name": "vlan",
+              "description": "The VLAN allocated for the gateway. Only set for connect gateways type created directly through the {{site.data.keyword.IBM_notm}} portal.",
+              "args": []
+            }
+          ]
+        }
+      ]
+    },
+    "ibm_dl_locations": {
+      "name": "ibm_dl_locations",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Direct Link Gateway data sources",
+      "args": [
+        {
+          "name": "offering_type",
+          "description": "(Required, String) The direct link offering type. Possible values are `dedicated`,`connect`.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "locations",
+          "description": "List of all the direct link locations in the IBM Cloud infrastructure.",
+          "args": [
+            {
+              "name": "billing_location",
+              "description": "The billing location.",
+              "args": []
+            },
+            {
+              "name": "building_colocation_owner",
+              "description": "The building co-location owner. Only present for dedicated offering type locations.",
+              "args": []
+            },
+            {
+              "name": "name",
+              "description": "The location short name.",
+              "args": []
+            },
+            {
+              "name": "display_name",
+              "description": "The location long name.",
+              "args": []
+            },
+            {
+              "name": "location_type",
+              "description": "The location type.",
+              "args": []
+            },
+            {
+              "name": "market",
+              "description": "The market location.",
+              "args": []
+            },
+            {
+              "name": "market_geography",
+              "description": "The location geography.",
+              "args": []
+            },
+            {
+              "name": "mzr",
+              "description": "Is location a multi-zone region(MZR).",
+              "args": []
+            },
+            {
+              "name": "vpc_region",
+              "description": "The location VPC region.",
+              "args": []
+            }
+          ]
+        }
+      ]
+    },
+    "ibm_dl_offering_speeds": {
+      "name": "ibm_dl_offering_speeds",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Direct Link Gateway data sources",
+      "args": [
+        {
+          "name": "offering_type",
+          "description": "(Required, String) The direct link offering type. Possible values are `dedicated`,`connect`.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "offering_speeds",
+          "description": "List of all the direct link offering speeds in the IBM Cloud infrastructure.",
+          "args": [
+            {
+              "name": "link_speed",
+              "description": "The link speed in megabits per second.",
+              "args": []
+            }
+          ]
+        }
+      ]
+    },
+    "ibm_dl_port": {
+      "name": "ibm_dl_port",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Direct Link Gateway data sources",
+      "args": [
+        {
+          "name": "port_id",
+          "description": "(Required, String) The unique ID for the direct link port.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "direct_link_count",
+          "description": "The count of the existing direct link gateways on the port.",
+          "args": []
+        },
+        {
+          "name": "label",
+          "description": "The port label.",
+          "args": []
+        },
+        {
+          "name": "location_display_name",
+          "description": "The port location long name.",
+          "args": []
+        },
+        {
+          "name": "location_name",
+          "description": "The port location name.",
+          "args": []
+        },
+        {
+          "name": "provider_name",
+          "description": "The port's provider name.",
+          "args": []
+        },
+        {
+          "name": "supported_link_speeds",
+          "description": "The port supported speeds in megabits per second.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_dl_ports": {
+      "name": "ibm_dl_ports",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Direct Link Gateway data sources",
+      "args": [],
+      "attrs": [
+        {
+          "name": "ports",
+          "description": "List of all the direct link ports.",
+          "args": [
+            {
+              "name": "direct_link_count",
+              "description": "Count of the existing direct link gateways in this port account.",
+              "args": []
+            },
+            {
+              "name": "label",
+              "description": "The port label.",
+              "args": []
+            },
+            {
+              "name": "location_display_name",
+              "description": "The port location long name.",
+              "args": []
+            },
+            {
+              "name": "location_name",
+              "description": "The port location name.",
+              "args": []
+            },
+            {
+              "name": "id",
+              "description": "The port identifier.",
+              "args": []
+            },
+            {
+              "name": "provider_name",
+              "description": "The port's provider name.",
+              "args": []
+            },
+            {
+              "name": "supported_link_speeds",
+              "description": "The port supported speeds in megabits per second.",
+              "args": []
+            }
+          ]
+        }
+      ]
+    },
+    "ibm_dl_routers": {
+      "name": "ibm_dl_routers",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Direct Link Gateway data sources",
+      "args": [
+        {
+          "name": "offering_type",
+          "description": "(Required, String) The direct link offering type. Only `dedicated` is supported in this API.",
+          "args": []
+        },
+        {
+          "name": "location_name",
+          "description": "(Required, String) The name of the direct link location.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "cross_connect_routers",
+          "description": "List of all the cross connect router details.",
+          "args": [
+            {
+              "name": "router_name",
+              "description": "The name of the router.",
+              "args": []
+            },
+            {
+              "name": "total_connections",
+              "description": "Count of existing direct link dedicated gateways on this router account.",
+              "args": []
+            }
+          ]
+        }
+      ]
+    },
     "ibm_dns_domain": {
       "name": "ibm_dns_domain",
       "type": "data",
@@ -9388,61 +9902,6 @@
         }
       ]
     },
-    "ibm_dl_connection": {
-      "name": "ibm_dl_connection",
-      "type": "resource",
-      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "Direct Link Gateway resources",
-      "args": [
-        {
-          "name": "gateway",
-          "description": "(Required, String) Enter the transit gateway identifier.",
-          "args": []
-        },
-        {
-          "name": "name",
-          "description": "(Optional, String) Enter a name. If unentered, the default name is provided based on the network type, such as `vpc` for network type VPC and `classic` for network type classic.",
-          "args": []
-        },
-        {
-          "name": "network_type",
-          "description": "(Required, String) Enter the network type. Allowed values are `classic` and `vpc`.",
-          "args": []
-        },
-        {
-          "name": "network_id",
-          "description": "(Optional, String) Enter the ID of the network being connected through this connection. This parameter is required for network type 'vpc', it is CRN of the VPC to be connected. This field is required to be unspecified for network type 'classic'. For example: crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b",
-          "args": []
-        }
-      ],
-      "attrs": [
-        {
-          "name": "id",
-          "description": "The unique identifier of the gateway ID or connection ID resource.",
-          "args": []
-        },
-        {
-          "name": "connection_id",
-          "description": "The unique identifier for transit gateway connection to network.",
-          "args": []
-        },
-        {
-          "name": "created_at",
-          "description": "The date and time the connection was created.",
-          "args": []
-        },
-        {
-          "name": "updated_at",
-          "description": "Last updated date and time of the connection.",
-          "args": []
-        },
-        {
-          "name": "status",
-          "description": "The configuration status of the connection, such as **attached**, **failed**, **pending**, **deleting**.",
-          "args": []
-        }
-      ]
-    },
     "ibm_dl_gateway": {
       "name": "ibm_dl_gateway",
       "type": "resource",
@@ -9450,30 +9909,85 @@
       "groupName": "Direct Link Gateway resources",
       "args": [
         {
-          "name": "name",
-          "description": "(Required, String) The unique user-defined name for the gateway. For example: `myGateway`",
+          "name": "bgp_asn",
+          "description": "(Required, Integer) The BGP ASN of the gateway to be created. For example: `64999`.",
           "args": []
         },
         {
-          "name": "location",
-          "description": "(Optional, Integer) The location of the transit gateway. For example, `us-south`",
+          "name": "bgp_base_cidr",
+          "description": "(Required, String) The BGP base CIDR of the gateway to be created. For example: `10.254.30.76/30`",
           "args": []
         },
         {
           "name": "global",
-          "description": "(Required, Boolean) The gateways with global routing (true) to connect to the networks outside their associated region.",
+          "description": "(Required, Boolean) Gateway with global routing as `true` can connect networks outside your associated region.",
+          "args": []
+        },
+        {
+          "name": "metered",
+          "description": "(Required, Boolean) Metered billing option. If set `true` gateway usage is billed per GB. Otherwise, flat rate is charged for the gateway.",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "(Required, String) The unique user-defined name for the gateway. For example, `myGateway`.",
+          "args": []
+        },
+        {
+          "name": "speed_mbps",
+          "description": "(Required, Integer) The gateway speed in MBPS. For example, `10.254.30.78/30`.",
+          "args": []
+        },
+        {
+          "name": "type",
+          "description": "(Required, String) The gateway type, allowed values are `dedicated` and `connect`.",
+          "args": []
+        },
+        {
+          "name": "bgp_cer_cidr",
+          "description": "(Optional, String) The BGP customer edge router CIDR. Specify a value within bgp_base_cidr. If bgp_base_cidr is `169.254.0.0/16`, this parameter can be ommitted and a CIDR is selected automatically. For example, `10.254.30.78/30`.",
+          "args": []
+        },
+        {
+          "name": "bgp_ibm_cidr",
+          "description": "(Optional, String) The {{site.data.keyword.IBM_notm}} BGP ASN. Specify a value within bgp_base_cidr. If bgp_base_cidr is `169.254.0.0/16`, this parameter can be ommitted and a CIDR is selected automatically. For example: `10.254.30.77/30`.",
           "args": []
         },
         {
           "name": "resource_group",
-          "description": "(Optional, String) The resource group ID where the transit gateway to be created.",
+          "description": "(Optional, String) The resource group. If unspecified, the account's default resource group is used.",
+          "args": []
+        },
+        {
+          "name": "carrier_name",
+          "description": "(Required, String) The carrier name. Constraints are 1 ≤ length ≤ 128, Value must match regular expression ^[a-z][A-Z][0-9][ -_]$. For example, `myCarrierName`.",
+          "args": []
+        },
+        {
+          "name": "cross_connect_router",
+          "description": "(Required, String) The cross connect router. For example, `xcr01.dal03`.",
+          "args": []
+        },
+        {
+          "name": "customer_name",
+          "description": "(Required, String) The customer name is required for `dedicated` type. Constraints are 1 ≤ length ≤ 128, Value must match regular expression ^[a-z][A-Z][0-9][ -_]$. For example, `newCustomerName`.",
+          "args": []
+        },
+        {
+          "name": "location_name",
+          "description": "(Required, String) The gateway location is required for `dedicated` type. For example, `dal03`.",
           "args": []
         }
       ],
       "attrs": [
         {
           "name": "id",
-          "description": "The unique identifier of the gateway ID or connection ID resource.",
+          "description": "The unique ID of the gateway.",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "The unique user-defined name for the gateway",
           "args": []
         },
         {
@@ -9483,17 +9997,117 @@
         },
         {
           "name": "created_at",
-          "description": "The date and time the connection is created.",
+          "description": "The date and time resource created.",
           "args": []
         },
         {
-          "name": "updated_at",
-          "description": "The date and time the connection is last updated.",
+          "name": "location_display_name",
+          "description": "The gateway location long name.",
+          "args": []
+        },
+        {
+          "name": "resource_group",
+          "description": "The resource group reference.",
+          "args": []
+        },
+        {
+          "name": "bgp_asn",
+          "description": "The {{site.data.keyword.IBM.notm}} BGP ASN.",
+          "args": []
+        },
+        {
+          "name": "bgp_status",
+          "description": "The gateway BGP status.",
+          "args": []
+        },
+        {
+          "name": "completion_notice_reject_reason",
+          "description": "The reason for completion notice rejection.",
+          "args": []
+        },
+        {
+          "name": "link_status",
+          "description": "The gateway link status. You can include only on `type=dedicated` gateways. For example, `down`, `up`.",
+          "args": []
+        },
+        {
+          "name": "port",
+          "description": "The gateway port for `type=connect` gateways.",
+          "args": []
+        },
+        {
+          "name": "vlan",
+          "description": "The VLAN allocated for the gateway. You can set only for `type=connect` gateways created directly through the {{site.data.keyword.IBM_notm}} portal.",
+          "args": []
+        },
+        {
+          "name": "provider_api_managed",
+          "description": "Indicates whether gateway changes need to be made via a provider portal.",
+          "args": []
+        },
+        {
+          "name": "operational_status",
+          "description": "The gateway operational status. For gateways pending LOA approval, patch operational_status to the appropriate value to approve or reject its LOA. For example, `loa_accepted`.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_dl_virtual_connection": {
+      "name": "ibm_dl_virtual_connection",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Direct Link Gateway resources",
+      "args": [
+        {
+          "name": "gateway",
+          "description": "(Required, String) The direct link gateway ID.",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "(Required, String) The user-defined name for the virtual connection.",
+          "args": []
+        },
+        {
+          "name": "type",
+          "description": "(Required, String) The type of virtual connection. Allowed values are `classic`,`vpc`.",
+          "args": []
+        },
+        {
+          "name": "network_id",
+          "description": "(Required, String) Metered billing option. If set `true` gateway usage is billed per GB. Otherwise, flat rate is charged for the gateway.",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "(Required, String) The unique identifier of the target network. For `type=vpc` virtual connections it is the CRN of the target VPC. This parameter does not apply for `type=classic` connections. For example, `crn:v1:bluemix:public:is:us-east:a/28e4d90ac7504be69447111122223333::vpc:aaa81ac8-5e96-42a0-a4b7-6c2e2d1bb`.",
+          "args": []
+        },
+        {
+          "name": "id",
+          "description": "(The unique ID of the resource with combination of gateway / virtual_connection_id., String) ",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "created_at",
+          "description": "The date and time resource created.",
+          "args": []
+        },
+        {
+          "name": "virtual_connection_id",
+          "description": "The unique identifier for the direct link gateway virtual connection",
           "args": []
         },
         {
           "name": "status",
-          "description": "The configuration status of the connection, such as **Available**, **pending**.",
+          "description": "The status of the virtual connection. Possible values are `pending`, `attached`, `approval_pending`, `rejected`, `expired`, `deleting`, `detached_by_network_pending`, `detached_by_network`.",
+          "args": []
+        },
+        {
+          "name": "network_account",
+          "description": "The virtual connections across two different {{site.data.keyword.cloud_notm} accounts network_account indicates the account that owns the target network. For example, `00aa14a2e0fb102c8995ebeff65555`.",
           "args": []
         }
       ]
@@ -12830,7 +13444,7 @@
         },
         {
           "name": "total_ipv4_address_count",
-          "description": "(Required, String) The total number of IPv4 addresses.",
+          "description": "(Optional, String) The total number of IPv4 addresses. Either `ipv4_cid_block` or `total_pv4_address_count` input parameters must be provided in the resource.",
           "args": []
         },
         {
@@ -15275,6 +15889,116 @@
         }
       ],
       "attrs": []
+    },
+    "ibm_tg_connection": {
+      "name": "ibm_tg_connection",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Transit Gateway resources",
+      "args": [
+        {
+          "name": "gateway",
+          "description": "(Required, String) Enter the transit gateway identifier.",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "(Optional, String) Enter a name. If unentered, the default name is provided based on the network type, such as `vpc` for network type VPC and `classic` for network type classic.",
+          "args": []
+        },
+        {
+          "name": "network_type",
+          "description": "(Required, String) Enter the network type. Allowed values are `classic` and `vpc`.",
+          "args": []
+        },
+        {
+          "name": "network_id",
+          "description": "(Optional, String) Enter the ID of the network being connected through this connection. This parameter is required for network type 'vpc', it is CRN of the VPC to be connected. This field is required to be unspecified for network type 'classic'. For example: crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier of the gateway ID or connection ID resource.",
+          "args": []
+        },
+        {
+          "name": "connection_id",
+          "description": "The unique identifier for transit gateway connection to network.",
+          "args": []
+        },
+        {
+          "name": "created_at",
+          "description": "The date and time the connection was created.",
+          "args": []
+        },
+        {
+          "name": "updated_at",
+          "description": "Last updated date and time of the connection.",
+          "args": []
+        },
+        {
+          "name": "status",
+          "description": "The configuration status of the connection, such as **attached**, **failed**, **pending**, **deleting**.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_tg_gateway": {
+      "name": "ibm_tg_gateway",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Transit Gateway resources",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, String) The unique user-defined name for the gateway. For example: `myGateway`",
+          "args": []
+        },
+        {
+          "name": "location",
+          "description": "(Optional, Integer) The location of the transit gateway. For example, `us-south`",
+          "args": []
+        },
+        {
+          "name": "global",
+          "description": "(Required, Boolean) The gateways with global routing (true) to connect to the networks outside their associated region.",
+          "args": []
+        },
+        {
+          "name": "resource_group",
+          "description": "(Optional, String) The resource group ID where the transit gateway to be created.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier of the gateway ID or connection ID resource.",
+          "args": []
+        },
+        {
+          "name": "crn",
+          "description": "The CRN of the gateway.",
+          "args": []
+        },
+        {
+          "name": "created_at",
+          "description": "The date and time the connection is created.",
+          "args": []
+        },
+        {
+          "name": "updated_at",
+          "description": "The date and time the connection is last updated.",
+          "args": []
+        },
+        {
+          "name": "status",
+          "description": "The configuration status of the connection, such as **Available**, **pending**.",
+          "args": []
+        }
+      ]
     }
   }
 }
