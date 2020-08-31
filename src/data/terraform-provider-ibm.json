@@ -3185,7 +3185,7 @@
       "args": [
         {
           "name": "service",
-          "description": "(Required, String) The name of the IBM Cloud service for which you want to list supported actions. For account management services, you can find supported values in the [documentation](/docs/iam?topic=iam-account-services#api-acct-mgmt). For other services, run the `ibmcloud catalog service-marketplace` command and retrieve the value from the **Name** column of your CLI output.",
+          "description": "(Required, String) The name of the IBM Cloud service for which you want to list supported actions. For account management services, you can find supported values in the [documentation](/docs/account?topic=account-account-services#api-acct-mgmt). For other services, run the `ibmcloud catalog service-marketplace` command and retrieve the value from the **Name** column of your CLI output.",
           "args": []
         }
       ],
@@ -3225,7 +3225,7 @@
       "args": [
         {
           "name": "service",
-          "description": "(Required, String) The name of the IBM Cloud service for which you want to list supported IAM roles. For account management services, you can find supported values in the [documentation](/docs/iam?topic=iam-account-services#api-acct-mgmt). For other services, run the `ibmcloud catalog service-marketplace` command and retrieve the value from the **Name** column of your CLI output.",
+          "description": "(Required, String) The name of the IBM Cloud service for which you want to list supported IAM roles. For account management services, you can find supported values in the [documentation](/docs/account?topic=account-account-services#api-acct-mgmt). For other services, run the `ibmcloud catalog service-marketplace` command and retrieve the value from the **Name** column of your CLI output.",
           "args": []
         }
       ],
@@ -3519,6 +3519,51 @@
               "args": []
             }
           ]
+        }
+      ]
+    },
+    "ibm_is_floating_ip": {
+      "name": "ibm_is_floating_ip",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "VPC infrastructure data sources (Gen 1 compute)",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, String) The name of the floating IP.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier of the floating IP.",
+          "args": []
+        },
+        {
+          "name": "address",
+          "description": "The floating IP address that is created.",
+          "args": []
+        },
+        {
+          "name": "status",
+          "description": "Provisioning status of the floating IP address.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "The tags associated with VPC.",
+          "args": []
+        },
+        {
+          "name": "target",
+          "description": "The ID of the network interface used to allocate the floating IP address.",
+          "args": []
+        },
+        {
+          "name": "zone",
+          "description": "The zone name where to create the floating IP address.",
+          "args": []
         }
       ]
     },
@@ -4109,6 +4154,62 @@
         }
       ]
     },
+    "ibm_is_public_gateway": {
+      "name": "ibm_is_public_gateway",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "VPC infrastructure data sources (Gen 1 compute)",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, String) The name of the gateway.",
+          "args": []
+        },
+        {
+          "name": "resource_group",
+          "description": "(Optional, String) The resource group ID of the public gateway. **Note** This parameter is supported only for VPC Gen 2 infrastructure.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "is",
+          "description": "The ID of the public gateway.",
+          "args": []
+        },
+        {
+          "name": "status",
+          "description": "The status of the gateway.",
+          "args": []
+        },
+        {
+          "name": "vpc",
+          "description": "The vpc ID of the gateway.",
+          "args": []
+        },
+        {
+          "name": "zone",
+          "description": "The public gateway zone name.",
+          "args": []
+        },
+        {
+          "name": "floating_ip",
+          "description": "Lists the nested block describing the floating IP of the gateway.  with **id** and **address**.",
+          "args": [
+            {
+              "name": "id",
+              "description": "The ID of the floating IP that is bound to the public gateway.",
+              "args": []
+            },
+            {
+              "name": "address",
+              "description": "The IP address of the floating IP that is bound to the public gateway.",
+              "args": []
+            }
+          ]
+        }
+      ]
+    },
     "ibm_is_region": {
       "name": "ibm_is_region",
       "type": "data",
@@ -4536,7 +4637,7 @@
       "name": "ibm_kms_key",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "Key Protect data sources",
+      "groupName": "Key Management Service data sources",
       "args": [
         {
           "name": "instance_id",
@@ -4557,7 +4658,7 @@
       "attrs": [
         {
           "name": "keys",
-          "description": "Lists the Keys of hs-crypto or Key-protect instance.",
+          "description": "Lists the Keys of HPCS or Key-protect instance.",
           "args": [
             {
               "name": "name",
@@ -4576,7 +4677,7 @@
             },
             {
               "name": "standard_key",
-              "description": "The flag lists true in case of standard key, and lists false for root key.",
+              "description": "Set the flag `true` for standard key, and `false` for root key. Default value is **false**.",
               "args": []
             }
           ]
@@ -4587,7 +4688,7 @@
       "name": "ibm_kp_key",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "Key Protect data sources",
+      "groupName": "Key Management Service data sources",
       "args": [
         {
           "name": "key_protect_id",
@@ -4622,7 +4723,7 @@
             },
             {
               "name": "standard_key",
-              "description": "If set to **true**, the key is a standard key. If set to **false**, the key is a root key.",
+              "description": "Set the flag `true` for standard key, and `false` for root key. Default value is **false**.",
               "args": []
             }
           ]
@@ -5135,6 +5236,11 @@
           ]
         },
         {
+          "name": "health_status",
+          "description": "The health of the instance.",
+          "args": []
+        },
+        {
           "name": "id",
           "description": "The unique identifier of the instance.",
           "args": []
@@ -5160,6 +5266,11 @@
           "args": []
         },
         {
+          "name": "max_virtual_cores",
+          "description": "The maximum value that you increase without a reboot.",
+          "args": []
+        },
+        {
           "name": "min_memory",
           "description": "The minimum amount of memory that must be allocated to the instance.",
           "args": []
@@ -5170,13 +5281,13 @@
           "args": []
         },
         {
-          "name": "processors",
-          "description": "The number of processors that are allocated to the instance.",
+          "name": "min_virtual_cores",
+          "description": "The minimum cores assigned to an instance.",
           "args": []
         },
         {
-          "name": "status",
-          "description": "The status of the instance.",
+          "name": "processors",
+          "description": "The number of processors that are allocated to the instance.",
           "args": []
         },
         {
@@ -5185,13 +5296,18 @@
           "args": []
         },
         {
-          "name": "volumes",
-          "description": "The list of volume IDs that are attached to the instance.",
+          "name": "status",
+          "description": "The status of the instance.",
           "args": []
         },
         {
-          "name": "health_status",
-          "description": "The health of the instance.",
+          "name": "virtual_cores_assigned",
+          "description": "The virtual cores that are assigned to the instance.",
+          "args": []
+        },
+        {
+          "name": "volumes",
+          "description": "The list of volume IDs that are attached to the instance.",
           "args": []
         }
       ]
@@ -5528,7 +5644,7 @@
         },
         {
           "name": "size",
-          "description": "The size of this volume in gigabytes.",
+          "description": "The size of the volume in gigabytes.",
           "args": []
         },
         {
@@ -5538,7 +5654,12 @@
         },
         {
           "name": "type",
-          "description": "The disk type that is used for this volume.",
+          "description": "The disk type that is used for the volume.",
+          "args": []
+        },
+        {
+          "name": "wwn",
+          "description": "The world wide name of the volume.",
           "args": []
         }
       ]
@@ -8811,7 +8932,7 @@
         },
         {
           "name": "disk_encryption",
-          "description": "(Optional, Boolean) If set to **true**, the worker node disks are set up with an AES 256-bit encryption. If set to **false**, the disk encryption for the worker node is disabled. For more information, see [Encrypted disks](/docs/containers?topic=containers-security#encrypted_disk).",
+          "description": "(Optional, Boolean) If set to **true**, the worker node disks are set up with an AES 256-bit encryption. If set to **false**, the disk encryption for the worker node is disabled. For more information, see [Encrypted disks for worker node](/docs/containers?topic=containers-security#workernodes).",
           "args": []
         },
         {
@@ -9278,12 +9399,12 @@
         },
         {
           "name": "pod_subnet",
-          "description": "(Optional, String) Specify a custom subnet CIDR to provide private IP addresses for pods. The subnet must have a CIDR of at least `/23` or larger. For more information, see the [documentation](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#pod-subnet). Default value: `172.30.0.0/16`.",
+          "description": "(Optional, String) Specify a custom subnet CIDR to provide private IP addresses for pods. The subnet must have a CIDR of at least `/23` or larger. For more information, see the [documentation](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_subnets). Default value: `172.30.0.0/16`.",
           "args": []
         },
         {
           "name": "service_subnet",
-          "description": "(Optional, String) Specify a custom subnet CIDR to provide private IP addresses for services. The subnet must be at least ’/24’ or larger. For more information, see the [documentation](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#service-subnet). Default value: `172.21.0.0/16`.",
+          "description": "(Optional, String) Specify a custom subnet CIDR to provide private IP addresses for services. The subnet must be at least ’/24’ or larger. For more information, see the [documentation](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_messages). Default value: `172.21.0.0/16`.",
           "args": []
         },
         {
@@ -9303,7 +9424,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of strings) A list of tags that you want to associate with your VPC cluster. **Note**: For users on account to add tags to a resource, they must be assigned the [appropriate permissions](/docs/resources?topic=resources-tag-access).",
+          "description": "(Optional, Array of strings) A list of tags that you want to associate with your VPC cluster. **Note**: For users on account to add tags to a resource, they must be assigned the [appropriate permissions]/docs/account?topic=account-access).",
           "args": []
         },
         {
@@ -9667,7 +9788,7 @@
         },
         {
           "name": "cross_region_location",
-          "description": "(Optional, String) The location for a cross-regional bucket. Supported values are `us`, `eu`, and `ap`. If you use this parameter, do not set `single_site_location` or `region_location` at the same time.",
+          "description": "(Optional, String) Specify the cross-regional bucket location. Supported values are `us`, `eu`, and `ap`. If you use this parameter, do not set `single_site_location` or `region_location` at the same time.",
           "args": []
         },
         {
@@ -9758,7 +9879,7 @@
         },
         {
           "name": "location",
-          "description": "(Required, String) The location where you want to deploy your instance. The location must match the `region` parameter that you specify in the `provider` block of your Terraform configuration file.",
+          "description": "(Required, String) The location where you want to deploy your instance. The location must match the `region` parameter that you specify in the `provider` block of your Terraform configuration file. The default value is `us-south`. Currently supported regions are `us-south`, `us-east`, `eu-gb`, `eu-de`, `au-syd`, `jp-tok`, `oslo01`.",
           "args": []
         },
         {
@@ -9807,23 +9928,23 @@
           "args": []
         },
         {
+          "name": "remote_leader_id",
+          "description": "(Optional, String) A CRN of the leader database to make the replica(read-only) deployment. The leader database must have been created by a database deployment with the same service ID. A read-only replica is set up to replicate all of your data from the leader deployment to the replica deployment using asynchronous replication. For more information, see [Configuring Read-only Replicas](/docs/databases-for-postgresql?topic=databases-for-postgresql-read-only-replicas).",
+          "args": []
+        },
+        {
           "name": "key_protect_key",
-          "description": "(Optional, String) The CRN of a Key Protect root key that you want to use for disk encryption. A key protect CRN is in the format `crn:v1:<…>:key:`. You can specify the root key during the database creation only. After the database is created, you cannot update the root key.",
+          "description": "(Optional, String) The CRN of a Key Protect root key that you want to use for disk encryption. A key protect CRN is in the format `crn:v1:<…>:key:`. You can specify the root key during the database creation only. After the database is created, you cannot update the root key. Refer [Disk encryption](/docs/cloud-databases?topic=cloud-databases-key-protect#using-the-key-protect-key) documentation for more information.",
+          "args": []
+        },
+        {
+          "name": "backup_encryption_key_crn",
+          "description": "(Optional, String) The CRN of a key protect key, that you want to use for encrypting disk that holds deployment backups. A key protect CRN is in the format `crn:v1:<...>:key:`. Backup_encryption_key_crn can be added only at the time of creation and no update support  are available.",
           "args": []
         },
         {
           "name": "key_protect_instance",
-          "description": "(Optional, String) The CRN of a Key Protect instance that you want to use for disk encryption. A key protect CRN is in the format `crn:v1:<…>::`.",
-          "args": []
-        },
-        {
-          "name": "guid",
-          "description": "(Optional, String) The unique identifier of the database instance.",
-          "args": []
-        },
-        {
-          "name": "remote_leader_id",
-          "description": "(Optional, String) A CRN of the leader database to make the replica(read-only) deployment. The leader database must have been created by a database deployment with the same service ID. A read-only replica is set up to replicate all of your data from the leader deployment to the replica deployment using asynchronous replication. For more information, see [Configuring Read-only Replicas](/docs/services/databases-for-postgresql?topic=databases-for-postgresql-read-only-replicas).",
+          "description": "(Optional, String) The CRN of a key protect instance that you want to use for disk encryption. A key protect CRN is in the format `crn:v1:<…>::`.",
           "args": []
         },
         {
@@ -9872,6 +9993,11 @@
               "args": []
             }
           ]
+        },
+        {
+          "name": "guid",
+          "description": "(Optional, String) The unique identifier of the database instance.",
+          "args": []
         }
       ],
       "attrs": [
@@ -10012,7 +10138,7 @@
         },
         {
           "name": "bgp_asn",
-          "description": "The {{site.data.keyword.IBM.notm}} BGP ASN.",
+          "description": "The IBM BGP ASN.",
           "args": []
         },
         {
@@ -10916,12 +11042,17 @@
         },
         {
           "name": "parameters",
-          "description": "All parameters passed to the action when the action is invoked, including those set by you or by IBM Cloud Functions.",
+          "description": "All parameters passed to the action when the action is invoked, including those set by you or by the IBM Cloud Functions.",
           "args": []
         },
         {
           "name": "action_id",
           "description": "The action ID.",
+          "args": []
+        },
+        {
+          "name": "target_endpoint_url",
+          "description": "The target endpoint URL of the action.",
           "args": []
         }
       ]
@@ -11339,7 +11470,7 @@
           "args": [
             {
               "name": "service",
-              "description": "(Optional, String) The service name that you want to include in your policy definition. For account management services, you can find supported values in the [documentation](/docs/iam?topic=iam-account-services#api-acct-mgmt). For other services, run the `ibmcloud catalog service-marketplace` command and retrieve the value from the **Name** column of your CLI output.",
+              "description": "(Optional, String) The service name that you want to include in your policy definition. For account management services, you can find supported values in the [documentation](/docs/account?topic=account-account-services#api-acct-mgmt). For other services, run the `ibmcloud catalog service-marketplace` command and retrieve the value from the **Name** column of your CLI output.",
               "args": []
             },
             {
@@ -11505,7 +11636,7 @@
         },
         {
           "name": "actions",
-          "description": "(Required, Array of strings) A list of action IDs that you want to add to your custom role. The action IDs vary by service. To retrieve supported action IDs, follow the [documentation](/docs/iam?topic=iam-custom-roles) to create the custom role from the UI.",
+          "description": "(Required, Array of strings) A list of action IDs that you want to add to your custom role. The action IDs vary by service. To retrieve supported action IDs, follow the [documentation](/docs/account?topic=account-custom-roles) to create the custom role from the UI.",
           "args": []
         }
       ],
@@ -13887,11 +14018,11 @@
       "name": "ibm_kms_key",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "Key Protect resources",
+      "groupName": "Key Management Service resources",
       "args": [
         {
           "name": "instance_id",
-          "description": "(Required, String) The hs-crypto or key-protect instance GUID.",
+          "description": "(Required, String) The HPCS or key-protect instance GUID.",
           "args": []
         },
         {
@@ -13901,7 +14032,7 @@
         },
         {
           "name": "standard_key",
-          "description": "(Optional, Boolean) Set to **true** to create a standard key, to create a root key set this flag to **false**. Default is **false**.",
+          "description": "(Optional, Boolean) Set flag `true` for standard key, and `false` for root key. Default value is **false**.",
           "args": []
         },
         {
@@ -13953,7 +14084,7 @@
         },
         {
           "name": "type",
-          "description": "The type of the key kms or hs-crypto.",
+          "description": "The type of the key kms or HPCS.",
           "args": []
         }
       ]
@@ -13962,7 +14093,7 @@
       "name": "ibm_kp_key",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "Key Protect resources",
+      "groupName": "Key Management Service resources",
       "args": [
         {
           "name": "key_protect_id",
@@ -13976,7 +14107,7 @@
         },
         {
           "name": "standard_key",
-          "description": "(Optional, Boolean) Set to **true** to create a standard key, to create a root key set this flag to **false**. Default is **false**.",
+          "description": "(Optional, Boolean) Set flag `true` for standard key, and `false` for root key. Default value is **false**.",
           "args": []
         },
         {
@@ -13991,12 +14122,12 @@
         },
         {
           "name": "force_delete",
-          "description": "(Optional, Boolean) If set to **true**, Key Protect forces the deletion of a root or standard key, even if this key is still in use, such as to protect an IBM Cloud Object Storage bucket. Note that the key cannot be deleted if the protected cloud resource is set up with a retention policy. Successful deletion includes the removal of any registrations that are associated with the key. Default value: **false**.",
+          "description": "(Optional, Boolean) If set to **true**, Key Protect forces the deletion of a root or standard key, even if this key is still in use, such as to protect an IBM Cloud Object Storage bucket. Note, the key cannot be deleted if the protected cloud resource is set up with a retention policy. Successful deletion includes the removal of any registrations that are associated with the key. Default value is **false**.",
           "args": []
         },
         {
           "name": "iv_value",
-          "description": "(Optional, String) Used with import tokens. The initialization vector (IV) that is generated when you encrypt a nonce. The IV value is required to decrypt the encrypted nonce value that you provide when you make a key import request to the service. To generate an IV, encrypt the nonce by running `ibmcloud kp import-token encrypt-nonce`. Only for imported root key.",
+          "description": "(Optional, String) Used with import tokens. The Initialization Vector (IV) that is generated when you encrypt a nonce. The IV value is required to decrypt the encrypted nonce value that you provide when you make a key import request to the service. To generate an IV, encrypt the nonce by running `ibmcloud kp import-token encrypt-nonce`. Only for imported root key.",
           "args": []
         }
       ],
@@ -14163,7 +14294,7 @@
       "args": [
         {
           "name": "datacenter",
-          "description": "(Required, String) The data center in which you want to provision the VPX load balancer. You can find accepted values in the [data center docs](http://www.softlayer.com/data-centers).",
+          "description": "(Required, String) The data center in which you want to provision the VPX load balancer. You can find accepted values in the [data center docs](https://www.ibm.com/cloud/load-balancer).",
           "args": []
         },
         {
@@ -15008,6 +15139,11 @@
           "args": []
         },
         {
+          "name": "pi_virtual_cores_assigned",
+          "description": "(Optional, Integer) Specify the number of virtual cores to be assigned.",
+          "args": []
+        },
+        {
           "name": "pi_volume_ids",
           "description": "(Required, String) The list of volume IDs that you want to attach to the instance during creation.",
           "args": []
@@ -15061,6 +15197,11 @@
           "args": []
         },
         {
+          "name": "pin_policy",
+          "description": "The pinning policy of the instance.",
+          "args": []
+        },
+        {
           "name": "progress",
           "description": "Specifies the overall progress of the instance deployment process in percentage.",
           "args": []
@@ -15086,6 +15227,11 @@
           "args": []
         },
         {
+          "name": "max_virtual_cores",
+          "description": "The maximum number of virtual cores.",
+          "args": []
+        },
+        {
           "name": "min_processors",
           "description": "The minimum number of processors that the instance can have.",
           "args": []
@@ -15101,8 +15247,8 @@
           "args": []
         },
         {
-          "name": "pin_policy",
-          "description": "The pinning policy of the instance.",
+          "name": "min_virtual_cores",
+          "description": "The minimum number of virtual cores.",
           "args": []
         }
       ]
@@ -15233,6 +15379,11 @@
         {
           "name": "volume_id",
           "description": "The unique identifier of the volume.",
+          "args": []
+        },
+        {
+          "name": "wwn",
+          "description": "The world wide name of the volume.",
           "args": []
         }
       ]
@@ -15696,7 +15847,7 @@
         },
         {
           "name": "hourly_billing",
-          "description": "(Optional, Boolean) Set true to enable hourly billing.Default is false   **NOTE**: `Hourly billing` is only available in updated data centers with improved capabilities. Refer to the link to get the updated list of data centers. http://knowledgelayer.softlayer.com/articles/new-ibm-block-and-file-storage-location-and-features",
+          "description": "(Optional, Boolean) Set true to enable hourly billing.Default is false   **NOTE**: `Hourly billing` is only available in updated data centers with improved capabilities. Refer to the link to get the updated list of data centers. see [Data Center locations](/docs/FileStorage?topic=FileStorage-selectDC)",
           "args": []
         }
       ],
