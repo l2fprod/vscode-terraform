@@ -493,11 +493,11 @@
         },
         {
           "name": "match",
-          "description": "A list of characteristics that incoming network traffic must match to be counted towards the `threshold`.",
+          "description": "A list of characteristics that incoming network traffic must match to be counted toward the `threshold`.",
           "args": [
             {
               "name": "request",
-              "description": "A list of characteristics that the incoming request must match to be counted towards the `threshold`. If no list is provided, all incoming requests are counted towards the `threshold`.",
+              "description": "A list of characteristics that the incoming request must match to be counted toward the `threshold`. If no list is provided, all incoming requests are counted toward the `threshold`.",
               "args": [
                 {
                   "name": "url",
@@ -506,12 +506,12 @@
                 },
                 {
                   "name": "schemes",
-                  "description": "The scheme of the request that determines the desired protocol. Supported values are `HTTPS`, `HTTP,HTTPS`, and `ALL`.",
+                  "description": "The scheme of the request that determines the protocol that you want. Supported values are `HTTPS`, `HTTP,HTTPS`, and `ALL`.",
                   "args": []
                 },
                 {
                   "name": "methods",
-                  "description": "The HTTP methods that the incoming request can use to be counted towards the `threshold`. Supported values are `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD`, and `ALL`. You can also combine multiple methods and separate them with a comma. For example `POST,PUT`.",
+                  "description": "The HTTP methods that the incoming request can use to be counted toward the `threshold`. Supported values are `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD`, and `ALL`. You can also combine multiple methods and separate them with a comma. For example `POST,PUT`.",
                   "args": []
                 }
               ]
@@ -520,16 +520,16 @@
         },
         {
           "name": "response",
-          "description": "A list of HTTP responses that outgoing packets must match before they can be returned to the client. If an incoming request matches the request criteria, but the reponse does not match the response criteria, then the request packet is not counted towards the `threshold`.",
+          "description": "A list of HTTP responses that outgoing packets must match before they can be returned to the client. If an incoming request matches the request criteria, but the response does not match the response criteria, then the request packet is not counted toward the `threshold`.",
           "args": [
             {
               "name": "status",
-              "description": "The HTTP status code that the response must have so that the request is counted towards the `threshold`. The value can be between 100 and 999. If you want to use multiple response codes, you must separate them with a comma, such as `401,403`.",
+              "description": "The HTTP status code that the response must have so that the request is counted toward the `threshold`. The value can be between 100 and 999. If you want to use multiple response codes, you must separate them with a comma, such as `401,403`.",
               "args": []
             },
             {
               "name": "header",
-              "description": "A list of HTTP response headers that the response packet must match so that the original request is counted towards the `threshold`.",
+              "description": "A list of HTTP response headers that the response packet must match so that the original request is counted toward the `threshold`.",
               "args": [
                 {
                   "name": "name",
@@ -575,7 +575,7 @@
                 },
                 {
                   "name": "body",
-                  "description": "The body of the reponse that you want to return to the client. The information must match the `action.response.content_type` that you specified. The value can have a maximum length of 1024.",
+                  "description": "The body of the response that you want to return to the client. The information must match the `action.response.content_type` that you specified. The value can have a maximum length of 1024.",
                   "args": []
                 }
               ]
@@ -1086,7 +1086,7 @@
             },
             {
               "name": "alb_ip",
-              "description": "BYOIP VIP to use for application load balancer (ALB). Currently supported only for private application load balancer (ALB).",
+              "description": "BYOIP VIP to use for application load balancer. Currently supported only for private application load balancer.",
               "args": []
             },
             {
@@ -1186,7 +1186,7 @@
                 },
                 {
                   "name": "is_public",
-                  "description": "If set to **ture**, the VLAN is public. If set to **false**, the VLAN is private.",
+                  "description": "If set to **true**, the VLAN is public. If set to **false**, the VLAN is private.",
                   "args": []
                 }
               ]
@@ -2328,7 +2328,7 @@
             },
             {
               "name": "name",
-              "description": "The uniqure user defined name of the gateway.",
+              "description": "The unique user defined name of the gateway.",
               "args": []
             },
             {
@@ -2459,7 +2459,7 @@
             },
             {
               "name": "mzr",
-              "description": "Is location a multi-zone region(MZR).",
+              "description": "Is location a multi-zone region.",
               "args": []
             },
             {
@@ -3089,7 +3089,7 @@
             },
             {
               "name": "ibm_ids",
-              "description": "A list of IBMiDs that belong to the access group.",
+              "description": "A list of IBM ID that belong to the access group.",
               "args": []
             },
             {
@@ -3113,7 +3113,7 @@
                 },
                 {
                   "name": "identity_provider",
-                  "description": "The URI of your identity provider. This is the SAML \"entityId\" field, which is sometimes referred to as the issuer ID, for the identity provider as part of the federation configuration for onboarding with IBMid.",
+                  "description": "The URI of your identity provider. This is the SAML \"entity ID\" field, which is sometimes referred to as the issuer ID, for the identity provider as part of the federation configuration for onboarding with IBMid.",
                   "args": []
                 },
                 {
@@ -3443,6 +3443,11 @@
         {
           "name": "state",
           "description": "The state of the user.",
+          "args": []
+        },
+        {
+          "name": "phonenumber",
+          "description": "The contact number of the user.",
           "args": []
         },
         {
@@ -4184,7 +4189,7 @@
         },
         {
           "name": "vpc",
-          "description": "The vpc ID of the gateway.",
+          "description": "The VPC ID of the gateway.",
           "args": []
         },
         {
@@ -4289,12 +4294,12 @@
             },
             {
               "name": "port_max",
-              "description": "The inclusive upper bound of TCP/UDP port range.",
+              "description": "The TCP/UDP port range that includes maximum bound.",
               "args": []
             },
             {
               "name": "port_min",
-              "description": "The inclusive lower bound of TCP/UDP port range.",
+              "description": "The TCP/UDP port range that includes minimum bound.",
               "args": []
             }
           ]
@@ -4336,7 +4341,7 @@
         },
         {
           "name": "type",
-          "description": "The cryptosystem that is used by the SSH key.",
+          "description": "The crypto system that is used by the SSH key.",
           "args": []
         }
       ]
@@ -4646,7 +4651,7 @@
         },
         {
           "name": "key_name",
-          "description": "(Required, String) The name of the key. Only matching name of the keys are etrieved",
+          "description": "(Required, String) The name of the key. Only matching name of the keys are retrieved",
           "args": []
         },
         {
@@ -4972,7 +4977,7 @@
             },
             {
               "name": "cidr",
-              "description": "A subnet's Classless Inter-Domain Routing prefix. This is a number between 0 and 32 signifying the number of bits in a subnet's netmask.",
+              "description": "A subnet's Classless Inter-Domain Routing prefix. This is a number between 0 and 32 signifying the number of bits in a subnet's mask.",
               "args": []
             }
           ]
@@ -5159,22 +5164,22 @@
           "args": [
             {
               "name": "href",
-              "description": "The href of this image.",
+              "description": "The hyper link of an image.",
               "args": []
             },
             {
               "name": "id",
-              "description": "The unique identifier for the image.",
+              "description": "The unique identifier of an image.",
               "args": []
             },
             {
               "name": "name",
-              "description": "The name of the image.",
+              "description": "The name of an image.",
               "args": []
             },
             {
               "name": "state",
-              "description": "The state of the image.",
+              "description": "The state of an image.",
               "args": []
             }
           ]
@@ -5262,7 +5267,7 @@
         },
         {
           "name": "max_processors",
-          "description": "The maximum number of processors that can be allocated to the instance without shutting down or rebooting the LPAR.",
+          "description": "The maximum number of processors that can be allocated to the instance without shutting down or rebooting the `LPAR`.",
           "args": []
         },
         {
@@ -5277,7 +5282,7 @@
         },
         {
           "name": "max_memory",
-          "description": "The maximum amount of memory that can be allocated to the instance without shutting down or rebooting the LPAR.",
+          "description": "The maximum amount of memory that can be allocated to the instance without shutting down or rebooting the `LPAR`.",
           "args": []
         },
         {
@@ -5426,7 +5431,7 @@
             },
             {
               "name": "href",
-              "description": "The href of the volume.",
+              "description": "The hyper link of the volume.",
               "args": []
             }
           ]
@@ -6197,7 +6202,7 @@
             },
             {
               "name": "network_type",
-              "description": "The type of network connected with the connection. Possible values are `classic` or `vpc`.",
+              "description": "The type of network connected with the connection. Possible values are `classic` or `VPC`.",
               "args": []
             },
             {
@@ -6207,7 +6212,7 @@
             },
             {
               "name": "id",
-              "description": "The unique identifier for the transit gateway connection to network either `vpc` or `classic`).",
+              "description": "The unique identifier for the transit gateway connection to network either `VPC` or `classic`).",
               "args": []
             },
             {
@@ -6921,7 +6926,7 @@
         },
         {
           "name": "dns_provider_instance_crn",
-          "description": "(Optional, String) The CRN-based instance ID of the IBM Cloud Internet Services instance that manages the domains. If not present, Certificate Manager assumes that a `v4` or above Callback URL notifications channel with domain validation exists.",
+          "description": "(Optional, String) The CRN-based instance ID of the IBM Cloud Internet Services instance that manages the domains. If not present, Certificate Manager assumes that a `v4` or Callback URL notifications channel with domain validation exists.",
           "args": []
         },
         {
@@ -7071,7 +7076,7 @@
         },
         {
           "name": "ttl",
-          "description": "(Optional, Integer) The time to live (TTL) in seconds for how long the resolved DNS record entry is cached before the IP address of the DNS entry must be looked up again. If your global load balancer is proxied, this value is automatically set and cannot be changed. If your global load balancer is unproxied, you can enter a value that is 120 or greater.",
+          "description": "(Optional, Integer) The time to live (TTL) in seconds for how long the resolved DNS record entry is cached before the IP address of the DNS entry must be looked up again. If your global load balancer is proxied, this value is automatically set and cannot be changed. If your global load balancer is not in proxy, you can enter a value that is 120 or greater.",
           "args": []
         }
       ],
@@ -7423,7 +7428,7 @@
         },
         {
           "name": "ttl",
-          "description": "(Optional, Integer) The time to live (TTL) in seconds for how long the load balancer must cache a resolved IP address for a DNS entry before the load balancer must look up the IP address again. If your global load balancer is proxied, this value is automatically set and cannot be changed. If your global load balancer is unproxied, you can enter a value that is 120 or greater.",
+          "description": "(Optional, Integer) The time to live (TTL) in seconds for how long the load balancer must cache a resolved IP address for a DNS entry before the load balancer must look up the IP address again. If your global load balancer is proxied, this value is automatically set and cannot be changed. If your global load balancer is not in proxy, you can enter a value that is 120 or greater.",
           "args": []
         },
         {
@@ -7616,7 +7621,7 @@
         },
         {
           "name": "minimum_origins",
-          "description": "(Optional, Integer) The minimum number of origins that must be healthy for this pool to serve traffic. If the number of healthy origins falls below this number, the pool will be marked unhealthy and we will failover to the next available pool. Default: 1.",
+          "description": "(Optional, Integer) The minimum number of origins that must be healthy for this pool to serve traffic. If the number of healthy origins falls within this number, the pool will be marked unhealthy and we will failover to the next available pool. Default: 1.",
           "args": []
         },
         {
@@ -7692,11 +7697,11 @@
         },
         {
           "name": "match",
-          "description": "(Optional, List of matching rules) A list of characteristics that incoming network traffic must match to be counted towards the `threshold`.",
+          "description": "(Optional, List of matching rules) A list of characteristics that incoming network traffic must match the `threshold` count.",
           "args": [
             {
               "name": "request",
-              "description": "(Optional, List of request characteristics) A list of characteristics that the incoming request must match to be counted towards the `threshold`. If this list is not provided, all incoming requests are counted towards the `threshold`.",
+              "description": "(Optional, List of request characteristics) A list of characteristics that the incoming request match the `threshold` count. If this list is not provided, all incoming requests are matched the count of the `threshold`.",
               "args": [
                 {
                   "name": "url",
@@ -7705,12 +7710,12 @@
                 },
                 {
                   "name": "schemes",
-                  "description": "(Optional, Set of strings) The scheme of the request that determines the desired protocol. Supported values are `HTTPS`, `HTTP,HTTPS`, and `ALL`.",
+                  "description": "(Optional, Set of strings) The scheme of the request that determines the protocol that you want. Supported values are `HTTPS`, `HTTP,HTTPS`, and `ALL`.",
                   "args": []
                 },
                 {
                   "name": "methods",
-                  "description": "(Optional, Set of strings) The HTTP methods that the incoming request can use to be counted towards the `threshold`. Supported values are `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD`, and `ALL`. You can also combine multiple methods and seperate them with a comma. For example `POST,PUT`.",
+                  "description": "(Optional, Set of strings) The HTTP methods that the incoming request that match the `threshold` count. Supported values are `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD`, and `ALL`. You can also combine multiple methods and separate them with a comma. For example `POST,PUT`.",
                   "args": []
                 }
               ]
@@ -7719,16 +7724,16 @@
         },
         {
           "name": "response",
-          "description": "(Optional, List of HTTP responses) A list of HTTP responses that outgoing packets must match before they can be returned to the client. If an incoming request matches the request criteria, but the reponse does not match the response criteria, then the request packet is not counted towards the `threshold`.",
+          "description": "(Optional, List of HTTP responses) A list of HTTP responses that outgoing packets must match before they can be returned to the client. If an incoming request matches the request criteria, but the response does not match the response criteria, then the request packet is not counted with the `threshold`.",
           "args": [
             {
               "name": "status",
-              "description": "(Optional, Set of integers) The HTTP status that the response must have so that the request is counted towards the `threshold`. You can specify one (`403`) or multiple (`401,403`) HTTP response codes. The value that you enter must be between 100 and 999.",
+              "description": "(Optional, Set of integers) The HTTP status that the response must have so that the request is matched with the `threshold` count. You can specify one (`403`) or multiple (`401,403`) HTTP response codes. The value that you enter must be between 100 and 999.",
               "args": []
             },
             {
               "name": "header",
-              "description": "(Optional, List of response headers) A list of HTTP response headers that the response packet must match so that the original request is counted towards the `threshold`.",
+              "description": "(Optional, List of response headers) A list of HTTP response headers that the response packet must match so that the original request is matched with the `threshold` count.",
               "args": [
                 {
                   "name": "name",
@@ -7765,7 +7770,7 @@
             },
             {
               "name": "response",
-              "description": "(Optional, List of reponse information) A list of information that you want to return to the client, such as the `content-type` and specific body information. The information provided in this parameter overrides the default HTML error page that is returned to the client. You can use this option only for actions of type `simulate` or `ban`.",
+              "description": "(Optional, List of response information) A list of information that you want to return to the client, such as the `content-type` and specific body information. The information provided in this parameter overrides the default HTML error page that is returned to the client. You can use this option only for actions of type `simulate` or `ban`.",
               "args": [
                 {
                   "name": "content_type",
@@ -7774,7 +7779,7 @@
                 },
                 {
                   "name": "body",
-                  "description": "(Optional, String) The body of the reponse that you want to return to the client. The information that you provide must match the `action.response.content_type` that you specified. The value that you enter can have a maximum length of 1024.",
+                  "description": "(Optional, String) The body of the response that you want to return to the client. The information that you provide must match the `action.response.content_type` that you specified. The value that you enter can have a maximum length of 1024.",
                   "args": []
                 }
               ]
@@ -7869,7 +7874,7 @@
         },
         {
           "name": "virtual_server_id",
-          "description": "(Optional, Integer) The ID of a virtual server in a local load balancer. You can find the ID with the following [URL](https://api.softlayer.com/rest/v3/SoftLayer_Network_Application_Delivery_Controller_LoadBalancer_VirtualIpAddress/<load_balancer_ID>/getObject?objectMask=virtualServers). Replace `<load_balancer_ID>` with the ID of the target load balancer. An IBM Cloud Classic Infrastructure user name and API key are required.",
+          "description": "(Optional, Integer) The ID of a virtual server in a local load balancer. You can find the ID with the following URL `https://api.softlayer.com/rest/v3/SoftLayer_Network_Application_Delivery_Controller_LoadBalancer_VirtualIpAddress/<load_balancer_ID>/getObject?objectMask=virtualServers`. Replace `<load_balancer_ID>` with the ID of the target load balancer. An IBM Cloud Classic Infrastructure user name and API key are required.",
           "args": []
         },
         {
@@ -7919,7 +7924,7 @@
         },
         {
           "name": "cooldown",
-          "description": "(Optional, Integer) The duration, expressed in seconds, that the policy waits after the last action date before performing another scaling action. If you do not provide a value, the `scale_group` cooldown applies.",
+          "description": "(Optional, Integer) The duration, expressed in seconds, that the policy waits after the last action date before performing another scaling action. If you do not provide a value, the `scale_group` cool down applies.",
           "args": []
         },
         {
@@ -8004,7 +8009,7 @@
         },
         {
           "name": "gpu_key_name",
-          "description": "(Optional, String) The key name for the primary Graphics Processing Unit (GPU). Example: `GPU_NVIDIA_GRID_K2`. Locate your package ID. See `package_key_name` attribute. Once you have the ID fetch its [details](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/<PACKAGE_ID>/getItems?objectMask=mask[prices[id,categories[id,name,categoryCode],capacityRestrictionType,capacityRestrictionMinimum,capacityRestrictionMaximum,locationGroupId]]). Select a gpu key name from the resulting available gpu key names where category code is `gpu0`.",
+          "description": "(Optional, String) The key name for the primary Graphics Processing Unit (GPU). Example: `GPU_NVIDIA_GRID_K2`. Locate your package ID. See `package_key_name` attribute. Once you have the ID fetch its details by accessing the URL `https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/<PACKAGE_ID>/getItems?objectMask=mask[prices[id,categories[id,name,categoryCode],capacityRestrictionType,capacityRestrictionMinimum,capacityRestrictionMaximum,locationGroupId]]`. Select a gpu key name from the resulting available gpu key names where category code is `gpu0`.",
           "args": []
         },
         {
@@ -8104,12 +8109,12 @@
         },
         {
           "name": "package_key_name",
-          "description": "(Optional, String) The key name for the monthly bare metal server's package. Only use this argument when you create a new monthly bare metal server. You can find available package key names in the [SoftLayer API](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_CPU\"}}}), using your API key as the password.",
+          "description": "(Optional, String) The key name for the monthly bare metal server's package. Only use this argument when you create a new monthly bare metal server. You can find available package key names in the SoftLayer API URL `https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_CPU\"}}}`, using your API key as the password.",
           "args": []
         },
         {
           "name": "process_key_name",
-          "description": "(Optional, String) The key name for the monthly bare metal server's process. Only use this argument when you create a new monthly bare metal server. To get a process key name, first find the package key name in the [SoftLayer API](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_CPU\"}}}). Then replace <PACKAGE_NAME> with your package key name in the following [URL](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/<PACKAGE_NAME>/getItems?objectMask=mask[prices[id,categories[id,name,categoryCode],capacityRestrictionType,capacityRestrictionMinimum,capacityRestrictionMaximum,locationGroupId]]). Select a process key name from the resulting available process key names.",
+          "description": "(Optional, String) The key name for the monthly bare metal server's process. Only use this argument when you create a new monthly bare metal server. To get a process key name, first find the package key name in the [SoftLayer API](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_CPU\"}}}). Then replace <PACKAGE_NAME> with your package key name in the following URL `https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/<PACKAGE_NAME>/getItems?objectMask=mask[prices[id,categories[id,name,categoryCode],capacityRestrictionType,capacityRestrictionMinimum,capacityRestrictionMaximum,locationGroupId]]`. Select a process key name from the resulting available process key names.",
           "args": []
         },
         {
@@ -8153,7 +8158,7 @@
             },
             {
               "name": "partition_template_id",
-              "description": "(Optional, String) The partition template ID for the OS disk. Templates are different based on the target OS. To get the partition template ID, first find the OS ID in the [SoftLayer API](https://api.softlayer.com/rest/v3/SoftLayer_Hardware_Component_Partition_OperatingSystem/getAllObjects). Then replace <OS_ID> with your OS ID in the following [URL](https://api.softlayer.com/rest/v3/SoftLayer_Hardware_Component_Partition_OperatingSystem/<OS_ID>/getPartitionTemplates). Select you template ID in resulting available partition template IDs.",
+              "description": "(Optional, String) The partition template ID for the OS disk. Templates are different based on the target OS. To get the partition template ID, first find the OS ID in the [SoftLayer API](https://api.softlayer.com/rest/v3/SoftLayer_Hardware_Component_Partition_OperatingSystem/getAllObjects). Then replace <OS_ID> with your OS ID in the following URL`https://api.softlayer.com/rest/v3/SoftLayer_Hardware_Component_Partition_OperatingSystem/<OS_ID>/getPartitionTemplates`. Select your template ID in resulting available partition template IDs.",
               "args": []
             }
           ]
@@ -8358,7 +8363,7 @@
         },
         {
           "name": "pod",
-          "description": "(Required, String) The data center pod where you want to create the placement group. To find the pod, run `ibmcloud sl placement-group create-options` and select one of the **Backend Router ID** for the data center where you want to create the placement group.",
+          "description": "(Required, String) The data center pod where you want to create the placement group. To find the pod, run `ibmcloud sl placement-group create-options` and select one of the **Back-end Router ID** for the data center where you want to create the placement group.",
           "args": []
         },
         {
@@ -8571,7 +8576,7 @@
         },
         {
           "name": "disks",
-          "description": "(Optional, Array of integers) The numeric disk sizes (in GBs) for the instance's block device and disk image settings. The default value is the smallest available capacity for the primary disk. If you specify an image template, the template provides the disk capacity. If you specify the `flavorKeyName`, first disk is provided by the flavor.",
+          "description": "(Optional, Array of integers) The numeric disk sizes in GBs for the instance's block device and disk image settings. The default value is the smallest available capacity for the primary disk. If you specify an image template, the template provides the disk capacity. If you specify the `flavorKeyName`, first disk is provided by the flavor.",
           "args": []
         },
         {
@@ -8631,17 +8636,17 @@
         },
         {
           "name": "public_bandwidth_limited",
-          "description": "(Optional, Integer) Allowed public network traffic(GB) per month. It can be greater than 0 when the server is a monthly based server. Defaults to the smallest available capacity for the public bandwidth are used.       **NOTE**: Conflicts with `private_network_only` and `public_bandwidth_unlimited`.",
+          "description": "(Optional, Integer) Allowed public network traffic in GB per month. It can be greater than 0 when the server is a monthly based server. Defaults to the smallest available capacity for the public bandwidth are used.       **NOTE**: Conflicts with `private_network_only` and `public_bandwidth_unlimited`.",
           "args": []
         },
         {
           "name": "public_bandwidth_unlimited",
-          "description": "(Optional, Boolean) Allowed unlimited public network traffic(GB) per month for a monthly based server. The `network_speed` should be 100 Mbps. Default value: `false`.       **NOTE**: Conflicts with `private_network_only` and `public_bandwidth_limited`.",
+          "description": "(Optional, Boolean) Allowed unlimited public network traffic in GB per month for a monthly based server. The `network_speed` should be 100 Mbps. Default value: `false`.       **NOTE**: Conflicts with `private_network_only` and `public_bandwidth_limited`.",
           "args": []
         },
         {
           "name": "evault",
-          "description": "(Optional, Integer) Allowed evault(GB) per month for monthly based servers.",
+          "description": "(Optional, Integer) Allowed `Evault` in GB per month for monthly based servers.",
           "args": []
         },
         {
@@ -9394,7 +9399,7 @@
         },
         {
           "name": "update_all_workers",
-          "description": "(Optional, Boolean) Set to true, if you want to update workers kube version with the cluster kube_version.",
+          "description": "(Optional, Boolean) Set to true, if you want to update workers Kubernetes version with the cluster kube_version.",
           "args": []
         },
         {
@@ -9591,7 +9596,7 @@
         },
         {
           "name": "entitlement",
-          "description": "(Optional, String) The {{site.data.keyword.openshiftshort}} cluster entitlement avoids incurred OCP license charges and use cloud pak with OCP licence entitlement to add the {{site.data.keyword.openshiftshort}} cluster worker pool. **Note** <ul><li> It is set as one time creation of the worker pool. There is no impacts on any modification.</li><li> Set the argument to `entitlement` only when you use cluster with a cloud pak that has an {{site.data.keyword.openshiftshort}} entitlement </li></ul>",
+          "description": "(Optional, String) The {{site.data.keyword.openshiftshort}} cluster entitlement avoids incurred OCP license charges and use cloud pak with OCP license entitlement to add the {{site.data.keyword.openshiftshort}} cluster worker pool. **Note** <ul><li> It is set as one time creation of the worker pool. There is no impacts on any modification.</li><li> Set the argument to `entitlement` only when you use cluster with a cloud pak that has an {{site.data.keyword.openshiftshort}} entitlement </li></ul>",
           "args": []
         }
       ],
@@ -9616,12 +9621,12 @@
         },
         {
           "name": "disk_encryption",
-          "description": "(Optional, Boolean) If set to **true**, the worker node disks are set up with an AES 256-bit encryption. If set to **false**, the disk encryption for the worker node is disabled. For more information, see [Encrypted disks](/docs/containers?topic=containers-security#encrypted_disk).",
+          "description": "(Optional, Boolean) If set to **true**, the worker node disks are set up with an AES 256-bit encryption. If set to **false**, the disk encryption for the worker node is disabled. For more information, see [Encrypted disks](/docs/containers?topic=containers-security).",
           "args": []
         },
         {
           "name": "entitlement",
-          "description": "(Optional, String) If you purchased an IBM Cloud Cloud Pak that includes an entitlement to run worker nodes that are installed with OpenShift Container Platform, enter `entitlement` to create your worker pool with that entitlement so that you are not charged twice for the {{site.data.keyword.openshiftshort}} license. ** Note ** that this option can be set only when you create the worker pool. After the worker pool is created, the cost for the {{site.data.keyword.openshiftshort}} license automatically occures when you add worker nodes to your worker pool.",
+          "description": "(Optional, String) If you purchased an IBM Cloud Cloud Pak that includes an entitlement to run worker nodes that are installed with OpenShift Container Platform, enter `entitlement` to create your worker pool with that entitlement so that you are not charged twice for the {{site.data.keyword.openshiftshort}} license. ** Note ** that this option can be set only when you create the worker pool. After the worker pool is created, the cost for the {{site.data.keyword.openshiftshort}} license automaticates when you add worker nodes to your worker pool.",
           "args": []
         },
         {
@@ -9722,7 +9727,7 @@
         },
         {
           "name": "wait_till_albs",
-          "description": "(Optional, Boolean) When you add a zone to a worker pool, worker nodes are provisioned in that zone with the configuration that you defined in your worker pool. This process and enabling the ALBs on those workere nodes can take a few minutes to complete. To avoid long wait times when you run your Terraform code, you can specify the stage when you want Terraform to mark the zone attachment complete. Set to **true** to wait until all worker nodes are successfully provisioned in the zone that you added to your worker pool and all ALBs are available and healthy. If you want the worker node creation and ALB enablement to continue in the background, set this option to **false**.",
+          "description": "(Optional, Boolean) When you add a zone to a worker pool, worker nodes are provisioned in that zone with the configuration that you defined in your worker pool. This process and enabling the ALBs on those worker nodes can take a few minutes to complete. To avoid long wait times when you run your Terraform code, you can specify the stage when you want Terraform to mark the zone attachment complete. Set to **true** to wait until all worker nodes are successfully provisioned in the zone that you added to your worker pool and all ALBs are available and healthy. If you want the worker node creation and ALB enablement to continue in the background, set this option to **false**.",
           "args": []
         },
         {
@@ -9879,7 +9884,7 @@
         },
         {
           "name": "location",
-          "description": "(Required, String) The location where you want to deploy your instance. The location must match the `region` parameter that you specify in the `provider` block of your Terraform configuration file. The default value is `us-south`. Currently supported regions are `us-south`, `us-east`, `eu-gb`, `eu-de`, `au-syd`, `jp-tok`, `oslo01`.",
+          "description": "(Required, String) The location where you want to deploy your instance. The location must match the `region` parameter that you specify in the `provider` block of your Terraform configuration file. The default value is `us-south`. Currently, supported regions are `us-south`, `us-east`, `eu-gb`, `eu-de`, `au-syd`, `jp-tok`, `oslo01`.",
           "args": []
         },
         {
@@ -9904,7 +9909,7 @@
         },
         {
           "name": "adminpassword",
-          "description": "(Optional, String) The password for the database administrator. If not specified, an empty string is provided for the password and the user ID cannot be used. In this case, additional users must be specified in a `user` block.",
+          "description": "(Optional, String) The password for the database administrator. If not specified, an empty string is provided for the password and the user ID cannot be used. In this case, more users must be specified in a `user` block.",
           "args": []
         },
         {
@@ -9924,17 +9929,17 @@
         },
         {
           "name": "backup_id",
-          "description": "(Optional, String) The CRN of a backup resource to restore from. The backup must have been created by a database deployment with the same service ID. The backup is loaded after provisioning and the new deployment starts up that uses that data. A backup CRN is in the format `crn:v1:<…>:backup:`. If omitted, the database is provisioned empty.",
+          "description": "(Optional, String) The CRN of a backup resource to restore from. The backup is created by a database deployment with the same service ID. The backup is loaded after provisioning and the new deployment starts up that uses that data. A backup CRN is in the format `crn:v1:<…>:backup:`. If omitted, the database is provisioned empty.",
           "args": []
         },
         {
           "name": "remote_leader_id",
-          "description": "(Optional, String) A CRN of the leader database to make the replica(read-only) deployment. The leader database must have been created by a database deployment with the same service ID. A read-only replica is set up to replicate all of your data from the leader deployment to the replica deployment using asynchronous replication. For more information, see [Configuring Read-only Replicas](/docs/databases-for-postgresql?topic=databases-for-postgresql-read-only-replicas).",
+          "description": "(Optional, String) A CRN of the leader database to make the replica(read-only) deployment. The leader database is created by a database deployment with the same service ID. A read-only replica is set up to replicate all of your data from the leader deployment to the replica deployment by using asynchronous replication. For more information, see [Configuring Read-only Replicas](/docs/databases-for-postgresql?topic=databases-for-postgresql-read-only-replicas).",
           "args": []
         },
         {
           "name": "key_protect_key",
-          "description": "(Optional, String) The CRN of a Key Protect root key that you want to use for disk encryption. A key protect CRN is in the format `crn:v1:<…>:key:`. You can specify the root key during the database creation only. After the database is created, you cannot update the root key. Refer [Disk encryption](/docs/cloud-databases?topic=cloud-databases-key-protect#using-the-key-protect-key) documentation for more information.",
+          "description": "(Optional, String) The CRN of a Key Protect root key that you want to use for disk encryption. A key protect CRN is in the format `crn:v1:<…>:key:`. You can specify the root key during the database creation only. After the database is created, you cannot update the root key. For more information, refer [Disk encryption](/docs/cloud-databases?topic=cloud-databases-key-protect#using-the-key-protect-key) documentation.",
           "args": []
         },
         {
@@ -9959,7 +9964,7 @@
         },
         {
           "name": "service_endpoints",
-          "description": "(Optional, String) Specify if you want to enable the public, private, or both service endpoints. Supported values are `public`, `private`, or `public-and-private`. The default is `public`.",
+          "description": "(Optional, String) Specify whether you want to enable the public, private, or both service endpoints. Supported values are `public`, `private`, or `public-and-private`. The default is `public`.",
           "args": []
         },
         {
@@ -9968,12 +9973,12 @@
           "args": [
             {
               "name": "name",
-              "description": "(Optional, String) The of the user ID to add to the database instance. The user ID must be between 5 and 32 characters.",
+              "description": "(Optional, String) The user ID to add to the database instance. The user ID must be in the range 5 - 32 characters.",
               "args": []
             },
             {
               "name": "password",
-              "description": "(Optional, String) The password for the user ID. The password must be between 10 and 32 characters.",
+              "description": "(Optional, String) The password for the user ID. The password must be in the range 10 - 32 characters.",
               "args": []
             }
           ]
@@ -9984,7 +9989,7 @@
           "args": [
             {
               "name": "address",
-              "description": "(Optional, String) The IP address or range of database client addresses to be whitelisted in CIDR format. Example: `172.168.1.2/32`.",
+              "description": "(Optional, String) The IP address or range of database client addresses to be whitelisted in CIDR format. Example, `172.168.1.2/32`.",
               "args": []
             },
             {
@@ -10013,7 +10018,7 @@
         },
         {
           "name": "adminuser",
-          "description": "The user ID of the database administrator. Example: `admin` or `root`.",
+          "description": "The user ID of the database administrator. Example, `admin` or `root`.",
           "args": []
         },
         {
@@ -10023,7 +10028,7 @@
         },
         {
           "name": "connectionstrings",
-          "description": "A list of connection strings for the database for each user ID. For more information about how to use connection strings, see the [documentation](/docs/databases-for-postgresql?topic=databases-for-postgresql-connection-strings). The results are returned in pairs of the userid and string: `connectionstrings.1.name = admin connectionstrings.1.string = postgres://admin:$PASSWORD@79226bd4-4076-4873-b5ce-b1dba48ff8c4.b8a5e798d2d04f2e860e54e5d042c915.databases.appdomain.cloud:32554/ibmclouddb?sslmode=verify-full` Individual string parameters can be retrieved using Terraform variables and outputs `connectionstrings.x.hosts.x.port` and `connectionstrings.x.hosts.x.host`",
+          "description": "A list of connection strings for the database for each user ID. For more information about how to use connection strings, see the [documentation](/docs/databases-for-postgresql?topic=databases-for-postgresql-connection-strings). The results are returned in pairs of the userid and string: `connectionstrings.1.name = admin connectionstrings.1.string = postgres://admin:$PASSWORD@79226bd4-4076-4873-b5ce-b1dba48ff8c4.b8a5e798d2d04f2e860e54e5d042c915.databases.appdomain.cloud:32554/ibmclouddb?sslmode=verify-full` Individual string parameters can be retrieved by using Terraform variables and outputs `connectionstrings.x.hosts.x.port` and `connectionstrings.x.hosts.x.host`",
           "args": []
         }
       ]
@@ -10071,12 +10076,12 @@
         },
         {
           "name": "bgp_cer_cidr",
-          "description": "(Optional, String) The BGP customer edge router CIDR. Specify a value within bgp_base_cidr. If bgp_base_cidr is `169.254.0.0/16`, this parameter can be ommitted and a CIDR is selected automatically. For example, `10.254.30.78/30`.",
+          "description": "(Optional, String) The BGP customer edge router CIDR. Specify a value within bgp_base_cidr. If bgp_base_cidr is `169.254.0.0/16`, this parameter can exclude and a CIDR is selected automatically. For example, `10.254.30.78/30`.",
           "args": []
         },
         {
           "name": "bgp_ibm_cidr",
-          "description": "(Optional, String) The {{site.data.keyword.IBM_notm}} BGP ASN. Specify a value within bgp_base_cidr. If bgp_base_cidr is `169.254.0.0/16`, this parameter can be ommitted and a CIDR is selected automatically. For example: `10.254.30.77/30`.",
+          "description": "(Optional, String) The {{site.data.keyword.IBM_notm}} BGP ASN. Specify a value within bgp_base_cidr. If bgp_base_cidr is `169.254.0.0/16`, this parameter can exclude and a CIDR is selected automatically. For example: `10.254.30.77/30`.",
           "args": []
         },
         {
@@ -10246,7 +10251,7 @@
       "args": [
         {
           "name": "name",
-          "description": "(Required, String) The domain's name, including the top-level domain. For example, \"example.com\". When the domain is created, proper `NS` and `SOA` records are created automatically for the domain.",
+          "description": "(Required, String) The name of the domain. For example, \"example.com\". When the domain is created, proper `NS` and `SOA` records are created automatically for the domain.",
           "args": []
         },
         {
@@ -10283,7 +10288,7 @@
         },
         {
           "name": "zone_id",
-          "description": "(Requried, String) The ID of the private DNS zone where you want to add the permitted network.",
+          "description": "(Required, String) The ID of the private DNS zone where you want to add the permitted network.",
           "args": []
         },
         {
@@ -10415,7 +10420,7 @@
         },
         {
           "name": "mx_priority",
-          "description": "(Optional, Integer) The priority of the mail exchanger that delivers mail for a domain. This is useful in cases where a domain has more than one mail exchanger. A lower number denotes a higher priority, and mail will attempt to deliver through the highest priority exchanger before moving to lower priority exchangers. The default value is `0`.",
+          "description": "(Optional, Integer) The priority of the mail exchanger that delivers mail for a domain. This is useful in cases where a domain has more than one mail exchanger. A lower number denotes a higher priority, and mail will attempt to deliver through the highest priority exchanger before moving to lower priority exchanger. The default value is `0`.",
           "args": []
         },
         {
@@ -10534,12 +10539,12 @@
         },
         {
           "name": "service",
-          "description": "(Required for `SRV` records, String) If you create an `SRV` record, enter the name of the desired service. The name must start with an underscore (`_`).",
+          "description": "(Required for `SRV` records, String) If you create an `SRV` record, enter the name of the service that you want. The name must start with an underscore (`_`).",
           "args": []
         },
         {
           "name": "protocol",
-          "description": "(Required for `SRV` records, String) If you create an `SRV` record, enter the name of the desired protocol.",
+          "description": "(Required for `SRV` records, String) If you create an `SRV` record, enter the name of the protocol that you want.",
           "args": []
         }
       ],
@@ -10678,7 +10683,7 @@
       "args": [
         {
           "name": "name",
-          "description": "(Requierd, String) The name of the DNS zone that you want to create.",
+          "description": "(Required, String) The name of the DNS zone that you want to create.",
           "args": []
         },
         {
@@ -10957,12 +10962,12 @@
             },
             {
               "name": "memory",
-              "description": "(Optional, Integer) The maximum memory for the action, specified in MBs. Default value: `256`.",
+              "description": "(Optional, Integer) The maximum memory for the action, specified in megabyte. Default value: `256`.",
               "args": []
             },
             {
               "name": "log_size",
-              "description": "(Optional, Integer) The maximum log size for the action, specified in MBs. Default value: `10`.",
+              "description": "(Optional, Integer) The maximum log size for the action, specified in megabyte. Default value: `10`.",
               "args": []
             }
           ]
@@ -10978,7 +10983,7 @@
             },
             {
               "name": "init",
-              "description": "(Optional, String) When using `nodejs`, the optional zipfile reference.        **NOTE**: Conflicts with `exec.components`, `exec.image`.",
+              "description": "(Optional, String) When using `nodejs`, the optional archive reference.        **NOTE**: Conflicts with `exec.components`, `exec.image`.",
               "args": []
             },
             {
@@ -11369,7 +11374,7 @@
         },
         {
           "name": "identity_provider",
-          "description": "(Required, String) Enter the URI for your identity provider. This is the SAML \"entityId\" field, which is sometimes referred to as the issuer ID, for the identity provider as part of the federation configuration for onboarding with IBMid. Example: `https://idp.example.org/SAML2`.",
+          "description": "(Required, String) Enter the URI for your identity provider. This is the SAML `entity ID` field, which is sometimes referred to as the issuer ID, for the identity provider as part of the federation configuration for onboarding with IBMid. Example: `https://idp.example.org/SAML2`.",
           "args": []
         },
         {
@@ -11992,7 +11997,7 @@
         },
         {
           "name": "allowed_ip_addresses",
-          "description": "(Optional, List) Lists the IP addresses in comman separated format.",
+          "description": "(Optional, List) Lists the IP addresses in common separated format.",
           "args": []
         }
       ],
@@ -12017,12 +12022,12 @@
         },
         {
           "name": "phase_one",
-          "description": "(Optional, Map) The key-value parameters for phaseOne negotiation.",
+          "description": "(Optional, Map) The key-value parameters for phase One negotiation.",
           "args": []
         },
         {
           "name": "phase_two",
-          "description": "(Optional, Map) The key-value parameters for phaseTwo negotiation.",
+          "description": "(Optional, Map) The key-value parameters for phase Two negotiation.",
           "args": []
         },
         {
@@ -12127,7 +12132,7 @@
       "args": [
         {
           "name": "authentication_algorithm",
-          "description": "(Required, String) Enter the algorithm that you want to use to authenticate IPsec peers. Available options are `md5`, `sha1`, or `sha256`.",
+          "description": "(Required, String) Enter the algorithm that you want to use to authenticate `IPsec` peers. Available options are `md5`, `sha1`, or `sha256`.",
           "args": []
         },
         {
@@ -12365,7 +12370,7 @@
         },
         {
           "name": "resource_group",
-          "description": "(Optional, String) The ID of the resource gorup where you want to create the instance.",
+          "description": "(Optional, String) The ID of the resource group where you want to create the instance.",
           "args": []
         },
         {
@@ -12566,7 +12571,7 @@
       "args": [
         {
           "name": "authentication_algorithm",
-          "description": "(Required, String) Enter the algorithm that you want to use to authenticate IPsec peers. Available options are `md5`, `sha1`, or `sha256`.",
+          "description": "(Required, String) Enter the algorithm that you want to use to authenticate `IPsec` peers. Available options are `md5`, `sha1`, or `sha256`.",
           "args": []
         },
         {
@@ -12586,7 +12591,7 @@
         },
         {
           "name": "pfs",
-          "description": "(Required, String) Enter the Perfect Forward Secrecy (PFS) protocol that you want to use during a session. Available options are `disabled`, `group_2`, `group_5`, and `group_14`.",
+          "description": "(Required, String) Enter the Perfect Forward Secrecy protocol that you want to use during a session. Available options are `disabled`, `group_2`, `group_5`, and `group_14`.",
           "args": []
         },
         {
@@ -12932,7 +12937,7 @@
         },
         {
           "name": "health_monitor_url",
-          "description": "(Optional, String) The health check url. This option is applicable only to the HTTP `health-type`.",
+          "description": "(Optional, String) The health check URL. This option is applicable only to the HTTP `health-type`.",
           "args": []
         },
         {
@@ -13295,12 +13300,12 @@
             },
             {
               "name": "port_max",
-              "description": "The inclusive upper bound of TCP/UDP port range.",
+              "description": "The TCP/UDP port range that includes maximum bound.",
               "args": []
             },
             {
               "name": "port_min",
-              "description": "The inclusive lower bound of TCP/UDP port range.",
+              "description": "The TCP/UDP port range that includes minimum bound.",
               "args": []
             }
           ]
@@ -13347,7 +13352,7 @@
         },
         {
           "name": "primary_ipv4_address",
-          "description": "The primvary IPv4 address.",
+          "description": "The primary IPv4 address.",
           "args": []
         },
         {
@@ -13357,7 +13362,7 @@
         },
         {
           "name": "secondary_address",
-          "description": "Collection seconary IP addresses.",
+          "description": "Collection secondary IP addresses.",
           "args": []
         },
         {
@@ -13472,12 +13477,12 @@
           "args": [
             {
               "name": "port_min",
-              "description": "(Required, Integer) The inclusive lower bound of TCP port range. Valid values are from 1 to 65535.",
+              "description": "(Required, Integer) The TCP port range that includes minimum bound. Valid values are from 1 to 65535.",
               "args": []
             },
             {
               "name": "port_max",
-              "description": "(Required, Integer) The inclusive upper bound of TCP port range. Valid values are from 1 to 65535.",
+              "description": "(Required, Integer) The TCP port range that includes maximum bound. Valid values are from 1 to 65535.",
               "args": []
             }
           ]
@@ -13488,12 +13493,12 @@
           "args": [
             {
               "name": "port_min",
-              "description": "(Required, Integer) The inclusive lower bound of UDP port range. Valid values are from 1 to 65535.",
+              "description": "(Required, Integer) The UDP port range that includes minimum bound. Valid values are from 1 to 65535.",
               "args": []
             },
             {
               "name": "port_max",
-              "description": "(Required, Integer) The inclusive upper bound of UDP port range. Valid values are from 1 to 65535. **NOTE**: If any of the `icmp` , `tcp` or `udp` is not specified it creates a rule with protocol `ALL`.",
+              "description": "(Required, Integer) The UDP port range that includes maximum bound. Valid values are from 1 to 65535. **NOTE**: If any of the `icmp` , `tcp` or `udp` is not specified it creates a rule with protocol `ALL`.",
               "args": []
             }
           ]
@@ -13557,7 +13562,7 @@
         },
         {
           "name": "type",
-          "description": "The cryptosystem used by this key.",
+          "description": "The crypto system used by this key.",
           "args": []
         }
       ]
@@ -13857,7 +13862,7 @@
         },
         {
           "name": "vpc",
-          "description": "(Requied, String) The ID of the VPC where you want to create the route.",
+          "description": "(Required, String) The ID of the VPC where you want to create the route.",
           "args": []
         },
         {
@@ -14084,7 +14089,7 @@
         },
         {
           "name": "type",
-          "description": "The type of the key kms or HPCS.",
+          "description": "The type of the key KMS or HPCS.",
           "args": []
         }
       ]
@@ -14162,7 +14167,7 @@
       "args": [
         {
           "name": "connections",
-          "description": "(Required, Integer) The number of connections for the local load balancer. Only incremental upgrade is supported . For downgrade, please open the softlayer support ticket.",
+          "description": "(Required, Integer) The number of connections for the local load balancer. Only incremental upgrade is supported . For downgrade, please open the SoftLayer support ticket.",
           "args": []
         },
         {
@@ -14236,7 +14241,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Arrya of Strings) Tags associated with the local load balancer service instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of Strings) Tags associated with the local load balancer service instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
           "args": []
         }
       ],
@@ -14353,22 +14358,22 @@
       "args": [
         {
           "name": "primary_id",
-          "description": "(Required, String) The ID of the primary NetScaler VPX.",
+          "description": "(Required, String) The ID of the primary Netscaler VPX.",
           "args": []
         },
         {
           "name": "secondary_id",
-          "description": "(Required, String) The ID of the secondary NetScaler VPX.",
+          "description": "(Required, String) The ID of the secondary Netscaler VPX.",
           "args": []
         },
         {
           "name": "stay_secondary",
-          "description": "(Optional, Boolean) Specifies whether the secondary NetScaler VPX will  take over the service. Set this argument to `true` to prevent the secondary NetScaler VPX from taking over the service even if the primary NetScaler VPX fails. For additional details, see the [Citrix NetScaler docs](https://docs.citrix.com/en-us/netscaler/10-5/ns-system-wrapper-10-con/ns-nw-ha-intro-wrppr-con/ns-nw-ha-frcng-scndry-nd-sty-scndry-tsk.html) and the [Citrix support docs](https://support.citrix.com/article/CTX116748). The default value is `false`.",
+          "description": "(Optional, Boolean) Specifies whether the secondary Netscaler VPX will  take over the service. Set this argument to `true` to prevent the secondary NetScaler VPX from taking over the service even if the primary NetScaler VPX fails. For additional details, see the [Citrix NetScaler docs](https://docs.citrix.com/en-us/netscaler/10-5/ns-system-wrapper-10-con/ns-nw-ha-intro-wrppr-con/ns-nw-ha-frcng-scndry-nd-sty-scndry-tsk.html) and the [Citrix support docs](https://support.citrix.com/article/CTX116748). The default value is `false`.",
           "args": []
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of strings) Tags associated with the high availability NetScale VPX pair instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of strings) Tags associated with the high availability Netscaler VPX pair instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
           "args": []
         }
       ],
@@ -14392,7 +14397,7 @@
         },
         {
           "name": "destination_ip_address",
-          "description": "(Required, String) The IP address of the server to which traffic directs. If you use NetScaler VPX 10.1, you must indicate a public IP address in an IBM Cloud Classic Infrastructure (SoftLayer) account. If you use NetScaler VPX 10.5, you can use any IP address.",
+          "description": "(Required, String) The IP address of the server to which traffic directs. If you use Netscaler VPX 10.1, you must indicate a public IP address in an IBM Cloud Classic Infrastructure (SoftLayer) account. If you use Netscaler VPX 10.5, you can use any IP address.",
           "args": []
         },
         {
@@ -14402,12 +14407,12 @@
         },
         {
           "name": "weight",
-          "description": "(Required, Integer) The percentage of the total connection limit allocated to the load balancer between all your services. See the [IBM Cloud Classic Infrastructure (SoftLayer) API docs](http://sldn.softlayer.com/reference/datatypes/SoftLayer_Network_LoadBalancer_Service) for details.       **NOTE**: If you use NetScaler VPX 10.5, the weight value is ignored.",
+          "description": "(Required, Integer) The percentage of the total connection limit allocated to the load balancer between all your services. See the [IBM Cloud Classic Infrastructure (SoftLayer) API docs](http://sldn.softlayer.com/reference/datatypes/SoftLayer_Network_LoadBalancer_Service) for details.       **NOTE**: If you use Netscaler VPX 10.5, the weight value is ignored.",
           "args": []
         },
         {
           "name": "connection_limit",
-          "description": "(Required, Integer) The connection limit for this service. Acceptable values are `0`-`4294967294`. See the [Citrix NetScaler docs](https://docs.citrix.com/en-us/netscaler/11/reference/netscaler-command-reference/basic/service.html) for details.",
+          "description": "(Required, Integer) The connection limit for this service. Acceptable values are `0`-`4294967294`. See the [Citrix Netscaler docs](https://docs.citrix.com/en-us/netscaler/11/reference/netscaler-command-reference/basic/service.html) for details.",
           "args": []
         },
         {
@@ -14417,7 +14422,7 @@
         },
         {
           "name": "usip",
-          "description": "(Optional, String) Whether the service reports the source IP of the client to the service being load balanced. Acceptable values are `YES` or `NO`. The default value is `NO`. See the [Citrix NetScaler docs](https://developer-docs.citrix.com/projects/netscaler-nitro-api/en/11.0/configuration/basic/service/service) for more details.       **NOTE**: This argument is only available for VPX 10.5.",
+          "description": "(Optional, String) Whether the service reports the source IP of the client to the service being load balanced. Acceptable values are `YES` or `NO`. The default value is `NO`. See the [Citrix Netscaler docs](https://developer-docs.citrix.com/projects/netscaler-nitro-api/en/11.0/configuration/basic/service/service) for more details.       **NOTE**: This argument is only available for VPX 10.5.",
           "args": []
         },
         {
@@ -14446,12 +14451,12 @@
         },
         {
           "name": "load_balancing_method",
-          "description": "(Required, String) See the [IBM Cloud Classic Infrastructure (SoftLayer) API docs](http://sldn.softlayer.com/reference/datatypes/SoftLayer_Network_LoadBalancer_VirtualIpAddress) for available methods. If you use NetScaler VPX 10.5, see the [Citrix docs](https://docs.citrix.com/en-us/netscaler/10-5/ns-tmg-wrapper-10-con/ns-lb-wrapper-con-10/ns-lb-customizing-lbalgorithms-wrapper-con.html) for additional methods that you can use.",
+          "description": "(Required, String) See the [IBM Cloud Classic Infrastructure (SoftLayer) API docs](http://sldn.softlayer.com/reference/datatypes/SoftLayer_Network_LoadBalancer_VirtualIpAddress) for available methods. If you use Netscaler VPX 10.5, see the [Citrix docs](https://docs.citrix.com/en-us/netscaler/10-5/ns-tmg-wrapper-10-con/ns-lb-wrapper-con-10/ns-lb-customizing-lbalgorithms-wrapper-con.html) for additional methods that you can use.",
           "args": []
         },
         {
           "name": "persistence",
-          "description": "(Optional, String) Applies to NetScaler VPX 10.5 only. See the available persistence types in the [Citrix docs](https://docs.citrix.com/en-us/netscaler/10-5/ns-tmg-wrapper-10-con/ns-lb-wrapper-con-10/ns-lb-persistence-wrapper-con/ns-lb-persistence-about-con.html).",
+          "description": "(Optional, String) Applies to Netscaler VPX 10.5 only. See the available persistence types in the [Citrix docs](https://docs.citrix.com/en-us/netscaler/10-5/ns-tmg-wrapper-10-con/ns-lb-wrapper-con-10/ns-lb-persistence-wrapper-con/ns-lb-persistence-about-con.html).",
           "args": []
         },
         {
@@ -14471,7 +14476,7 @@
         },
         {
           "name": "security_certificate_id",
-          "description": "(Optional, Integer) Applies to NetScaler VPX 10.5 only. The ID of a security certificate you want to use. This argument provides security certification for SSL offload services. For additional information, see the  [ibm_compute_ssl_certificate resource](#ssl-compute-cert).",
+          "description": "(Optional, Integer) Applies to Netscaler VPX 10.5 only. The ID of a security certificate you want to use. This argument provides security certification for SSL offload services. For additional information, see the  [ibm_compute_ssl_certificate resource](#ssl-compute-cert).",
           "args": []
         },
         {
@@ -14514,22 +14519,22 @@
           "args": [
             {
               "name": "frontend_protocol",
-              "description": "(Required, String) The frontend protocol. Accepted values are 'TCP', 'HTTP', and 'HTTPS'.",
+              "description": "(Required, String) The front-end protocol. Accepted values are 'TCP', 'HTTP', and 'HTTPS'.",
               "args": []
             },
             {
               "name": "frontend_port",
-              "description": "(Required, Integer) The frontend protocol port number. The port number must be in the range of 1-65535.",
+              "description": "(Required, Integer) The front-end protocol port number. The port number must be in the range of 1-65535.",
               "args": []
             },
             {
               "name": "backend_protocol",
-              "description": "(Required, String) The backend protocol. Accepted values are 'TCP', 'HTTP', and 'HTTPS'.",
+              "description": "(Required, String) The back-end protocol. Accepted values are 'TCP', 'HTTP', and 'HTTPS'.",
               "args": []
             },
             {
               "name": "backend_port",
-              "description": "(Required, Integer) The backend protocol port number. The port number must be in the range of 1-65535.",
+              "description": "(Required, Integer) The back-end protocol port number. The port number must be in the range of 1-65535.",
               "args": []
             },
             {
@@ -14549,7 +14554,7 @@
             },
             {
               "name": "tls_certificate_id",
-              "description": "(Optional, Integer) The ID of the SSL/TLS certificate being used for a protocol. This ID should be specified when `frontend protocol` has a value of `HTTPS`.",
+              "description": "(Optional, Integer) The ID of the SSL/TLS certificate being used for a protocol. This ID should be specified when `front-end protocol` has a value of `HTTPS`.",
               "args": []
             }
           ]
@@ -14590,12 +14595,12 @@
         },
         {
           "name": "protocol",
-          "description": "(Required, String) Backends protocol",
+          "description": "(Required, String) The back-end protocol",
           "args": []
         },
         {
           "name": "port",
-          "description": "(Required, Integer) Backends port",
+          "description": "(Required, Integer) The back-end port",
           "args": []
         },
         {
@@ -14751,7 +14756,7 @@
             },
             {
               "name": "package_key_name",
-              "description": "(Optional, String) The key name for the network gateway package. You can find available package key names in the [SoftLayer API](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_GATEWAY\"}}}), using your API key as the password. Default value: `NETWORK_GATEWAY_APPLIANCE`. The default will allow to order Single Processor Multi-Core Servers. Use `2U_NETWORK_GATEWAY_APPLIANCE_1O_GBPS` for ordering Dual Processor Multi-Core Servers.",
+              "description": "(Optional, String) The key name for the network gateway package. You can find available package key names in the SoftLayer API URL `https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_GATEWAY\"}}}`, using your API key as the password. Default value: `NETWORK_GATEWAY_APPLIANCE`. The default will allow to order Single Processor Multi-Core Servers. Use `2U_NETWORK_GATEWAY_APPLIANCE_1O_GBPS` for ordering Dual Processor Multi-Core Servers.",
               "args": []
             },
             {
@@ -14911,7 +14916,7 @@
       "args": [
         {
           "name": "routes_to",
-          "description": "(Required, String) The destination IP address that the public IP routes traffic through. The destination IP address can be a public IP address of IBM resources in the same account, such as a public IP address of a VM or public virtual IP addresses of NetScaler VPXs.",
+          "description": "(Required, String) The destination IP address that the public IP routes traffic through. The destination IP address can be a public IP address of IBM resources in the same account, such as a public IP address of a VM or public virtual IP addresses of Netscaler VPXs.",
           "args": []
         },
         {
@@ -15105,7 +15110,7 @@
         },
         {
           "name": "pi_processors",
-          "description": "(Required, Float) The number of vCPUs to assign to the VM (as visibile within the guest operating system).",
+          "description": "(Required, Float) The number of vCPUs to assign to the VM (as visible within the guest operating system).",
           "args": []
         },
         {
@@ -15218,12 +15223,12 @@
         },
         {
           "name": "migratable",
-          "description": "Indicates if the VM is migratable or not.",
+          "description": "Indicates if the VM can be migratable.",
           "args": []
         },
         {
           "name": "max_processors",
-          "description": "The maximum number of processors that can be allocated to the instance with shutting down or rebooting the LPAR.",
+          "description": "The maximum number of processors that can be allocated to the instance with shutting down or rebooting the `LPAR`.",
           "args": []
         },
         {
@@ -15243,7 +15248,7 @@
         },
         {
           "name": "max_memory",
-          "description": "The maximum amount of memory that can be allocated to the instance without shutting down or rebotting the LPAR.",
+          "description": "The maximum amount of memory that can be allocated to the instance without shut down or reboot the `LPAR`.",
           "args": []
         },
         {
@@ -15493,7 +15498,7 @@
         },
         {
           "name": "dashboard_url",
-          "description": "The dashboard url of the new resource instance.",
+          "description": "The dashboard URL of the new resource instance.",
           "args": []
         }
       ]
@@ -15585,7 +15590,7 @@
         },
         {
           "name": "ether_type",
-          "description": "(Optional, String) The IP version. Accepted values  (case sensitive): `IPv4` or `IPv6`. Default value: 'IPv4'.",
+          "description": "(Optional, String) The IP version. Accepted values  (case sensitive): `IPv4` or `IPv6`. Default value: `IPv4`.",
           "args": []
         },
         {
@@ -15861,7 +15866,7 @@
       "args": [
         {
           "name": "datacenter",
-          "description": "(Required, String) The data center where you want to provision the evault storage instance.",
+          "description": "(Required, String) The data center where you want to provision the Evault storage instance.",
           "args": []
         },
         {
@@ -15881,7 +15886,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of strings) Tags associated with the storage evault instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of strings) Tags associated with the storage Evault instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
           "args": []
         }
       ],
@@ -16025,7 +16030,7 @@
         },
         {
           "name": "endpoint_ip",
-          "description": "(Optional, String) The target primary IP address for a static subnet. Only public IP addresses of virtual servers, bare metal servers, and netscaler VPXs can be configured as an `endpoint_ip`. The `static subnet` will be created on the VLAN where the `endpoint_ip` is located.",
+          "description": "(Optional, String) The target primary IP address for a static subnet. Only public IP addresses of virtual servers, bare metal servers, and Netscaler VPXs can be configured as an `endpoint_ip`. The `static subnet` will be created on the VLAN where the `endpoint_ip` is located.",
           "args": []
         },
         {
@@ -16064,7 +16069,7 @@
         },
         {
           "name": "network_id",
-          "description": "(Optional, String) Enter the ID of the network being connected through this connection. This parameter is required for network type 'vpc', it is CRN of the VPC to be connected. This field is required to be unspecified for network type 'classic'. For example: crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b",
+          "description": "(Optional, String) Enter the ID of the network being connected through this connection. This parameter is required for network type 'vpc', the CRN of the VPC to be connected. This field is required to be unspecified for network type 'classic'. For example: crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b",
           "args": []
         }
       ],
