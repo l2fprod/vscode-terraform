@@ -9626,7 +9626,7 @@
         },
         {
           "name": "entitlement",
-          "description": "(Optional, String) If you purchased an IBM Cloud Cloud Pak that includes an entitlement to run worker nodes that are installed with OpenShift Container Platform, enter `entitlement` to create your worker pool with that entitlement so that you are not charged twice for the {{site.data.keyword.openshiftshort}} license. ** Note ** that this option can be set only when you create the worker pool. After the worker pool is created, the cost for the {{site.data.keyword.openshiftshort}} license automaticates when you add worker nodes to your worker pool.",
+          "description": "(Optional, String) If you purchased an IBM Cloud Cloud Pak that includes an entitlement to run worker nodes that are installed with OpenShift Container Platform, enter `entitlement` to create your worker pool with that entitlement so that you are not charged twice for the {{site.data.keyword.openshiftshort}} license. ** Note ** that this option can be set only when you create the worker pool. After the worker pool is created, the cost for the {{site.data.keyword.openshiftshort}} license automates when you add worker nodes to your worker pool.",
           "args": []
         },
         {
@@ -14368,7 +14368,7 @@
         },
         {
           "name": "stay_secondary",
-          "description": "(Optional, Boolean) Specifies whether the secondary Netscaler VPX will  take over the service. Set this argument to `true` to prevent the secondary NetScaler VPX from taking over the service even if the primary NetScaler VPX fails. For additional details, see the [Citrix NetScaler docs](https://docs.citrix.com/en-us/netscaler/10-5/ns-system-wrapper-10-con/ns-nw-ha-intro-wrppr-con/ns-nw-ha-frcng-scndry-nd-sty-scndry-tsk.html) and the [Citrix support docs](https://support.citrix.com/article/CTX116748). The default value is `false`.",
+          "description": "(Optional, Boolean) Specifies whether the secondary Netscaler VPX will  take over the service. Set this argument to `true` to prevent the secondary NetScaler VPX from taking over the service even if the primary Netscaler VPX fails. For additional details, see the [Citrix NetScaler docs](https://docs.citrix.com/en-us/netscaler/10-5/ns-system-wrapper-10-con/ns-nw-ha-intro-wrppr-con/ns-nw-ha-frcng-scndry-nd-sty-scndry-tsk.html) and the [Citrix support docs](https://support.citrix.com/article/CTX116748). The default value is `false`.",
           "args": []
         },
         {
@@ -15223,7 +15223,7 @@
         },
         {
           "name": "migratable",
-          "description": "Indicates if the VM can be migratable.",
+          "description": "Indicates the VM is migrated or not.",
           "args": []
         },
         {
