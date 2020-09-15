@@ -194,7 +194,7 @@
         },
         {
           "name": "port",
-          "description": "(Optional, String) The port of the route. This values is supported for TCP router group domains only.",
+          "description": "(Optional, String) The port of the route. This value is supported for TCP router group domains only.",
           "args": []
         },
         {
@@ -629,34 +629,34 @@
       "args": [
         {
           "name": "hostname",
-          "description": "(Optional, String) The hostname of the bare metal server. If you specify the `hostname`, do not specify `global_identifier` at the same time.",
+          "description": "(Optional, String) The hostname of the Bare Metal server. If you specify the `hostname`, do not specify `global_identifier` at the same time.",
           "args": []
         },
         {
           "name": "domain",
-          "description": "(Optional, String) The domain of the bare metal server. If you specify this option, do not specify `global_identifier` at the same time.",
+          "description": "(Optional, String) The domain of the Bare Metal server. If you specify this option, do not specify `global_identifier` at the same time.",
           "args": []
         },
         {
           "name": "global_identifier",
-          "description": "(Optional, String) The unique global identifier of the bare metal server. To see global identifier, log in to the [IBM Cloud Classic Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3.1/SoftLayer_Account/getHardware.json), using your API key as the password. If you specify this option, do not specify `hostname`, `domain`, or `most_recent` at the same time.",
+          "description": "(Optional, String) The unique global identifier of the Bare Metal server. To see global identifier, log in to the [IBM Cloud Classic Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3.1/SoftLayer_Account/getHardware.json), that uses your API key as the password. If you specify this option, do not specify `hostname`, `domain`, or `most_recent` at the same time.",
           "args": []
         },
         {
           "name": "most_recent",
-          "description": "(Optional, Boolean) If there are multiple bare metal services, you can set this argument to `true` to import only the most recently created server. If you specify this option, do not specify `global_identifier` at the same time.",
+          "description": "(Optional, Boolean) For multiple Bare Metal services, you can set this argument to `true` to import only the most recently created server. If you specify this option, do not specify `global_identifier` at the same time.",
           "args": []
         }
       ],
       "attrs": [
         {
           "name": "id",
-          "description": "The unique identifier of the bare metal server.",
+          "description": "The unique identifier of the Bare Metal server.",
           "args": []
         },
         {
           "name": "datacenter",
-          "description": "The data center in which the bare metal server is deployed.",
+          "description": "The data center in which the Bare Metal server is deployed.",
           "args": []
         },
         {
@@ -671,22 +671,22 @@
         },
         {
           "name": "public_ipv4_address",
-          "description": "The public IPv4 address of the bare metal server.",
+          "description": "The public IPv4 address of the Bare Metal server.",
           "args": []
         },
         {
           "name": "public_ipv4_address_id",
-          "description": "The unique identifier for the public IPv4 address of the bare metal server.",
+          "description": "The unique identifier for the public IPv4 address of the Bare Metal server.",
           "args": []
         },
         {
           "name": "private_ipv4_address",
-          "description": "The private IPv4 address of the bare metal server.",
+          "description": "The private IPv4 address of the Bare Metal server.",
           "args": []
         },
         {
           "name": "private_ipv4_address_id",
-          "description": "The unique identifier for the private IPv4 address of the bare metal server.",
+          "description": "The unique identifier for the private IPv4 address of the Bare Metal server.",
           "args": []
         },
         {
@@ -716,7 +716,7 @@
         },
         {
           "name": "private_network_only",
-          "description": "Specifies whether the server only has access to the private network.",
+          "description": "Specifies whether the server has only access to the private network.",
           "args": []
         },
         {
@@ -736,7 +736,7 @@
         },
         {
           "name": "redundant_power_supply",
-          "description": "When the value is `true`, it indicates additional power supply is provided.",
+          "description": "When the value is `true`, it indicates that more power supply is provided.",
           "args": []
         },
         {
@@ -756,17 +756,17 @@
         },
         {
           "name": "tags",
-          "description": "Tags associated with this bare metal server.",
+          "description": "Tags associated with this Bare Metal server.",
           "args": []
         },
         {
           "name": "block_storage_ids",
-          "description": "Block storage to which this computing server have access.",
+          "description": "Block storage to which this computing server has access.",
           "args": []
         },
         {
           "name": "file_storage_ids",
-          "description": "File storage to which this computing server have access.",
+          "description": "File storage to which this computing server has access.",
           "args": []
         },
         {
@@ -776,22 +776,22 @@
         },
         {
           "name": "ipv6_address",
-          "description": "The public IPv6 address of the bare metal server.",
+          "description": "The public IPv6 address of the Bare Metal server.",
           "args": []
         },
         {
           "name": "ipv6_address_id",
-          "description": "The unique identifier for the public IPv6 address of the bare metal server.",
+          "description": "The unique identifier for the public IPv6 address of the Bare Metal server.",
           "args": []
         },
         {
           "name": "secondary_ip_count",
-          "description": "The number of secondary IPv4 addresses of the bare metal server.",
+          "description": "The number of secondary IPv4 addresses of the Bare Metal server.",
           "args": []
         },
         {
           "name": "secondary_ip_addresses",
-          "description": "The public secondary IPv4 addresses of the bare metal server.",
+          "description": "The public secondary IPv4 addresses of the Bare Metal server.",
           "args": []
         }
       ]
@@ -851,7 +851,7 @@
         },
         {
           "name": "virtual_guests",
-          "description": "A nested block describing the VSIs attached to the placement group.",
+          "description": "A nested block describes the VSIs attached to the placement group.",
           "args": [
             {
               "name": "id",
@@ -930,7 +930,7 @@
         },
         {
           "name": "most_recent",
-          "description": "(Optional, Boolean) If there are multiple VM instances, you can set this argument to `true` to import only the most recently created instance.",
+          "description": "(Optional, Boolean) For multiple VM instances, you can set this argument to `true` to import only the most recently created instance.",
           "args": []
         }
       ],
@@ -967,7 +967,7 @@
         },
         {
           "name": "last_known_power_state",
-          "description": "The last known power state of a VM instance, in the event the instance is turned off outside the information management system (IMS) or has gone offline.",
+          "description": "The last known power state of a VM instance, if the instance is turned off outside the information management system (IMS) is offline.",
           "args": []
         },
         {
@@ -982,7 +982,7 @@
         },
         {
           "name": "ip_address_id_private",
-          "description": "The unique identifier for the private IPv4 address assigned to the VM instance.",
+          "description": "The unique identifier for the private IPv4 address that is assigned to the VM instance.",
           "args": []
         },
         {
@@ -992,7 +992,7 @@
         },
         {
           "name": "ip_address_id",
-          "description": "The unique identifier for the public IPv4 address assigned to the VM instance.",
+          "description": "The unique identifier for the public IPv4 address that is assigned to the VM instance.",
           "args": []
         },
         {
@@ -1333,7 +1333,7 @@
         },
         {
           "name": "admin_key",
-          "description": "The admin key of the cluster configuration. Note that this key is case sensitive.",
+          "description": "The admin key of the cluster configuration. Note that this key is case-sensitive.",
           "args": []
         },
         {
@@ -2698,7 +2698,7 @@
         },
         {
           "name": "status_id",
-          "description": "The current status of a secondary DNS record.",
+          "description": "The status of a secondary DNS record.",
           "args": []
         },
         {
@@ -3319,12 +3319,22 @@
           "name": "iam_service_id",
           "description": "(Required, String) The UUID of the service ID.",
           "args": []
+        },
+        {
+          "name": "policies",
+          "args": [
+            {
+              "name": "resources",
+              "description": "(A nested block describes the resources in the policy., List of objects) `policies.resources.service`",
+              "args": []
+            }
+          ]
         }
       ],
       "attrs": [
         {
           "name": "policies",
-          "description": "A nested block describing IAM service policies that are assigned to a service ID.",
+          "description": "A nested block describes IAM service policies that are assigned to a service ID.",
           "args": [
             {
               "name": "id",
@@ -3334,11 +3344,6 @@
             {
               "name": "roles",
               "description": "The roles that are assigned to the policy.",
-              "args": []
-            },
-            {
-              "name": "resources",
-              "description": "A nested block describing the resources in the policy.",
               "args": []
             }
           ]
@@ -3360,7 +3365,7 @@
       "attrs": [
         {
           "name": "policies",
-          "description": "A nested block describing IAM Policies assigned to user.",
+          "description": "A nested block describes IAM Policies assigned to user.",
           "args": [
             {
               "name": "id",
@@ -3374,7 +3379,7 @@
             },
             {
               "name": "resources",
-              "description": "A nested block describing the resources in the policy.",
+              "description": "A nested block describes the resources in the policy.",
               "args": [
                 {
                   "name": "service",
@@ -3485,7 +3490,7 @@
             },
             {
               "name": "user_id",
-              "description": "The user ID used for login.",
+              "description": "The user ID used for log in.",
               "args": []
             },
             {
@@ -4199,7 +4204,7 @@
         },
         {
           "name": "floating_ip",
-          "description": "Lists the nested block describing the floating IP of the gateway.  with **id** and **address**.",
+          "description": "Lists the nested block describes the floating IP of the gateway.  with **id** and **address**.",
           "args": [
             {
               "name": "id",
@@ -4260,7 +4265,7 @@
         },
         {
           "name": "rules",
-          "description": "A nested block describing the rules of the attributes.",
+          "description": "A nested block describes the rules of the attributes.",
           "args": [
             {
               "name": "rule_id",
@@ -4760,7 +4765,7 @@
         },
         {
           "name": "protocols",
-          "description": "A nested block describing the protocols assigned to the load balancer.",
+          "description": "A nested block describes the protocols that are assigned to the load balancer.",
           "args": [
             {
               "name": "frontend_protocol",
@@ -4784,7 +4789,7 @@
             },
             {
               "name": "load_balancing_method",
-              "description": "The load balancing algorithm.",
+              "description": "The load-balancing algorithm.",
               "args": []
             },
             {
@@ -4799,7 +4804,7 @@
             },
             {
               "name": "tls_certificate_id",
-              "description": "The ID of the SSL/TLS certificate being used for a protocol.",
+              "description": "The ID of the SSL/TLS certificate used for a protocol.",
               "args": []
             }
           ]
@@ -4811,7 +4816,7 @@
         },
         {
           "name": "server_instances",
-          "description": "A nested block describing the server instances for this load balancer.",
+          "description": "A nested block describes the server instances for this load balancer.",
           "args": [
             {
               "name": "private_ip_address",
@@ -4837,7 +4842,7 @@
         },
         {
           "name": "health_monitors",
-          "description": "A nested block describing the health_monitors assigned to the load balancer.",
+          "description": "A nested block describes the health_monitors assigned to the load balancer.",
           "args": [
             {
               "name": "protocol",
@@ -4856,7 +4861,7 @@
             },
             {
               "name": "max_retries",
-              "description": "The maximum retries before the load balancer is considered unhealthy.",
+              "description": "The maximum retries before the load balancer are considered unhealthy.",
               "args": []
             },
             {
@@ -4866,7 +4871,7 @@
             },
             {
               "name": "url_path",
-              "description": "If monitor is \"HTTP\", this specifies URL path.",
+              "description": "If monitor is \"HTTP\", it specifies the URL path.",
               "args": []
             },
             {
@@ -4883,7 +4888,7 @@
         },
         {
           "name": "status",
-          "description": "Specifies the operation status of the load balancer as 'ONLINE' or 'OFFLINE'.",
+          "description": "Specifies the operation status of the load balancer as `online` or `offline`.",
           "args": []
         },
         {
@@ -4893,12 +4898,12 @@
         },
         {
           "name": "server_instances_up",
-          "description": "The number of service instances which are in the `UP` health state.",
+          "description": "The number of service instances, that are in the `UP` health state.",
           "args": []
         },
         {
           "name": "server_instances_down",
-          "description": "The number of service instances which are in the `DOWN` health state.",
+          "description": "The number of service instances, that are in the `DOWN` health state.",
           "args": []
         },
         {
@@ -4908,7 +4913,7 @@
         },
         {
           "name": "use_system_public_ip_pool",
-          "description": "It specifies whether the public IP addresses are allocated from system public IP pool or public subnet from the account ordering the load balancer.",
+          "description": "It specifies whether the public IP addresses are allocated from system public IP pool or public subnet from the account order of the load balancer.",
           "args": []
         },
         {
@@ -4926,7 +4931,7 @@
       "args": [
         {
           "name": "name",
-          "description": "(Conditional, String) The name of the VLAN. This values is required if neither the VLAN number nor the router host name are specified. To retrieve the name, go to the [IBM Cloud infrastructure portal](https://cloud.ibm.com/classic/network/vlans) and navigate to **Network > IP Management > VLANs**.",
+          "description": "(Conditional, String) The name of the VLAN. This value is required if neither the VLAN number nor the router host name is specified. To retrieve the name, go to the [IBM Cloud infrastructure portal](https://cloud.ibm.com/classic/network/vlans) and navigate to **Network > IP Management > VLANs**.",
           "args": []
         },
         {
@@ -4957,12 +4962,12 @@
             },
             {
               "name": "subnet",
-              "description": "The subnet for the vlan.",
+              "description": "The subnet for the VLAN.",
               "args": []
             },
             {
               "name": "subnet-type",
-              "description": "A subnet can be one of several types. `PRIMARY, ADDITIONAL_PRIMARY, SECONDARY, ROUTED_TO_VLAN, SECONDARY_ON_VLAN, STORAGE_NETWORK, and STATIC_IP_ROUTED`. A `PRIMARY` subnet is the primary network bound to a VLAN within the IBM Cloud network. An `ADDITIONAL_PRIMARY` subnet is bound to a network VLAN to augment the pool of available primary IP addresses that may be assigned to a server. A `SECONDARY` subnet is any of the secondary subnet's bound to a VLAN interface. A `ROUTED_TO_VLAN` subnet is a portable subnet that can be routed to any server on a vlan. A `SECONDARY_ON_VLAN` subnet also doesn't exist as a VLAN interface, but is routed directly to a VLAN instead of a single IP address.",
+              "description": "A subnet can be one of several types. `PRIMARY, ADDITIONAL_PRIMARY, SECONDARY, ROUTED_TO_VLAN, SECONDARY_ON_VLAN, STORAGE_NETWORK, and STATIC_IP_ROUTED`. A `PRIMARY` subnet is the primary network that is bound to a VLAN within the IBM Cloud network. An `ADDITIONAL_PRIMARY` subnet is bound to a network VLAN to augment the pool of available primary IP addresses that might be assigned to a server. A `SECONDARY` subnet is any of the secondary subnets bound to a VLAN interface. A `ROUTED_TO_VLAN` subnet is a portable subnet that can be routed to any server on a VLAN. A `SECONDARY_ON_VLAN` subnet also doesn't exist as a VLAN interface, but is routed directly to a VLAN instead of a single IP address.",
               "args": []
             },
             {
@@ -4972,19 +4977,19 @@
             },
             {
               "name": "gateway",
-              "description": "A subnet's gateway address.",
+              "description": "A subnet gateway address.",
               "args": []
             },
             {
               "name": "cidr",
-              "description": "A subnet's Classless Inter-Domain Routing prefix. This is a number between 0 and 32 signifying the number of bits in a subnet's mask.",
+              "description": "A subnet Classless Inter-Domain Routing prefix. The number in the range of 0 - 32 signifying the number of bits in a subnet mask.",
               "args": []
             }
           ]
         },
         {
           "name": "virtual_guests",
-          "description": "A nested block describing the VSIs attached to the VLAN.",
+          "description": "A nested block describes the VSIs attached to the VLAN.",
           "args": [
             {
               "name": "id",
@@ -5772,7 +5777,7 @@
         },
         {
           "name": "most_recent",
-          "description": "(Optional, Boolean) If there are multiple resource keys, you can set this argument to `true` to import only the most recently created key.",
+          "description": "(Optional, Boolean) For multiple resource keys, you can set this argument to `true` to import only the most recently created key.",
           "args": []
         }
       ],
@@ -5982,7 +5987,7 @@
         },
         {
           "name": "most_recent",
-          "description": "(Optional, Boolean) If more than one security group has the same name or description, you can set this argument to `true` to import only the most recent security group. **NOTE**: The search must return only one match, otherwise Terraform fails. Ensure that your name and description combinations are specific enough to return a single security group key only, or set the `most_recent` argument to `true`.",
+          "description": "(Optional, Boolean) If more than one security group has the same name or description, you can set this argument to `true` to import only the most recent security group. **NOTE**: The search must return only one match for Terraform to be success. Ensure that your name and description combinations are specific enough to return a single security group key only, or set the `most_recent` argument to `true`.",
           "args": []
         }
       ],
@@ -6575,7 +6580,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of strings) The tags that you want to add to your app instance. Tags can help you find your app more easily.  **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of strings) The tags that you want to add to your app instance. Tags can help you find your app more easily.  **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud Service Endpointat this moment.",
           "args": []
         }
       ],
@@ -6760,7 +6765,7 @@
         },
         {
           "name": "respect_headers",
-          "description": "(Optional, Boolean) If set to **true**, the TTL settings in the origin overrides CDN TTL settings.",
+          "description": "(Optional, Boolean) If set to **true**, the TTL settings in the origin override CDN TTL settings.",
           "args": []
         },
         {
@@ -6906,7 +6911,7 @@
         },
         {
           "name": "domains",
-          "description": "(Required, List of strings) An list of valid domains for the issued certificate. The first domain is the primary domain. Additional domains are secondary domains.",
+          "description": "(Required, List of strings) An list of valid domains for the issued certificate. The first domain is the primary domain. More domains are secondary domains.",
           "args": []
         },
         {
@@ -6931,7 +6936,7 @@
         },
         {
           "name": "auto_renew_enabled",
-          "description": "(Optional, Boolean) Determines the certificate is auto renewed. Default is **false**. <br> With `auto_renew_enabled` as true, certificates are automatically renewed for 31 days. If the certificate expires before 31 days. You can renew by updating `rotate_keys` to renewed the certificates automatically.",
+          "description": "(Optional, Boolean) Determines the certificate is auto that is renewed. Default is **false**. <br> With `auto_renew_enabled` as true, certificates are automatically renewed for 31 days. If the certificate expires before 31 days. You can renew by updating `rotate_keys` to renewed the certificates automatically.",
           "args": []
         }
       ],
@@ -7046,7 +7051,7 @@
         },
         {
           "name": "name",
-          "description": "(Required, String) The name of the record, like for example `www`.",
+          "description": "(Required, String) The name of the record, like, for example, `www`.",
           "args": []
         },
         {
@@ -7056,7 +7061,7 @@
         },
         {
           "name": "content",
-          "description": "(Optional, String) The value of the record, like for example `192.168.127.127`.",
+          "description": "(Optional, String) The value of the record, like, for example, `192.168.127.127`.",
           "args": []
         },
         {
@@ -7398,7 +7403,7 @@
         },
         {
           "name": "name",
-          "description": "(Required, String) The DNS name to associate with the load balancer. This values can be a hostname, like `www`, or the fully qualified domain name, such as `www.example.com`. `example.com` is also accepted.",
+          "description": "(Required, String) The DNS name to associate with the load balancer. This value can be a hostname, like `www`, or the fully qualified domain name, such as `www.example.com`. `example.com` is also accepted.",
           "args": []
         },
         {
@@ -7510,7 +7515,7 @@
         },
         {
           "name": "expected_codes",
-          "description": "(Required, String) The expected HTTP response code or code range of the health check. Example: 200.",
+          "description": "(Required, String) The expected HTTP response code or code range of the health check. For example, 200.",
           "args": []
         },
         {
@@ -7869,7 +7874,7 @@
         },
         {
           "name": "network_vlan_ids",
-          "description": "(Optional, Array) The collection of VLAN IDs for the autoscaling group. You can find accepted values in the [VLAN console](https://cloud.ibm.com/classic/network/vlans). Click the VLAN that you want and note the ID in the resulting URL. You can also refer to a VLAN by name using a data source.",
+          "description": "(Optional, Array) The collection of VLAN IDs for the autoscaling group. You can find accepted values in the [VLAN console](https://cloud.ibm.com/classic/network/vlans). Click the VLAN that you want and notes the ID in the resulting URL. You can also refer to a VLAN by name using a data source.",
           "args": []
         },
         {
@@ -7889,7 +7894,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of strings) A list of tags that you want to add to the autoscaling group. Tags are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of strings) A list of tags that you want to add to the autoscaling group. Tags are managed locally and not stored on the IBM Cloud Service Endpointat this moment.",
           "args": []
         }
       ],
@@ -7939,7 +7944,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of strings) The tags that you want to add to the autoscaling policy. Tags are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of strings) The tags that you want to add to the autoscaling policy. Tags are managed locally and not stored on the IBM Cloud Service Endpointat this moment.",
           "args": []
         }
       ],
@@ -7979,7 +7984,7 @@
         },
         {
           "name": "ssh_key_ids",
-          "description": "(Optional, Array of integers) The SSH key IDs to install on the compute instance when the instance is provisioned. **Note:** If you don't know the ID(s) for your SSH keys, you can reference your SSH keys by their labels.",
+          "description": "(Optional, Array of integers) The SSH key IDs to install on the compute instance when the instance is provisioned. **Note** If you don't know the IDs for your SSH keys, you can reference your SSH keys by their labels.",
           "args": []
         },
         {
@@ -7989,17 +7994,17 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of strings) Tags associated with this bare metal server. Permitted characters include: A-Z, 0-9, whitespace, `_` (underscore), `-` (hyphen), `.` (period), and `:` (colon). All other characters will be removed.",
+          "description": "(Optional, Array of strings) Tags associated with this Bare Metal server. Permitted characters include: A-Z, 0-9, whitespace, `_` (underscore), `-` (hyphen), `.` (period), and `:` (colon). All other characters are removed.",
           "args": []
         },
         {
           "name": "file_storage_ids",
-          "description": "(Optional, Array of integers) File storage to which this computing instance should have access. File storage must be in the same data center as the bare metal server. If you use this argument to authorize access to file storage, do not use the `allowed_hardware_ids` argument in the `ibm_storage_file` resource in order to prevent the same storage being added twice.",
+          "description": "(Optional, Array of integers) File storage to which this computing instance have access. File storage must be in the same data center as the Bare Metal server. If you use this argument to authorize, access to file storage, do not use the `allowed_hardware_ids` argument in the `ibm_storage_file` resource in order to prevent the same storage be added twice.",
           "args": []
         },
         {
           "name": "block_storage_ids",
-          "description": "(Optional, Array of integers) Block storage to which this computing instance should have access. Block storage must be in the same data center as the bare metal server. If you use this argument to authorize access to block storage, do not use the `allowed_hardware_ids` argument in the `ibm_storage_file` resource in order to prevent the same storage being added twice.#### Arguments common to hourly and monthly server",
+          "description": "(Optional, Array of integers) Block storage to which this computing instance have access. Block storage must be in the same data center as the Bare Metal server. If you use this argument to authorize, access to block storage, do not use the `allowed_hardware_ids` argument in the `ibm_storage_file` resource in order to prevent the same storage be added twice.#### Arguments common to hourly and monthly server",
           "args": []
         },
         {
@@ -8009,22 +8014,22 @@
         },
         {
           "name": "gpu_key_name",
-          "description": "(Optional, String) The key name for the primary Graphics Processing Unit (GPU). Example: `GPU_NVIDIA_GRID_K2`. Locate your package ID. See `package_key_name` attribute. Once you have the ID fetch its details by accessing the URL `https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/<PACKAGE_ID>/getItems?objectMask=mask[prices[id,categories[id,name,categoryCode],capacityRestrictionType,capacityRestrictionMinimum,capacityRestrictionMaximum,locationGroupId]]`. Select a gpu key name from the resulting available gpu key names where category code is `gpu0`.",
+          "description": "(Optional, String) The key name for the primary Graphics Processing Unit (GPU). For example, `GPU_NVIDIA_GRID_K2`. Locate your package ID. See `package_key_name` attribute. Once you have the ID, fetch its details by accessing the URL `https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/<PACKAGE_ID>/getItems?objectMask=mask[prices[id,categories[id,name,categoryCode],capacityRestrictionType,capacityRestrictionMinimum,capacityRestrictionMaximum,locationGroupId]]`. Select a gpu key name from the resulting available gpu key names where category code is `gpu0`.",
           "args": []
         },
         {
           "name": "gpu_secondary_key_name",
-          "description": "(Optional, String) The key name for the secondary Graphics Processing Unit (GPU). Example: `GPU_NVIDIA_GRID_K2`. Key names can be fetched in the similar way as `gpu_key_name` and  category code is `gpu1`.",
+          "description": "(Optional, String) The key name for the secondary Graphics Processing Unit (GPU). For example, `GPU_NVIDIA_GRID_K2`. Key names can be fetched in the similar way as `gpu_key_name` and  category code is `gpu1`.",
           "args": []
         },
         {
           "name": "hourly_billing",
-          "description": "(Required, Boolean) The billing type for the instance. When set to `true`, the compute instance is billed on hourly usage. Otherwise the instance is billed on a monthly basis. The default value is `true`.",
+          "description": "(Required, Boolean) The billing type for the instance. When set to `true`, the compute instance is billed on hourly usage. Otherwise, the instance is billed monthly. The default value is `true`.",
           "args": []
         },
         {
           "name": "redundant_power_supply",
-          "description": "(Optional, Boolean) When the value is `true`, an additional power supply is provided.",
+          "description": "(Optional, Boolean) When the value is `true`, more power supply is provided.",
           "args": []
         },
         {
@@ -8044,12 +8049,12 @@
         },
         {
           "name": "private_network_only",
-          "description": "(Optional, Boolean) Specifies whether the instance only has access to the private network. When the value is `true`, a compute instance only has access to the private network. The default value is `false`.",
+          "description": "(Optional, Boolean) Specifies whether the instance has only access to the private network. When the value is `true`, a compute instance has only access to the private network. The default value is `false`.",
           "args": []
         },
         {
           "name": "extended_hardware_testing",
-          "description": "(Optional, Boolean) Enable the extended hardware testing while ordering the bare metal server. The default value is `false`. **Note**: Enabling the `extended_hardware_testing` will cause considerable delays in the deployment.",
+          "description": "(Optional, Boolean) Enable the extended hardware testing while ordering the Bare Metal server. The default value is `false`. **Note**: Enabling the `extended_hardware_testing` will cause considerable delays in the deployment.",
           "args": []
         },
         {
@@ -8074,27 +8079,27 @@
         },
         {
           "name": "fixed_config_preset",
-          "description": "(Required, String) The configuration preset with which you want to provision the bare metal server. This preset governs the type of CPU, number of cores, amount of RAM, and number of hard drives that the bare metal server has. To see the available presets, log in to the [IBM Cloud Classic Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3/SoftLayer_Hardware/getCreateObjectOptions.json) using your API key as the password. Find the key called `fixedConfigurationPresets`. The presets are identified by the key names.",
+          "description": "(Required, String) The configuration preset with which you want to provision the Bare Metal server. This preset governs the type of CPU, number of cores, amount of RAM, and number of hard drives that the Bare Metal server has. To see the available presets, log in to the [IBM Cloud Classic Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3/SoftLayer_Hardware/getCreateObjectOptions.json) that uses your API key as the password. Find the key called `fixedConfigurationPresets`. The presets are identified by the key names.",
           "args": []
         },
         {
           "name": "os_reference_code",
-          "description": "(Optional, String) An operating system reference code that provisions the computing instance. To see available OS reference codes, log in to the [IBM Cloud Classic Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3/SoftLayer_Virtual_Guest_Block_Device_Template_Group/getVhdImportSoftwareDescriptions.json?objectMask=referenceCode), using your API key as the password.         **NOTE**: Conflicts with `image_template_id`.",
+          "description": "(Optional, String) An operating system reference code that provisions the computing instance. To see available OS reference codes, log in to the [IBM Cloud Classic Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3/SoftLayer_Virtual_Guest_Block_Device_Template_Group/getVhdImportSoftwareDescriptions.json?objectMask=referenceCode), that uses your API key as the password.         **NOTE**: Conflicts with `image_template_id`.",
           "args": []
         },
         {
           "name": "software_guard_extensions",
-          "description": "(Optional, Boolean) The Software Guard Extensions product will be added to a compatible server package, selecting Intel SGX-enabled BIOS and hardware. The default value is `false`.#### Arguments for monthly bare metal servers",
+          "description": "(Optional, Boolean) The Software Guard Extensions product will be added to a compatible server package, selecting Intel SGX-enabled BIOS and hardware. The default value is `false`.#### Arguments for monthly Bare Metal servers",
           "args": []
         },
         {
           "name": "public_vlan_id",
-          "description": "(Optional, Integer) The public VLAN to be used for the public network interface of the instance. You can find accepted values in the [VLAN docs](https://cloud.ibm.com/classic/network/vlans). Click the VLAN that you want and note the ID in the resulting URL.",
+          "description": "(Optional, Integer) The public VLAN to be used for the public network interface of the instance. You can find accepted values in the [VLAN Docs](https://cloud.ibm.com/classic/network/vlans). Click the VLAN that you want and notes the ID in the resulting URL.",
           "args": []
         },
         {
           "name": "private_vlan_id",
-          "description": "(Optional, Integer) The private VLAN to be used for the private network interface of the instance. You can find accepted values in the [VLAN docs](https://cloud.ibm.com/classic/network/vlans). Click the VLAN that you want and note the ID in the resulting URL.",
+          "description": "(Optional, Integer) The private VLAN to be used for the private network interface of the instance. You can find accepted values in the [VLAN Docs](https://cloud.ibm.com/classic/network/vlans). Click the VLAN that you want and notes the ID in the resulting URL.",
           "args": []
         },
         {
@@ -8109,17 +8114,17 @@
         },
         {
           "name": "package_key_name",
-          "description": "(Optional, String) The key name for the monthly bare metal server's package. Only use this argument when you create a new monthly bare metal server. You can find available package key names in the SoftLayer API URL `https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_CPU\"}}}`, using your API key as the password.",
+          "description": "(Optional, String) The key name for the monthly Bare Metal server's package. Only use this argument when you create a new monthly Bare Metal server. You can find available package key names in the SoftLayer API URL `https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_CPU\"}}}`, that uses your API key as the password.",
           "args": []
         },
         {
           "name": "process_key_name",
-          "description": "(Optional, String) The key name for the monthly bare metal server's process. Only use this argument when you create a new monthly bare metal server. To get a process key name, first find the package key name in the [SoftLayer API](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_CPU\"}}}). Then replace <PACKAGE_NAME> with your package key name in the following URL `https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/<PACKAGE_NAME>/getItems?objectMask=mask[prices[id,categories[id,name,categoryCode],capacityRestrictionType,capacityRestrictionMinimum,capacityRestrictionMaximum,locationGroupId]]`. Select a process key name from the resulting available process key names.",
+          "description": "(Optional, String) The key name for the monthly Bare Metal server's process. Only use this argument when you create a new monthly Bare Metal server. To get a process key name, first find the package key name in the [SoftLayer API](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_CPU\"}}}). Then replace <PACKAGE_NAME> with your package key name in the following URL `https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/<PACKAGE_NAME>/getItems?objectMask=mask[prices[id,categories[id,name,categoryCode],capacityRestrictionType,capacityRestrictionMinimum,capacityRestrictionMaximum,locationGroupId]]`. Select a process key name from the resulting available process key names.",
           "args": []
         },
         {
           "name": "disk_key_names",
-          "description": "(Optional, Array of strings) The internal key names for the monthly bare metal server's disk. Only use this argument when you create a new monthly bare metal server. To get disk key names, first find the package key name in the [SoftLayer API](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_CPU\"}}}). Then replace <PACKAGE_NAME> with your package key name in the following [URL](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/PACKAGE_NAME/getItems?objectMask=mask[prices[id,categories[id,name,categoryCode],capacityRestrictionType,capacityRestrictionMinimum,capacityRestrictionMaximum,locationGroupId]]). Select disk key names from the resulting available disk key names.",
+          "description": "(Optional, Array of strings) The internal key names for the monthly Bare Metal server's disk. Only use this argument when you create a new monthly Bare Metal server. To get disk key names, first find the package key name in the [SoftLayer API](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_CPU\"}}}). Then replace <PACKAGE_NAME> with your package key name in the following [URL](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/PACKAGE_NAME/getItems?objectMask=mask[prices[id,categories[id,name,categoryCode],capacityRestrictionType,capacityRestrictionMinimum,capacityRestrictionMaximum,locationGroupId]]). Select disk key names from the resulting available disk key names.",
           "args": []
         },
         {
@@ -8158,7 +8163,7 @@
             },
             {
               "name": "partition_template_id",
-              "description": "(Optional, String) The partition template ID for the OS disk. Templates are different based on the target OS. To get the partition template ID, first find the OS ID in the [SoftLayer API](https://api.softlayer.com/rest/v3/SoftLayer_Hardware_Component_Partition_OperatingSystem/getAllObjects). Then replace <OS_ID> with your OS ID in the following URL`https://api.softlayer.com/rest/v3/SoftLayer_Hardware_Component_Partition_OperatingSystem/<OS_ID>/getPartitionTemplates`. Select your template ID in resulting available partition template IDs.",
+              "description": "(Optional, String) The partition template ID for the OS disk. Templates are different based on the target OS. To get the partition template ID, first find the OS ID in the [SoftLayer API](https://api.softlayer.com/rest/v3/SoftLayer_Hardware_Component_Partition_OperatingSystem/getAllObjects). Then replace <OS_ID> with your OS ID in the following URL `https://api.softlayer.com/rest/v3/SoftLayer_Hardware_Component_Partition_OperatingSystem/<OS_ID>/getPartitionTemplates`. Select your template ID in resulting available partition template IDs.",
               "args": []
             }
           ]
@@ -8175,17 +8180,17 @@
         },
         {
           "name": "tcp_monitoring",
-          "description": "(Optional, Boolean) When the value is `false`, a ping monitoring service is provided. When the value is `true`, a ping monitoring service and a TCP monitoring service are provided.#### Arguments for quote-based bare metal servers",
+          "description": "(Optional, Boolean) When the value is `false`, a ping monitoring service is provided. When the value is `true`, a ping monitoring service and a TCP monitoring service are provided.#### Arguments for quote-based Bare Metal servers",
           "args": []
         },
         {
           "name": "public_vlan_id",
-          "description": "(Optional, Integer) The public VLAN to be used for the public network interface of the instance. You can find accepted values in the [VLAN docs](https://cloud.ibm.com/classic/network/vlans). Click the VLAN that you want and note the ID in the resulting URL.",
+          "description": "(Optional, Integer) The public VLAN to be used for the public network interface of the instance. You can find accepted values in the [VLAN Docs](https://cloud.ibm.com/classic/network/vlans). Click the VLAN that you want and notes the ID in the resulting URL.",
           "args": []
         },
         {
           "name": "private_vlan_id",
-          "description": "(Optional, Integer) The private VLAN to be used for the private network interface of the instance. You can find accepted values in the [VLAN docs](https://cloud.ibm.com/classic/network/vlans). Click the VLAN that you want and note the ID in the resulting URL.",
+          "description": "(Optional, Integer) The private VLAN to be used for the private network interface of the instance. You can find accepted values in the [VLAN Docs](https://cloud.ibm.com/classic/network/vlans). Click the VLAN that you want and notes the ID in the resulting URL.",
           "args": []
         },
         {
@@ -8200,54 +8205,54 @@
         },
         {
           "name": "quote_id",
-          "description": "(Optional, String) When you define `quote_id`, Terraform uses specifications in the quote to create a bare metal server. You can find the quote ID in the [IBM Cloud infrastructure customer portal](https://cloud.ibm.com/classic) by navigating to **Account > Sales > Quotes**.",
+          "description": "(Optional, String) When you define `quote_id`, Terraform uses specifications in the quote to create a Bare Metal server. You can find the quote ID in the [IBM Cloud infrastructure customer portal](https://cloud.ibm.com/classic) by navigating to **Account > Sales > Quotes**.",
           "args": []
         }
       ],
       "attrs": [
         {
           "name": "id",
-          "description": "The unique identifier of the bare metal server.",
+          "description": "The unique identifier of the Bare Metal server.",
           "args": []
         },
         {
           "name": "public_ipv4_address",
-          "description": "The public IPv4 address of the bare metal server.",
+          "description": "The public IPv4 address of the Bare Metal server.",
           "args": []
         },
         {
           "name": "public_ipv4_address_id",
-          "description": "The unique identifier for the public IPv4 address of the bare metal server.",
+          "description": "The unique identifier for the public IPv4 address of the Bare Metal server.",
           "args": []
         },
         {
           "name": "private_ipv4_address",
-          "description": "The private IPv4 address of the bare metal server.",
+          "description": "The private IPv4 address of the Bare Metal server.",
           "args": []
         },
         {
           "name": "private_ipv4_address_id",
-          "description": "The unique identifier for the private IPv4 address of the bare metal server.",
+          "description": "The unique identifier for the private IPv4 address of the Bare Metal server.",
           "args": []
         },
         {
           "name": "ipv6_address",
-          "description": "The public IPv6 address of the bare metal server instance provided when `ipv6_enabled` is set to `true`.",
+          "description": "The public IPv6 address of the Bare Metal server instance provided when `ipv6_enabled` is set to `true`.",
           "args": []
         },
         {
           "name": "ipv6_address_id",
-          "description": "The unique identifier for the public IPv6 address of the bare metal server.",
+          "description": "The unique identifier for the public IPv6 address of the Bare Metal server.",
           "args": []
         },
         {
           "name": "secondary_ip_addresses",
-          "description": "The public secondary IPv4 addresses of the bare metal server instance when `secondary_ip_count` is set to non-zero value.",
+          "description": "The public secondary IPv4 addresses of the Bare Metal server instance when `secondary_ip_count` is set to non-zero value.",
           "args": []
         },
         {
           "name": "global_identifier",
-          "description": "The unique global identifier of the bare metal server.",
+          "description": "The unique global identifier of the Bare Metal server.",
           "args": []
         }
       ]
@@ -8270,7 +8275,7 @@
         },
         {
           "name": "domain",
-          "description": "(Required, String) The domain of dedicated host..",
+          "description": "(Required, String) The domain of dedicated host.",
           "args": []
         },
         {
@@ -8280,7 +8285,7 @@
         },
         {
           "name": "hourly_billing",
-          "description": "(Optional, Boolean) The billing type for the host. When set to `true`, the dedicated host is billed on hourly usage. Otherwise, the dedicated host is billed on a monthly basis. The default value is `true`.",
+          "description": "(Optional, Boolean) The billing type for the host. When set to `true`, the dedicated host is billed on hourly usage. Otherwise, the dedicated host is billed monthly. The default value is `true`.",
           "args": []
         },
         {
@@ -8339,7 +8344,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of Integers) Tags associated with the monitoring instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of Integers) Tags associated with the monitoring instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud Service Endpointat this moment.",
           "args": []
         }
       ],
@@ -8373,7 +8378,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of Strings) Tags associated with the placement group.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of Strings) Tags associated with the placement group.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud Service Endpointat this moment.",
           "args": []
         }
       ],
@@ -8418,7 +8423,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of Strings) Tags associated with the security certificates instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of Strings) Tags associated with the security certificates instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud Service Endpointat this moment.",
           "args": []
         }
       ],
@@ -8476,7 +8481,7 @@
         },
         {
           "name": "flavor_key_name",
-          "description": "(Optional, String) The flavor key name that you want to use to provision the instance. To see available Flavor key name, log in to the [IBM Cloud Classic Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3/SoftLayer_Virtual_Guest/getCreateObjectOptions.json), using your API key as the password. If you set this option, do not specify `cores` and `memory` at the same time.",
+          "description": "(Optional, String) The flavor key name that you want to use to provision the instance. To see available Flavor key name, log in to the [IBM Cloud Classic Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3/SoftLayer_Virtual_Guest/getCreateObjectOptions.json), that uses your API key as the password. If you set this option, do not specify `cores` and `memory` at the same time.",
           "args": []
         },
         {
@@ -8486,7 +8491,7 @@
         },
         {
           "name": "hourly_billing",
-          "description": "(Optional, Boolean) The billing type for the instance. When set to `true`, the computing instance is billed on hourly usage. Otherwise, the instance is billed on a monthly basis. The default value is `true`.",
+          "description": "(Optional, Boolean) The billing type for the instance. When set to `true`, the computing instance is billed on hourly usage. Otherwise, the instance is billed monthly. The default value is `true`.",
           "args": []
         },
         {
@@ -8501,7 +8506,7 @@
         },
         {
           "name": "dedicated_host_id",
-          "description": "(Optional, Integer) Specifies [dedicated host](/docs/virtual-servers?topic=virtual-servers-dedicated-virtual-servers) for the instance by its id. **NOTE**: Conflicts with `dedicated_acct_host_only`, `dedicated_host_name`, `placement_group_name` and `placement_group_id`.",
+          "description": "(Optional, Integer) Specifies [dedicated host](/docs/virtual-servers?topic=virtual-servers-dedicated-virtual-servers) for the instance by its ID. **NOTE**: Conflicts with `dedicated_acct_host_only`, `dedicated_host_name`, `placement_group_name` and `placement_group_id`.",
           "args": []
         },
         {
@@ -8511,7 +8516,7 @@
         },
         {
           "name": "placement_group_id",
-          "description": "(Optional, Integer) Specifies [placement group](/docs/virtual-servers?topic=virtual-servers-dedicated-virtual-servers) for the instance by its id. **NOTE**: Conflicts with `dedicated_acct_host_only`, `dedicated_host_name`, `dedicated_host_id` and `placement_group_name`.",
+          "description": "(Optional, Integer) Specifies [placement group](/docs/virtual-servers?topic=virtual-servers-dedicated-virtual-servers) for the instance by its ID. **NOTE**: Conflicts with `dedicated_acct_host_only`, `dedicated_host_name`, `dedicated_host_id` and `placement_group_name`.",
           "args": []
         },
         {
@@ -8526,7 +8531,7 @@
         },
         {
           "name": "os_reference_code",
-          "description": "(Optional, String) The operating system reference code that is used to provision the computing instance. To see available OS reference codes, log in to the [IBM Cloud Classic Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3/SoftLayer_Virtual_Guest_Block_Device_Template_Group/getVhdImportSoftwareDescriptions.json?objectMask=referenceCode), using your API key as the password.       **NOTE**: Conflicts with `image_id`.",
+          "description": "(Optional, String) The operating system reference code that is used to provision the computing instance. To see available OS reference codes, log in to the [IBM Cloud Classic Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3/SoftLayer_Virtual_Guest_Block_Device_Template_Group/getVhdImportSoftwareDescriptions.json?objectMask=referenceCode), that uses your API key as the password.       **NOTE**: Conflicts with `image_id`.",
           "args": []
         },
         {
@@ -8541,17 +8546,17 @@
         },
         {
           "name": "private_network_only",
-          "description": "(Optional, Boolean) When set to `true`, a compute instance only has access to the private network. The default value is `false`.",
+          "description": "(Optional, Boolean) When set to `true`, a compute instance has only access to the private network. The default value is `false`.",
           "args": []
         },
         {
           "name": "private_security_group_ids",
-          "description": "(Optional, Array of integers) The IDs of security groups to apply on the private interface. This attribute can't be updated. You can can use this parameter to add a security groups to your virtual server instance when you create it. If you want to add or remove security groups later, you must use the `ibm_network_interface_sg_attachment` resource. If you use this attribute in addition to `ibm_network_interface_sg_attachment` resource you might experience errors. So use one of these consistently for a particular virtual server instance.",
+          "description": "(Optional, Array of integers) The IDs of security groups to apply on the private interface. This attribute can't be updated. You can use this parameter to add a security group to your virtual server instance when you create it. If you want to add or remove security groups later, you must use the `ibm_network_interface_sg_attachment` resource. If you use this attribute in addition to `ibm_network_interface_sg_attachment` resource you might experience errors. So use one of these consistently for a particular virtual server instance.",
           "args": []
         },
         {
           "name": "public_vlan_id",
-          "description": "(Optional, Integer) The public VLAN ID for the public network interface of the instance. Accepted values are in the [VLAN doc](https://cloud.ibm.com/classic/network/vlans). Click the VLAN that you want and note the ID number in the browser URL. You can also refer to a VLAN by name using a data source. **NOTE**: Conflicts with `datacenter_choice`.",
+          "description": "(Optional, Integer) The public VLAN ID for the public network interface of the instance. Accepted values are in the [VLAN doc](https://cloud.ibm.com/classic/network/vlans). Click the VLAN that you want and notes the ID number in the browser URL. You can also refer to a VLAN by name using a data source. **NOTE**: Conflicts with `datacenter_choice`.",
           "args": []
         },
         {
@@ -8561,7 +8566,7 @@
         },
         {
           "name": "public_security_group_ids",
-          "description": "(Optional, Array of integers) The ids of security groups to apply on the public interface.This attribute can't be updated. You can can use this parameter to add a security groups to your virtual server instance when you create it. If you want to add or remove security groups later, you must use the `ibm_network_interface_sg_attachment` resource. If you use this attribute in addition to `ibm_network_interface_sg_attachment` resource, you might experience errors. So use one of these consistently for a particular virtual server instance.",
+          "description": "(Optional, Array of integers) The IDs of security groups to apply on the public interface.This attribute can't be updated. You can use this parameter to add a security group to your virtual server instance when you create it. If you want to add or remove security groups later, you must use the `ibm_network_interface_sg_attachment` resource. If you use this attribute in addition to `ibm_network_interface_sg_attachment` resource, you might experience errors. So use one of these consistently for a particular virtual server instance.",
           "args": []
         },
         {
@@ -8591,17 +8596,17 @@
         },
         {
           "name": "ssh_key_ids",
-          "description": "(Optional, Array of integers) The SSH key IDs to install on the computing instance when the instance provisions.      **NOTE:** If you don't know the ID(s) for your SSH keys, you can reference your SSH keys by their labels.",
+          "description": "(Optional, Array of integers) The SSH key IDs to install on the computing instance when the instance provisions.      **NOTE** If you don't know the ID(s) for your SSH keys, you can reference your SSH keys by their labels.",
           "args": []
         },
         {
           "name": "file_storage_ids",
-          "description": "(Optional, Array of integers) File storage to which this computing instance should have access. File storage must be in the same data center as the bare metal server. If you use this argument to authorize access to file storage, then do not use the `allowed_virtual_guest_ids` argument in the `ibm_storage_file` resource in order to prevent the same storage being added twice.",
+          "description": "(Optional, Array of integers) File storage to which this computing instance have access. File storage must be in the same data center as the Bare Metal server. If you use this argument to authorize, access to file storage, then do not use the `allowed_virtual_guest_ids` argument in the `ibm_storage_file` resource in order to prevent the same storage be added twice.",
           "args": []
         },
         {
           "name": "block_storage_ids",
-          "description": "(Optional, Array of integers) File storage to which this computing instance should have access. File storage must be in the same data center as the bare metal server. If you use this argument to authorize access to file storage, then do not use the `allowed_virtual_guest_ids` argument in the `ibm_storage_block` resource in order to prevent the same storage being added twice.",
+          "description": "(Optional, Array of integers) File storage to which this computing instancehave access. File storage must be in the same data center as the Bare Metal server. If you use this argument to authorize, access to file storage, then do not use the `allowed_virtual_guest_ids` argument in the `ibm_storage_block` resource in order to prevent the same storage be added twice.",
           "args": []
         },
         {
@@ -8684,7 +8689,7 @@
         },
         {
           "name": "ip_address_id_private",
-          "description": "The unique identifier for the private IPv4 address assigned to the VM instance.",
+          "description": "The unique identifier for the private IPv4 address that is assigned to the VM instance.",
           "args": []
         },
         {
@@ -8694,7 +8699,7 @@
         },
         {
           "name": "ip_address_id",
-          "description": "The unique identifier for the public IPv4 address assigned to the VM instance.",
+          "description": "The unique identifier for the public IPv4 address that is assigned to the VM instance.",
           "args": []
         },
         {
@@ -9373,7 +9378,7 @@
         },
         {
           "name": "zones",
-          "description": "(Required, List) A nested block describing the zones of this VPC cluster.",
+          "description": "(Required, List) A nested block describes the zones of this VPC cluster.",
           "args": [
             {
               "name": "subnet_id",
@@ -9389,7 +9394,7 @@
         },
         {
           "name": "disable_public_service_endpoint",
-          "description": "(Optional, Boolean) Disable the public service endpoint to prevent public access to the Kubernetes master. Default value 'true’.",
+          "description": "(Optional, Boolean) Disable the public service endpoint to prevent public access to the Kubernetes master. Default value is 'true’.",
           "args": []
         },
         {
@@ -9404,7 +9409,7 @@
         },
         {
           "name": "pod_subnet",
-          "description": "(Optional, String) Specify a custom subnet CIDR to provide private IP addresses for pods. The subnet must have a CIDR of at least `/23` or larger. For more information, see the [documentation](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_subnets). Default value: `172.30.0.0/16`.",
+          "description": "(Optional, String) Specify a custom subnet CIDR to provide private IP addresses for pods. The subnet must have a CIDR of at least `/23` or larger. For more information, see the [documentation](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_subnets). Default value is `172.30.0.0/16`.",
           "args": []
         },
         {
@@ -9439,7 +9444,7 @@
         },
         {
           "name": "wait_till",
-          "description": "(Optional, String) The creation of a cluster can take a few minutes (for virtual servers) or even hours (for bare metal servers) to complete. To avoid long wait times when you run your Terraform code, you can specify the stage when you want Terraform to mark the cluster resource creation as completed. Depending on what stage you choose, the cluster creation might not be fully completed and continues to run in the background. However, your Terraform code can continue to run without waiting for the cluster to be fully created. Supported stages are: <ul><li><strong>MasterNodeReady</strong>: Terraform marks the creation of your cluster complete when the cluster master is in a <code>ready</code> state.</li><li><strong>OneWorkerNodeReady</strong>: Terraform marks the creation of your cluster complete when the master and at least one worker node are in a <code>ready</code> state.</li><li><strong>IngressReady</strong>: Terraform marks the creation of your cluster complete when the cluster master and all worker nodes are in a <code>ready</code> state, and the Ingress subdomain is fully set up.</li></ul> If you do not specify this option, <code>IngressReady</code> is used by default. You can set this option only when the cluster is created. If this option is set during a cluster update or deletion, the parameter is ignored by the Terraform provider.",
+          "description": "(Optional, String) The creation of a cluster can take a few minutes (for virtual servers) or even hours (for Bare Metal servers) to complete. To avoid long wait times when you run your Terraform code, you can specify the stage when you want Terraform to mark the cluster resource creation as completed. Depending on what stage you choose, the cluster creation might not be fully completed and continues to run in the background. However, your Terraform code can continue to run without waiting for the cluster to be fully created. Supported stages are: <ul><li><strong>MasterNodeReady</strong>: Terraform marks the creation of your cluster complete when the cluster master is in a <code>ready</code> state.</li><li><strong>OneWorkerNodeReady</strong>: Terraform marks the creation of your cluster complete when the master and at least one worker node are in a <code>ready</code> state.</li><li><strong>IngressReady</strong>: Terraform marks the creation of your cluster complete when the cluster master and all worker nodes are in a <code>ready</code> state, and the Ingress subdomain is fully set up.</li></ul> If you do not specify this option, <code>IngressReady</code> is used by default. You can set this option only when the cluster is created. If this option is set during a cluster update or deletion, the parameter is ignored by the Terraform provider.",
           "args": []
         }
       ],
@@ -9570,7 +9575,7 @@
         },
         {
           "name": "zones",
-          "description": "(Required, List) A nested block describing the zones of this worker pool.",
+          "description": "(Required, List) A nested block describes the zones of this worker pool.",
           "args": [
             {
               "name": "subnet_id",
@@ -10003,6 +10008,124 @@
           "name": "guid",
           "description": "(Optional, String) The unique identifier of the database instance.",
           "args": []
+        },
+        {
+          "name": "auto_scaling",
+          "description": "(Optional, List) Configure rules to allow your database to automatically increase its resources. Single block of autoscaling is allowed at once.",
+          "args": [
+            {
+              "name": "cpu",
+              "description": "(Optional, List) Single block of CPU is allowed at once by CPU autoscaling.",
+              "args": [
+                {
+                  "name": "rate_increase_percent",
+                  "description": "(Optional, Integer) Auto scaling rate in increase percent.",
+                  "args": []
+                },
+                {
+                  "name": "rate_limit_count_per_member",
+                  "description": "(Optional, Integer) Auto scaling rate limit in count per number.",
+                  "args": []
+                },
+                {
+                  "name": "rate_period_seconds",
+                  "description": "(Optional, Integer) Period seconds of the auto scaling rate.",
+                  "args": []
+                },
+                {
+                  "name": "rate_units",
+                  "description": "(Optional, String) Auto scaling rate in units.",
+                  "args": []
+                }
+              ]
+            },
+            {
+              "name": "disk",
+              "description": "(Optional, List) Single block of disk is allowed at once in disk auto scaling.",
+              "args": [
+                {
+                  "name": "capacity_enabled",
+                  "description": "(Optional, Bool) Auto scaling scalar enables or disables the scalar capacity.",
+                  "args": []
+                },
+                {
+                  "name": "free_space_less_than_percent",
+                  "description": "(Optional, Integer) Auto scaling scalar capacity free space less than percent.",
+                  "args": []
+                },
+                {
+                  "name": "io_above_percent",
+                  "description": "(Optional, Integer) Auto scaling scalar I/O utilization above percent.",
+                  "args": []
+                },
+                {
+                  "name": "io_enabled",
+                  "description": "(Optional, Bool) Auto scaling scalar I/O utilization enabled.",
+                  "args": []
+                },
+                {
+                  "name": "rate_increase_percent",
+                  "description": "(Optional, Integer) Auto scaling rate increase percent.",
+                  "args": []
+                },
+                {
+                  "name": "rate_limit_mb_per_member",
+                  "description": "(Optional, Integer) Auto scaling rate limit in mega bytes per member.",
+                  "args": []
+                },
+                {
+                  "name": "rate_period_seconds",
+                  "description": "(Optional, Integer) Auto scaling rate period in seconds.",
+                  "args": []
+                },
+                {
+                  "name": "rate_units",
+                  "description": "(Optional, String) Auto scaling rate in units.",
+                  "args": []
+                }
+              ]
+            },
+            {
+              "name": "memory",
+              "description": "(Optional, List) Memory Auto Scaling in single block of memory is allowed at once.",
+              "args": []
+            },
+            {
+              "name": "io_above_percent",
+              "description": "(Optional, Integer) Auto scaling scalar I/O utilization above percent.",
+              "args": []
+            },
+            {
+              "name": "io_enabled",
+              "description": "(Optional, Bool) Auto scaling scalar I/O utilization enabled.",
+              "args": []
+            },
+            {
+              "name": "io_over_period",
+              "description": "(Optional, String) Auto scaling scalar I/O utilization over period.",
+              "args": []
+            },
+            {
+              "name": "rate_increase_percent",
+              "description": "(Optional, Integer) Auto scaling rate in increase percent.",
+              "args": []
+            },
+            {
+              "name": "rate_limit_mb_per_member",
+              "description": "(Optional, Integer) Auto scaling rate limit in mega bytes per member.",
+              "args": []
+            },
+            {
+              "name": "rate_period_seconds",
+              "description": "(Optional, Integer) Auto scaling rate period in seconds.",
+              "args": []
+            },
+            {
+              "name": "rate_units",
+              "description": "(Optional, String) Auto scaling rate in units.",
+              "args": []
+            }
+          ]
         }
       ],
       "attrs": [
@@ -10041,12 +10164,12 @@
       "args": [
         {
           "name": "bgp_asn",
-          "description": "(Required, Integer) The BGP ASN of the gateway to be created. For example: `64999`.",
+          "description": "(Required, Integer) The BGP ASN of the gateway to be created. For example, `64999`.",
           "args": []
         },
         {
           "name": "bgp_base_cidr",
-          "description": "(Required, String) The BGP base CIDR of the gateway to be created. For example: `10.254.30.76/30`",
+          "description": "(Required, String) The BGP base CIDR of the gateway to be created. For example, `10.254.30.76/30`",
           "args": []
         },
         {
@@ -10081,7 +10204,7 @@
         },
         {
           "name": "bgp_ibm_cidr",
-          "description": "(Optional, String) The {{site.data.keyword.IBM_notm}} BGP ASN. Specify a value within bgp_base_cidr. If bgp_base_cidr is `169.254.0.0/16`, this parameter can exclude and a CIDR is selected automatically. For example: `10.254.30.77/30`.",
+          "description": "(Optional, String) The {{site.data.keyword.IBM_notm}} BGP ASN. Specify a value within bgp_base_cidr. If bgp_base_cidr is `169.254.0.0/16`, this parameter can exclude and a CIDR is selected automatically. For example, `10.254.30.77/30`.",
           "args": []
         },
         {
@@ -10256,12 +10379,12 @@
         },
         {
           "name": "target",
-          "description": "(Optional, String) The primary target IP address to which the domain resolves. When the domain is created, an `A` record with a host value of `@` and a data-target value of the IP address are provided and associated with the new domain",
+          "description": "(Optional, String) The primary target IP address to which the domain resolves. When the domain is created, an `A` record with a host value of `@` and a data-target value of the IP address are provided and associated with the new domain.",
           "args": []
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of Strings) Tags associated with the DNS domain instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of Strings) Tags associated with the DNS domain instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud Service Endpointat this moment.",
           "args": []
         }
       ],
@@ -10430,7 +10553,7 @@
         },
         {
           "name": "responsible_person",
-          "description": "(Required, String) The email address of the person responsible for a domain. Replace the `@` symbol in the address with a `.`. For example: root@example.org would be expressed as `root.example.org.`.",
+          "description": "(Required, String) The email address of the person responsible for a domain. Replace the `@` symbol in the address with a `.`. For example, root@example.org would be expressed as `root.example.org.`.",
           "args": []
         },
         {
@@ -10480,7 +10603,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of Strings) Tags associated with the DNS domain record instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of Strings) Tags associated with the DNS domain record instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud Service Endpointat this moment.",
           "args": []
         }
       ],
@@ -10669,7 +10792,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of Strings) Tags associated with the DNS secondary instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of Strings) Tags associated with the DNS secondary instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud Service Endpointat this moment.",
           "args": []
         }
       ],
@@ -10929,7 +11052,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of Strings) Tags associated with the firewall policy instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of Strings) Tags associated with the firewall policy instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud Service Endpointat this moment.",
           "args": []
         }
       ],
@@ -11157,7 +11280,7 @@
         },
         {
           "name": "parameters",
-          "description": "All parameters passed to the package, including those set by you or by IBM Cloud Functions.### Import`ibm_function_package` can be imported using the ID.Example:```$ terraform import ibm_function_package.sample hello```",
+          "description": "All parameters passed to the package, including those set by you or by IBM Cloud Functions.### Import`ibm_function_package` can be imported using the ID. For example, ```$ terraform import ibm_function_package.sample hello```",
           "args": []
         },
         {
@@ -11374,7 +11497,7 @@
         },
         {
           "name": "identity_provider",
-          "description": "(Required, String) Enter the URI for your identity provider. This is the SAML `entity ID` field, which is sometimes referred to as the issuer ID, for the identity provider as part of the federation configuration for onboarding with IBMid. Example: `https://idp.example.org/SAML2`.",
+          "description": "(Required, String) Enter the URI for your identity provider. This is the SAML `entity ID` field, which is sometimes referred to as the issuer ID, for the identity provider as part of the federation configuration for onboarding with IBMid. For example, `https://idp.example.org/SAML2`.",
           "args": []
         },
         {
@@ -11471,7 +11594,7 @@
         },
         {
           "name": "resources",
-          "description": "(Optional, List) A nested block describing the resource of this policy.",
+          "description": "(Optional, List) A nested block describes the resource of this policy.",
           "args": [
             {
               "name": "service",
@@ -11517,7 +11640,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of Strings) A list of tags that you want to add to the access group policy. Tags are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of Strings) A list of tags that you want to add to the access group policy. Tags are managed locally and not stored on the IBM Cloud Service Endpointat this moment.",
           "args": []
         }
       ],
@@ -11676,7 +11799,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of strings) A list of tags that you want to add to the service ID. The tags are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of strings) A list of tags that you want to add to the service ID. The tags are managed locally and not stored on the IBM Cloud Service Endpointat this moment.",
           "args": []
         }
       ],
@@ -11716,7 +11839,7 @@
         },
         {
           "name": "resources",
-          "description": "(Optional, List of objects) A nested block describing the resource of this policy.",
+          "description": "(Optional, List of objects) A nested block describes the resource of this policy.",
           "args": [
             {
               "name": "service",
@@ -11762,7 +11885,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of strings) A list of tags that are associated with the service policy instance.  Tags are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of strings) A list of tags that are associated with the service policy instance.  Tags are managed locally and not stored on the IBM Cloud Service Endpointat this moment.",
           "args": []
         }
       ],
@@ -11797,7 +11920,7 @@
         },
         {
           "name": "classic_infra_roles",
-          "description": "(Optional, Map) A nested block describing the classic infrastructure roles for the inviting users. </br></br>**Note**: If you have an IBM Cloud Lite account, you cannot set classic infrastructure roles. For more information about Lite accounts, see [What's available?](/docs/account?topic=account-accounts#lite-account-features).",
+          "description": "(Optional, Map) A nested block describes the classic infrastructure roles for the inviting users. </br></br>**Note**: If you have an IBM Cloud Lite account, you cannot set classic infrastructure roles. For more information about Lite accounts, see [What's available?](/docs/account?topic=account-accounts#lite-account-features).",
           "args": [
             {
               "name": "permissions",
@@ -11813,11 +11936,11 @@
         },
         {
           "name": "iam_policy",
-          "description": "(Optional, List) A nested block describing the IAM policies for invited users.",
+          "description": "(Optional, List) A nested block describes the IAM policies for invited users.",
           "args": [
             {
               "name": "resources",
-              "description": "(Optional, List of objects) A nested block describing the resource of this policy.",
+              "description": "(Optional, List of objects) A nested block describes the resource of this policy.",
               "args": [
                 {
                   "name": "service",
@@ -11858,7 +11981,7 @@
             },
             {
               "name": "account_management",
-              "description": "(Optional, Boolean) Gives access to all account management services if set to `true`. Default value `false`. If you set this option, do not set `resources` at the same time.",
+              "description": "(Optional, Boolean) Gives access to all account management services if set to `true`. Default value is `false`. If you set this option, do not set `resources` at the same time.",
               "args": []
             }
           ]
@@ -11870,7 +11993,7 @@
         },
         {
           "name": "cloud_foundry_roles",
-          "description": "(Optional, List) A nested block describing the cloud foundry roles of inviting user.",
+          "description": "(Optional, List) A nested block describes the cloud foundry roles of inviting user.",
           "args": [
             {
               "name": "organization_guid",
@@ -11884,7 +12007,7 @@
             },
             {
               "name": "spaces",
-              "description": "(Optional, List) A nested block describing the Cloud Foundry space roles and space details.",
+              "description": "(Optional, List) A nested block describes the Cloud Foundry space roles and space details.",
               "args": [
                 {
                   "name": "space_guid",
@@ -11921,7 +12044,7 @@
         },
         {
           "name": "resources",
-          "description": "(Optional, List of objects) A nested block describing the resource of this policy.",
+          "description": "(Optional, List of objects) A nested block describes the resource of this policy.",
           "args": [
             {
               "name": "service",
@@ -11967,7 +12090,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of strings) A list of tags that are associated with the service policy instance.  Tags are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of strings) A list of tags that are associated with the service policy instance.  Tags are managed locally and not stored on the IBM Cloud Service Endpointat this moment.",
           "args": []
         }
       ],
@@ -12042,7 +12165,7 @@
         },
         {
           "name": "internal_subnet_id",
-          "description": "(Optional, Map) The ID of the network device on which the vpn configurations have to be applied.When a private subnet is associated, the network tunnel will allow the customer (remote) network to access the private subnet.",
+          "description": "(Optional, Map) The ID of the network device on which the vpn configurations have to be applied. When a private subnet is associated, the network tunnel will allow the customer (remote) network to access the private subnet.",
           "args": []
         },
         {
@@ -12313,12 +12436,12 @@
         },
         {
           "name": "keys",
-          "description": "(Required, List) A comma separated list of SSH keys that you want to add to your instance.",
+          "description": "(Required, List) A comma-separated list of SSH keys that you want to add to your instance.",
           "args": []
         },
         {
           "name": "primary_network_interface",
-          "description": "(Required, List) A nested block describing the primary network interface of this instance. Only one primary network interface can be specified for an instance.",
+          "description": "(Required, List) A nested block describes the primary network interface of this instance. Only one primary network interface can be specified for an instance.",
           "args": [
             {
               "name": "name",
@@ -12907,7 +13030,7 @@
         },
         {
           "name": "algorithm",
-          "description": "(Required, String) The load balancing algorithm. Supported values are `round_robin`, `weighted_round_robin`, or `least_connections`.",
+          "description": "(Required, String) The load-balancing algorithm. Supported values are `round_robin`, `weighted_round_robin`, or `least_connections`.",
           "args": []
         },
         {
@@ -12992,7 +13115,7 @@
         },
         {
           "name": "weight",
-          "description": "(Optional, Integer) Weight of the server member. This option takes effect only when the load balancing algorithm of its belonging pool is `weighted_round_robin`.",
+          "description": "(Optional, Integer) Weight of the server member. This option takes effect only when the load-balancing algorithm of its belonging pool is `weighted_round_robin`.",
           "args": []
         }
       ],
@@ -13266,7 +13389,7 @@
         },
         {
           "name": "rules",
-          "description": "A nested block describing the rules of this security group.",
+          "description": "A nested block describes the rules of this security group.",
           "args": [
             {
               "name": "direction",
@@ -13382,7 +13505,7 @@
         },
         {
           "name": "security_groups",
-          "description": "A nested block describing the security groups of this network interface.",
+          "description": "A nested block describes the security groups of this network interface.",
           "args": [
             {
               "name": "id",
@@ -13403,7 +13526,7 @@
         },
         {
           "name": "floating_ips",
-          "description": "A nested block describing the floating IPs of this network interface.",
+          "description": "A nested block describes the floating IPs of this network interface.",
           "args": [
             {
               "name": "id",
@@ -13457,7 +13580,7 @@
         },
         {
           "name": "icmp",
-          "description": "(Optional, List of objects) A nested block describing the `icmp` protocol of this security group rule.",
+          "description": "(Optional, List of objects) A nested block describes the `icmp` protocol of this security group rule.",
           "args": [
             {
               "name": "type",
@@ -13473,7 +13596,7 @@
         },
         {
           "name": "tcp",
-          "description": "(Optional, List of objects) A nested block describing the `tcp` protocol of this security group rule.",
+          "description": "(Optional, List of objects) A nested block describes the `tcp` protocol of this security group rule.",
           "args": [
             {
               "name": "port_min",
@@ -13489,7 +13612,7 @@
         },
         {
           "name": "udp",
-          "description": "(Optional, List of objects) A nested block describing the `udp` protocol of this security group rule.",
+          "description": "(Optional, List of objects) A nested block describes the `udp` protocol of this security group rule.",
           "args": [
             {
               "name": "port_min",
@@ -14167,7 +14290,7 @@
       "args": [
         {
           "name": "connections",
-          "description": "(Required, Integer) The number of connections for the local load balancer. Only incremental upgrade is supported . For downgrade, please open the SoftLayer support ticket.",
+          "description": "(Required, Integer) The number of connections for the local load balancer. Only incremental upgrade is supported. For downgrade, please open the SoftLayer support ticket.",
           "args": []
         },
         {
@@ -14197,7 +14320,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of Strings) Tags associated with the local load balancer instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of Strings) Tags associated with the local load balancer instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud Service Endpointat this moment.",
           "args": []
         }
       ],
@@ -14241,7 +14364,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of Strings) Tags associated with the local load balancer service instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of Strings) Tags associated with the local load balancer service instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud Service Endpointat this moment.",
           "args": []
         }
       ],
@@ -14285,7 +14408,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of Strings) Tags associated with the local load balancer service group instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of Strings) Tags associated with the local load balancer service group instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud Service Endpointat this moment.",
           "args": []
         }
       ],
@@ -14324,12 +14447,12 @@
         },
         {
           "name": "public_vlan_id",
-          "description": "(Optional, Integer) The public VLAN ID that is used for the public network interface of the VPX load balancer. You can find accepted values in the [VLAN docs](https://cloud.ibm.com/classic/network/vlans) by clicking the VLAN that you want to use and noting the ID in the resulting URL. You can also refer to a VLAN by name using a data source.",
+          "description": "(Optional, Integer) The public VLAN ID that is used for the public network interface of the VPX load balancer. You can find accepted values in the [VLAN Docs](https://cloud.ibm.com/classic/network/vlans) by clicking the VLAN that you want to use and noting the ID in the resulting URL. You can also refer to a VLAN by name using a data source.",
           "args": []
         },
         {
           "name": "private_vlan_id",
-          "description": "(Optional, Integer) The private VLAN ID that is used for the private network interface of the VPX load balancer. You can find accepted values in the [VLAN docs](https://cloud.ibm.com/classic/network/vlans) by clicking the VLAN that you want to use and noting the ID in the resulting URL. You can also refer to a VLAN by name using a data source.",
+          "description": "(Optional, Integer) The private VLAN ID that is used for the private network interface of the VPX load balancer. You can find accepted values in the [VLAN Docs](https://cloud.ibm.com/classic/network/vlans) by clicking the VLAN that you want to use and noting the ID in the resulting URL. You can also refer to a VLAN by name using a data source.",
           "args": []
         },
         {
@@ -14344,7 +14467,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of strings) Tags associated with the VPX load balancer instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of strings) Tags associated with the VPX load balancer instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud Service Endpointat this moment.",
           "args": []
         }
       ],
@@ -14368,12 +14491,12 @@
         },
         {
           "name": "stay_secondary",
-          "description": "(Optional, Boolean) Specifies whether the secondary Netscaler VPX will  take over the service. Set this argument to `true` to prevent the secondary NetScaler VPX from taking over the service even if the primary Netscaler VPX fails. For additional details, see the [Citrix NetScaler docs](https://docs.citrix.com/en-us/netscaler/10-5/ns-system-wrapper-10-con/ns-nw-ha-intro-wrppr-con/ns-nw-ha-frcng-scndry-nd-sty-scndry-tsk.html) and the [Citrix support docs](https://support.citrix.com/article/CTX116748). The default value is `false`.",
+          "description": "(Optional, Boolean) Specifies whether the secondary Netscaler VPX will  take over the service. Set this argument to `true` to prevent the secondary NetScaler VPX from taking over the service even if the primary Netscaler VPX fails. For more information, see the [Citrix NetScaler docs](https://docs.citrix.com/en-us/netscaler/10-5/ns-system-wrapper-10-con/ns-nw-ha-intro-wrppr-con/ns-nw-ha-frcng-scndry-nd-sty-scndry-tsk.html) and the [Citrix support docs](https://support.citrix.com/article/CTX116748). The default value is `false`.",
           "args": []
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of strings) Tags associated with the high availability Netscaler VPX pair instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of strings) Tags associated with the high availability Netscaler VPX pair instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud Service Endpointat this moment.",
           "args": []
         }
       ],
@@ -14422,12 +14545,12 @@
         },
         {
           "name": "usip",
-          "description": "(Optional, String) Whether the service reports the source IP of the client to the service being load balanced. Acceptable values are `YES` or `NO`. The default value is `NO`. See the [Citrix Netscaler docs](https://developer-docs.citrix.com/projects/netscaler-nitro-api/en/11.0/configuration/basic/service/service) for more details.       **NOTE**: This argument is only available for VPX 10.5.",
+          "description": "(Optional, String) Whether the service reports the source IP of the client to the service being load balanced. Acceptable values are `YES` or `NO`. The default value is `NO`. See the [Citrix Netscaler docs](https://developer-docs.citrix.com/projects/netscaler-nitro-api/en/11.0/configuration/basic/service/service) for more information.       **NOTE**: This argument is only available for VPX 10.5.",
           "args": []
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of strings) Tags associated with the VPX load balancer service instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of strings) Tags associated with the VPX load balancer service instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud Service Endpointat this moment.",
           "args": []
         }
       ],
@@ -14481,7 +14604,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of strings) Tags associated with the VPX load balancer virtual IP instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of strings) Tags associated with the VPX load balancer virtual IP instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud Service Endpointat this moment.",
           "args": []
         }
       ],
@@ -14515,7 +14638,7 @@
         },
         {
           "name": "protocols",
-          "description": "(Optional, Array) A nested block describing the protocols assigned to load balancer.",
+          "description": "(Optional, Array) A nested block describes the protocols that are assigned to load balancer.",
           "args": [
             {
               "name": "frontend_protocol",
@@ -14539,7 +14662,7 @@
             },
             {
               "name": "load_balancing_method",
-              "description": "(Optional, String) The load balancing algorithm. Accepted values are 'round_robin', 'weighted_round_robin', and 'least_connection'. The default is 'round_robin'.",
+              "description": "(Optional, String) The load-balancing algorithm. Accepted values are 'round_robin', 'weighted_round_robin', and 'least_connection'. The default is 'round_robin'.",
               "args": []
             },
             {
@@ -14554,19 +14677,19 @@
             },
             {
               "name": "tls_certificate_id",
-              "description": "(Optional, Integer) The ID of the SSL/TLS certificate being used for a protocol. This ID should be specified when `front-end protocol` has a value of `HTTPS`.",
+              "description": "(Optional, Integer) The ID of the SSL/TLS certificate used for a protocol. This ID should be specified when `front-end protocol` has a value of `HTTPS`.",
               "args": []
             }
           ]
         },
         {
           "name": "ssl_ciphers",
-          "description": "(Optional, list) The comma separated list of SSL Ciphers. You can find list of supported ciphers [SSL_offload](/docs/loadbalancer-service?topic=loadbalancer-service-ssl-offload-with-ibm-cloud-load-balancer).",
+          "description": "(Optional, list) The comma-separated list of SSL Ciphers. You can find list of supported ciphers [SSL_offload](/docs/loadbalancer-service?topic=loadbalancer-service-ssl-offload-with-ibm-cloud-load-balancer).",
           "args": []
         },
         {
           "name": "use_system_public_ip_pool",
-          "description": "(Optional, Boolean) Applicable for public load balancer only. It specifies whether the public IP addresses are allocated from system public IP pool or public subnet from the account ordering the load balancer. Default Value is `true`.",
+          "description": "(Optional, Boolean) Applicable for public load balancer only. It specifies whether the public IP addresses are allocated from system public IP pool or public subnet from the account order of the load balancer. The default value is `true`.",
           "args": []
         },
         {
@@ -14585,7 +14708,7 @@
       "args": [
         {
           "name": "monitor_id",
-          "description": "(Required, String) Health Monitor unique identifier. The monitor id can be imported from either the `ibm_lbaas` resource or datasource. Example: `ibm_lbaas.lbaas.health_monitors.X.monitor_id` or `data.ibm_lbaas.lbaas.health_monitors.X.monitor_id`",
+          "description": "(Required, String) Health Monitor unique identifier. The monitor id can be imported from either the `ibm_lbaas` resource or datasource. For example, `ibm_lbaas.lbaas.health_monitors.X.monitor_id` or `data.ibm_lbaas.lbaas.health_monitors.X.monitor_id`",
           "args": []
         },
         {
@@ -14620,7 +14743,7 @@
         },
         {
           "name": "url_path",
-          "description": "(Optional, String) If monitor is \"HTTP\", this specifies URL path",
+          "description": "(Optional, String) If monitor is \"HTTP\", it specifies the URL path",
           "args": []
         }
       ],
@@ -14649,7 +14772,7 @@
         },
         {
           "name": "depends_on",
-          "description": "(Required, String) the UUID of a load balancer",
+          "description": "(Required, String) The UUID of a load balancer",
           "args": []
         }
       ],
@@ -14712,7 +14835,7 @@
         },
         {
           "name": "members",
-          "description": "(Required, List) A nested block describing the hardware members of this network gateway.",
+          "description": "(Required, List) A nested block describes the hardware members of this network gateway.",
           "args": [
             {
               "name": "hostname",
@@ -14741,7 +14864,7 @@
             },
             {
               "name": "redundant_power_supply",
-              "description": "(Optional, Boolean) When the value is `true`, an additional power supply is provided. Default value: `false`",
+              "description": "(Optional, Boolean) When the value is `true`, more power supply is provided. Default value: `false`",
               "args": []
             },
             {
@@ -14756,22 +14879,22 @@
             },
             {
               "name": "package_key_name",
-              "description": "(Optional, String) The key name for the network gateway package. You can find available package key names in the SoftLayer API URL `https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_GATEWAY\"}}}`, using your API key as the password. Default value: `NETWORK_GATEWAY_APPLIANCE`. The default will allow to order Single Processor Multi-Core Servers. Use `2U_NETWORK_GATEWAY_APPLIANCE_1O_GBPS` for ordering Dual Processor Multi-Core Servers.",
+              "description": "(Optional, String) The key name for the network gateway package. You can find available package key names in the SoftLayer API URL `https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_GATEWAY\"}}}`, that uses your API key as the password. Default value is `NETWORK_GATEWAY_APPLIANCE`. The default value will allow to order Single processor Multi-Core Servers. Use `2U_NETWORK_GATEWAY_APPLIANCE_1O_GBPS` for ordering Dual processor Multi-Core Servers.",
               "args": []
             },
             {
               "name": "os_key_name",
-              "description": "(Optional, String) The os key name for member. Default value:  `OS_VYATTA_5600_5_X_UP_TO_1GBPS_SUBSCRIPTION_EDITION_64_BIT`. Refer to the same attribute on the `ibm_compute_bare_metal` resource.",
+              "description": "(Optional, String) The os key name for member. Default value is  `OS_VYATTA_5600_5_X_UP_TO_1GBPS_SUBSCRIPTION_EDITION_64_BIT`. Refer to the same attribute on the `ibm_compute_bare_metal` resource.",
               "args": []
             },
             {
               "name": "redundant_network",
-              "description": "(Optional, Boolean) When the value is `true`, two physical network interfaces are provided with a bonding configuration. Default value: `false`.",
+              "description": "(Optional, Boolean) When the value is `true`, two physical network interfaces are provided with a bonding configuration. Default value is `false`.",
               "args": []
             },
             {
               "name": "unbonded_network",
-              "description": "(Optional, Boolean) When the value is `true`, two physical network interfaces are provided without a bonding configuration. Default value: `false`.",
+              "description": "(Optional, Boolean) When the value is `true`, two physical network interfaces are provided without a bonding configuration. Default value is `false`.",
               "args": []
             },
             {
@@ -14781,7 +14904,7 @@
             },
             {
               "name": "public_bandwidth",
-              "description": "(Optional, Integer) Allowed public network traffic (in GB) per month. Default value: `20000`.",
+              "description": "(Optional, Integer) Allowed public network traffic (in GB) per month. Default value is `20000`.",
               "args": []
             },
             {
@@ -14791,7 +14914,7 @@
             },
             {
               "name": "storage_groups",
-              "description": "(Optional, List) A nested block describing the storage group for the member of the network gateway. Nested `storage_groups` blocks have the following structure:",
+              "description": "(Optional, List) A nested block describes the storage group for the member of the network gateway. Nested `storage_groups` blocks have the following structure:",
               "args": [
                 {
                   "name": "array_type_id",
@@ -14822,7 +14945,7 @@
             },
             {
               "name": "post_install_script_uri",
-              "description": "(Optional, String) The URI of the script to be downloaded and executed on the member. Default value: `nil`.",
+              "description": "(Optional, String) The URI of the script to be downloaded and executed on the member. Default value is `nil`.",
               "args": []
             },
             {
@@ -14926,7 +15049,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of strings) Tags associated with the public IP instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of strings) Tags associated with the public IP instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud Service Endpointat this moment.",
           "args": []
         }
       ],
@@ -15411,7 +15534,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of strings) Tags associated with the resource group instance. The tags are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of strings) Tags associated with the resource group instance. The tags are managed locally and not stored on the IBM Cloud Service Endpointat this moment.",
           "args": []
         }
       ],
@@ -15536,7 +15659,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of strings) Tags associated with the resource key instance. Tags are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of strings) Tags associated with the resource key instance. Tags are managed locally and not stored on the IBM Cloud Service Endpointat this moment.",
           "args": []
         }
       ],
@@ -15590,7 +15713,7 @@
         },
         {
           "name": "ether_type",
-          "description": "(Optional, String) The IP version. Accepted values  (case sensitive): `IPv4` or `IPv6`. Default value: `IPv4`.",
+          "description": "(Optional, String) The IP version. Accepted values  (case-sensitive): `IPv4` or `IPv6`. Default value: `IPv4`.",
           "args": []
         },
         {
@@ -15605,7 +15728,7 @@
         },
         {
           "name": "protocol",
-          "description": "(Optional, String) The IP protocol type. Accepted values (case sensitive): `icmp`,`tcp`, or `udp`.",
+          "description": "(Optional, String) The IP protocol type. Accepted values (case-sensitive): `icmp`,`tcp`, or `udp`.",
           "args": []
         },
         {
@@ -15812,7 +15935,7 @@
         },
         {
           "name": "iops",
-          "description": "(Required, Float) The IOPS value for the storage. For supported values, see [Provisioning](/docs/BlockStorage?topic=BlockStorage-About#provisioning)",
+          "description": "(Required, Float) The IOPS value for the storage. For supported values, see [Provisioning](/docs/BlockStorage?topic=BlockStorage-About#provisioning).",
           "args": []
         },
         {
@@ -15832,7 +15955,7 @@
         },
         {
           "name": "allowed_hardware_ids",
-          "description": "(Optional, Array of integers) The bare metal servers that you want to give access to this instance. Bare metal servers must be in the same data center as the block storage. You can also use this field to import the list of bare metal servers that have access to this storage from the `block_storage_ids` argument in the `ibm_compute_bare_metal` resource.",
+          "description": "(Optional, Array of integers) The Bare Metal servers that you want to give access to this instance. Bare Metal servers must be in the same data center as the block storage. You can also use this field to import the list of Bare Metal servers that have access to this storage from the `block_storage_ids` argument in the `ibm_compute_bare_metal` resource.",
           "args": []
         },
         {
@@ -15847,12 +15970,12 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of strings) Tags associated with the storage block instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of strings) Tags associated with the storage block instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud Service Endpointat this moment.",
           "args": []
         },
         {
           "name": "hourly_billing",
-          "description": "(Optional, Boolean) Set true to enable hourly billing.Default is false   **NOTE**: `Hourly billing` is only available in updated data centers with improved capabilities. Refer to the link to get the updated list of data centers. see [Data Center locations](/docs/FileStorage?topic=FileStorage-selectDC)",
+          "description": "(Optional, Boolean) Set true to enable hourly billing. Default value is **false**   **NOTE**: `Hourly billing` is only available in updated data centers with improved capabilities. Refer to the link to get the updated list of data centers. See [Data Center locations](/docs/FileStorage?topic=FileStorage-selectDC)",
           "args": []
         }
       ],
@@ -15886,7 +16009,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of strings) Tags associated with the storage Evault instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of strings) Tags associated with the storage Evault instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud Service Endpointat this moment.",
           "args": []
         }
       ],
@@ -15930,7 +16053,7 @@
         },
         {
           "name": "allowed_hardware_ids",
-          "description": "(Optional, Array of integers) The bare metal servers that you want to give access to this instance. Bare metal servers must be in the same data center as the block storage. You can also use this field to import the list of bare metal servers that have access to this storage from the `block_storage_ids` argument in the `ibm_compute_bare_metal` resource.",
+          "description": "(Optional, Array of integers) The Bare Metal servers that you want to give access to this instance. Bare Metal servers must be in the same data center as the block storage. You can also use this field to import the list of Bare Metal servers that have access to this storage from the `block_storage_ids` argument in the `ibm_compute_bare_metal` resource.",
           "args": []
         },
         {
@@ -15986,7 +16109,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Arrays of Strings) Tags associated with the file storage instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Arrays of Strings) Tags associated with the file storage instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud Service Endpointat this moment.",
           "args": []
         },
         {
@@ -16030,7 +16153,7 @@
         },
         {
           "name": "endpoint_ip",
-          "description": "(Optional, String) The target primary IP address for a static subnet. Only public IP addresses of virtual servers, bare metal servers, and Netscaler VPXs can be configured as an `endpoint_ip`. The `static subnet` will be created on the VLAN where the `endpoint_ip` is located.",
+          "description": "(Optional, String) The target primary IP address for a static subnet. Only public IP addresses of virtual servers, Bare Metal servers, and Netscaler VPXs can be configured as an `endpoint_ip`. The `static subnet` will be created on the VLAN where the `endpoint_ip` is located.",
           "args": []
         },
         {
@@ -16040,7 +16163,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of Strings) Tags associated with the subnet instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud service endpoint at this moment.",
+          "description": "(Optional, Array of Strings) Tags associated with the subnet instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud Service Endpointat this moment.",
           "args": []
         }
       ],
@@ -16069,7 +16192,7 @@
         },
         {
           "name": "network_id",
-          "description": "(Optional, String) Enter the ID of the network being connected through this connection. This parameter is required for network type 'vpc', the CRN of the VPC to be connected. This field is required to be unspecified for network type 'classic'. For example: crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b",
+          "description": "(Optional, String) Enter the ID of the network being connected through this connection. This parameter is required for network type 'vpc', the CRN of the VPC to be connected. This field is required to be unspecified for network type 'classic'. For example, crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b",
           "args": []
         }
       ],
@@ -16109,7 +16232,7 @@
       "args": [
         {
           "name": "name",
-          "description": "(Required, String) The unique user-defined name for the gateway. For example: `myGateway`",
+          "description": "(Required, String) The unique user-defined name for the gateway. For example, `myGateway`",
           "args": []
         },
         {
