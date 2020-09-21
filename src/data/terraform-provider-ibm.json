@@ -1037,6 +1037,237 @@
         }
       ]
     },
+    "ibm_container_addons": {
+      "name": "ibm_container_addons",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Kubernetes Service data sources",
+      "args": [
+        {
+          "name": "cluster",
+          "description": "(Required, String) The name or ID of the cluster.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "addons",
+          "description": "The details of an enabled addons.",
+          "args": [
+            {
+              "name": "name",
+              "description": "The addon name such as `istio`.",
+              "args": []
+            },
+            {
+              "name": "version",
+              "description": "The addon version. Omit the version, if you need to use the default version.",
+              "args": []
+            },
+            {
+              "name": "allowed_upgrade_versions",
+              "description": "The versions that the addon is upgraded to.",
+              "args": []
+            },
+            {
+              "name": "deprecated",
+              "description": "Determines if the addon version is deprecated.",
+              "args": []
+            },
+            {
+              "name": "health_state",
+              "description": "The health state of an addon, such as critical or pending.",
+              "args": []
+            },
+            {
+              "name": "health_status",
+              "description": "The health status of an addon, provides a description of the state in the form of error message.",
+              "args": []
+            },
+            {
+              "name": "min_kube_version",
+              "description": "The minimum Kubernetes version of the addon.",
+              "args": []
+            },
+            {
+              "name": "min_ocp_version",
+              "description": "The minimum OpenShift version of the addon.",
+              "args": []
+            },
+            {
+              "name": "supported_kube_range",
+              "description": "The supported Kubernetes version range of the addon.",
+              "args": []
+            },
+            {
+              "name": "target_version",
+              "description": "The addon target version.",
+              "args": []
+            },
+            {
+              "name": "vlan_spanning_required",
+              "description": "The VLAN spanning required for multi-zone clusters.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "id",
+          "description": "The ID of an addons.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_container_alb": {
+      "name": "ibm_container_alb",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Kubernetes Service data sources",
+      "args": [
+        {
+          "name": "alb_id",
+          "description": "(Required, String) The ID of the ALB.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "alb_type",
+          "description": "The ALB type.",
+          "args": []
+        },
+        {
+          "name": "cluster",
+          "description": "The name of the cluster.",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "The name of the ALB.",
+          "args": []
+        },
+        {
+          "name": "user_ip",
+          "description": "The IP address assigned by the user.",
+          "args": []
+        },
+        {
+          "name": "id",
+          "description": "The ALB ID.",
+          "args": []
+        },
+        {
+          "name": "zone",
+          "description": "The name of the zone.",
+          "args": []
+        },
+        {
+          "name": "enable",
+          "description": "Enable an ALB for the cluster.",
+          "args": []
+        },
+        {
+          "name": "disable_deployment",
+          "description": "Disable the ALB deployment details.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_container_alb_cert": {
+      "name": "ibm_container_alb_cert",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Kubernetes Service data sources",
+      "args": [
+        {
+          "name": "cluster_id",
+          "description": "(Required, String) The cluster ID.",
+          "args": []
+        },
+        {
+          "name": "secret_name",
+          "description": "(Required, String) The name of the ALB certificate secret.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "cert_crn",
+          "description": "The certificate CRN.",
+          "args": []
+        },
+        {
+          "name": "cloud_cert_instance_id",
+          "description": "The Cloud certificate instance ID from which certificate is downloaded.",
+          "args": []
+        },
+        {
+          "name": "cluster_crn",
+          "description": "The cluster CRN.",
+          "args": []
+        },
+        {
+          "name": "domain_name",
+          "description": "The domain name of the certificate.",
+          "args": []
+        },
+        {
+          "name": "expires_on",
+          "description": "The expiry date of the certificate.",
+          "args": []
+        },
+        {
+          "name": "id",
+          "description": "The ALB cert ID. The ID is composed of `<cluster_name_id>/<secret_name>`.",
+          "args": []
+        },
+        {
+          "name": "issuer_name",
+          "description": "The issuer name of the certificate.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_container_bind_service": {
+      "name": "ibm_container_bind_service",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Kubernetes Service data sources",
+      "args": [
+        {
+          "name": "cluster_name_id",
+          "description": "(Required, String) The name or Id of the cluster.",
+          "args": []
+        },
+        {
+          "name": "namespace_id",
+          "description": "(Required, String) The Kubernetes namespace.",
+          "args": []
+        },
+        {
+          "name": "service_instance_name",
+          "description": "(Optional, String) The name of the service that is attached to the cluster. This conflicts with the `service_instance_id` parameter.",
+          "args": []
+        },
+        {
+          "name": "service_instance_id",
+          "description": "(Optional, String) The Id of the service that is attached to the cluster. This conflicts with the `service_instance_name` parameter.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique Id of the bind service resource. The ID is composed of `<cluster_name_id>/<service_instance_name or service_instance_id>/<namespace_id/>`.",
+          "args": []
+        },
+        {
+          "name": "issuer_name",
+          "description": "The service key name.",
+          "args": []
+        }
+      ]
+    },
     "ibm_container_cluster": {
       "name": "ibm_container_cluster",
       "type": "data",
@@ -1044,8 +1275,18 @@
       "groupName": "Kubernetes Service data sources",
       "args": [
         {
+          "name": "alb_type",
+          "description": "(Optional, String) Filters the  `albs` based on type. The valid values are `private`, `public`, and `all`. The default value is `all`.",
+          "args": []
+        },
+        {
           "name": "cluster_name_id",
-          "description": "(Required, String) The name or ID of the cluster that you want to retrieve.",
+          "description": "(Required, String) The name or ID of the cluster that you want to retrieve.  (Deprecated)",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "(Optional, String) The name or ID of the cluster.",
           "args": []
         },
         {
@@ -1506,7 +1747,17 @@
       "args": [
         {
           "name": "cluster_name_id",
-          "description": "(Required, String) The name or ID of the VPC cluster that you want to retrieve.",
+          "description": "(Required, String) The name or ID of the VPC cluster that you want to retrieve. (Deprecated)",
+          "args": []
+        },
+        {
+          "name": "alb_type",
+          "description": "(Optional, String) The ALB type of a cluster.",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "(Optional, String) The name or ID of the cluster.",
           "args": []
         },
         {
@@ -3577,6 +3828,76 @@
         }
       ]
     },
+    "ibm_is_flow_logs": {
+      "name": "ibm_is_flow_logs",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "VPC infrastructure data sources (Gen 2 compute)",
+      "args": [],
+      "attrs": [
+        {
+          "name": "flow_log_collectors",
+          "description": "Lists all the flow logs in the IBM Cloud.",
+          "args": [
+            {
+              "name": "active",
+              "description": "Indicates whether the collector is active.",
+              "args": []
+            },
+            {
+              "name": "created_at",
+              "description": "The data and time the flow log created.",
+              "args": []
+            },
+            {
+              "name": "crn",
+              "description": "The CRN of the flow log collector.",
+              "args": []
+            },
+            {
+              "name": "href",
+              "description": "The URL of the flow log collector.",
+              "args": []
+            },
+            {
+              "name": "id",
+              "description": "The unique identifier of the flow log collector.",
+              "args": []
+            },
+            {
+              "name": "lifecycle_state",
+              "description": "The lifecycle state of the flow log collector.",
+              "args": []
+            },
+            {
+              "name": "name",
+              "description": "The flow log collector name.",
+              "args": []
+            },
+            {
+              "name": "resource_group",
+              "description": "The resource group of the flow log.",
+              "args": []
+            },
+            {
+              "name": "storage_bucket",
+              "description": "The COS bucket name where the flow logs are logged.",
+              "args": []
+            },
+            {
+              "name": "target",
+              "description": "The target ID that the flow log collector collects the flow logs.",
+              "args": []
+            },
+            {
+              "name": "vpc",
+              "description": "The VPC of the flow log collector that are associated.",
+              "args": []
+            }
+          ]
+        }
+      ]
+    },
     "ibm_is_image": {
       "name": "ibm_is_image",
       "type": "data",
@@ -3929,6 +4250,227 @@
         }
       ]
     },
+    "ibm_is_instance_group": {
+      "name": "ibm_is_instance_group",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "VPC infrastructure data sources (Gen 2 compute)",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, String) The name of an instance group.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The ID of an instance group.",
+          "args": []
+        },
+        {
+          "name": "managers",
+          "description": "List of managers associated with the instance group.",
+          "args": []
+        },
+        {
+          "name": "vpc",
+          "description": "The VPC ID.",
+          "args": []
+        },
+        {
+          "name": "status",
+          "description": "The status of an instance group.",
+          "args": []
+        },
+        {
+          "name": "instance_template",
+          "description": "The ID of an instance template to create an instance group.",
+          "args": []
+        },
+        {
+          "name": "instance_count",
+          "description": "The number of instances created in an instance group.",
+          "args": []
+        },
+        {
+          "name": "resource_group",
+          "description": "The resource group ID.",
+          "args": []
+        },
+        {
+          "name": "subnets",
+          "description": "The list of subnet IDs used by an instances.",
+          "args": []
+        },
+        {
+          "name": "application_port",
+          "description": "Scales an instances to supply the port for the Load Balancer pool member.",
+          "args": []
+        },
+        {
+          "name": "load_balancer_pool",
+          "description": "The Load Balancer pool ID.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_is_instance_group_manager_policies": {
+      "name": "ibm_is_instance_group_manager_policies",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "VPC infrastructure data sources (Gen 2 compute)",
+      "args": [
+        {
+          "name": "instance_group",
+          "description": "(Required, String) The instance group ID.",
+          "args": []
+        },
+        {
+          "name": "instance_group_manager",
+          "description": "(Required, String) The instance group manager ID",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "This ID is the combination of instance group ID, instance group manager ID and instance group manager policy ID.",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "The policy name.",
+          "args": []
+        },
+        {
+          "name": "policy_type",
+          "description": "The type of metric to evaluate.",
+          "args": []
+        },
+        {
+          "name": "metric_type",
+          "description": "The type of metric to evaluate. The possible values are `cpu`, `memory`, `network_in` and `network_out`.",
+          "args": []
+        },
+        {
+          "name": "metric_value",
+          "description": "The metric value to evaluate.",
+          "args": []
+        },
+        {
+          "name": "policy_id",
+          "description": "The policy ID.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_is_instance_group_manager_policy": {
+      "name": "ibm_is_instance_group_manager_policy",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "VPC infrastructure data sources (Gen 2 compute)",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, String) The name of the policy.",
+          "args": []
+        },
+        {
+          "name": "instance_group",
+          "description": "(Required, String) The instance group ID.",
+          "args": []
+        },
+        {
+          "name": "instance_group_manager",
+          "description": "(Required, String) The instance group manager ID",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "This ID is the combination of instance group ID, instance group manager ID and instance group manager policy ID.",
+          "args": []
+        },
+        {
+          "name": "policy_type",
+          "description": "The type of metric to evaluate.",
+          "args": []
+        },
+        {
+          "name": "metric_type",
+          "description": "The type of metric to evaluate. The possible values are `cpu`, `memory`, `network_in` and `network_out`.",
+          "args": []
+        },
+        {
+          "name": "metric_value",
+          "description": "The metric value to evaluate.",
+          "args": []
+        },
+        {
+          "name": "policy_id",
+          "description": "The policy ID.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_is_instance_group_managers": {
+      "name": "ibm_is_instance_group_managers",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "VPC infrastructure data sources (Gen 2 compute)",
+      "args": [
+        {
+          "name": "instance_group",
+          "description": "(Required, String) The instance group ID where the instance group manager is created.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "instance_group_managers",
+          "description": "Nested block with list of instance manager properties.",
+          "args": [
+            {
+              "name": "id",
+              "description": "This ID is the combination of instance group ID, and instance group manager ID.",
+              "args": []
+            },
+            {
+              "name": "manager_type",
+              "description": "The type of an instance group manager.",
+              "args": []
+            },
+            {
+              "name": "aggregation_window",
+              "description": "The time window in seconds to aggregate metrics prior to evaluation.",
+              "args": []
+            },
+            {
+              "name": "manager_id",
+              "description": "The instance group manager ID.",
+              "args": []
+            },
+            {
+              "name": "policies",
+              "description": "List of policies associated with the instance group manager.",
+              "args": []
+            },
+            {
+              "name": "max_membership_count",
+              "description": "The maximum number of members in a managed instance group.",
+              "args": []
+            },
+            {
+              "name": "min_membership_count",
+              "description": "The minimum number of members in a managed instance group.",
+              "args": []
+            }
+          ]
+        }
+      ]
+    },
     "ibm_is_instance_profile": {
       "name": "ibm_is_instance_profile",
       "type": "data",
@@ -3968,6 +4510,175 @@
             {
               "name": "family",
               "description": "The family that the profile belongs to. The family indicates what workloads are best suited for this type of profile. For more information, see [Profiles](/docs/vpc?topic=vpc-profiles).",
+              "args": []
+            }
+          ]
+        }
+      ]
+    },
+    "ibm_is_instance_templates": {
+      "name": "ibm_is_instance_templates",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "VPC infrastructure data sources (Gen 2 compute)",
+      "args": [],
+      "attrs": [
+        {
+          "name": "templates",
+          "description": "List of templates.",
+          "args": [
+            {
+              "name": "id",
+              "description": "The ID of the instance template.",
+              "args": []
+            },
+            {
+              "name": "name",
+              "description": "The name of the instance template.",
+              "args": []
+            },
+            {
+              "name": "image",
+              "description": "The ID of the image to create the template.",
+              "args": []
+            },
+            {
+              "name": "profile",
+              "description": "The number of instances created in the instance group.",
+              "args": []
+            },
+            {
+              "name": "vpc",
+              "description": "The VPC ID that the instance templates needs to be created.",
+              "args": []
+            },
+            {
+              "name": "zone",
+              "description": "The name of the zone.",
+              "args": []
+            },
+            {
+              "name": "keys",
+              "description": "List of SSH key IDs used to allow log in user to the instances.",
+              "args": []
+            },
+            {
+              "name": "resource_group",
+              "description": "The resource group ID.",
+              "args": []
+            },
+            {
+              "name": "primary_network_interfaces",
+              "description": "A nested block describes the primary network interface for the template.",
+              "args": [
+                {
+                  "name": "subnet",
+                  "description": "The VPC subnet to assign to the interface.",
+                  "args": []
+                },
+                {
+                  "name": "name",
+                  "description": "The name of the interface.",
+                  "args": []
+                },
+                {
+                  "name": "security_groups",
+                  "description": "List of security groups of the subnet.",
+                  "args": []
+                },
+                {
+                  "name": "primary_ipv4_address",
+                  "description": "The IPv4 address assigned to the primary network interface.",
+                  "args": []
+                }
+              ]
+            },
+            {
+              "name": "network_interfaces",
+              "description": "A nested block describes the network interfaces for the template.",
+              "args": [
+                {
+                  "name": "subnet",
+                  "description": "The VPC subnet to assign to the interface.",
+                  "args": []
+                },
+                {
+                  "name": "name",
+                  "description": "The name of the interface.",
+                  "args": []
+                },
+                {
+                  "name": "security_groups",
+                  "description": "List of security groups of  the subnet.",
+                  "args": []
+                },
+                {
+                  "name": "primary_ipv4_address",
+                  "description": "The IPv4 address assigned to the network interface.",
+                  "args": []
+                }
+              ]
+            },
+            {
+              "name": "boot_volume",
+              "description": "A nested block describes the boot volume configuration for the template.",
+              "args": [
+                {
+                  "name": "encryption",
+                  "description": "The encryption key CRN to encrypt the boot volume attached.",
+                  "args": []
+                },
+                {
+                  "name": "name",
+                  "description": "The name of the boot volume.",
+                  "args": []
+                },
+                {
+                  "name": "size",
+                  "description": "The boot volume size to configure in giga bytes.",
+                  "args": []
+                },
+                {
+                  "name": "iops",
+                  "description": "The IOPS for the boot volume.",
+                  "args": []
+                },
+                {
+                  "name": "profile",
+                  "description": "The profile for the boot volume configuration.",
+                  "args": []
+                },
+                {
+                  "name": "delete_volume_on_instance_delete",
+                  "description": "You can configure to delete the boot volume based on instance deletion.",
+                  "args": []
+                }
+              ]
+            },
+            {
+              "name": "volume_attachments",
+              "description": "A nested block describes the storage volume configuration for the template.",
+              "args": [
+                {
+                  "name": "name",
+                  "description": "The name of the boot volume.",
+                  "args": []
+                },
+                {
+                  "name": "volume",
+                  "description": "The storage volume ID created in VPC.",
+                  "args": []
+                },
+                {
+                  "name": "delete_volume_on_instance_delete",
+                  "description": "You can configure to delete the storage volume to delete based on instance deletion.",
+                  "args": []
+                }
+              ]
+            },
+            {
+              "name": "user_data",
+              "description": "The user data provided for the instance.",
               "args": []
             }
           ]
@@ -4161,6 +4872,81 @@
               ]
             }
           ]
+        }
+      ]
+    },
+    "ibm_is_lb": {
+      "name": "ibm_is_lb",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "VPC infrastructure data sources (Gen 1 compute)",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, String) The name of the load balancer.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The ID of the load balancer.",
+          "args": []
+        },
+        {
+          "name": "subnets",
+          "description": "The ID of the subnets to provision this load balancer.",
+          "args": []
+        },
+        {
+          "name": "listeners",
+          "description": "The ID of the listeners attached to this load balancer.",
+          "args": []
+        },
+        {
+          "name": "pools",
+          "description": "The ID of the Pools attached to this load balancer.",
+          "args": []
+        },
+        {
+          "name": "type",
+          "description": "The type of the load balancer.",
+          "args": []
+        },
+        {
+          "name": "resource_group",
+          "description": "The resource group where the load balancer is created.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "The tags associated with the load balancer.",
+          "args": []
+        },
+        {
+          "name": "public_ips",
+          "description": "The public IP addresses assigned to this load balancer.",
+          "args": []
+        },
+        {
+          "name": "private_ips",
+          "description": "The private IP addresses assigned to this load balancer.",
+          "args": []
+        },
+        {
+          "name": "status",
+          "description": "The status of load balancer.",
+          "args": []
+        },
+        {
+          "name": "operating_status",
+          "description": "The operating status of this load balancer.",
+          "args": []
+        },
+        {
+          "name": "hostname",
+          "description": "Fully qualified domain name assigned to this load balancer.",
+          "args": []
         }
       ]
     },
@@ -4359,7 +5145,12 @@
       "args": [
         {
           "name": "identifier",
-          "description": "(Required, String) The ID of the subnet. To list subnets in your account, run the `ibmcloud is subnets` command.",
+          "description": "(Optional, String) The ID of the subnet. To list subnets in your account, run the `ibmcloud is subnets` command.",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "(Optional, String) The name of the subnet.",
           "args": []
         }
       ],
@@ -4412,6 +5203,11 @@
         {
           "name": "zone",
           "description": "The name of the zone where the subnet is provisioned.",
+          "args": []
+        },
+        {
+          "name": "resource_group",
+          "description": "The subnet resource group.",
           "args": []
         }
       ]
@@ -5017,8 +5813,8 @@
       "groupName": "Cloud Foundry data sources",
       "args": [
         {
-          "name": "org",
-          "description": "(Required, String) The name of the IBM Cloud organization. You can retrieve the value by running the `ibmcloud iam orgs` command.",
+          "name": "name",
+          "description": "(Optional, String) The name of the IBM Cloud organization.",
           "args": []
         }
       ],
@@ -6112,12 +6908,17 @@
       "args": [
         {
           "name": "org",
-          "description": "(Required, String) The name of your Cloud Foundry organization that the space belongs to. You can retrieve the value by running the `ibmcloud iam orgs` command in the IBM Cloud CLI.",
+          "description": "(Required, String) The name of your Cloud Foundry organization that the space belongs to. You can retrieve the value by running the `ibmcloud iam orgs` command in the IBM Cloud CLI. (Deprecated)",
           "args": []
         },
         {
           "name": "space",
-          "description": "(Required, String) The name of your Cloud Foundry space. You can retrieve the value by running the `ibmcloud iam spaces` command in the IBM Cloud CLI.",
+          "description": "(Required, String) The name of your Cloud Foundry space. You can retrieve the value by running the `ibmcloud iam spaces` command in the IBM Cloud CLI. (Deprecated)",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "(Optional, String) The name of your space.",
           "args": []
         }
       ],
@@ -8749,6 +9550,93 @@
         }
       ]
     },
+    "ibm_container_addons": {
+      "name": "ibm_container_addons",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Kubernetes Service resources",
+      "args": [
+        {
+          "name": "cluster",
+          "description": "(Required, String) The name or ID of the cluster.",
+          "args": []
+        },
+        {
+          "name": "addons",
+          "description": "(Required, Set) Set of addons that needs to be enabled.",
+          "args": [
+            {
+              "name": "name",
+              "description": "(Optional, String) The addon name such as `istio`.",
+              "args": []
+            },
+            {
+              "name": "version",
+              "description": "(Optional, String) The addon version. Omit the version that you want to use as the default version.This is required when you want to update the addon to specified version.",
+              "args": []
+            }
+          ]
+        }
+      ],
+      "attrs": [
+        {
+          "name": "addons",
+          "description": "The details of an enabled addons.",
+          "args": [
+            {
+              "name": "allowed_upgrade_versions",
+              "description": "The versions that the addon is upgraded to.",
+              "args": []
+            },
+            {
+              "name": "deprecated",
+              "description": "Determines if the addon version is deprecated.",
+              "args": []
+            },
+            {
+              "name": "health_state",
+              "description": "The health state of an addon, such as critical or pending.",
+              "args": []
+            },
+            {
+              "name": "health_status",
+              "description": "The health status of an addon, provides a description of the state in the form of error message.",
+              "args": []
+            },
+            {
+              "name": "min_kube_version",
+              "description": "The minimum Kubernetes version of the addon.",
+              "args": []
+            },
+            {
+              "name": "min_ocp_version",
+              "description": "The minimum OpenShift version of the addon.",
+              "args": []
+            },
+            {
+              "name": "supported_kube_range",
+              "description": "The supported Kubernetes version range of the addon.",
+              "args": []
+            },
+            {
+              "name": "target_version",
+              "description": "The addon target version.",
+              "args": []
+            },
+            {
+              "name": "vlan_spanning_required",
+              "description": "The VLAN spanning required for multi-zone clusters.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "id",
+          "description": "The Id of the addons.",
+          "args": []
+        }
+      ]
+    },
     "ibm_container_alb": {
       "name": "ibm_container_alb",
       "type": "resource",
@@ -8951,6 +9839,11 @@
           "args": []
         },
         {
+          "name": "force_delete_storage",
+          "description": "(Optional, Boolean) If set to `true`,force the removal of persistent storage associated with the cluster during cluster deletion. Default value is `false`. **NOTE** If `force_delete_storage` parameter is used after provisioning the cluster, then, you need to execute `terraform apply` before `terraform destroy` for `force_delete_storage` parameter to take effect.",
+          "args": []
+        },
+        {
           "name": "hardware",
           "description": "(Optional, String) The level of hardware isolation for your worker node. Use `dedicated` to have available physical resources dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. This option is available for virtual machine worker node flavors only.",
           "args": []
@@ -8959,6 +9852,27 @@
           "name": "gateway_enabled",
           "description": "(Optional, Boolean) Set to **true** if you want to automatically create a gateway-enabled cluster. If `gateway_enabled` is set to **true**, then `private_service_endpoint` must be set to **true** at the same time.",
           "args": []
+        },
+        {
+          "name": "kms_config",
+          "description": "(Optional, List) Used to attach a Key Protect instance to a cluster. Nested `kms_config` block have `instance_id`, `crk_id`, `private_endpoint` structure.",
+          "args": [
+            {
+              "name": "instance_id",
+              "description": "(Optional, List) The GUID of the Key Protect instance.",
+              "args": []
+            },
+            {
+              "name": "crk_id",
+              "description": "(Optional, List) The ID of the customer root key (CRK).",
+              "args": []
+            },
+            {
+              "name": "private_endpoint",
+              "description": "(Optional, Boolean) Set to `true` to configure the KMS private service endpoint. Default value is `false`.",
+              "args": []
+            }
+          ]
         },
         {
           "name": "kube_version",
@@ -9445,6 +10359,37 @@
         {
           "name": "wait_till",
           "description": "(Optional, String) The creation of a cluster can take a few minutes (for virtual servers) or even hours (for Bare Metal servers) to complete. To avoid long wait times when you run your Terraform code, you can specify the stage when you want Terraform to mark the cluster resource creation as completed. Depending on what stage you choose, the cluster creation might not be fully completed and continues to run in the background. However, your Terraform code can continue to run without waiting for the cluster to be fully created. Supported stages are: <ul><li><strong>MasterNodeReady</strong>: Terraform marks the creation of your cluster complete when the cluster master is in a <code>ready</code> state.</li><li><strong>OneWorkerNodeReady</strong>: Terraform marks the creation of your cluster complete when the master and at least one worker node are in a <code>ready</code> state.</li><li><strong>IngressReady</strong>: Terraform marks the creation of your cluster complete when the cluster master and all worker nodes are in a <code>ready</code> state, and the Ingress subdomain is fully set up.</li></ul> If you do not specify this option, <code>IngressReady</code> is used by default. You can set this option only when the cluster is created. If this option is set during a cluster update or deletion, the parameter is ignored by the Terraform provider.",
+          "args": []
+        },
+        {
+          "name": "kms_config",
+          "description": "(Optional, List) Use to attach a Key Protect instance to a cluster. Nested `kms_config` block has an `instance_id`, `crk_id`, `private_endpoint`.",
+          "args": [
+            {
+              "name": "instance_id",
+              "description": "(Optional, List) The GUID of the Key Protect instance.",
+              "args": []
+            },
+            {
+              "name": "crk_id",
+              "description": "(Optional, List) The ID of the customer root key (CRK).",
+              "args": []
+            },
+            {
+              "name": "private_endpoint",
+              "description": "(Optional, Boolean) Set `true` to configure the KMS private service endpoint. Default value is `false`.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "entitlement",
+          "description": "(Optional, String) The {{site.data.keyword.openshiftshort}} cluster entitlement avoids the OCP licence charges incurred. Use Cloud Pak with OCP Licence entitlement to create the {{site.data.keyword.openshiftshort}}cluster. **NOTE** <ul><li> It is set only the first time creation of the cluster, further modifications are not impacted. </li></ul> <ul><li> Set this argument to `cloud_pak` only if you use the cluster with a Cloud Pak that has an {{site.data.keyword.openshiftshort}} entitlement.</li></ul>",
+          "args": []
+        },
+        {
+          "name": "force_delete_storage",
+          "description": "(Optional, Boolean) If set to `true`,force the removal of persistent storage associated with the cluster during cluster deletion. Default value is `false`. **NOTE** If `force_delete_storage` parameter is used after provisioning the cluster, then, you need to execute `terraform apply` before `terraform destroy` for `force_delete_storage` parameter to take effect.",
           "args": []
         }
       ],
@@ -12247,6 +13192,81 @@
         }
       ]
     },
+    "ibm_is_flow_log": {
+      "name": "ibm_is_flow_log",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "VPC infrastructure resources (Gen 2 compute)",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, String) The unique user-defined name for the flow log collector.",
+          "args": []
+        },
+        {
+          "name": "target",
+          "description": "(Required, String) The ID of the target to collect flow logs. If the target is an instance, subnet, or VPC, flow logs is not collected for any network interfaces within the target that are more specific flow log collector.",
+          "args": []
+        },
+        {
+          "name": "storage_bucket",
+          "description": "(Required, String) The name of the COS bucket where the collected flows will be logged. The bucket must exist and an IAM service authorization must grant IBM Cloud flow logs resources of VPC infrastructure services writer access to the bucket.",
+          "args": []
+        },
+        {
+          "name": "active",
+          "description": "(Optional, String) Indicates whether the collector is active. If `false`, this collector is created in inactive mode. Default value is true.",
+          "args": []
+        },
+        {
+          "name": "resource_group",
+          "description": "(Optional, String) The resource group ID where the flow log is created.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, Array of Strings) The tags associated with the flow log.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "created_at",
+          "description": "The date and time that the flow log collector created.",
+          "args": []
+        },
+        {
+          "name": "crn",
+          "description": "The CRN of the flow log collector.",
+          "args": []
+        },
+        {
+          "name": "href",
+          "description": "The URL of the flow log collector.",
+          "args": []
+        },
+        {
+          "name": "id",
+          "description": "The unique identifier of the flow log collector.",
+          "args": []
+        },
+        {
+          "name": "lifecycle_state",
+          "description": "The lifecycle state of the flow log collector.",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "The user-defined name of the flow log collector.",
+          "args": []
+        },
+        {
+          "name": "vpc",
+          "description": "The VPC of the flow log collector that is associated.",
+          "args": []
+        }
+      ]
+    },
     "ibm_is_ike_policy": {
       "name": "ibm_is_ike_policy",
       "type": "resource",
@@ -12683,6 +13703,365 @@
               "args": []
             }
           ]
+        }
+      ]
+    },
+    "ibm_is_instance_group": {
+      "name": "ibm_is_instance_group",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "VPC infrastructure resources (Gen 2 compute)",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, String) The instance  group name.",
+          "args": []
+        },
+        {
+          "name": "instance_template",
+          "description": "(Required, String) The ID of the instance template to create the instance group.",
+          "args": []
+        },
+        {
+          "name": "instance_count",
+          "description": "(Required, Integer) The number of instances to create in the instance group.",
+          "args": []
+        },
+        {
+          "name": "resource_group",
+          "description": "(Optional, String) The resource group ID.",
+          "args": []
+        },
+        {
+          "name": "subnets",
+          "description": "(Required, List) The list of subnet IDs used by the instances.",
+          "args": []
+        },
+        {
+          "name": "application_port",
+          "description": "(Optional, Integer) The instance group uses when scaling up instances to supply the port for the Load Balancer pool member.",
+          "args": []
+        },
+        {
+          "name": "load_balancer",
+          "description": "(Optional, String) The load Balancer ID.",
+          "args": []
+        },
+        {
+          "name": "load_balancer_pool",
+          "description": "(Optional, String) The load Balancer pool ID.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The ID of an instance group.",
+          "args": []
+        },
+        {
+          "name": "managers",
+          "description": "List of managers associated with the instance group.",
+          "args": []
+        },
+        {
+          "name": "vpc",
+          "description": "The VPC ID.",
+          "args": []
+        },
+        {
+          "name": "status",
+          "description": "Status of an instance group.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_is_instance_group_manager": {
+      "name": "ibm_is_instance_group_manager",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "VPC infrastructure resources (Gen 2 compute)",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Optional, String) The name of the instance group manager.",
+          "args": []
+        },
+        {
+          "name": "enable_manager",
+          "description": "(Optional, Boolean) Enable or disbale the instance group manager. Default value is `true`.",
+          "args": []
+        },
+        {
+          "name": "instance_group",
+          "description": "(Required, String) The instance group ID where instance group manager is created.",
+          "args": []
+        },
+        {
+          "name": "manager_type",
+          "description": "(Optional, String) The type of instance group manager. Default value is `autoscale`.",
+          "args": []
+        },
+        {
+          "name": "aggregation_window",
+          "description": "(Optional, Integer) The time window in seconds to aggregate metrics prior to evaluation.",
+          "args": []
+        },
+        {
+          "name": "cooldown",
+          "description": "(Optional, Integer) The duration of time in seconds to pause further scale actions after scaling has taken place.",
+          "args": []
+        },
+        {
+          "name": "max_membership_count",
+          "description": "(Required, Integer) The maximum number of members in a managed instance group.",
+          "args": []
+        },
+        {
+          "name": "min_membership_count",
+          "description": "(Optional, Integer) The minimum number of members in a managed instance group. Default value is `1`.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The ID in the combination of instance group ID and instance group manager ID.",
+          "args": []
+        },
+        {
+          "name": "policies",
+          "description": "List of policies associated with the instance group manager.",
+          "args": []
+        },
+        {
+          "name": "manager_id",
+          "description": "The ID of the instance group manager.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_is_instance_group_manager_policy": {
+      "name": "ibm_is_instance_group_manager_policy",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "VPC infrastructure resources (Gen 2 compute)",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Optional, String) The name of the policy.",
+          "args": []
+        },
+        {
+          "name": "policy_type",
+          "description": "(Required, String) The type of metric to evaluate.",
+          "args": []
+        },
+        {
+          "name": "instance_group",
+          "description": "(Required, String) The instance group ID.",
+          "args": []
+        },
+        {
+          "name": "instance_group_manager",
+          "description": "(Required, String) The instance group manager ID for policy creation.",
+          "args": []
+        },
+        {
+          "name": "metric_type",
+          "description": "(Required, String) The type of metric to evaluate. The possible values for metric types are `cpu`, `memory`, `network_in`, and `network_out`.",
+          "args": []
+        },
+        {
+          "name": "metric_value",
+          "description": "(Required, Integer) The metric value to evaluate.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The ID in the combination of instance group ID, instance group manager ID, and instance group manager policy ID.",
+          "args": []
+        },
+        {
+          "name": "policy_id",
+          "description": "The policy ID.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_is_instance_template": {
+      "name": "ibm_is_instance_template",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "VPC infrastructure resources (Gen 2 compute)",
+      "args": [
+        {
+          "name": "templates",
+          "args": [
+            {
+              "name": "id",
+              "description": "(Required, String) The ID of the instance template.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "name",
+          "description": "(Required, String) The name of the instance template.",
+          "args": []
+        },
+        {
+          "name": "image",
+          "description": "(Required, String) The ID of the image to create the template.",
+          "args": []
+        },
+        {
+          "name": "profile",
+          "description": "(Required, String) The number of instances created in the instance group.",
+          "args": []
+        },
+        {
+          "name": "vpc",
+          "description": "(Required, String) The VPC ID that the instance templates needs to be created.",
+          "args": []
+        },
+        {
+          "name": "zone",
+          "description": "(Required, String) The name of the zone.",
+          "args": []
+        },
+        {
+          "name": "keys",
+          "description": "(Required, List) List of SSH key IDs used to allow log in user to the instances.",
+          "args": []
+        },
+        {
+          "name": "resource_group",
+          "description": "(Optional, String) The resource group ID.",
+          "args": []
+        },
+        {
+          "name": "primary_network_interfaces",
+          "description": "(Required, List) A nested block describes the primary network interface for the template.",
+          "args": [
+            {
+              "name": "subnet",
+              "description": "(Required, String) The VPC subnet to assign to the interface.",
+              "args": []
+            },
+            {
+              "name": "name",
+              "description": "(Optional, String) The name of the interface.",
+              "args": []
+            },
+            {
+              "name": "security_groups",
+              "description": "(Optional, List) List of security groups of the subnet.",
+              "args": []
+            },
+            {
+              "name": "primary_ipv4_address",
+              "description": "(Optional, String) The IPv4 address assigned to the primary network interface.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "network_interfaces",
+          "description": "(Optional, List) A nested block describes the network interfaces for the template.",
+          "args": [
+            {
+              "name": "subnet",
+              "description": "(Required, String) The VPC subnet to assign to the interface.",
+              "args": []
+            },
+            {
+              "name": "name",
+              "description": "(Optional, String) The name of the interface.",
+              "args": []
+            },
+            {
+              "name": "security_groups",
+              "description": "(Optional, List) List of security groups of  the subnet.",
+              "args": []
+            },
+            {
+              "name": "primary_ipv4_address",
+              "description": "(Optional, String) The IPv4 address assigned to the network interface.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "boot_volume",
+          "description": "(Optional, List) A nested block describes the boot volume configuration for the template.",
+          "args": [
+            {
+              "name": "encryption",
+              "description": "(Optional, String) The encryption key CRN to encrypt the boot volume attached.",
+              "args": []
+            },
+            {
+              "name": "name",
+              "description": "(Optional, String) The name of the boot volume.",
+              "args": []
+            },
+            {
+              "name": "size",
+              "description": "(Optional, String) The boot volume size to configure in giga bytes.",
+              "args": []
+            },
+            {
+              "name": "iops",
+              "description": "(Optional, String) The IOPS for the boot volume.",
+              "args": []
+            },
+            {
+              "name": "profile",
+              "description": "(Optional, String) The profile for the boot volume configuration.",
+              "args": []
+            },
+            {
+              "name": "delete_volume_on_instance_delete",
+              "description": "(Optional, Boolean) You can configure to delete the boot volume based on instance deletion.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "volume_attachments",
+          "description": "(Optional, List) A nested block describes the storage volume configuration for the template.",
+          "args": [
+            {
+              "name": "name",
+              "description": "(Required, String) The name of the boot volume.",
+              "args": []
+            },
+            {
+              "name": "volume",
+              "description": "(Required, String) The storage volume ID created in VPC.",
+              "args": []
+            },
+            {
+              "name": "delete_volume_on_instance_delete",
+              "description": "(Required, Boolean) You can configure to delete the storage volume to delete based on instance deletion.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "user_data",
+          "description": "(Optional, String) The user data provided for the instance.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The ID of an instance template.",
+          "args": []
         }
       ]
     },
@@ -15461,6 +16840,101 @@
         }
       ]
     },
+    "ibm_pi_network_port": {
+      "name": "ibm_pi_network_port",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Power Systems resources",
+      "args": [
+        {
+          "name": "pi_instance_name",
+          "description": "(Required, String) The name of the VM.",
+          "args": []
+        },
+        {
+          "name": "pi_cloud_instance_id",
+          "description": "(Required, String) The cloud_instance_id of the account.",
+          "args": []
+        },
+        {
+          "name": "pi_network_port_description",
+          "description": "(Optional, String) The description for the Network Port.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier of the instance. The ID is composed of <power_network_port_id>/<id>.",
+          "args": []
+        },
+        {
+          "name": "ipaddress",
+          "description": "The unique identifier of the instance.",
+          "args": []
+        },
+        {
+          "name": "macaddress",
+          "description": "The MAC address of the port.",
+          "args": []
+        },
+        {
+          "name": "status",
+          "description": "The status of the port.",
+          "args": []
+        },
+        {
+          "name": "portid",
+          "description": "The ID of the port.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_pi_snapshot": {
+      "name": "ibm_pi_snapshot",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Power Systems resources",
+      "args": [
+        {
+          "name": "pi_instance_name",
+          "description": "(Required, String) The name of the instance you want to take a snapshot of.",
+          "args": []
+        },
+        {
+          "name": "pi_snapshot_name",
+          "description": "(Required, String) The unique name of the snapshot.",
+          "args": []
+        },
+        {
+          "name": "description",
+          "description": "(Optional, String) The description for the snapshot.",
+          "args": []
+        },
+        {
+          "name": "pi_volume_ids",
+          "description": "(Optional, String) The volume ID, if none provided then all volumes of the instance will be part of the snapshot.",
+          "args": []
+        },
+        {
+          "name": "pi_cloud_instance_id",
+          "description": "(Required, String) The cloud instance ID for this account.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier of the snapshot. The ID is composed of <power_instance_id>/<pi_snap_shot_id>.",
+          "args": []
+        },
+        {
+          "name": "volume_snapshots",
+          "description": "A map of the source and target volumes.",
+          "args": []
+        }
+      ]
+    },
     "ibm_pi_volume": {
       "name": "ibm_pi_volume",
       "type": "resource",
@@ -15569,7 +17043,7 @@
         },
         {
           "name": "service",
-          "description": "(Required, String) The name of the service offering. You can retrieve the value by installing the `catalogs-management` CLI plug-in and running the `ibmcloud catalog service-marketplace` or `ibmcloud catalog search` command.",
+          "description": "(Required, String) The name of the service offering. You can retrieve the value by installing the `catalogs-management` CLI plug-in and running the `ibmcloud catalog service-marketplace` or `ibmcloud catalog search` command. For more information about IBM Cloud catalog service marketplace, refer [IBM Cloud catalog service marketplace] (docs/cli?topic=cli-ibmcloud_catalog#ibmcloud_catalog_service_marketplace).",
           "args": []
         },
         {
