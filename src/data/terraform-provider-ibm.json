@@ -434,6 +434,212 @@
         }
       ]
     },
+    "ibm_cis_edge_functions_actions": {
+      "name": "ibm_cis_edge_functions_actions",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Internet Services data sources",
+      "args": [
+        {
+          "name": "domain_id",
+          "description": "(Required, String) The ID of the domain to add an edge functions action.",
+          "args": []
+        },
+        {
+          "name": "cis_id",
+          "description": "(Required, String) The ID of the IBM Cloud Internet Services instance.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "created_on",
+          "description": "An action created date.",
+          "args": []
+        },
+        {
+          "name": "etag",
+          "description": "An action E-Tag.",
+          "args": []
+        },
+        {
+          "name": "handler",
+          "description": "An action handler methods.",
+          "args": []
+        },
+        {
+          "name": "modified_on",
+          "description": "An action modified date.",
+          "args": []
+        },
+        {
+          "name": "routes",
+          "description": "An action route detail.",
+          "args": [
+            {
+              "name": "action_name",
+              "description": "An action route detail.",
+              "args": []
+            },
+            {
+              "name": "pattern_url",
+              "description": "The Route pattern. It is a domain name in which the action is performed.",
+              "args": []
+            },
+            {
+              "name": "request_limit_fail_open",
+              "description": "An action request limit fail open.",
+              "args": []
+            },
+            {
+              "name": "trigger_id",
+              "description": "The Trigger ID of an action.",
+              "args": []
+            }
+          ]
+        }
+      ]
+    },
+    "ibm_cis_edge_functions_triggers": {
+      "name": "ibm_cis_edge_functions_triggers",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Internet Services data sources",
+      "args": [
+        {
+          "name": "domain_id",
+          "description": "(Required, String) The ID of the domain to add an edge functions triggers.",
+          "args": []
+        },
+        {
+          "name": "cis_id",
+          "description": "(Required, String) The ID of the IBM Cloud Internet Services instance.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "action_name",
+          "description": "An action script for execution.",
+          "args": []
+        },
+        {
+          "name": "pattern_url",
+          "description": "The Route pattern. It is a domain name in which the action is performed.",
+          "args": []
+        },
+        {
+          "name": "request_limit_fail_open",
+          "description": "An action request limit fail open.",
+          "args": []
+        },
+        {
+          "name": "trigger_id",
+          "description": "The route ID of an action trigger.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_cis_healthchecks": {
+      "name": "ibm_cis_healthchecks",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Internet Services data sources",
+      "args": [
+        {
+          "name": "cis_id",
+          "description": "(Required, String) The resource CRN ID of the IBM Cloud Internet Services on which zones were created.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "allow_insecure",
+          "description": "Do not validate the certificate when healthcheck uses `HTTPS`.",
+          "args": []
+        },
+        {
+          "name": "created_on",
+          "description": "The RFC3339 timestamp of when the load balancer monitor was created.",
+          "args": []
+        },
+        {
+          "name": "description",
+          "description": "Free text description.",
+          "args": []
+        },
+        {
+          "name": "expected_body",
+          "description": "The requested body.",
+          "args": []
+        },
+        {
+          "name": "expected_codes",
+          "description": "The expected HTTP response code or code range of the health check. For example, `2xx`.",
+          "args": []
+        },
+        {
+          "name": "headers",
+          "description": "The health check header.",
+          "args": []
+        },
+        {
+          "name": "id",
+          "description": "The load balancer monitor ID and CRN. For example, `monitor_id:crn`.",
+          "args": []
+        },
+        {
+          "name": "interval",
+          "description": "The interval between each health check. Shorter intervals improve failover time, but can increase load on the origins as you check from multiple locations. The default value is `60`.",
+          "args": []
+        },
+        {
+          "name": "modified_on",
+          "description": "The RFC3339 timestamp of when the load balancer monitor was last modified.",
+          "args": []
+        },
+        {
+          "name": "monitor_id",
+          "description": "The load balancer monitor ID.",
+          "args": []
+        },
+        {
+          "name": "method",
+          "description": "The HTTP method to use for the health check.",
+          "args": []
+        },
+        {
+          "name": "path",
+          "description": "The endpoint path to health check.",
+          "args": []
+        },
+        {
+          "name": "port",
+          "description": "The TCP port to use for the health check.",
+          "args": []
+        },
+        {
+          "name": "retries",
+          "description": "The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately. The default value is `2`.",
+          "args": []
+        },
+        {
+          "name": "timeout",
+          "description": "The timeout (in seconds) before marking the health check as failed. The default value is `5`.",
+          "args": []
+        },
+        {
+          "name": "type",
+          "description": "The protocol to use for the healthcheck. Currently supported protocols are `HTTP`, `HTTPS`, and `TCP`. The default value is `HTTP`.",
+          "args": []
+        },
+        {
+          "name": "follow_redirects",
+          "description": "Follow redirects if returned by the origin.",
+          "args": []
+        }
+      ]
+    },
     "ibm_cis_ip_addresses": {
       "name": "ibm_cis_ip_addresses",
       "type": "data",
@@ -443,12 +649,12 @@
       "attrs": [
         {
           "name": "ipv4_cidrs",
-          "description": "The IPv4 address ranges that the CIS proxy uses and that you can reference to configure and whitelist IP addresses in firewalls, network ACLs, and security groups.",
+          "description": "The IPv4 address ranges that the CIS proxy uses and that you can reference to configure and allowed IP addresses in firewalls, network ACLs, and security groups.",
           "args": []
         },
         {
           "name": "ipv6_cidrs",
-          "description": "The IPv6 address ranges that the CIS proxy uses and that you can reference to configure and whitelist IP addresses in firewalls, network ACLs, and security groups.",
+          "description": "The IPv6 address ranges that the CIS proxy uses and that you can reference to configure and allowed IP addresses in firewalls, network ACLs, and security groups.",
           "args": []
         }
       ]
@@ -1052,56 +1258,56 @@
       "attrs": [
         {
           "name": "addons",
-          "description": "The details of an enabled addons.",
+          "description": "The details of an enabled add-ons.",
           "args": [
             {
               "name": "name",
-              "description": "The addon name such as `istio`.",
+              "description": "The add-on name such as `istio`.",
               "args": []
             },
             {
               "name": "version",
-              "description": "The addon version. Omit the version, if you need to use the default version.",
+              "description": "The add-on version. Omit the version, if you need to use the default version.",
               "args": []
             },
             {
               "name": "allowed_upgrade_versions",
-              "description": "The versions that the addon is upgraded to.",
+              "description": "The versions that the add-on is upgraded to.",
               "args": []
             },
             {
               "name": "deprecated",
-              "description": "Determines if the addon version is deprecated.",
+              "description": "Determines if the add-on version is deprecated.",
               "args": []
             },
             {
               "name": "health_state",
-              "description": "The health state of an addon, such as critical or pending.",
+              "description": "The health state of an add-on, such as critical or pending.",
               "args": []
             },
             {
               "name": "health_status",
-              "description": "The health status of an addon, provides a description of the state in the form of error message.",
+              "description": "The health status of an add-on, provides a description of the state in the form of error message.",
               "args": []
             },
             {
               "name": "min_kube_version",
-              "description": "The minimum Kubernetes version of the addon.",
+              "description": "The minimum Kubernetes version of the add-on.",
               "args": []
             },
             {
               "name": "min_ocp_version",
-              "description": "The minimum OpenShift version of the addon.",
+              "description": "The minimum OpenShift version of the add-on.",
               "args": []
             },
             {
               "name": "supported_kube_range",
-              "description": "The supported Kubernetes version range of the addon.",
+              "description": "The supported Kubernetes version range of the add-on.",
               "args": []
             },
             {
               "name": "target_version",
-              "description": "The addon target version.",
+              "description": "The add-on target version.",
               "args": []
             },
             {
@@ -1113,7 +1319,12 @@
         },
         {
           "name": "id",
-          "description": "The ID of an addons.",
+          "description": "The ID of an add-ons.",
+          "args": []
+        },
+        {
+          "name": "resource_group_id",
+          "description": "The ID of the cluster resource group in which the addons is installed.",
           "args": []
         }
       ]
@@ -3527,11 +3738,6 @@
           "description": "A nested block list of IAM service IDs.",
           "args": [
             {
-              "name": "id",
-              "description": "The unique identifier of the service ID.",
-              "args": []
-            },
-            {
               "name": "bound_to",
               "description": "The service the service ID is bound to.",
               "args": []
@@ -3547,13 +3753,23 @@
               "args": []
             },
             {
-              "name": "version",
-              "description": "The version of the service ID.",
+              "name": "iam_id",
+              "description": "The IAM ID of the serviceID.",
+              "args": []
+            },
+            {
+              "name": "id",
+              "description": "The unique identifier of the service ID.",
               "args": []
             },
             {
               "name": "locked",
               "description": "If set to **true**, the service ID is locked.",
+              "args": []
+            },
+            {
+              "name": "version",
+              "description": "The version of the service ID.",
               "args": []
             }
           ]
@@ -5075,6 +5291,204 @@
         }
       ]
     },
+    "ibm_is_lb_profiles": {
+      "name": "ibm_is_lb_profiles",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "VPC infrastructure data sources (Gen 2 compute)",
+      "args": [],
+      "attrs": [
+        {
+          "name": "lb_profiles",
+          "description": "List of all load balancer profiles in the IBM Cloud Infrastructure.",
+          "args": [
+            {
+              "name": "family",
+              "description": "The product family this load balancer profile belongs to.",
+              "args": []
+            },
+            {
+              "name": "href",
+              "description": "The URL for this load balancer profile.",
+              "args": []
+            },
+            {
+              "name": "name",
+              "description": "The name for this load balancer profile.",
+              "args": []
+            }
+          ]
+        }
+      ]
+    },
+    "ibm_is_lbs": {
+      "name": "ibm_is_lbs",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "VPC infrastructure data sources (Gen 2 compute)",
+      "args": [],
+      "attrs": [
+        {
+          "name": "load_balancers",
+          "description": "The Collection of load balancers.",
+          "args": []
+        },
+        {
+          "name": "loadbalancers",
+          "args": [
+            {
+              "name": "id",
+              "description": "The unique identifier of the load balancer.",
+              "args": []
+            },
+            {
+              "name": "created_at",
+              "description": "The date and time this load balancer was created.",
+              "args": []
+            },
+            {
+              "name": "crn",
+              "description": "The load balancer's CRN.",
+              "args": []
+            },
+            {
+              "name": "name",
+              "description": "Name of the loadbalancer.",
+              "args": []
+            },
+            {
+              "name": "subnets",
+              "description": "The subnets this load balancer is part of.",
+              "args": [
+                {
+                  "name": "crn",
+                  "description": "The CRN for the subnet.",
+                  "args": []
+                },
+                {
+                  "name": "id",
+                  "description": "The unique identifier for this subnet.",
+                  "args": []
+                },
+                {
+                  "name": "href",
+                  "description": "The URL for this subnet.",
+                  "args": []
+                },
+                {
+                  "name": "name",
+                  "description": "The user-defined name for this subnet.",
+                  "args": []
+                }
+              ]
+            },
+            {
+              "name": "hostname",
+              "description": "The Fully qualified domain name assigned to this load balancer.",
+              "args": []
+            },
+            {
+              "name": "listeners",
+              "description": "The listeners of this load balancer.",
+              "args": [
+                {
+                  "name": "id",
+                  "description": "The unique identifier for this load balancer listener.",
+                  "args": []
+                },
+                {
+                  "name": "href",
+                  "description": "The listener's canonical URL.",
+                  "args": []
+                }
+              ]
+            },
+            {
+              "name": "operating_status",
+              "description": "The operating status of this load balancer.",
+              "args": []
+            },
+            {
+              "name": "pools",
+              "description": "The pools of this load balancer.",
+              "args": [
+                {
+                  "name": "href",
+                  "description": "The pool's canonical URL.",
+                  "args": []
+                },
+                {
+                  "name": "id",
+                  "description": "The unique identifier for this load balancer pool.",
+                  "args": []
+                },
+                {
+                  "name": "name",
+                  "description": "The user-defined name for this load balancer pool.",
+                  "args": []
+                }
+              ]
+            },
+            {
+              "name": "profile",
+              "description": "The profile to use for this load balancer.",
+              "args": [
+                {
+                  "name": "family",
+                  "description": "The product family this load balancer profile belongs to.",
+                  "args": []
+                },
+                {
+                  "name": "href",
+                  "description": "The URL for this load balancer profile.",
+                  "args": []
+                },
+                {
+                  "name": "name",
+                  "description": "The name for this load balancer profile.",
+                  "args": []
+                }
+              ]
+            },
+            {
+              "name": "private_ips",
+              "description": "The private IP addresses assigned to this load balancer.",
+              "args": []
+            },
+            {
+              "name": "provisioning_status",
+              "description": "The provisioning status of this load balancer. Possible values are: **active**, **create_pending**, **delete_pending**, **failed**, **maintenance_pending**, **update_pending**",
+              "args": []
+            },
+            {
+              "name": "public_ips",
+              "description": "The public IP addresses assigned to this load balancer.",
+              "args": []
+            },
+            {
+              "name": "resource_group",
+              "description": "The resource group where the load balancer is created.",
+              "args": []
+            },
+            {
+              "name": "status",
+              "description": "The status of the load balancers.",
+              "args": []
+            },
+            {
+              "name": "type",
+              "description": "The type of the load balancer.",
+              "args": []
+            },
+            {
+              "name": "tags",
+              "description": "Tags associated with the load balancer.",
+              "args": []
+            }
+          ]
+        }
+      ]
+    },
     "ibm_is_public_gateway": {
       "name": "ibm_is_public_gateway",
       "type": "data",
@@ -5839,7 +6253,7 @@
         },
         {
           "name": "ssl_ciphers",
-          "description": "The list of ssl offloads.",
+          "description": "The list of SSL offloads.",
           "args": []
         }
       ]
@@ -7869,6 +8283,11 @@
           "name": "auto_renew_enabled",
           "description": "(Optional, Boolean) Determines the certificate is auto that is renewed. Default is **false**. <br> With `auto_renew_enabled` as true, certificates are automatically renewed for 31 days. If the certificate expires before 31 days. You can renew by updating `rotate_keys` to renew the certificates automatically.",
           "args": []
+        },
+        {
+          "name": "renew_certificate",
+          "description": "(Optional, Boolean) Determines the certificate to renew. Default value is **false**.",
+          "args": []
         }
       ],
       "attrs": [
@@ -8244,6 +8663,96 @@
         }
       ]
     },
+    "ibm_cis_edge_functions_action": {
+      "name": "ibm_cis_edge_functions_action",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Internet services resources",
+      "args": [
+        {
+          "name": "action_name",
+          "description": "(Required, String) The action name of an edge functions action.",
+          "args": []
+        },
+        {
+          "name": "cis_id",
+          "description": "(Required, String) The ID of the IBM Cloud Internet Services instance.",
+          "args": []
+        },
+        {
+          "name": "domain_id",
+          "description": "(Required, String) The ID of the domain to add the edge functions action.",
+          "args": []
+        },
+        {
+          "name": "script",
+          "description": "(Required, String) The script of an edge functions action.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The action ID with a combination of `<action_name>`,`<domain_id>`,`<cis_id>` attributes concatenate with colon (`:`).",
+          "args": []
+        }
+      ]
+    },
+    "ibm_cis_edge_functions_trigger": {
+      "name": "ibm_cis_edge_functions_trigger",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Internet services resources",
+      "args": [
+        {
+          "name": "action_name",
+          "description": "(Optional, String) An action name of the edge functions action on which the trigger associates. If it is not specified, then the trigger will be disabled.",
+          "args": []
+        },
+        {
+          "name": "cis_id",
+          "description": "(Required, String) The ID of the IBM Cloud Internet Services instance.",
+          "args": []
+        },
+        {
+          "name": "domain_id",
+          "description": "(Required, String) The ID of the domain to add the edge functions trigger.",
+          "args": []
+        },
+        {
+          "name": "pattern_url",
+          "description": "(Required, String) The domain name pattern on which the edge function action trigger should be executed.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "action_name",
+          "description": "An edge functions action Script name.",
+          "args": []
+        },
+        {
+          "name": "id",
+          "description": "The action ID with a combination of `<trigger_id>`,`<domain_id>`,`<cis_id>` attributes concatenate with colon (`:`).",
+          "args": []
+        },
+        {
+          "name": "pattern_url",
+          "description": "The Route pattern. It is a domain name on which the action is performed.",
+          "args": []
+        },
+        {
+          "name": "request_limit_fail_open",
+          "description": "An action request limit fail open.",
+          "args": []
+        },
+        {
+          "name": "trigger_id",
+          "description": "The route ID of an action trigger.",
+          "args": []
+        }
+      ]
+    },
     "ibm_cis_firewall": {
       "name": "ibm_cis_firewall",
       "type": "resource",
@@ -8488,6 +8997,22 @@
           "name": "description",
           "description": "(Optional, String) A description for your health check.",
           "args": []
+        },
+        {
+          "name": "headers",
+          "description": "(Optional, String) The health check headers.",
+          "args": [
+            {
+              "name": "header",
+              "description": "(Optional, String) The value of a header.",
+              "args": []
+            },
+            {
+              "name": "values",
+              "description": "(Optional, String) The list of values for a header field. `[expected_body]`, and `[expected_codes]` are required arguments when the type is `HTTP` or `HTTPS`. **Note** Header is not currently supported in this version of the provider.",
+              "args": []
+            }
+          ]
         }
       ],
       "attrs": [
@@ -8504,6 +9029,11 @@
         {
           "name": "modified_on",
           "description": "The RFC3339 timestamp of when the health check was last modified.",
+          "args": []
+        },
+        {
+          "name": "monitor_id",
+          "description": "The load balancer monitor ID.",
           "args": []
         }
       ]
@@ -8810,7 +9340,7 @@
         },
         {
           "name": "virtual_server_id",
-          "description": "(Optional, Integer) The ID of a virtual server in a local load balancer. You can find the ID with the following URL `https://api.softlayer.com/rest/v3/SoftLayer_Network_Application_Delivery_Controller_LoadBalancer_VirtualIpAddress/<load_balancer_ID>/getObject?objectMask=virtualServers`. Replace `<load_balancer_ID>` with the ID of the target load balancer. An IBM Cloud Classic Infrastructure user name and API key are required.",
+          "description": "(Optional, Integer) The ID of a virtual server in a local load balancer. You can find the ID with the following URL `https://api.softlayer.com/rest/v3/SoftLayer_Network_Application_Delivery_Controller_LoadBalancer_VirtualIpAddress/<load_balancer_ID>/getObject?objectMask=virtualServers`. Replace `<load_balancer_ID>` with the ID of the target load balancer. **Note**: To view the load balancer ID. Log in to the [IBM Cloud Classic Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3/SoftLayer_Hardware/getCreateObjectOptions.json) that uses your API key as the password. For more information, about creating classic infrastructure keys and locating your VPN username and password, refer [Managing classic infrastructure API keys](/docs/account?topic=account-classic_keys).",
           "args": []
         },
         {
@@ -8945,7 +9475,7 @@
         },
         {
           "name": "gpu_key_name",
-          "description": "(Optional, String) The key name for the primary Graphics Processing Unit (GPU). For example, `GPU_NVIDIA_GRID_K2`. Locate your package ID. See `package_key_name` attribute. Once you have the ID, fetch its details by accessing the URL `https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/<PACKAGE_ID>/getItems?objectMask=mask[prices[id,categories[id,name,categoryCode],capacityRestrictionType,capacityRestrictionMinimum,capacityRestrictionMaximum,locationGroupId]]`. Select a gpu key name from the resulting available gpu key names where category code is `gpu0`.",
+          "description": "(Optional, String) The key name for the primary Graphics Processing Unit (GPU). For example, `GPU_NVIDIA_GRID_K2`. Locate your package ID. See `package_key_name` attribute. To fetch the `PACKAGE_ID`, you need to access [Package ID](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={%22type%22:{%22keyName%22:{%22operation%22:%22BARE_METAL_CPU%22}}}) URL to view the `ID`. Once you have the ID, for example provide `PACKAGE_ID` as `142`, fetch its details by accessing the URL `https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/142/getItems?objectMask=mask[prices[id,categories[id,name,categoryCode],capacityRestrictionType,capacityRestrictionMinimum,capacityRestrictionMaximum,locationGroupId]]`. Select a gpu key name from the resulting available gpu key names where category code is `gpu0`. **Note**: To view the package ID. Log in to the [IBM Cloud Classic Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3/SoftLayer_Hardware/getCreateObjectOptions.json) that uses your API key as the password. For more information, about creating classic infrastructure keys and locating your VPN username and password, refer [Managing classic infrastructure API keys](/docs/account?topic=account-classic_keys).",
           "args": []
         },
         {
@@ -9050,7 +9580,7 @@
         },
         {
           "name": "process_key_name",
-          "description": "(Optional, String) The key name for the monthly Bare Metal server's process. Only use this argument when you create a new monthly Bare Metal server. To get a process key name, first find the package key name in the [SoftLayer API](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_CPU\"}}}). Then replace <PACKAGE_NAME> with your package key name in the following URL `https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/<PACKAGE_NAME>/getItems?objectMask=mask[prices[id,categories[id,name,categoryCode],capacityRestrictionType,capacityRestrictionMinimum,capacityRestrictionMaximum,locationGroupId]]`. Select a process key name from the resulting available process key names.",
+          "description": "(Optional, String) The key name for the monthly Bare Metal server's process. Only use this argument when you create a new monthly Bare Metal server. To get a process key name, first find the package key name in the [SoftLayer API](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_CPU\"}}}). To fetch the `PACKAGE_ID`, you need to access [Package ID](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={%22type%22:{%22keyName%22:{%22operation%22:%22BARE_METAL_CPU%22}}}) URL to view the `ID`. Once you have the ID, for example provide `PACKAGE_ID` as `142`. Then replace <PACKAGE_ID> with your package key name in the following URL `https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/142/getItems?objectMask=mask[prices[id,categories[id,name,categoryCode],capacityRestrictionType,capacityRestrictionMinimum,capacityRestrictionMaximum,locationGroupId]]`. Select a process key name from the resulting available process key names. **Note**: To view the package ID. log in to the [IBM Cloud Classic Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3/SoftLayer_Hardware/getCreateObjectOptions.json) that uses your API key as the password. For more information, about creating classic infrastructure keys and locating your VPN username and password, refer [Managing classic infrastructure API keys](/docs/account?topic=account-classic_keys).",
           "args": []
         },
         {
@@ -9687,70 +10217,75 @@
       "groupName": "Kubernetes Service resources",
       "args": [
         {
+          "name": "addons",
+          "description": "(Required, Set) Set of add-ons that needs to be enabled.",
+          "args": [
+            {
+              "name": "name",
+              "description": "(Optional, String) The add-on name such as `istio`.",
+              "args": []
+            },
+            {
+              "name": "version",
+              "description": "(Optional, String) The add-on version. Omit the version that you want to use as the default version.This is required when you want to update the add-on to specified version.",
+              "args": []
+            }
+          ]
+        },
+        {
           "name": "cluster",
           "description": "(Required, String) The name or ID of the cluster.",
           "args": []
         },
         {
-          "name": "addons",
-          "description": "(Required, Set) Set of addons that needs to be enabled.",
-          "args": [
-            {
-              "name": "name",
-              "description": "(Optional, String) The addon name such as `istio`.",
-              "args": []
-            },
-            {
-              "name": "version",
-              "description": "(Optional, String) The addon version. Omit the version that you want to use as the default version.This is required when you want to update the addon to specified version.",
-              "args": []
-            }
-          ]
+          "name": "resource_group_id",
+          "description": "(Optional, String) The ID of the resource group. You can retrieve the value from data source ibm_resource_group. If not provided defaults to default resource group.",
+          "args": []
         }
       ],
       "attrs": [
         {
           "name": "addons",
-          "description": "The details of an enabled addons.",
+          "description": "The details of an enabled add-ons.",
           "args": [
             {
               "name": "allowed_upgrade_versions",
-              "description": "The versions that the addon is upgraded to.",
+              "description": "The versions that the add-on is upgraded to.",
               "args": []
             },
             {
               "name": "deprecated",
-              "description": "Determines if the addon version is deprecated.",
+              "description": "Determines if the add-on version is deprecated.",
               "args": []
             },
             {
               "name": "health_state",
-              "description": "The health state of an addon, such as critical or pending.",
+              "description": "The health state of an add-on, such as critical or pending.",
               "args": []
             },
             {
               "name": "health_status",
-              "description": "The health status of an addon, provides a description of the state in the form of error message.",
+              "description": "The health status of an add-on, provides a description of the state in the form of error message.",
               "args": []
             },
             {
               "name": "min_kube_version",
-              "description": "The minimum Kubernetes version of the addon.",
+              "description": "The minimum Kubernetes version of the add-on.",
               "args": []
             },
             {
               "name": "min_ocp_version",
-              "description": "The minimum OpenShift version of the addon.",
+              "description": "The minimum OpenShift version of the add-on.",
               "args": []
             },
             {
               "name": "supported_kube_range",
-              "description": "The supported Kubernetes version range of the addon.",
+              "description": "The supported Kubernetes version range of the add-on.",
               "args": []
             },
             {
               "name": "target_version",
-              "description": "The addon target version.",
+              "description": "The add-on target version.",
               "args": []
             },
             {
@@ -9762,7 +10297,7 @@
         },
         {
           "name": "id",
-          "description": "The Id of the addons.",
+          "description": "The Id of the add-ons.",
           "args": []
         }
       ]
@@ -10514,7 +11049,7 @@
         },
         {
           "name": "entitlement",
-          "description": "(Optional, String) The {{site.data.keyword.openshiftshort}} cluster entitlement avoids the OCP licence charges incurred. Use Cloud Pak with OCP Licence entitlement to create the {{site.data.keyword.openshiftshort}}cluster. **NOTE** <ul><li> It is set only the first time creation of the cluster, further modifications are not impacted. </li></ul> <ul><li> Set this argument to `cloud_pak` only if you use the cluster with a Cloud Pak that has an {{site.data.keyword.openshiftshort}} entitlement.</li></ul>",
+          "description": "(Optional, String) The {{site.data.keyword.openshiftshort}} cluster entitlement avoids the OCP license charges incurred. Use Cloud Pak with OCP Licence entitlement to create the {{site.data.keyword.openshiftshort}}cluster. **NOTE** <ul><li> It is set only the first time creation of the cluster, further modifications are not impacted. </li></ul> <ul><li> Set this argument to `cloud_pak` only if you use the cluster with a Cloud Pak that has an {{site.data.keyword.openshiftshort}} entitlement.</li></ul>",
           "args": []
         },
         {
@@ -11065,7 +11600,7 @@
         },
         {
           "name": "whitelist",
-          "description": "(Optional, List of objects) A list of IP addresses to whitelist for the database. Multiple blocks are allowed.",
+          "description": "(Optional, List of objects) A list of allowed IP addresses for the database. Multiple blocks are allowed.",
           "args": [
             {
               "name": "address",
@@ -11074,7 +11609,7 @@
             },
             {
               "name": "description",
-              "description": "(Optional, String) A description for the whitelist range.",
+              "description": "(Optional, String) A description for the allowed IP addresses range.",
               "args": []
             }
           ]
@@ -11145,7 +11680,7 @@
                 },
                 {
                   "name": "rate_limit_mb_per_member",
-                  "description": "(Optional, Integer) Auto scaling rate limit in mega bytes per member.",
+                  "description": "(Optional, Integer) Auto scaling rate limit in megabytes per member.",
                   "args": []
                 },
                 {
@@ -11181,7 +11716,7 @@
                 },
                 {
                   "name": "rate_limit_mb_per_member",
-                  "description": "(Optional, Integer) Auto scaling rate limit in mega bytes per member.",
+                  "description": "(Optional, Integer) Auto scaling rate limit in megabytes per member.",
                   "args": []
                 },
                 {
@@ -12881,6 +13416,16 @@
       ],
       "attrs": [
         {
+          "name": "crn",
+          "description": "The CRN of the service ID.",
+          "args": []
+        },
+        {
+          "name": "iam_id",
+          "description": "The IAM ID of the serviceID.",
+          "args": []
+        },
+        {
           "name": "id",
           "description": "The unique identifier of the service ID.",
           "args": []
@@ -12888,11 +13433,6 @@
         {
           "name": "version",
           "description": "The version of the service ID.",
-          "args": []
-        },
-        {
-          "name": "crn",
-          "description": "The CRN of the service ID.",
           "args": []
         }
       ]
@@ -13216,7 +13756,7 @@
       "args": [
         {
           "name": "datacenter",
-          "description": "(Required, String) The data center in which the IPSecVPN resides.",
+          "description": "(Required, String) The data center in which the IPSec VPN resides.",
           "args": []
         },
         {
@@ -13258,12 +13798,12 @@
       "attrs": [
         {
           "name": "id",
-          "description": "The computed ID of the IPSecVPN device that is created.",
+          "description": "The computed ID of the IPSec VPN device that is created.",
           "args": []
         },
         {
           "name": "name",
-          "description": "The computed name of the IPSecVPN device that is created.",
+          "description": "The computed name of the IPSec VPN device that is created.",
           "args": []
         },
         {
@@ -13406,7 +13946,7 @@
       "args": [
         {
           "name": "authentication_algorithm",
-          "description": "(Required, String) Enter the algorithm that you want to use to authenticate `IPsec` peers. Available options are `md5`, `sha1`, or `sha256`.",
+          "description": "(Required, String) Enter the algorithm that you want to use to authenticate `IPSec` peers. Available options are `md5`, `sha1`, or `sha256`.",
           "args": []
         },
         {
@@ -13870,7 +14410,7 @@
         },
         {
           "name": "instance_count",
-          "description": "(Required, Integer) The number of instances to create in the instance group.",
+          "description": "(Optional, Integer) The number of instances to create in the instance group.",
           "args": []
         },
         {
@@ -13935,7 +14475,7 @@
         },
         {
           "name": "enable_manager",
-          "description": "(Optional, Boolean) Enable or disbale the instance group manager. Default value is `true`.",
+          "description": "(Optional, Boolean) Enable or disable the instance group manager. Default value is `true`.",
           "args": []
         },
         {
@@ -14219,7 +14759,7 @@
       "args": [
         {
           "name": "authentication_algorithm",
-          "description": "(Required, String) Enter the algorithm that you want to use to authenticate `IPsec` peers. Available options are `md5`, `sha1`, or `sha256`.",
+          "description": "(Required, String) Enter the algorithm that you want to use to authenticate `IPSec` peers. Available options are `md5`, `sha1`, or `sha256`.",
           "args": []
         },
         {
@@ -14234,7 +14774,7 @@
         },
         {
           "name": "name",
-          "description": "(Required, String) Enter the name for your IPsec policy.",
+          "description": "(Required, String) Enter the name for your IPSec policy.",
           "args": []
         },
         {
@@ -14244,29 +14784,29 @@
         },
         {
           "name": "resource_group",
-          "description": "(Optional, String) Enter the ID of the resource group where you want to create the IPsec policy. To list available resource groups, run `ibmcloud resource groups`. If you do not specify a resource group, the IPsec policy is created in the `default` resource group.",
+          "description": "(Optional, String) Enter the ID of the resource group where you want to create the IPSec policy. To list available resource groups, run `ibmcloud resource groups`. If you do not specify a resource group, the IPSec policy is created in the `default` resource group.",
           "args": []
         }
       ],
       "attrs": [
         {
           "name": "encapsulation_mode",
-          "description": "The encapsulation mode that was set for your IPsec policy. Only `tunnel` is supported.",
+          "description": "The encapsulation mode that was set for your IPSec policy. Only `tunnel` is supported.",
           "args": []
         },
         {
           "name": "id",
-          "description": "The unique identifier of the IPsec policy that you created.",
+          "description": "The unique identifier of the IPSec policy that you created.",
           "args": []
         },
         {
           "name": "transform_protocol",
-          "description": "The transform protocol that is used in your IPsec policy. Only the `esp` protocol is supported that uses the triple DES (3DES) encryption algorithm to encrypt your data.",
+          "description": "The transform protocol that is used in your IPSec policy. Only the `esp` protocol is supported that uses the triple DES (3DES) encryption algorithm to encrypt your data.",
           "args": []
         },
         {
           "name": "vpn_connections",
-          "description": "A collection of VPN connections that use the IPsec policy. Every connection is listed with a VPC connection `name`, `id`, and `canonical URL`.",
+          "description": "A collection of VPN connections that use the IPSec policy. Every connection is listed with a VPC connection `name`, `id`, and `canonical URL`.",
           "args": []
         }
       ]
@@ -15650,7 +16190,7 @@
         },
         {
           "name": "ipsec_policy",
-          "description": "(Optional, String) The ID of the IPsec policy.",
+          "description": "(Optional, String) The ID of the IPSec policy.",
           "args": []
         }
       ],
@@ -16016,7 +16556,7 @@
         },
         {
           "name": "stay_secondary",
-          "description": "(Optional, Boolean) Specifies whether the secondary Netscaler VPX will  take over the service. Set this argument to `true` to prevent the secondary NetScaler VPX from taking over the service even if the primary Netscaler VPX fails. For more information, see the [Citrix NetScaler Docs ](https://docs.citrix.com/en-us/netscaler/10-5/ns-system-wrapper-10-con/ns-nw-ha-intro-wrppr-con/ns-nw-ha-frcng-scndry-nd-sty-scndry-tsk.html) and the [Citrix support Docs  ](https://support.citrix.com/article/CTX116748). The default value is `false`.",
+          "description": "(Optional, Boolean) Specifies whether the secondary Netscaler VPX will  take over the service. Set this argument to `true` to prevent the secondary Netscaler VPX from taking over the service even if the primary Netscaler VPX fails. For more information, see the [Citrix Netscaler Docs ](https://docs.citrix.com/en-us/netscaler/10-5/ns-system-wrapper-10-con/ns-nw-ha-intro-wrppr-con/ns-nw-ha-frcng-scndry-nd-sty-scndry-tsk.html) and the [Citrix support Docs  ](https://support.citrix.com/article/CTX116748). The default value is `false`.",
           "args": []
         },
         {
@@ -16564,7 +17104,7 @@
       "args": [
         {
           "name": "routes_to",
-          "description": "(Required, String) The destination IP address that the public IP routes traffic through. The destination IP address can be a public IP address of IBM resources in the same account, such as a public IP address of a VM or public virtual IP addresses of Netscaler VPXs.",
+          "description": "(Required, String) The destination IP address that the public IP routes traffic through. The destination IP address can be a public IP address of IBM resources in the same account, such as a public IP address of a VM or public virtual IP addresses of `NetscalerVPXs`.",
           "args": []
         },
         {
@@ -17497,17 +18037,17 @@
         },
         {
           "name": "managers",
-          "description": "(Optional, Set) The email addresses (associated with IBMids) of the users to whom you want to give a manager role in this space. Users with the manager role can invite users, manage users, and enable features for the given space.",
+          "description": "(Optional, Set) The email addresses (associated with IBM IDs) of the users to whom you want to give a manager role in this space. Users with the manager role can invite users, manage users, and enable features for the given space.",
           "args": []
         },
         {
           "name": "developers",
-          "description": "(Optional, Set) The email addresses (associated with IBMids) of the users to whom you want to give a developer role in this space. Users with the developer role can create apps and services, manage apps and services, and see logs and reports in the given space.",
+          "description": "(Optional, Set) The email addresses (associated with IBM IDs) of the users to whom you want to give a developer role in this space. Users with the developer role can create apps and services, manage apps and services, and see logs and reports in the given space.",
           "args": []
         },
         {
           "name": "auditors",
-          "description": "(Optional, Set) The email addresses (associated with IBMids) of the users to whom you want to give an auditor role in this space. Users with the auditor role can view logs, reports, and settings in the given space.",
+          "description": "(Optional, Set) The email addresses (associated with IBM IDs) of the users to whom you want to give an auditor role in this space. Users with the auditor role can view logs, reports, and settings in the given space.",
           "args": []
         },
         {
@@ -17609,7 +18149,7 @@
       "args": [
         {
           "name": "datacenter",
-          "description": "(Required, String) The data center where you want to provision the Evault storage instance.",
+          "description": "(Required, String) The data center where you want to provision the EVault  storage instance.",
           "args": []
         },
         {
@@ -17629,7 +18169,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of strings) Tags associated with the storage Evault instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud Service Endpoint at this moment.",
+          "description": "(Optional, Array of strings) Tags associated with the storage EVault  instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud Service Endpoint at this moment.",
           "args": []
         }
       ],
@@ -17773,7 +18313,7 @@
         },
         {
           "name": "endpoint_ip",
-          "description": "(Optional, String) The target primary IP address for a static subnet. Only public IP addresses of virtual servers, Bare Metal servers, and Netscaler VPXs can be configured as an `endpoint_ip`. The `static subnet` will be created on the VLAN where the `endpoint_ip` is located.",
+          "description": "(Optional, String) The target primary IP address for a static subnet. Only public IP addresses of virtual servers, Bare Metal servers, and `NetscalerVPXs` can be configured as an `endpoint_ip`. The `static subnet` will be created on the VLAN where the `endpoint_ip` is located.",
           "args": []
         },
         {
@@ -17812,7 +18352,7 @@
         },
         {
           "name": "network_id",
-          "description": "(Optional, String) Enter the ID of the network being connected through this connection. This parameter is required for network type 'vpc', the CRN of the VPC to be connected. This field is required to be unspecified for network type 'classic'. For example, crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b",
+          "description": "(Optional, String) Enter the ID of the network being connected through this connection. This parameter is required for network type 'vpc', the CRN of the VPC to be connected. This field is required to be unspecified for network type 'classic'. For example, `crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`",
           "args": []
         }
       ],
