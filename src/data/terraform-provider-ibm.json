@@ -555,7 +555,7 @@
       "attrs": [
         {
           "name": "allow_insecure",
-          "description": "Do not validate the certificate when healthcheck uses `HTTPS`.",
+          "description": "Do not validate the certificate when health check uses `HTTPS`.",
           "args": []
         },
         {
@@ -630,7 +630,7 @@
         },
         {
           "name": "type",
-          "description": "The protocol to use for the healthcheck. Currently supported protocols are `HTTP`, `HTTPS`, and `TCP`. The default value is `HTTP`.",
+          "description": "The protocol to use for the health check. Currently supported protocols are `HTTP`, `HTTPS`, and `TCP`. The default value is `HTTP`.",
           "args": []
         },
         {
@@ -762,7 +762,7 @@
           "args": [
             {
               "name": "mode",
-              "description": "The type of action that you want to perform. Supported values are `simulate`, `ban`, `challenge`, or `js_challenge`. For more information about each type, see [Configure response](/docs/cis?topic=cis-cis-rate-limiting#rate-limiting-configure-response).",
+              "description": "The type of action that you want to perform. Supported values are `simulate`, `ban`, `challenge`, or `js_challenge`. For more information, about each type, see [Configure response](/docs/cis?topic=cis-cis-rate-limiting#rate-limiting-configure-response).",
               "args": []
             },
             {
@@ -845,7 +845,7 @@
         },
         {
           "name": "global_identifier",
-          "description": "(Optional, String) The unique global identifier of the Bare Metal server. To see global identifier, log in to the [IBM Cloud Classic Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3.1/SoftLayer_Account/getHardware.json), that uses your API key as the password. If you specify this option, do not specify `hostname`, `domain`, or `most_recent` at the same time.",
+          "description": "(Optional, String) The unique global identifier of the Bare Metal server. To see global identifier, log in to the [IBM Cloud Classic Infrastructure API](https://api.softlayer.com/rest/v3.1/SoftLayer_Account/getHardware.json), that uses your API key as the password. If you specify this option, do not specify `hostname`, `domain`, or `most_recent` at the same time.",
           "args": []
         },
         {
@@ -1324,7 +1324,7 @@
         },
         {
           "name": "resource_group_id",
-          "description": "The ID of the cluster resource group in which the addons is installed.",
+          "description": "The ID of the cluster resource group in which the `addons` is installed.",
           "args": []
         }
       ]
@@ -3118,7 +3118,7 @@
       "args": [
         {
           "name": "name",
-          "description": "(Required, String) The name of the DNS domain registration as it was defined in IBM Cloud Infrastructure DNS Registration Service (SoftLayer).",
+          "description": "(Required, String) The name of the DNS domain registration as it was defined in IBM Cloud Infrastructure DNS Registration Service.",
           "args": []
         }
       ],
@@ -3200,7 +3200,7 @@
         },
         {
           "name": "kafka_brokers_sasl",
-          "description": "Kafka brokers uses for interacting with Kafka native API.",
+          "description": "Kafka brokers use for interacting with Kafka native API.",
           "args": []
         }
       ]
@@ -4222,7 +4222,7 @@
         },
         {
           "name": "private_key",
-          "description": "(Optional, String) The private key of an SSH key that you want to add to your Virtual Servers for VPC instance during creation in PEM format. SSH keys are used by virtual servers to identify a user or device through public-key cryptography. For more information about how to create SSH keys and upload them to IBM Cloud, see [Locating or generating your SSH key](/docs/vpc?topic=vpc-ssh-keys#locating-ssh-keys). The SSH key is used to decrypt the default administrator password in Windows if Windows is installed as the operating system on your Virtual Servers for VPC instance.",
+          "description": "(Optional, String) The private key of an SSH key that you want to add to your Virtual Servers for VPC instance during creation in PEM format. SSH keys are used by virtual servers to identify a user or device through public-key cryptography. For more information, about how to create SSH keys and upload them to IBM Cloud, see [Locating or generating your SSH key](/docs/vpc?topic=vpc-ssh-keys#locating-ssh-keys). The SSH key is used to decrypt the default administrator password in Windows if Windows is installed as the operating system on your Virtual Servers for VPC instance.",
           "args": []
         },
         {
@@ -5353,7 +5353,7 @@
             },
             {
               "name": "name",
-              "description": "Name of the loadbalancer.",
+              "description": "Name of the load balancer.",
               "args": []
             },
             {
@@ -7556,6 +7556,11 @@
               "args": []
             },
             {
+              "name": "account_id",
+              "description": "The ID of the network connected account. This is used if the network is in a different account than the gateway.",
+              "args": []
+            },
+            {
               "name": "network_id",
               "description": "The ID of the network being connected with the connection.",
               "args": []
@@ -7745,7 +7750,7 @@
         },
         {
           "name": "managed",
-          "description": "(Optional, Boolean) If set to **true**, the endpoint is online. If set to **false**, the endpoint is offline. The default value is false. Note that the API endpoint cannot be shared if this value is set to **false**.",
+          "description": "(Optional, Boolean) If set to **true**, the endpoint is online. If set to **false**, the endpoint is offline. The default value is false. The API endpoint cannot be shared if this value is set to **false**.",
           "args": []
         },
         {
@@ -7765,7 +7770,7 @@
         },
         {
           "name": "type",
-          "description": "(Optional, String) The type of action that is performed on the API endpoint. Supported values are `share`, `unshare`, `manage`, and `unmanage`. The default value is `unshare`. Note that endpoint actions are performed by using the `type` parameter after the endpoint is created. As a consequence, endpoint actions are invoked during an endpoint update only.",
+          "description": "(Optional, String) The type of action that is performed on the API endpoint. Supported values are `share`, `unshare`, `manage`, and `unmanage`. The default value is `unshare`. The endpoint actions are performed by using the `type` parameter after the endpoint is created. As a consequence, endpoint actions are invoked during an endpoint update only.",
           "args": []
         }
       ],
@@ -7787,7 +7792,7 @@
         },
         {
           "name": "base_path",
-          "description": "The base path of an endpoint. Note that base paths must be unique.",
+          "description": "The base path of an endpoint. The base paths must be unique.",
           "args": []
         }
       ]
@@ -8132,12 +8137,12 @@
       "attrs": [
         {
           "name": "id",
-          "description": "The unique internal identifier of the cdn domain mapping.",
+          "description": "The unique internal identifier of the CDN domain mapping.",
           "args": []
         },
         {
           "name": "status",
-          "description": "The Status of the cdn domain mapping.",
+          "description": "The Status of the CDN domain mapping.",
           "args": []
         }
       ]
@@ -9226,7 +9231,7 @@
           "args": [
             {
               "name": "mode",
-              "description": "(Required, String) The type of action that you want to perform. Supported values are `simulate`, `ban`, `challenge`, or `js_challenge`. For more information about each type, see [Configure response](/docs/cis?topic=cis-cis-rate-limiting#rate-limiting-configure-response).",
+              "description": "(Required, String) The type of action that you want to perform. Supported values are `simulate`, `ban`, `challenge`, or `js_challenge`. For more information, about each type, see [Configure response](/docs/cis?topic=cis-cis-rate-limiting#rate-limiting-configure-response).",
               "args": []
             },
             {
@@ -9340,7 +9345,7 @@
         },
         {
           "name": "virtual_server_id",
-          "description": "(Optional, Integer) The ID of a virtual server in a local load balancer. You can find the ID with the following URL `https://api.softlayer.com/rest/v3/SoftLayer_Network_Application_Delivery_Controller_LoadBalancer_VirtualIpAddress/<load_balancer_ID>/getObject?objectMask=virtualServers`. Replace `<load_balancer_ID>` with the ID of the target load balancer. **Note**: To view the load balancer ID. Log in to the [IBM Cloud Classic Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3/SoftLayer_Hardware/getCreateObjectOptions.json) that uses your API key as the password. For more information, about creating classic infrastructure keys and locating your VPN username and password, refer [Managing classic infrastructure API keys](/docs/account?topic=account-classic_keys).",
+          "description": "(Optional, Integer) The ID of a virtual server in a local load balancer. You can find the ID with the following URL `https://api.softlayer.com/rest/v3/SoftLayer_Network_Application_Delivery_Controller_LoadBalancer_VirtualIpAddress/<load_balancer_ID>/getObject?objectMask=virtualServers`. Replace `<load_balancer_ID>` with the ID of the target load balancer. **Note**: To view the load balancer ID. Log in to the [IBM Cloud Classic Infrastructure API](https://api.softlayer.com/rest/v3/SoftLayer_Hardware/getCreateObjectOptions.json) that uses your API key as the password. For more information, about creating classic infrastructure keys and locating your VPN username and password, refer [Managing classic infrastructure API keys](/docs/account?topic=account-classic_keys).",
           "args": []
         },
         {
@@ -9455,7 +9460,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of strings) Tags associated with this Bare Metal server. Permitted characters includes A-Z, 0-9, whitespace, `_` (underscore), `-` (hyphen), `.` (period), and `:` (colon). All other characters are removed.",
+          "description": "(Optional, Array of strings) Tags associated with this Bare Metal server. Permitted characters include A-Z, 0-9, whitespace, `_` (underscore), `-` (hyphen), `.` (period), and `:` (colon). All other characters are removed.",
           "args": []
         },
         {
@@ -9475,7 +9480,7 @@
         },
         {
           "name": "gpu_key_name",
-          "description": "(Optional, String) The key name for the primary Graphics Processing Unit (GPU). For example, `GPU_NVIDIA_GRID_K2`. Locate your package ID. See `package_key_name` attribute. To fetch the `PACKAGE_ID`, you need to access [Package ID](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={%22type%22:{%22keyName%22:{%22operation%22:%22BARE_METAL_CPU%22}}}) URL to view the `ID`. Once you have the ID, for example provide `PACKAGE_ID` as `142`, fetch its details by accessing the URL `https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/142/getItems?objectMask=mask[prices[id,categories[id,name,categoryCode],capacityRestrictionType,capacityRestrictionMinimum,capacityRestrictionMaximum,locationGroupId]]`. Select a gpu key name from the resulting available gpu key names where category code is `gpu0`. **Note**: To view the package ID. Log in to the [IBM Cloud Classic Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3/SoftLayer_Hardware/getCreateObjectOptions.json) that uses your API key as the password. For more information, about creating classic infrastructure keys and locating your VPN username and password, refer [Managing classic infrastructure API keys](/docs/account?topic=account-classic_keys).",
+          "description": "(Optional, String) The key name for the primary Graphics Processing Unit (GPU). For example, `GPU_NVIDIA_GRID_K2`. Locate your package ID. See `package_key_name` attribute. To fetch the `PACKAGE_ID`, you need to access [Package ID](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={%22type%22:{%22keyName%22:{%22operation%22:%22BARE_METAL_CPU%22}}}) URL to view the `ID`. Once you have the ID, for example provide `PACKAGE_ID` as `142`, fetch its details by accessing the URL `https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/142/getItems?objectMask=mask[prices[id,categories[id,name,categoryCode],capacityRestrictionType,capacityRestrictionMinimum,capacityRestrictionMaximum,locationGroupId]]`. Select a `GPU` key name from the resulting available `GPU` key names where category code is `gpu0`. **Note**: To view the package ID. Log in to the [IBM Cloud Classic Infrastructure API](https://api.softlayer.com/rest/v3/SoftLayer_Hardware/getCreateObjectOptions.json) that uses your API key as the password. For more information, about creating classic infrastructure keys and locating your VPN username and password, refer [Managing classic infrastructure API keys](/docs/account?topic=account-classic_keys).",
           "args": []
         },
         {
@@ -9540,17 +9545,17 @@
         },
         {
           "name": "fixed_config_preset",
-          "description": "(Required, String) The configuration preset with which you want to provision the Bare Metal server. This preset governs the type of CPU, number of cores, amount of RAM, and number of hard disks that the Bare Metal server has. To see the available presets, log in to the [IBM Cloud Classic Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3/SoftLayer_Hardware/getCreateObjectOptions.json) that uses your API key as the password. For more information, about creating classic infrastructure keys and locating your VPN username and password, refer [Managing classic infrastructure API keys](/docs/account?topic=account-classic_keys).  You can search for `fixedConfigurationPresets` to view the presets key names. **Note** The `fixedConfigurationPresets` key names are displayed in the `JSON` or `txt` format.",
+          "description": "(Required, String) The configuration preset with which you want to provision the Bare Metal server. This preset governs the type of CPU, number of cores, amount of RAM, and number of hard disks that the Bare Metal server has. To see the available presets, log in to the [IBM Cloud Classic Infrastructure API](https://api.softlayer.com/rest/v3/SoftLayer_Hardware/getCreateObjectOptions.json) that uses your API key as the password. For more information, about creating classic infrastructure keys and locating your VPN username and password, refer [Managing classic infrastructure API keys](/docs/account?topic=account-classic_keys).  You can search for `fixedConfigurationPresets` to view the presets key names. **Note**: The `fixedConfigurationPresets` key names are displayed in the `JSON` or `txt` format.",
           "args": []
         },
         {
           "name": "os_reference_code",
-          "description": "(Optional, String) An operating system reference code that provisions the computing instance. To see available OS reference codes, log in to the [IBM Cloud Classic Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3/SoftLayer_Virtual_Guest_Block_Device_Template_Group/getVhdImportSoftwareDescriptions.json?objectMask=referenceCode), that uses your API key as the password.         **NOTE**: Conflicts with `image_template_id`.",
+          "description": "(Optional, String) An operating system reference code that provisions the computing instance. To see available OS reference codes, log in to the [IBM Cloud Classic Infrastructure API](https://api.softlayer.com/rest/v3/SoftLayer_Virtual_Guest_Block_Device_Template_Group/getVhdImportSoftwareDescriptions.json?objectMask=referenceCode), that uses your API key as the password.         **NOTE**: Conflicts with `image_template_id`.",
           "args": []
         },
         {
           "name": "software_guard_extensions",
-          "description": "(Optional, Boolean) The Software Guard Extensions product is added to a compatible server package, selecting Intel SGX-enabled BIOS and hardware. The default value is `false`.#### Arguments for monthly Bare Metal servers",
+          "description": "(Optional, Boolean) The Software Guard Extensions product is added to a compatible server package, selecting `Intel SGX-enabled BIOS` and `hardware`. The default value is `false`.",
           "args": []
         },
         {
@@ -9565,42 +9570,42 @@
         },
         {
           "name": "public_subnet",
-          "description": "(Optional, String) The public subnet to be used for the public network interface of the instance. Accepted values are primary public networks. You can find accepted values in the [subnets Docs ](https://cloud.ibm.com/classic/network/subnets).",
+          "description": "(Optional, String) The public subnet to be used for the public network interface of the instance. Accepted values are primary public networks. You can find accepted values in the [subnets Docs](https://cloud.ibm.com/classic/network/subnets).",
           "args": []
         },
         {
           "name": "private_subnet",
-          "description": "(Optional, String) The private subnet to be used for the private network interface of the instance. Accepted values are primary private networks. You can find accepted values in the [subnets Docs ](https://cloud.ibm.com/classic/network/subnets).",
+          "description": "(Optional, String) The private subnet to be used for the private network interface of the instance. Accepted values are primary private networks. You can find accepted values in the [subnets Docs](https://cloud.ibm.com/classic/network/subnets).",
           "args": []
         },
         {
           "name": "package_key_name",
-          "description": "(Optional, String) The key name for the monthly Bare Metal server's package. Only use this argument when you create a new monthly Bare Metal server. You can find available package key names in the SoftLayer API URL `https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_CPU\"}}}`, that uses your API key as the password.",
+          "description": "(Optional, String) The key name for the monthly Bare Metal server's package.Use this argument when you create a new monthly Bare Metal server. You can find available package key names in the IBM Cloud API URL `https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_CPU\"}}}`, that uses your API key as the password.",
           "args": []
         },
         {
           "name": "process_key_name",
-          "description": "(Optional, String) The key name for the monthly Bare Metal server's process. Only use this argument when you create a new monthly Bare Metal server. To get a process key name, first find the package key name in the [SoftLayer API](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_CPU\"}}}). To fetch the `PACKAGE_ID`, you need to access [Package ID](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={%22type%22:{%22keyName%22:{%22operation%22:%22BARE_METAL_CPU%22}}}) URL to view the `ID`. Once you have the ID, for example provide `PACKAGE_ID` as `142`. Then replace <PACKAGE_ID> with your package key name in the following URL `https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/142/getItems?objectMask=mask[prices[id,categories[id,name,categoryCode],capacityRestrictionType,capacityRestrictionMinimum,capacityRestrictionMaximum,locationGroupId]]`. Select a process key name from the resulting available process key names. **Note**: To view the package ID. log in to the [IBM Cloud Classic Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3/SoftLayer_Hardware/getCreateObjectOptions.json) that uses your API key as the password. For more information, about creating classic infrastructure keys and locating your VPN username and password, refer [Managing classic infrastructure API keys](/docs/account?topic=account-classic_keys).",
+          "description": "(Optional, String) The key name for the monthly Bare Metal server's process. Use this argument when you create a new monthly Bare Metal server. To get a process key name, first find the package key name in the [IBM CloudAPI](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_CPU\"}}}). To fetch the `PACKAGE_ID`, you need to access [Package ID](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={%22type%22:{%22keyName%22:{%22operation%22:%22BARE_METAL_CPU%22}}}) URL to view the `ID`. Once you have the ID, for example provide `PACKAGE_ID` as `142`. Then, replace <PACKAGE_ID> with your package key name in the following URL `https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/142/getItems?objectMask=mask[prices[id,categories[id,name,categoryCode],capacityRestrictionType,capacityRestrictionMinimum,capacityRestrictionMaximum,locationGroupId]]`. Select a process key name from the resulting available process key names. **Note**: To view the package ID. log in to the [IBM Cloud Classic Infrastructure API](https://api.softlayer.com/rest/v3/SoftLayer_Hardware/getCreateObjectOptions.json) that uses your API key as the password. For more information, about creating classic infrastructure keys and locating your VPN username and password, refer [Managing classic infrastructure API keys](/docs/account?topic=account-classic_keys).",
           "args": []
         },
         {
           "name": "disk_key_names",
-          "description": "(Optional, Array of strings) The internal key names for the monthly Bare Metal server's disk. Only use this argument when you create a new monthly Bare Metal server. To get disk key names, first find the package key name in the [SoftLayer API](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_CPU\"}}}). Then replace <PACKAGE_NAME> with your package key name in the following [URL](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/PACKAGE_NAME/getItems?objectMask=mask[prices[id,categories[id,name,categoryCode],capacityRestrictionType,capacityRestrictionMinimum,capacityRestrictionMaximum,locationGroupId]]). Select disk key names from the resulting available disk key names.",
+          "description": "(Optional, Array of strings) The internal key names for the monthly Bare Metal server's disk. Use this argument when you create a new monthly Bare Metal server. To get disk key names, first find the package key name in the [IBM Cloud API](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_CPU\"}}}). Then, replace <PACKAGE_NAME> with your package key name in the following [URL](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/PACKAGE_NAME/getItems?objectMask=mask[prices[id,categories[id,name,categoryCode],capacityRestrictionType,capacityRestrictionMinimum,capacityRestrictionMaximum,locationGroupId]]). Select disk key names from the resulting available disk key names.",
           "args": []
         },
         {
           "name": "os_key_name",
-          "description": "(Optional, String) The operating system key name that you want to use to provision the computing instance. To get disk key names, first find the package key name in the [SoftLayer API](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_CPU\"}}}). Then replace <PACKAGE_NAME> with your package key name in the following [URL](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/<PACKAGE_NAME>/getItems?objectMask=mask[prices[id,categories[id,name,categoryCode],capacityRestrictionType,capacityRestrictionMinimum,capacityRestrictionMaximum,locationGroupId]]). Select an OS key name from the resulting available OS key names.",
+          "description": "(Optional, String) The operating system key name that you want to use to provision the computing instance. To get disk key names, first find the package key name in the [{site.data.keyword.cloud_notm} API](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_CPU\"}}}). Then, replace <PACKAGE_NAME> with your package key name in the following [URL](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/<PACKAGE_NAME>/getItems?objectMask=mask[prices[id,categories[id,name,categoryCode],capacityRestrictionType,capacityRestrictionMinimum,capacityRestrictionMaximum,locationGroupId]]). Select an OS key name from the resulting available OS key names.",
           "args": []
         },
         {
           "name": "public_bandwidth",
-          "description": "(Optional, Integer) The amount of public network traffic, specified in gigabytes, allowed per month. The value can be greater than 0 when `private_network_only` is set to `false` and the server is a monthly-based server.",
+          "description": "(Optional, Integer) The amount of public network traffic, which is specified in gigabytes, allowed per month. The value can be greater than 0 when `private_network_only` is set to `false` and the server is a monthly based server.",
           "args": []
         },
         {
           "name": "memory",
-          "description": "(Optional, Integer) The amount of memory, specified in gigabytes, for the server.",
+          "description": "(Optional, Integer) The amount of memory, which is specified in gigabytes, for the server.",
           "args": []
         },
         {
@@ -9609,7 +9614,7 @@
           "args": [
             {
               "name": "array_type_id",
-              "description": "(Required, Integer) The RAID type. You can retrieve the value from the [SoftLayer API](https://api.softlayer.com/rest/v3/SoftLayer_Configuration_Storage_Group_Array_Type/getAllObjects).",
+              "description": "(Required, Integer) The RAID type. You can retrieve the value from the [{site.data.keyword.cloud_notm} API](https://api.softlayer.com/rest/v3/SoftLayer_Configuration_Storage_Group_Array_Type/getAllObjects).",
               "args": []
             },
             {
@@ -9624,7 +9629,7 @@
             },
             {
               "name": "partition_template_id",
-              "description": "(Optional, String) The partition template ID for the OS disk. Templates are different based on the target OS. To get the partition template ID, first find the OS ID in the [SoftLayer API](https://api.softlayer.com/rest/v3/SoftLayer_Hardware_Component_Partition_OperatingSystem/getAllObjects). Then replace <OS_ID> with your OS ID in the following URL `https://api.softlayer.com/rest/v3/SoftLayer_Hardware_Component_Partition_OperatingSystem/<OS_ID>/getPartitionTemplates`. Select your template ID in resulting available partition template IDs.",
+              "description": "(Optional, String) The partition template ID for the OS disk. Templates are different based on the target OS. To get the partition template ID, first find the OS ID in the [{site.data.keyword.cloud_notm} API](https://api.softlayer.com/rest/v3/SoftLayer_Hardware_Component_Partition_OperatingSystem/getAllObjects). Then, replace <OS_ID> with your OS ID in the following URL `https://api.softlayer.com/rest/v3/SoftLayer_Hardware_Component_Partition_OperatingSystem/<OS_ID>/getPartitionTemplates`. Select your template ID in resulting available partition template IDs.",
               "args": []
             }
           ]
@@ -9656,12 +9661,12 @@
         },
         {
           "name": "public_subnet",
-          "description": "(Optional, String) The public subnet to be used for the public network interface of the instance. Accepted values are primary public networks. You can find accepted values in the [subnets Docs ](https://cloud.ibm.com/classic/network/subnets).",
+          "description": "(Optional, String) The public subnet to be used for the public network interface of the instance. Accepted values are primary public networks. You can find accepted values in the [subnets Docs](https://cloud.ibm.com/classic/network/subnets).",
           "args": []
         },
         {
           "name": "private_subnet",
-          "description": "(Optional, String) The private subnet to be used for the private network interface of the instance. Accepted values are primary private networks. You can find accepted values in the [subnets Docs ](https://cloud.ibm.com/classic/network/subnets).",
+          "description": "(Optional, String) The private subnet to be used for the private network interface of the instance. Accepted values are primary private networks. You can find accepted values in the [subnets Docs](https://cloud.ibm.com/classic/network/subnets).",
           "args": []
         },
         {
@@ -9751,12 +9756,12 @@
         },
         {
           "name": "flavor",
-          "description": "(Optional, String) The flavor of dedicated host. Default value `56_CORES_X_242_RAM_X_1_4_TB`. [Log in to the IBM-Cloud Infrastructure (SoftLayer) API to see available flavor types](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/813/getItems.json). Use your API as the password to log in. Log in and find the key called `keyName`.",
+          "description": "(Optional, String) The flavor of dedicated host. Default value `56_CORES_X_242_RAM_X_1_4_TB`. [Log in to the IBM-Cloud Infrastructure API to see available flavor types](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/813/getItems.json). Use your API as the password to log in. Log in and find the key called `keyName`.",
           "args": []
         },
         {
           "name": "wait_time_minutes",
-          "description": "(Optional, Integer) The duration, expressed in minutes, to wait for the dedicated host to become available before declaring it as created. The default value is `90`.",
+          "description": "(Optional, Integer) The duration, expressed in minutes to wait for the dedicated host to become available before creation. The default value is `90`.",
           "args": []
         },
         {
@@ -9775,12 +9780,12 @@
       "args": [
         {
           "name": "guest_id",
-          "description": "(Required, Integer) The ID of the virtual guest you want to monitor.",
+          "description": "(Required, Integer) The ID of the virtual guest that you want to monitor.",
           "args": []
         },
         {
           "name": "ip_address",
-          "description": "(Optional, String) The IP address you want to monitor.",
+          "description": "(Optional, String) The IP address that you want to monitor.",
           "args": []
         },
         {
@@ -9795,7 +9800,7 @@
         },
         {
           "name": "wait_cycles",
-          "description": "(Optional, Integer) The number of five-minute cycles to wait before the response action is taken.",
+          "description": "(Optional, Integer) The number of 5-minute cycles to wait before the response action is taken.",
           "args": []
         },
         {
@@ -9819,7 +9824,7 @@
       "args": [
         {
           "name": "name",
-          "description": "(Required, String) The descriptive name used to identify a placement group.",
+          "description": "(Required, String) The descriptive that is used to identify a placement group.",
           "args": []
         },
         {
@@ -9829,7 +9834,7 @@
         },
         {
           "name": "pod",
-          "description": "(Required, String) The data center pod where you want to create the placement group. To find the pod, run `ibmcloud sl placement-group create-options` and select one of the **Back-end Router ID** for the data center where you want to create the placement group.",
+          "description": "(Required, String) The data center pod where you want to create the placement group. To find the pod, run `ibmcloud sl placement-group create-options` and select one of the **Back-end Router IDs** for the data center where you want to create the placement group.",
           "args": []
         },
         {
@@ -9942,7 +9947,7 @@
         },
         {
           "name": "flavor_key_name",
-          "description": "(Optional, String) The flavor key name that you want to use to provision the instance. To see available key name, log in to the [IBM Cloud Classic Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3/SoftLayer_Virtual_Guest/getCreateObjectOptions.json), that uses your API key as the password. If you set this option, do not specify `cores` and `memory` at the same time.",
+          "description": "(Optional, String) The flavor key name that you want to use to provision the instance. To see available key name, log in to the [IBM Cloud Classic Infrastructure API](https://api.softlayer.com/rest/v3/SoftLayer_Virtual_Guest/getCreateObjectOptions.json), that uses your API key as the password. If you set this option, do not specify `cores` and `memory` at the same time.",
           "args": []
         },
         {
@@ -9992,12 +9997,12 @@
         },
         {
           "name": "os_reference_code",
-          "description": "(Optional, String) The operating system reference code that is used to provision the computing instance. To see available OS reference codes, log in to the [IBM Cloud Classic Infrastructure (SoftLayer) API](https://api.softlayer.com/rest/v3/SoftLayer_Virtual_Guest_Block_Device_Template_Group/getVhdImportSoftwareDescriptions.json?objectMask=referenceCode), that uses your API key as the password.       **NOTE**: Conflicts with `image_id`.",
+          "description": "(Optional, String) The operating system reference code that is used to provision the computing instance. To see available OS reference codes, log in to the [IBM Cloud Classic Infrastructure API](https://api.softlayer.com/rest/v3/SoftLayer_Virtual_Guest_Block_Device_Template_Group/getVhdImportSoftwareDescriptions.json?objectMask=referenceCode), that uses your API key as the password.       **NOTE**: Conflicts with `image_id`.",
           "args": []
         },
         {
           "name": "image_id",
-          "description": "(Optional, Integer) The image template ID you want to use to provision the computing instance. This is not the global identifier (UUID), but the image template group ID that should point to a valid global identifier. To retrieve the image template ID from the IBM Cloud infrastructure customer portal, navigate to **Devices > Manage > Images**, click the image that you want, and note the ID number in the resulting URL. **NOTE**: Conflicts with `os_reference_code`.",
+          "description": "(Optional, Integer) The image template ID that you want to use to provision the computing instance. This is not the global identifier (UUID), but the image template group ID that should point to a valid global identifier. To retrieve the image template ID from the IBM Cloud infrastructure customer portal, navigate to **Devices > Manage > Images**, click the image that you want, and note the ID number in the resulting URL. **NOTE**: Conflicts with `os_reference_code`.",
           "args": []
         },
         {
@@ -10222,7 +10227,7 @@
           "args": [
             {
               "name": "name",
-              "description": "(Optional, String) The add-on name such as `istio`.",
+              "description": "(Optional, String) The add-on name such as `istio`. Supported addons are `kube-terminal`, `alb-oauth-proxy`, `debug-tool`, `istio`, `knative`, `static-route`,`vpc-block-csi-driver`.",
               "args": []
             },
             {
@@ -11412,8 +11417,13 @@
           "args": []
         },
         {
+          "name": "endpoint_type",
+          "description": "(Optional, String) The type of the endpoint either public or private to be used for buckets. Default value is `public`.",
+          "args": []
+        },
+        {
           "name": "key_protect",
-          "description": "(Optional, String) The CRN of the IBM Key Protect root key that you want to use to encrypt data that is sent and stored in IBM Cloud Object Storage. Before you can enable IBM Key Protect encryption, you must provision an instance of IBM Key Protect and authorize the service to access IBM Cloud Object Storage. For more information, see [Server-Side Encryption with IBM Key Protect or Hyper Protect Crypto Services (SSE-KP)](/docs/cloud-object-storage?topic=cloud-object-storage-encryption#encryption-kp).",
+          "description": "(Optional, String) The CRN of the IBM Key Protect root key that you want to use to encrypt data that is sent and stored in IBM Cloud Object Storage. Before you can enable IBM Key Protect encryption, you must provision an instance of IBM Key Protect and authorize the service to access IBM Cloud Object Storage. For more information, see [Server-Side Encryption with IBM Key Protect or Hyper Protect Crypto Services (SSE-KP)](/docs/cloud-object-storage?topic=cloud-object-storage-encryption).",
           "args": []
         },
         {
@@ -11435,6 +11445,21 @@
         {
           "name": "resource_instance_id",
           "description": "(Required, String) The ID of the IBM Cloud Object Storage service instance for which you want to create a bucket.",
+          "args": []
+        },
+        {
+          "name": "region_location",
+          "description": "(Optional, String) The location of a regional bucket. Supported values are `au-syd`, `eu-de`, `eu-gb`, `jp-tok`, `us-east`, `us-south`. If you set this parameter, do not set `single_site_location` or `cross_region_location` at the same time.",
+          "args": []
+        },
+        {
+          "name": "single_site_location",
+          "description": "(Optional, String) The location for a single site bucket. Supported values are: `ams03`, `che01`, `hkg02`, `mel01`, `mex01`, `mil01`, `mon01`, `osl01`, `par01`, `sjc04`, `sao01`, `seo01`, `sng01`, and `tor01`. If you set this parameter, do not set `region_location` or `cross_region_location` at the same time.",
+          "args": []
+        },
+        {
+          "name": "storage_class",
+          "description": "(Required, String) The storage class that you want to use for the bucket. Supported values are `standard`, `vault`, `cold`, `flex`, and `smart`. For more information, about storage classes, see [Use storage classes](/docs/cloud-object-storage?topic=cloud-object-storage-classes).",
           "args": []
         }
       ],
@@ -11762,7 +11787,7 @@
         },
         {
           "name": "connectionstrings",
-          "description": "A list of connection strings for the database for each user ID. For more information about how to use connection strings, see the [documentation](/docs/databases-for-postgresql?topic=databases-for-postgresql-connection-strings). The results are returned in pairs of the userid and string: `connectionstrings.1.name = admin connectionstrings.1.string = postgres://admin:$PASSWORD@79226bd4-4076-4873-b5ce-b1dba48ff8c4.b8a5e798d2d04f2e860e54e5d042c915.databases.appdomain.cloud:32554/ibmclouddb?sslmode=verify-full` Individual string parameters can be retrieved by using Terraform variables and outputs `connectionstrings.x.hosts.x.port` and `connectionstrings.x.hosts.x.host`",
+          "description": "A list of connection strings for the database for each user ID. For more information, about how to use connection strings, see the [documentation](/docs/databases-for-postgresql?topic=databases-for-postgresql-connection-strings). The results are returned in pairs of the userid and string: `connectionstrings.1.name = admin connectionstrings.1.string = postgres://admin:$PASSWORD@79226bd4-4076-4873-b5ce-b1dba48ff8c4.b8a5e798d2d04f2e860e54e5d042c915.databases.appdomain.cloud:32554/ibmclouddb?sslmode=verify-full` Individual string parameters can be retrieved by using Terraform variables and outputs `connectionstrings.x.hosts.x.port` and `connectionstrings.x.hosts.x.host`",
           "args": []
         }
       ]
@@ -11784,31 +11809,6 @@
           "args": []
         },
         {
-          "name": "global",
-          "description": "(Required, Boolean) Gateway with global routing as `true` can connect networks outside your associated region.",
-          "args": []
-        },
-        {
-          "name": "metered",
-          "description": "(Required, Boolean) Metered billing option. If set `true` gateway usage is billed per GB. Otherwise, flat rate is charged for the gateway.",
-          "args": []
-        },
-        {
-          "name": "name",
-          "description": "(Required, String) The unique user-defined name for the gateway. For example, `myGateway`.",
-          "args": []
-        },
-        {
-          "name": "speed_mbps",
-          "description": "(Required, Integer) The gateway speed in MBPS. For example, `10.254.30.78/30`.",
-          "args": []
-        },
-        {
-          "name": "type",
-          "description": "(Required, String) The gateway type, allowed values are `dedicated` and `connect`.",
-          "args": []
-        },
-        {
           "name": "bgp_cer_cidr",
           "description": "(Optional, String) The BGP customer edge router CIDR. Specify a value within bgp_base_cidr. If bgp_base_cidr is `169.254.0.0/16`, this parameter can exclude and a CIDR is selected automatically. For example, `10.254.30.78/30`.",
           "args": []
@@ -11816,11 +11816,6 @@
         {
           "name": "bgp_ibm_cidr",
           "description": "(Optional, String) The {{site.data.keyword.IBM_notm}} BGP ASN. Specify a value within bgp_base_cidr. If bgp_base_cidr is `169.254.0.0/16`, this parameter can exclude and a CIDR is selected automatically. For example, `10.254.30.77/30`.",
-          "args": []
-        },
-        {
-          "name": "resource_group",
-          "description": "(Optional, String) The resource group. If unspecified, the account's default resource group is used.",
           "args": []
         },
         {
@@ -11839,8 +11834,43 @@
           "args": []
         },
         {
+          "name": "global",
+          "description": "(Required, Boolean) Gateway with global routing as `true` can connect networks outside your associated region.",
+          "args": []
+        },
+        {
           "name": "location_name",
           "description": "(Required, String) The gateway location is required for `dedicated` type. For example, `dal03`.",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "(Required, String) The unique user-defined name for the gateway. For example, `myGateway`.",
+          "args": []
+        },
+        {
+          "name": "metered",
+          "description": "(Required, Boolean) Metered billing option. If set `true` gateway usage is billed per GB. Otherwise, flat rate is charged for the gateway.",
+          "args": []
+        },
+        {
+          "name": "port",
+          "description": "(Required, String) The gateway port for type is connect gateways. This parameter is required for Direct Link connect type.",
+          "args": []
+        },
+        {
+          "name": "resource_group",
+          "description": "(Optional, String) The resource group. If unspecified, the account's default resource group is used.",
+          "args": []
+        },
+        {
+          "name": "speed_mbps",
+          "description": "(Required, Integer) The gateway speed in MBPS. For example, `10.254.30.78/30`.",
+          "args": []
+        },
+        {
+          "name": "type",
+          "description": "(Required, String) The gateway type, allowed values are `dedicated` and `connect`.",
           "args": []
         }
       ],
@@ -12532,8 +12562,8 @@
       "groupName": "Event Streams resources",
       "args": [
         {
-          "name": "resource_instance_id",
-          "description": "(Required, String) The ID/CRN of the event streams service instance.",
+          "name": "config",
+          "description": "(Optional, Map) The configuration parameters of the topic. Supported configurations are: `cleanup.policy`, `retention.ms`, `retention.bytes`, `segment.bytes`, `segment.ms`, `segment.index.bytes`.",
           "args": []
         },
         {
@@ -12547,8 +12577,8 @@
           "args": []
         },
         {
-          "name": "config",
-          "description": "(Optional, Map) The configuration parameters of the topic. Supported configurations are: `cleanup.policy`, `retention.ms`, `retention.bytes`, `segment.bytes`, `segment.ms`, `segment.index.bytes`.",
+          "name": "resource_instance_id",
+          "description": "(Required, String) The ID/CRN of the event streams service instance.",
           "args": []
         }
       ],
@@ -12559,13 +12589,13 @@
           "args": []
         },
         {
-          "name": "kafka_http_url",
-          "description": "The API endpoint for interacting with event streams REST API.",
+          "name": "kafka_brokers_sasl",
+          "description": "Kafka brokers use for interacting with Kafka native API.",
           "args": []
         },
         {
-          "name": "kafka_brokers_sasl",
-          "description": "Kafka brokers uses for interacting with Kafka native API.",
+          "name": "kafka_http_url",
+          "description": "The API endpoint for interacting with event streams REST API.",
           "args": []
         }
       ]
@@ -12727,7 +12757,7 @@
             },
             {
               "name": "kind",
-              "description": "(Required, String) The type of action. You can find supported kinds in the [IBM Cloud Functions Docs ](/docs/openwhisk?topic=openwhisk-runtimes).",
+              "description": "(Required, String) The type of action. You can find supported kinds in the [IBM Cloud Functions Docs](/docs/openwhisk?topic=openwhisk-runtimes).",
               "args": []
             },
             {
@@ -13536,7 +13566,7 @@
         },
         {
           "name": "classic_infra_roles",
-          "description": "(Optional, Map) A nested block describes the classic infrastructure roles for the inviting users. </br></br>**Note**: If you have an IBM Cloud Lite account, you cannot set classic infrastructure roles. For more information about Lite accounts, see [What's available?](/docs/account?topic=account-accounts#lite-account-features).",
+          "description": "(Optional, Map) A nested block describes the classic infrastructure roles for the inviting users. </br></br>**Note**: If you have an IBM Cloud Lite account, you cannot set classic infrastructure roles. For more information, about Lite accounts, see [What's available?](/docs/account?topic=account-accounts#lite-account-features).",
           "args": [
             {
               "name": "permissions",
@@ -16487,7 +16517,7 @@
       "args": [
         {
           "name": "datacenter",
-          "description": "(Required, String) The data center in which you want to provision the VPX load balancer. You can find accepted values in the [data center Docs ](https://www.ibm.com/cloud/load-balancer).",
+          "description": "(Required, String) The data center in which you want to provision the VPX load balancer. You can find accepted values in the [data center Docs](https://www.ibm.com/cloud/load-balancer).",
           "args": []
         },
         {
@@ -16522,12 +16552,12 @@
         },
         {
           "name": "public_subnet",
-          "description": "(Optional, String) The public subnet that is used for the public network interface of the VPX load balancer. Accepted values are primary public networks. You can find accepted values in the [subnet Docs ](https://cloud.ibm.com/classic/network/subnets).",
+          "description": "(Optional, String) The public subnet that is used for the public network interface of the VPX load balancer. Accepted values are primary public networks. You can find accepted values in the [subnet Docs](https://cloud.ibm.com/classic/network/subnets).",
           "args": []
         },
         {
           "name": "private_subnet",
-          "description": "(Optional, String) Public subnet that is used for the private network interface of the VPX load balancer. Accepted values are primary private networks. You can find accepted values in the [subnet Docs ](https://cloud.ibm.com/classic/network/subnets).",
+          "description": "(Optional, String) Public subnet that is used for the private network interface of the VPX load balancer. Accepted values are primary private networks. You can find accepted values in the [subnet Docs](https://cloud.ibm.com/classic/network/subnets).",
           "args": []
         },
         {
@@ -16556,7 +16586,7 @@
         },
         {
           "name": "stay_secondary",
-          "description": "(Optional, Boolean) Specifies whether the secondary Netscaler VPX will  take over the service. Set this argument to `true` to prevent the secondary Netscaler VPX from taking over the service even if the primary Netscaler VPX fails. For more information, see the [Citrix Netscaler Docs ](https://docs.citrix.com/en-us/netscaler/10-5/ns-system-wrapper-10-con/ns-nw-ha-intro-wrppr-con/ns-nw-ha-frcng-scndry-nd-sty-scndry-tsk.html) and the [Citrix support Docs  ](https://support.citrix.com/article/CTX116748). The default value is `false`.",
+          "description": "(Optional, Boolean) Specifies whether the secondary Netscaler VPX will  take over the service. Set this argument to `true` to prevent the secondary Netscaler VPX from taking over the service even if the primary Netscaler VPX fails. For more information, see the [Citrix Netscaler Docs](https://docs.citrix.com/en-us/netscaler/10-5/ns-system-wrapper-10-con/ns-nw-ha-intro-wrppr-con/ns-nw-ha-frcng-scndry-nd-sty-scndry-tsk.html) and the [Citrix support Docs  ](https://support.citrix.com/article/CTX116748). The default value is `false`.",
           "args": []
         },
         {
@@ -16595,22 +16625,22 @@
         },
         {
           "name": "weight",
-          "description": "(Required, Integer) The percentage of the total connection limit allocated to the load balancer between all your services. See the [IBM Cloud Classic Infrastructure (SoftLayer)  API Docs ](http://sldn.softlayer.com/reference/datatypes/SoftLayer_Network_LoadBalancer_Service) for details.       **NOTE**: If you use Netscaler VPX 10.5, the weight value is ignored.",
+          "description": "(Required, Integer) The percentage of the total connection limit allocated to the load balancer between all your services. See the [IBM Cloud Classic Infrastructure (SoftLayer)  API Docs](http://sldn.softlayer.com/reference/datatypes/SoftLayer_Network_LoadBalancer_Service) for details.       **NOTE**: If you use Netscaler VPX 10.5, the weight value is ignored.",
           "args": []
         },
         {
           "name": "connection_limit",
-          "description": "(Required, Integer) The connection limit for this service. Acceptable values are `0`-`4294967294`. See the [Citrix Netscaler Docs ](https://docs.citrix.com/en-us/netscaler/11/reference/netscaler-command-reference/basic/service.html) for details.",
+          "description": "(Required, Integer) The connection limit for this service. Acceptable values are `0`-`4294967294`. See the [Citrix Netscaler Docs](https://docs.citrix.com/en-us/netscaler/11/reference/netscaler-command-reference/basic/service.html) for details.",
           "args": []
         },
         {
           "name": "health_check",
-          "description": "(Required, String) The health check type. See the [IBM Cloud Classic Infrastructure (SoftLayer)  API Docs ](http://sldn.softlayer.com/reference/datatypes/SoftLayer_Network_LoadBalancer_Service) for details.",
+          "description": "(Required, String) The health check type. See the [IBM Cloud Classic Infrastructure (SoftLayer)  API Docs](http://sldn.softlayer.com/reference/datatypes/SoftLayer_Network_LoadBalancer_Service) for details.",
           "args": []
         },
         {
           "name": "usip",
-          "description": "(Optional, String) Whether the service reports the source IP of the client to the service being load balanced. Acceptable values are `YES` or `NO`. The default value is `NO`. See the [Citrix Netscaler Docs ](https://developer-docs.citrix.com/projects/netscaler-nitro-api/en/11.0/configuration/basic/service/service) for more information.       **NOTE**: This argument is only available for VPX 10.5.",
+          "description": "(Optional, String) Whether the service reports the source IP of the client to the service being load balanced. Acceptable values are `YES` or `NO`. The default value is `NO`. See the [Citrix Netscaler Docs](https://developer-docs.citrix.com/projects/netscaler-nitro-api/en/11.0/configuration/basic/service/service) for more information.       **NOTE**: This argument is only available for VPX 10.5.",
           "args": []
         },
         {
@@ -16639,12 +16669,12 @@
         },
         {
           "name": "load_balancing_method",
-          "description": "(Required, String) See the [IBM Cloud Classic Infrastructure (SoftLayer)  API Docs ](http://sldn.softlayer.com/reference/datatypes/SoftLayer_Network_LoadBalancer_VirtualIpAddress) for available methods. If you use Netscaler VPX 10.5, see the [Citrix Docs ](https://docs.citrix.com/en-us/netscaler/10-5/ns-tmg-wrapper-10-con/ns-lb-wrapper-con-10/ns-lb-customizing-lbalgorithms-wrapper-con.html) for more methods that you can use.",
+          "description": "(Required, String) See the [IBM Cloud Classic Infrastructure (SoftLayer)  API Docs](http://sldn.softlayer.com/reference/datatypes/SoftLayer_Network_LoadBalancer_VirtualIpAddress) for available methods. If you use Netscaler VPX 10.5, see the [Citrix Docs](https://docs.citrix.com/en-us/netscaler/10-5/ns-tmg-wrapper-10-con/ns-lb-wrapper-con-10/ns-lb-customizing-lbalgorithms-wrapper-con.html) for more methods that you can use.",
           "args": []
         },
         {
           "name": "persistence",
-          "description": "(Optional, String) Applies to Netscaler VPX 10.5 only. See the available persistence types in the [Citrix Docs ](https://docs.citrix.com/en-us/netscaler/10-5/ns-tmg-wrapper-10-con/ns-lb-wrapper-con-10/ns-lb-persistence-wrapper-con/ns-lb-persistence-about-con.html).",
+          "description": "(Optional, String) Applies to Netscaler VPX 10.5 only. See the available persistence types in the [Citrix Docs](https://docs.citrix.com/en-us/netscaler/10-5/ns-tmg-wrapper-10-con/ns-lb-wrapper-con-10/ns-lb-persistence-wrapper-con/ns-lb-persistence-about-con.html).",
           "args": []
         },
         {
@@ -16664,7 +16694,7 @@
         },
         {
           "name": "security_certificate_id",
-          "description": "(Optional, Integer) Applies to Netscaler VPX 10.5 only. The ID of a security certificate you want to use. This argument provides security certification for SSL offload services. For more information, see the  [ibm_compute_ssl_certificate resource](#ssl-compute-cert).",
+          "description": "(Optional, Integer) Applies to Netscaler VPX 10.5 only. The ID of a security certificate that you want to use. This argument provides security certification for SSL offload services. For more information, see the  [ibm_compute_ssl_certificate resource](#ssl-compute-cert).",
           "args": []
         },
         {
@@ -16944,7 +16974,7 @@
             },
             {
               "name": "package_key_name",
-              "description": "(Optional, String) The key name for the network gateway package. You can find available package key names in the SoftLayer API URL `https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_GATEWAY\"}}}`, that uses your API key as the password. Default value is `NETWORK_GATEWAY_APPLIANCE`. The default value will allow order Single processor Multi-Core Servers. Use `2U_NETWORK_GATEWAY_APPLIANCE_1O_GBPS` for ordering Dual processor Multi-Core Servers.",
+              "description": "(Optional, String) The key name for the network gateway package. You can find available package key names in the SoftLayer API URL `https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_GATEWAY\"}}}` that uses your API key as the password. Default value is `NETWORK_GATEWAY_APPLIANCE`. The default value will allow order Single processor multi-core Servers. Use `2U_NETWORK_GATEWAY_APPLIANCE_1O_GBPS` for ordering Dual processor multi-core Servers.",
               "args": []
             },
             {
@@ -16988,7 +17018,7 @@
                 },
                 {
                   "name": "hard_drives",
-                  "description": "(Required, List) The list of hard drive associated with the gateway member.",
+                  "description": "(Required, List) The list of hard disk associated with the gateway member.",
                   "args": []
                 },
                 {
@@ -17729,7 +17759,7 @@
         },
         {
           "name": "service",
-          "description": "(Required, String) The name of the service offering. You can retrieve the value by installing the `catalogs-management` CLI plug-in and running the `ibmcloud catalog service-marketplace` or `ibmcloud catalog search` command. For more information about IBM Cloud catalog service marketplace, refer [IBM Cloud catalog service marketplace] (docs/cli?topic=cli-ibmcloud_catalog#ibmcloud_catalog_service_marketplace).",
+          "description": "(Required, String) The name of the service offering. You can retrieve the value by installing the `catalogs-management` CLI plug-in and running the `ibmcloud catalog service-marketplace` or `ibmcloud catalog search` command. For more information, about IBM Cloud catalog service marketplace, refer [IBM Cloud catalog service marketplace] (docs/cli?topic=cli-ibmcloud_catalog#ibmcloud_catalog_service_marketplace).",
           "args": []
         },
         {
@@ -17849,12 +17879,12 @@
       "args": [
         {
           "name": "name",
-          "description": "(Required, String) The descriptive name used to identify the security group.",
+          "description": "(Required, String) The descriptive name that is used to identify the security group.",
           "args": []
         },
         {
           "name": "description",
-          "description": "(Optional, String) Additional details to describe the security group.",
+          "description": "(Optional, String) More details to describe the security group.",
           "args": []
         }
       ],
@@ -18090,7 +18120,7 @@
         },
         {
           "name": "capacity",
-          "description": "(Required, Integer) The amount of storage capacity you want to allocate, specified in gigabytes.",
+          "description": "(Required, Integer) The amount of storage capacity that you want to allocate, specified in gigabytes.",
           "args": []
         },
         {
@@ -18100,7 +18130,7 @@
         },
         {
           "name": "os_format_type",
-          "description": "(Required, String) The OS type used to format the storage space. This OS type must match the OS type that connects to the LUN. [Log in to the IBM Cloud Classic Infrastructure (SoftLayer) API to see available OS format types](https://api.softlayer.com/rest/v3/SoftLayer_Network_Storage_Iscsi_OS_Type/getAllObjects/). Use your API as the password to log in. Log in and find the key called `name`.",
+          "description": "(Required, String) The OS type used to format the storage space. This OS type must match the OS type that connects to the LUN. [Log in to the IBM Cloud Classic Infrastructure API to see available OS format types](https://api.softlayer.com/rest/v3/SoftLayer_Network_Storage_Iscsi_OS_Type/getAllObjects/). Use your API as the password to log in. Log in and find the key called `name`.",
           "args": []
         },
         {
@@ -18154,7 +18184,7 @@
         },
         {
           "name": "capacity",
-          "description": "(Required, Integer) The amount of storage capacity you want to allocate, specified in gigabytes.",
+          "description": "(Required, Integer) The amount of storage capacity that you want to allocate, specified in gigabytes.",
           "args": []
         },
         {
@@ -18169,7 +18199,7 @@
         },
         {
           "name": "tags",
-          "description": "(Optional, Array of strings) Tags associated with the storage EVault  instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud Service Endpoint at this moment.",
+          "description": "(Optional, Array of strings) Tags associated with the storage EVault instance.     **NOTE**: `Tags` are managed locally and not stored on the IBM Cloud Service Endpoint at this moment.",
           "args": []
         }
       ],
@@ -18193,7 +18223,7 @@
         },
         {
           "name": "capacity",
-          "description": "(Required, Integer) The amount of storage capacity you want to allocate, expressed in gigabytes.",
+          "description": "(Required, Integer) The amount of storage capacity that you want to allocate, expressed in gigabytes.",
           "args": []
         },
         {
@@ -18203,7 +18233,7 @@
         },
         {
           "name": "snapshot_capacity",
-          "description": "(Optional, Integer) The amount of snapshot capacity you want to allocate, expressed in gigabytes.",
+          "description": "(Optional, Integer) The amount of snapshot capacity that you want to allocate, expressed in gigabytes.",
           "args": []
         },
         {
@@ -18343,6 +18373,11 @@
         {
           "name": "name",
           "description": "(Optional, String) Enter a name. If unentered, the default name is provided based on the network type, such as `vpc` for network type VPC and `classic` for network type classic.",
+          "args": []
+        },
+        {
+          "name": "network_account_id",
+          "description": "(Optional, String) The ID of the network connected account. This is used if the network is in a different account than the gateway.",
           "args": []
         },
         {
