@@ -211,8 +211,8 @@
         }
       ]
     },
-    "ibm_certificate_manager_certificates": {
-      "name": "ibm_certificate_manager_certificates",
+    "ibm_certificate_manager_certificate": {
+      "name": "ibm_certificate_manager_certificate",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "Certificate Manager data sources",
@@ -230,8 +230,13 @@
       ],
       "attrs": [
         {
-          "name": "id",
-          "description": "The ID of the certificate that is managed in Certificate Manager. The ID is composed of `<certificate_manager_instance_ID>:<certificate_ID>`.",
+          "name": "algorithm",
+          "description": "The algorithm that is used for the certificate.",
+          "args": []
+        },
+        {
+          "name": "begins_on",
+          "description": "The timestamp when the certificate was created in UNIX epoch time format.",
           "args": []
         },
         {
@@ -277,28 +282,8 @@
           ]
         },
         {
-          "name": "issuer",
-          "description": "The issuer of the certificate.",
-          "args": []
-        },
-        {
-          "name": "begins_on",
-          "description": "The timestamp when the certificate was created in UNIX epoch time format.",
-          "args": []
-        },
-        {
           "name": "expires_on",
           "description": "The date when the certificate expires in UNIX epoch time format.",
-          "args": []
-        },
-        {
-          "name": "imported",
-          "description": "If set to **true**, the certificate is imported.",
-          "args": []
-        },
-        {
-          "name": "status",
-          "description": "The status of the certificate.",
           "args": []
         },
         {
@@ -307,18 +292,13 @@
           "args": []
         },
         {
-          "name": "key_algorithm",
-          "description": "The key algorithm of the certificate.",
+          "name": "id",
+          "description": "The ID of the certificate that is managed in Certificate Manager. The ID is composed of `<certificate_manager_instance_ID>:<certificate_ID>`.",
           "args": []
         },
         {
-          "name": "algorithm",
-          "description": "The algorithm that is used for the certificate.",
-          "args": []
-        },
-        {
-          "name": "serial_number",
-          "description": "The serial number of the certificate.",
+          "name": "issuer",
+          "description": "The issuer of the certificate.",
           "args": []
         },
         {
@@ -346,6 +326,127 @@
               "args": []
             }
           ]
+        },
+        {
+          "name": "imported",
+          "description": "If set to **true**, the certificate is imported.",
+          "args": []
+        },
+        {
+          "name": "key_algorithm",
+          "description": "The key algorithm of the certificate.",
+          "args": []
+        },
+        {
+          "name": "serial_number",
+          "description": "The serial number of the certificate.",
+          "args": []
+        },
+        {
+          "name": "status",
+          "description": "The status of the certificate.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_certificate_manager_certificates": {
+      "name": "ibm_certificate_manager_certificates",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Certificate Manager data sources",
+      "args": [
+        {
+          "name": "certificate_manager_instance_id",
+          "description": "(Required, String) The CRN of the Certificate Manager service instance.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "algorithm",
+          "description": "The Algorithm of a certificate.",
+          "args": []
+        },
+        {
+          "name": "begins_on",
+          "description": "The creation date of the certificate in UNIX epoch time.",
+          "args": []
+        },
+        {
+          "name": "domains",
+          "description": "An array of valid domains for the issued certificate. The first domain is the primary domain. extra domains are secondary domains.",
+          "args": []
+        },
+        {
+          "name": "expires_on",
+          "description": "The expiration date of the certificate in Unix epoch time.",
+          "args": []
+        },
+        {
+          "name": "has_previous",
+          "description": "Indicates whether a certificate has a previous version.",
+          "args": []
+        },
+        {
+          "name": "key_algorithm",
+          "description": "The Key Algorithm of a certificate.",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "The display name of the certificate.",
+          "args": []
+        },
+        {
+          "name": "id",
+          "description": "The ID of the certificate that is managed in Certificate Manager. The ID is composed of `<certificate_manager_instance_ID>:<certificate_ID>`.",
+          "args": []
+        },
+        {
+          "name": "issuer",
+          "description": "The issuer of the certificate.",
+          "args": []
+        },
+        {
+          "name": "issuance_info",
+          "description": "The issuance information of a certificate.",
+          "args": [
+            {
+              "name": "status",
+              "description": "The status of a certificate.",
+              "args": []
+            },
+            {
+              "name": "ordered_on",
+              "description": "The certificate ordered date.",
+              "args": []
+            },
+            {
+              "name": "code",
+              "description": "The code of a certificate.",
+              "args": []
+            },
+            {
+              "name": "additional_info",
+              "description": "The extra information of a certificate.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "imported",
+          "description": "Indicates whether a certificate has imported or not.",
+          "args": []
+        },
+        {
+          "name": "serial_number",
+          "description": "The serial number of a certificate.",
+          "args": []
+        },
+        {
+          "name": "status",
+          "description": "The status of a certificate.",
+          "args": []
         }
       ]
     },
@@ -357,7 +458,7 @@
       "args": [
         {
           "name": "name",
-          "description": "(Required, String) The name of your IBM Cloud Internet Services instance.",
+          "description": "(Required, String) The name of an IBM Cloud Internet Services instance.",
           "args": []
         }
       ],
@@ -397,7 +498,7 @@
       "args": [
         {
           "name": "domain",
-          "description": "(Required, String) The DNS domain name that is added and managed for your IBM Cloud Internet Services instance.",
+          "description": "(Required, String) The DNS domain name that is added and managed for an IBM Cloud Internet Services instance.",
           "args": []
         },
         {
@@ -424,7 +525,7 @@
         },
         {
           "name": "name_servers",
-          "description": "The IBM CIS assigned name servers, to be passed by interpolation to the resource dns_domain_registration_nameservers.",
+          "description": "The IBM Cloud Internet Services assigned name servers, to be passed by interpolation to the resource dns_domain_registration_nameservers.",
           "args": []
         },
         {
@@ -656,6 +757,107 @@
           "name": "ipv6_cidrs",
           "description": "The IPv6 address ranges that the CIS proxy uses and that you can reference to configure and allowed IP addresses in firewalls, network ACLs, and security groups.",
           "args": []
+        }
+      ]
+    },
+    "ibm_cis_origin_pools": {
+      "name": "ibm_cis_origin_pools",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Internet Services data sources",
+      "args": [
+        {
+          "name": "cis_id",
+          "description": "(Required, String) The ID of the CIS service instance.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "created_on",
+          "description": "Created RFC3339 timestamp of the Load Balancer.",
+          "args": []
+        },
+        {
+          "name": "description",
+          "description": "The description of the origin pool.",
+          "args": []
+        },
+        {
+          "name": "enabled",
+          "description": "The default value is `enabled`. Disabled pools do not receive traffic, and are excluded from health checks. Disabling a pool cause any Load Balancers using it to failover to the next pool (if any).",
+          "args": []
+        },
+        {
+          "name": "healthy",
+          "description": "The status of the origin pool.",
+          "args": []
+        },
+        {
+          "name": "id",
+          "description": "The ID of the Load Balancer pool.",
+          "args": []
+        },
+        {
+          "name": "modified_on",
+          "description": "Last modified RFC3339 timestamp of the Load Balancer.",
+          "args": []
+        },
+        {
+          "name": "monitor",
+          "description": "The ID of the monitor to use for health checking origins within this pool.",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "A short name `tag` for the pool. Only alphanumeric characters, hyphens, and underscores are allowed.",
+          "args": []
+        },
+        {
+          "name": "notification_email",
+          "description": "The Email address to send health status notifications. This can be an individual mailbox or a mailing list.",
+          "args": []
+        },
+        {
+          "name": "origins",
+          "description": "The list of origins within this pool. Traffic directed at this pool is balanced across all currently healthy origins, provided the pool itself is healthy. Description of it's complex value is stated.",
+          "args": [
+            {
+              "name": "name",
+              "description": "A human-identifiable name of the origin.",
+              "args": []
+            },
+            {
+              "name": "address",
+              "description": "The IP address `IPv4` or `IPv6` of the origin, or the publicly addressable hostname. Hostnames entered is resolved directly to the origin, and not be a hostname proxied by CIS.",
+              "args": []
+            },
+            {
+              "name": "enabled",
+              "description": "The default value is `enable`. Disabled origins do not receive traffic, and are excluded from health checks. The origin is disabled only for the current pool.",
+              "args": []
+            },
+            {
+              "name": "weight",
+              "description": "The weight of the origin pool.",
+              "args": []
+            },
+            {
+              "name": "healthy",
+              "description": "The status of origins health.",
+              "args": []
+            },
+            {
+              "name": "disabled_at",
+              "description": "The disabled date and time.",
+              "args": []
+            },
+            {
+              "name": "failure_reason",
+              "description": "The failure reason.",
+              "args": []
+            }
+          ]
         }
       ]
     },
@@ -2570,6 +2772,135 @@
           "args": []
         },
         {
+          "name": "cert_file_path",
+          "description": "The absolute path to certificate PEM file.",
+          "args": []
+        },
+        {
+          "name": "auto_scaling",
+          "description": "Configure rules to allow your database to automatically increase its resources. Single block of autoscaling is allowed at once.",
+          "args": [
+            {
+              "name": "cpu",
+              "description": "Autoscaling CPU.",
+              "args": [
+                {
+                  "name": "rate_increase_percent",
+                  "description": "Auto scaling rate in increase percent.",
+                  "args": []
+                },
+                {
+                  "name": "rate_limit_count_per_member",
+                  "description": "Auto scaling rate limit in count per number.",
+                  "args": []
+                },
+                {
+                  "name": "rate_period_seconds",
+                  "description": "Auto scaling rate in period seconds.",
+                  "args": []
+                },
+                {
+                  "name": "rate_units",
+                  "description": "Auto scaling rate in units.",
+                  "args": []
+                }
+              ]
+            },
+            {
+              "name": "disk",
+              "description": "Disk auto scaling.",
+              "args": [
+                {
+                  "name": "capacity_enabled",
+                  "description": "Auto scaling scalar enables or disables the scalar capacity.",
+                  "args": []
+                },
+                {
+                  "name": "free_space_less_than_percent",
+                  "description": "Auto scaling scalar capacity free space less than percent.",
+                  "args": []
+                },
+                {
+                  "name": "io_above_percent",
+                  "description": "Auto scaling scalar I/O utilization above percent.",
+                  "args": []
+                },
+                {
+                  "name": "io_enabled",
+                  "description": "Auto scaling scalar I/O utilization enabled.",
+                  "args": []
+                },
+                {
+                  "name": "io_over_period",
+                  "description": "Auto scaling scalar I/O utilization over period.",
+                  "args": []
+                },
+                {
+                  "name": "rate_increase_percent",
+                  "description": "Auto scaling rate increase percent.",
+                  "args": []
+                },
+                {
+                  "name": "rate_limit_mb_per_member",
+                  "description": "Auto scaling rate limit in megabytes per member.",
+                  "args": []
+                },
+                {
+                  "name": "rate_period_seconds",
+                  "description": "Auto scaling rate period in seconds.",
+                  "args": []
+                },
+                {
+                  "name": "rate_units",
+                  "description": "Auto scaling rate in units.",
+                  "args": []
+                }
+              ]
+            },
+            {
+              "name": "memory",
+              "description": "Memory Auto Scaling.",
+              "args": [
+                {
+                  "name": "io_enabled",
+                  "description": "Auto scaling scalar I/O utilization enabled.",
+                  "args": []
+                },
+                {
+                  "name": "io_over_period",
+                  "description": "Auto scaling scalar I/O utilization over period.",
+                  "args": []
+                },
+                {
+                  "name": "rate_increase_percent",
+                  "description": "Auto scaling rate in increase percent.",
+                  "args": []
+                },
+                {
+                  "name": "rate_limit_mb_per_member",
+                  "description": "Auto scaling rate limit in megabytes per member.",
+                  "args": []
+                },
+                {
+                  "name": "rate_period_seconds",
+                  "description": "Auto scaling rate period in seconds.",
+                  "args": []
+                },
+                {
+                  "name": "rate_units",
+                  "description": "Auto scaling rate in units.",
+                  "args": []
+                }
+              ]
+            },
+            {
+              "name": "io_above_percent",
+              "description": "Auto scaling scalar I/O utilization above percent.",
+              "args": []
+            }
+          ]
+        },
+        {
           "name": "whitelist",
           "description": "A list of whitelisted IP addresses or ranges.",
           "args": []
@@ -4003,7 +4334,7 @@
       "name": "ibm_is_floating_ip",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 1 compute)",
+      "groupName": "VPC infrastructure data sources",
       "args": [
         {
           "name": "name",
@@ -4048,7 +4379,7 @@
       "name": "ibm_is_flow_logs",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 2 compute)",
+      "groupName": "VPC infrastructure data sources",
       "args": [],
       "attrs": [
         {
@@ -4118,43 +4449,43 @@
       "name": "ibm_is_image",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 1 compute)",
+      "groupName": "VPC infrastructure data sources",
       "args": [
         {
           "name": "name",
-          "description": "(Required, String) The name of the image. To list available names, run the `ibmcloud is images` command.",
+          "description": "(Required, String) The name of the image.",
           "args": []
         },
         {
           "name": "visibility",
-          "description": "(Optional, String) The visibility of the image. Images that are marked as `public` are provided by IBM. `Private` images are custom images that you uploaded to IBM Cloud.",
+          "description": "(Optional, String) The visibility of the image. Accepted values are `public` or `private`.",
           "args": []
         }
       ],
       "attrs": [
         {
-          "name": "architecture",
-          "description": "The CPU architecture that this image is designed for.",
+          "name": "id",
+          "description": "The unique identifier for this image.",
           "args": []
         },
         {
           "name": "crn",
-          "description": "The CRN of the image.",
-          "args": []
-        },
-        {
-          "name": "id",
-          "description": "The unique identifier for the image.",
+          "description": "The CRN for this image.",
           "args": []
         },
         {
           "name": "os",
-          "description": "The name and version of the operating system that is installed with the image.",
+          "description": "The name of the operating system.",
           "args": []
         },
         {
           "name": "status",
           "description": "The status of this image.",
+          "args": []
+        },
+        {
+          "name": "architecture",
+          "description": "The architecture for this image.",
           "args": []
         }
       ]
@@ -4163,36 +4494,31 @@
       "name": "ibm_is_images",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 1 compute)",
+      "groupName": "VPC infrastructure data sources",
       "args": [],
       "attrs": [
         {
           "name": "images",
-          "description": "A list of all images that you can use in your Virtual Servers for VPC instance.",
+          "description": "List of all supported images.",
           "args": [
             {
-              "name": "architecture",
-              "description": "The CPU architecture that this image is designed for.",
-              "args": []
-            },
-            {
-              "name": "crn",
-              "description": "The CRN of the image.",
+              "name": "name",
+              "description": "The name for this image.",
               "args": []
             },
             {
               "name": "id",
-              "description": "The unique identifier of the image.",
+              "description": "The unique identifier for this image.",
               "args": []
             },
             {
-              "name": "name",
-              "description": "The name of the image.",
+              "name": "crn",
+              "description": "The CRN for this image.",
               "args": []
             },
             {
               "name": "os",
-              "description": "The name and version of the operating system that is installed with the image.",
+              "description": "The name of the operating system.",
               "args": []
             },
             {
@@ -4201,8 +4527,13 @@
               "args": []
             },
             {
+              "name": "architecture",
+              "description": "The architecture for this image.",
+              "args": []
+            },
+            {
               "name": "visibility",
-              "description": "The visibility of the image. Images that are marked as `public` are provided by IBM. `Private` images are custom images that you uploaded to IBM Cloud.",
+              "description": "The visibility of the image public or private.",
               "args": []
             }
           ]
@@ -4213,7 +4544,7 @@
       "name": "ibm_is_instance",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 1 compute)",
+      "groupName": "VPC infrastructure data sources",
       "args": [
         {
           "name": "name",
@@ -4470,7 +4801,7 @@
       "name": "ibm_is_instance_group",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 2 compute)",
+      "groupName": "VPC infrastructure data sources",
       "args": [
         {
           "name": "name",
@@ -4535,7 +4866,7 @@
       "name": "ibm_is_instance_group_manager_policies",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 2 compute)",
+      "groupName": "VPC infrastructure data sources",
       "args": [
         {
           "name": "instance_group",
@@ -4585,7 +4916,7 @@
       "name": "ibm_is_instance_group_manager_policy",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 2 compute)",
+      "groupName": "VPC infrastructure data sources",
       "args": [
         {
           "name": "name",
@@ -4635,7 +4966,7 @@
       "name": "ibm_is_instance_group_managers",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 2 compute)",
+      "groupName": "VPC infrastructure data sources",
       "args": [
         {
           "name": "instance_group",
@@ -4691,18 +5022,18 @@
       "name": "ibm_is_instance_profile",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 1 compute)",
+      "groupName": "VPC infrastructure data sources",
       "args": [
         {
           "name": "name",
-          "description": "(Required, String) The name of the profile. To list available profiles, run the `ibmcloud is instance-profiles` command.",
+          "description": "(Required, String) The name for this virtual server instance profile.",
           "args": []
         }
       ],
       "attrs": [
         {
           "name": "family",
-          "description": "The family that the profile belongs to. The family indicates what workloads are best suited for this type of profile. For more information, see [Profiles](/docs/vpc?topic=vpc-profiles).",
+          "description": "The family of the virtual server instance profile.",
           "args": []
         }
       ]
@@ -4711,21 +5042,21 @@
       "name": "ibm_is_instance_profiles",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 1 compute)",
+      "groupName": "VPC infrastructure data sources",
       "args": [],
       "attrs": [
         {
           "name": "profiles",
-          "description": "A list of profiles that you can use in a Virtual Servers for VPC instance.",
+          "description": "List of all server instance profiles in the region.",
           "args": [
             {
               "name": "name",
-              "description": "The name of the profile.",
+              "description": "The name for this virtual server instance profile.",
               "args": []
             },
             {
               "name": "family",
-              "description": "The family that the profile belongs to. The family indicates what workloads are best suited for this type of profile. For more information, see [Profiles](/docs/vpc?topic=vpc-profiles).",
+              "description": "The family of the virtual server instance profile.",
               "args": []
             }
           ]
@@ -4736,7 +5067,7 @@
       "name": "ibm_is_instance_templates",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 2 compute)",
+      "groupName": "VPC infrastructure data sources",
       "args": [],
       "attrs": [
         {
@@ -4905,7 +5236,7 @@
       "name": "ibm_is_instances",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 1 compute)",
+      "groupName": "VPC infrastructure data sources",
       "args": [],
       "attrs": [
         {
@@ -5095,7 +5426,7 @@
       "name": "ibm_is_lb",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 1 compute)",
+      "groupName": "VPC infrastructure data sources",
       "args": [
         {
           "name": "name",
@@ -5295,7 +5626,7 @@
       "name": "ibm_is_lb_profiles",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 2 compute)",
+      "groupName": "VPC infrastructure data sources",
       "args": [],
       "attrs": [
         {
@@ -5325,7 +5656,7 @@
       "name": "ibm_is_lbs",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 2 compute)",
+      "groupName": "VPC infrastructure data sources",
       "args": [],
       "attrs": [
         {
@@ -5493,7 +5824,7 @@
       "name": "ibm_is_public_gateway",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 1 compute)",
+      "groupName": "VPC infrastructure data sources",
       "args": [
         {
           "name": "name",
@@ -5549,11 +5880,11 @@
       "name": "ibm_is_region",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 1 compute)",
+      "groupName": "VPC infrastructure data sources",
       "args": [
         {
           "name": "name",
-          "description": "(Required, String) The name of the region. To list available regions, run the `ibmcloud is regions` command.",
+          "description": "(Required, String) The name of the region.",
           "args": []
         }
       ],
@@ -5565,7 +5896,7 @@
         },
         {
           "name": "endpoint",
-          "description": "The API endpoint of the region.",
+          "description": "The endpoint of the region.",
           "args": []
         }
       ]
@@ -5574,7 +5905,7 @@
       "name": "ibm_is_security_group",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 1 compute)",
+      "groupName": "VPC infrastructure data sources",
       "args": [
         {
           "name": "name",
@@ -5624,12 +5955,12 @@
             },
             {
               "name": "port_max",
-              "description": "The TCP/UDP port range that includes maximum bound.",
+              "description": "The TCP/UDP port range that includes the maximum bound.",
               "args": []
             },
             {
               "name": "port_min",
-              "description": "The TCP/UDP port range that includes minimum bound.",
+              "description": "The TCP/UDP port range that includes the minimum bound.",
               "args": []
             }
           ]
@@ -5645,23 +5976,23 @@
       "name": "ibm_is_ssh_key",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 1 compute)",
+      "groupName": "VPC infrastructure data sources",
       "args": [
         {
           "name": "name",
-          "description": "(Required, String) The name of the SSH key that you uploaded to IBM Cloud.",
+          "description": "(Required, String) The name of the SSH key.",
           "args": []
         }
       ],
       "attrs": [
         {
-          "name": "fingerprint",
-          "description": "The SHA256 fingerprint of the public key.",
+          "name": "id",
+          "description": "The ID of the SSH key.",
           "args": []
         },
         {
-          "name": "id",
-          "description": "The ID of the SSH key.",
+          "name": "fingerprint",
+          "description": "The SHA256 fingerprint of the public key.",
           "args": []
         },
         {
@@ -5671,7 +6002,7 @@
         },
         {
           "name": "type",
-          "description": "The crypto system that is used by the SSH key.",
+          "description": "The crypto system that is used by this key.",
           "args": []
         }
       ]
@@ -5680,11 +6011,11 @@
       "name": "ibm_is_subnet",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 1 compute)",
+      "groupName": "VPC infrastructure data sources",
       "args": [
         {
           "name": "identifier",
-          "description": "(Optional, String) The ID of the subnet. To list subnets in your account, run the `ibmcloud is subnets` command.",
+          "description": "(Optional, String) The ID of the subnet.",
           "args": []
         },
         {
@@ -5696,17 +6027,22 @@
       "attrs": [
         {
           "name": "ipv4_cidr_block",
-          "description": "The IPv4 CIDR of the subnet.",
+          "description": "The IPv4 range of the subnet.",
           "args": []
         },
         {
           "name": "ipv6_cidr_block",
-          "description": "The IPv6 CIDR of the subnet.",
+          "description": "The IPv6 range of the subnet.",
+          "args": []
+        },
+        {
+          "name": "total_ipv4_address_count",
+          "description": "The total number of IPv4 addresses.",
           "args": []
         },
         {
           "name": "ip_version",
-          "description": "The IP Version.",
+          "description": "The IP version.",
           "args": []
         },
         {
@@ -5716,12 +6052,12 @@
         },
         {
           "name": "network_acl",
-          "description": "The ID of the network access control list (ACL) that is set up for the subnet.",
+          "description": "The ID of the network ACL for the subnet.",
           "args": []
         },
         {
           "name": "public_gateway",
-          "description": "The ID of the public gateway that is attached to the subnet.",
+          "description": "The ID of the public gateway for the subnet.",
           "args": []
         },
         {
@@ -5730,23 +6066,18 @@
           "args": []
         },
         {
-          "name": "total_ipv4_address_count",
-          "description": "The total number of IPv4 addresses.",
-          "args": []
-        },
-        {
           "name": "vpc",
-          "description": "The ID of the VPC that the subnet is attached to.",
+          "description": "The ID of the VPC that the subnet belongs to.",
           "args": []
         },
         {
           "name": "zone",
-          "description": "The name of the zone where the subnet is provisioned.",
+          "description": "The subnet zone name.",
           "args": []
         },
         {
-          "name": "resource_group",
-          "description": "The subnet resource group.",
+          "name": "available_ipv4_address_count",
+          "description": "The total number of available IPv4 addresses.",
           "args": []
         }
       ]
@@ -5755,7 +6086,7 @@
       "name": "ibm_is_subnets",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 1 compute)",
+      "groupName": "VPC infrastructure data sources",
       "args": [],
       "attrs": [
         {
@@ -5835,18 +6166,18 @@
       "name": "ibm_is_vpc",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 1 compute)",
+      "groupName": "VPC infrastructure data sources",
       "args": [
         {
           "name": "name",
-          "description": "(Required, String) The name of the VPC. To list available VPCs, run the `ibmcloud is vpcs` command.",
+          "description": "(Required, String) The name of the VPC.",
           "args": []
         }
       ],
       "attrs": [
         {
           "name": "classic_access",
-          "description": "Indicates whether this VPC is set up with a connection to classic IBM Cloud infrastructure.",
+          "description": "Indicates whether this VPC is connected to Classic Infrastructure.",
           "args": []
         },
         {
@@ -5872,12 +6203,12 @@
         },
         {
           "name": "default_network_acl",
-          "description": "The ID of the default network access control list (ACL) that was set up for the VPC.",
+          "description": "The ID of the default network ACL.",
           "args": []
         },
         {
           "name": "resource_group",
-          "description": "The resource group ID where the VPC was created.",
+          "description": "The resource group ID where the VPC created.",
           "args": []
         },
         {
@@ -5923,7 +6254,7 @@
         },
         {
           "name": "tags",
-          "description": "A list of tags that are associated with the VPC.",
+          "description": "Tags associated with the instance.",
           "args": []
         }
       ]
@@ -5932,7 +6263,7 @@
       "name": "ibm_is_zone",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 1 compute)",
+      "groupName": "VPC infrastructure data sources",
       "args": [
         {
           "name": "name",
@@ -5941,14 +6272,14 @@
         },
         {
           "name": "region",
-          "description": "(Required, String) The name of the region where the zone is located.",
+          "description": "(Required, String) The name of the region.",
           "args": []
         }
       ],
       "attrs": [
         {
           "name": "status",
-          "description": "The status of zone.",
+          "description": "The status of the zone.",
           "args": []
         }
       ]
@@ -5957,7 +6288,7 @@
       "name": "ibm_is_zones",
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure data sources (Gen 1 compute)",
+      "groupName": "VPC infrastructure data sources",
       "args": [
         {
           "name": "region",
@@ -5966,7 +6297,7 @@
         },
         {
           "name": "status",
-          "description": "(Optional, String) The status of the zone that you want to filter for.",
+          "description": "(Optional, String) Filter the list by status of zones.",
           "args": []
         }
       ],
@@ -7556,7 +7887,7 @@
               "args": []
             },
             {
-              "name": "account_id",
+              "name": "network_account_id",
               "description": "The ID of the network connected account. This is used if the network is in a different account than the gateway.",
               "args": []
             },
@@ -8365,6 +8696,11 @@
           "args": []
         },
         {
+          "name": "resource_group_id",
+          "description": "(Optional, String) The ID of the resource group where you want to create the service. To retrieve this value, run `ibmcloud resource groups` or use the `ibm_resource_group` data source. If no value is specified, the `default` resource group is used.",
+          "args": []
+        },
+        {
           "name": "tags",
           "description": "(Optional, Array) A list of tags that you want to associate with the instance.",
           "args": []
@@ -8530,28 +8866,8 @@
       "groupName": "Internet services resources",
       "args": [
         {
-          "name": "domain_id",
-          "description": "(Required, String) The ID of the domain that you want to customize.",
-          "args": []
-        },
-        {
-          "name": "cis_id",
-          "description": "(Required, String) The ID of the IBM Cloud Internet Services instance.",
-          "args": []
-        },
-        {
-          "name": "waf",
-          "description": "(Optional, String) Enable a web application firewall (WAF). Supported values are `off` and `on`.",
-          "args": []
-        },
-        {
-          "name": "min_tls_version",
-          "description": "(Optional, String) The minimum TLS version that you want to allow. Allowed values are `1.1`, `1.2`, or `1.3`.",
-          "args": []
-        },
-        {
-          "name": "ssl",
-          "description": "(Optional, String) Allowed values: `off`, `flexible`, `full`, `strict`, `origin_pull`.",
+          "name": "always_use_https",
+          "description": "(Optional, String) Supported values are `off` and `on`.",
           "args": []
         },
         {
@@ -8560,8 +8876,28 @@
           "args": []
         },
         {
-          "name": "opportunistic_encryption",
+          "name": "browser_check",
+          "description": "(Optional, String) Enable a client browser check to look for common HTTP headers that are used by malicious users. If HTTP headers are found,  access to your website is blocked. Supported values are `off` and `on`.",
+          "args": []
+        },
+        {
+          "name": "brotli",
           "description": "(Optional, String) Supported values are `off` and `on`.",
+          "args": []
+        },
+        {
+          "name": "challenge_ttl",
+          "description": "(Optional, String) Challenge TTL values are `300`, `900`, `1800`, `2700`, `3600`, `7200`, `10800`, `14400`, `28800`, `57600`, `86400`, `604800`, `2592000`, and `31536000`.",
+          "args": []
+        },
+        {
+          "name": "cipher",
+          "description": "(Optional, String) Cipher setting values are  `ECDHE-ECDSA-AES128-GCM-SHA256`, `ECDHE-ECDSA-CHACHA20-POLY1305`,`ECDHE-RSA-AES128-GCM-SHA256`, `ECDHE-RSA-CHACHA20-POLY1305`, `ECDHE-ECDSA-AES128-SHA256`, `ECDHE-ECDSA-AES128-SHA`, `ECDHE-RSA-AES128-SHA256`, `ECDHE-RSA-AES128-SHA`, `AES128-GCM-SHA256`, `AES128-SHA256`, `AES128-SHA`, `ECDHE-ECDSA-AES256-GCM-SHA384`, `ECDHE-ECDSA-AES256-SHA384`, `ECDHE-RSA-AES256-GCM-SHA384`, `ECDHE-RSA-AES256-SHA384`, `ECDHE-RSA-AES256-SHA`, `AES256-GCM-SHA384`, `AES256-SHA256`, `AES256-SHA`, `DES-CBC3-SHA`.",
+          "args": []
+        },
+        {
+          "name": "cis_id",
+          "description": "(Required, String) The ID of the IBM Cloud Internet Services instance.",
           "args": []
         },
         {
@@ -8570,18 +8906,13 @@
           "args": []
         },
         {
-          "name": "always_use_https",
-          "description": "(Optional, String) Supported values are `off` and `on`.",
+          "name": "domain_id",
+          "description": "(Required, String) The ID of the domain that you want to customize.",
           "args": []
         },
         {
-          "name": "ipv6",
-          "description": "(Optional, String) Supported values are `off` and `on`.",
-          "args": []
-        },
-        {
-          "name": "browser_check",
-          "description": "(Optional, String) Enable a client browser check to look for common HTTP headers that are used by malicious users. If HTTP headers are found,  access to your website is blocked. Supported values are `off` and `on`.",
+          "name": "dnssec",
+          "description": "(Optional, String) Can set to `active` only once. Allowed values are `active`, `disabled`.",
           "args": []
         },
         {
@@ -8605,9 +8936,66 @@
           "args": []
         },
         {
+          "name": "ipv6",
+          "description": "(Optional, String) Supported values are `off` and `on`.",
+          "args": []
+        },
+        {
           "name": "ip_geolocation",
           "description": "(Optional, String) Supported values are `off` and `on`.",
           "args": []
+        },
+        {
+          "name": "max_upload",
+          "description": "(Optional, String) Maximum upload values are `100`, `125`, `150`, `175`, `200`, `225`, `250`, `275`, `300`, `325`, `350`, `375`, `400`, `425`, `450`, `475`, and `500`.",
+          "args": []
+        },
+        {
+          "name": "min_tls_version",
+          "description": "(Optional, String) The minimum TLS version that you want to allow. Allowed values are `1.1`, `1.2`, or `1.3`.",
+          "args": []
+        },
+        {
+          "name": "minify",
+          "description": "(Optional, List) Minify the setting as stated.",
+          "args": [
+            {
+              "name": "css",
+              "description": "(Required, String) CSS supported values are `on` and `off`.",
+              "args": []
+            },
+            {
+              "name": "html",
+              "description": "(Required, String) HTML supported values are `on` and `off`.",
+              "args": []
+            },
+            {
+              "name": "js",
+              "description": "(Required, String) JS supported values are `on` and `off`.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "mobile_redirect",
+          "description": "(Optional, List) Mobile redirect setting.",
+          "args": [
+            {
+              "name": "status",
+              "description": "(Required, Boolean) Mobile redirect setting status values are `true` and `false`.",
+              "args": []
+            },
+            {
+              "name": "mobile_subdomain",
+              "description": "(Optional, String) Mobile redirect subdomain. For example `m.domain.com`",
+              "args": []
+            },
+            {
+              "name": "strip_uri",
+              "description": "(Optional, Boolean) Strip URI for mobile redirect.",
+              "args": []
+            }
+          ]
         },
         {
           "name": "origin_error_page_pass_thru",
@@ -8615,7 +9003,7 @@
           "args": []
         },
         {
-          "name": "brotli",
+          "name": "opportunistic_encryption",
           "description": "(Optional, String) Supported values are `off` and `on`.",
           "args": []
         },
@@ -8645,6 +9033,37 @@
           "args": []
         },
         {
+          "name": "security_header",
+          "description": "(Optional, List) Security headers as stated.",
+          "args": [
+            {
+              "name": "enabled",
+              "description": "(Required, Boolean) Supported values are `true` and `false`.",
+              "args": []
+            },
+            {
+              "name": "include_subdomains",
+              "description": "(Required, Boolean) Supported values are `true` and `false`.",
+              "args": []
+            },
+            {
+              "name": "max_age",
+              "description": "(Required, Integer) Maximum age of the security header.",
+              "args": []
+            },
+            {
+              "name": "nosniff",
+              "description": "(Required, Boolean) No sniff.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "ssl",
+          "description": "(Optional, String) Allowed values: `off`, `flexible`, `full`, `strict`, `origin_pull`.",
+          "args": []
+        },
+        {
           "name": "tls_client_auth",
           "description": "(Optional, String) Supported values are `off` and `on`.",
           "args": []
@@ -8652,6 +9071,11 @@
         {
           "name": "true_client_ip_header",
           "description": "(Optional, String) Supported values are `off` and `on`.",
+          "args": []
+        },
+        {
+          "name": "waf",
+          "description": "(Optional, String) Enable a web application firewall (WAF). Supported values are `off` and `on`.",
           "args": []
         },
         {
@@ -9296,6 +9720,51 @@
         }
       ],
       "attrs": []
+    },
+    "ibm_cis_tls_settings": {
+      "name": "ibm_cis_tls_settings",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Internet services resources",
+      "args": [
+        {
+          "name": "cis_id",
+          "description": "(Required, String) The ID of the IBM Cloud Internet Services instance.",
+          "args": []
+        },
+        {
+          "name": "domain_id",
+          "description": "(Required, String) The ID of the domain to change TLS settings.",
+          "args": []
+        },
+        {
+          "name": "tls_1_3",
+          "description": "(Optional, String) The TLS 1.3 version setting. Valid values are `on`, `off`, `zrt`. zrt will enable TLS 1.3 and the Zero RTT feature. If `on` is set, then `zrt` is enabled by default.",
+          "args": []
+        },
+        {
+          "name": "min_tls_version",
+          "description": "(Optional, String) The Minimum TLS version setting. Valid values are `1.1`, `1.2`, `1.3`, or `1.4`.",
+          "args": []
+        },
+        {
+          "name": "universal_ssl",
+          "description": "(Optional, Boolean) The Universal SSL `enable` or `disable` setting.",
+          "args": []
+        },
+        {
+          "name": "ssl_mode",
+          "description": "(Optional, String) The SSL mode settings. This is yet to support.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The record ID. It is a combination of <domain_id>,<cis_id> attributes concatenated with `:`.",
+          "args": []
+        }
+      ]
     },
     "ibm_compute_autoscale_group": {
       "name": "ibm_compute_autoscale_group",
@@ -10629,6 +11098,11 @@
           "name": "worker_num",
           "description": "(Optional, Integer) The number of worker nodes in your cluster. This attribute creates a worker node that is not associated with a worker pool.",
           "args": []
+        },
+        {
+          "name": "wait_for_worker_update",
+          "description": "(Optional, Boolean) Set to `true` to wait and update the kube version of worker nodes. **NOTE** Setting wait_for_worker_update to `false` is not recommended. Setting `false` results in upgrading all the worker nodes in the cluster at the same time causing the cluster downtime.",
+          "args": []
         }
       ],
       "attrs": [
@@ -11060,6 +11534,11 @@
         {
           "name": "force_delete_storage",
           "description": "(Optional, Boolean) If set to `true`,force the removal of persistent storage associated with the cluster during cluster deletion. Default value is `false`. **NOTE** If `force_delete_storage` parameter is used after provisioning the cluster, then, you need to execute `terraform apply` before `terraform destroy` for `force_delete_storage` parameter to take effect.",
+          "args": []
+        },
+        {
+          "name": "wait_for_worker_update",
+          "description": "(Optional, Boolean) Set to `true` to wait and update the kube version of worker nodes. **NOTE** Setting wait_for_worker_update to `false` is not recommended. Setting `false` results in upgrading all the worker nodes in the cluster at the same time causing the cluster downtime.",
           "args": []
         }
       ],
@@ -13847,7 +14326,7 @@
       "name": "ibm_is_floating_ip",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
         {
           "name": "name",
@@ -13870,7 +14349,7 @@
           "args": []
         },
         {
-          "name": "tags\t",
+          "name": "tags",
           "description": "(Optional, Array of strings) Enter any tags that you want to associate with your VPC. Tags might help you find your VPC more easily after it is created. Separate multiple tags with a comma (`,`).",
           "args": []
         }
@@ -13897,7 +14376,7 @@
       "name": "ibm_is_flow_log",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 2 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
         {
           "name": "name",
@@ -13972,7 +14451,7 @@
       "name": "ibm_is_ike_policy",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
         {
           "name": "authentication_algorithm",
@@ -14037,7 +14516,7 @@
       "name": "ibm_is_image",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
         {
           "name": "name",
@@ -14112,33 +14591,8 @@
       "name": "ibm_is_instance",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
-        {
-          "name": "name",
-          "description": "(Optional, String) The instance name.",
-          "args": []
-        },
-        {
-          "name": "vpc",
-          "description": "(Required, String) The ID of the VPC where you want to create the instance.",
-          "args": []
-        },
-        {
-          "name": "zone",
-          "description": "(Required, String) The name of the VPC zone where you want to create the instance.",
-          "args": []
-        },
-        {
-          "name": "profile",
-          "description": "(Required, String) The name of the profile that you want to use for your instance. To list supported profiles, run `ibmcloud is instance-profiles`.",
-          "args": []
-        },
-        {
-          "name": "image",
-          "description": "(Required, String) The ID of the virtual server image that you want to use. To list supported images, run `ibmcloud is images`.",
-          "args": []
-        },
         {
           "name": "boot_volume",
           "description": "(Optional, List) A list of boot volumes for an instance.",
@@ -14156,35 +14610,24 @@
           ]
         },
         {
+          "name": "force_recovery_time",
+          "description": "(Optional, Integer) Define timeout (in minutes), to force the is_instance to recover from a perpetual \"starting\" state, during provisioning. And to force the is_instance to recover from a perpetual \"stopping\" state, during removal of user access. **Note** The force_recovery_time is used to retry multiple times until timeout.",
+          "args": []
+        },
+        {
+          "name": "image",
+          "description": "(Required, String) The ID of the virtual server image that you want to use. To list supported images, run `ibmcloud is images`.",
+          "args": []
+        },
+        {
           "name": "keys",
           "description": "(Required, List) A comma-separated list of SSH keys that you want to add to your instance.",
           "args": []
         },
         {
-          "name": "primary_network_interface",
-          "description": "(Required, List) A nested block describes the primary network interface of this instance. Only one primary network interface can be specified for an instance.",
-          "args": [
-            {
-              "name": "name",
-              "description": "(Optional, String) The name of the network interface.",
-              "args": []
-            },
-            {
-              "name": "primary_ipv4_address",
-              "description": "(Optional, Strings) The IPV4 address of the interface.",
-              "args": []
-            },
-            {
-              "name": "subnet",
-              "description": "(Required, String) The ID of the subnet.",
-              "args": []
-            },
-            {
-              "name": "security_groups",
-              "description": "(Optional, List of strings) A comma separated list of security groups to add to the primary network interface.",
-              "args": []
-            }
-          ]
+          "name": "name",
+          "description": "(Optional, String) The instance name.",
+          "args": []
         },
         {
           "name": "network_interfaces",
@@ -14218,13 +14661,34 @@
           ]
         },
         {
-          "name": "volumes",
-          "description": "(Optional, List) A comma separated list of volume IDs to attach to the instance.",
-          "args": []
+          "name": "primary_network_interface",
+          "description": "(Required, List) A nested block describes the primary network interface of this instance. Only one primary network interface can be specified for an instance.",
+          "args": [
+            {
+              "name": "name",
+              "description": "(Optional, String) The name of the network interface.",
+              "args": []
+            },
+            {
+              "name": "primary_ipv4_address",
+              "description": "(Optional, Strings) The IPV4 address of the interface.",
+              "args": []
+            },
+            {
+              "name": "subnet",
+              "description": "(Required, String) The ID of the subnet.",
+              "args": []
+            },
+            {
+              "name": "security_groups",
+              "description": "(Optional, List of strings) A comma separated list of security groups to add to the primary network interface.",
+              "args": []
+            }
+          ]
         },
         {
-          "name": "user_data",
-          "description": "(Optional, String) User data to transfer to the instance.",
+          "name": "profile",
+          "description": "(Required, String) The name of the profile that you want to use for your instance. To list supported profiles, run `ibmcloud is instance-profiles`.",
           "args": []
         },
         {
@@ -14235,6 +14699,26 @@
         {
           "name": "tags",
           "description": "(Optional, Array of strings) A list of tags that you want to add to your instance. Tags can help you find your instance more easily later.",
+          "args": []
+        },
+        {
+          "name": "user_data",
+          "description": "(Optional, String) User data to transfer to the instance.",
+          "args": []
+        },
+        {
+          "name": "volumes",
+          "description": "(Optional, List) A comma separated list of volume IDs to attach to the instance.",
+          "args": []
+        },
+        {
+          "name": "vpc",
+          "description": "(Required, String) The ID of the VPC where you want to create the instance.",
+          "args": []
+        },
+        {
+          "name": "zone",
+          "description": "(Required, String) The name of the VPC zone where you want to create the instance.",
           "args": []
         }
       ],
@@ -14426,7 +14910,7 @@
       "name": "ibm_is_instance_group",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 2 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
         {
           "name": "name",
@@ -14496,7 +14980,7 @@
       "name": "ibm_is_instance_group_manager",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 2 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
         {
           "name": "name",
@@ -14561,7 +15045,7 @@
       "name": "ibm_is_instance_group_manager_policy",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 2 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
         {
           "name": "name",
@@ -14611,7 +15095,7 @@
       "name": "ibm_is_instance_template",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 2 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
         {
           "name": "templates",
@@ -14785,7 +15269,7 @@
       "name": "ibm_is_ipsec_policy",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
         {
           "name": "authentication_algorithm",
@@ -14845,7 +15329,7 @@
       "name": "ibm_is_lb",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
         {
           "name": "name",
@@ -14853,13 +15337,8 @@
           "args": []
         },
         {
-          "name": "subnets",
-          "description": "(Required, Array) List of the subnets IDs to connect to the load balancer.",
-          "args": []
-        },
-        {
-          "name": "type",
-          "description": "(Optional, String) The type of the load balancer. Default value `public`. Supported values `public` and `private`.",
+          "name": "profile",
+          "description": "(Required, String) The profile to use for this load balancer. This is required for network load balancer.",
           "args": []
         },
         {
@@ -14868,15 +15347,35 @@
           "args": []
         },
         {
+          "name": "subnets",
+          "description": "(Required, Array) List of the subnets IDs to connect to the load balancer.",
+          "args": []
+        },
+        {
           "name": "tags",
           "description": "(Optional, Array of strings) A list of tags that you want to add to your load balancer. Tags can help you find the load balancer more easily later.",
+          "args": []
+        },
+        {
+          "name": "type",
+          "description": "(Optional, String) The type of the load balancer. Default value `public`. Supported values `public` and `private`.",
           "args": []
         }
       ],
       "attrs": [
         {
+          "name": "hostname",
+          "description": "The fully qualified domain name assigned to this load balancer.",
+          "args": []
+        },
+        {
           "name": "id",
           "description": "The unique identifier of the load balancer.",
+          "args": []
+        },
+        {
+          "name": "operating_status",
+          "description": "The operating status of this load balancer.",
           "args": []
         },
         {
@@ -14893,16 +15392,6 @@
           "name": "status",
           "description": "The status of the load balancer.",
           "args": []
-        },
-        {
-          "name": "operating_status",
-          "description": "The operating status of this load balancer.",
-          "args": []
-        },
-        {
-          "name": "hostname",
-          "description": "The fully qualified domain name assigned to this load balancer.",
-          "args": []
         }
       ]
     },
@@ -14910,7 +15399,7 @@
       "name": "ibm_is_lb_listener",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
         {
           "name": "lb",
@@ -14960,7 +15449,7 @@
       "name": "ibm_is_lb_listener_policy",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
         {
           "name": "lb",
@@ -15051,7 +15540,7 @@
       "name": "ibm_is_lb_listener_policy_rule",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
         {
           "name": "lb",
@@ -15111,7 +15600,7 @@
       "name": "ibm_is_lb_pool",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
         {
           "name": "name",
@@ -15186,16 +15675,16 @@
       "name": "ibm_is_lb_pool_member",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
-        {
-          "name": "pool",
-          "description": "(Required, String) The load balancer pool unique identifier.",
-          "args": []
-        },
         {
           "name": "lb",
           "description": "(Required, String) The load balancer unique identifier.",
+          "args": []
+        },
+        {
+          "name": "pool",
+          "description": "(Required, String) The load balancer pool unique identifier.",
           "args": []
         },
         {
@@ -15206,6 +15695,11 @@
         {
           "name": "target_address",
           "description": "(Required, String) The IP address of the pool member.",
+          "args": []
+        },
+        {
+          "name": "target_id",
+          "description": "(Required, String) The unique identifier for the virtual server instance pool member. Required for network load balancer.",
           "args": []
         },
         {
@@ -15221,13 +15715,13 @@
           "args": []
         },
         {
-          "name": "href",
-          "description": "The member’s canonical URL.",
+          "name": "health",
+          "description": "Health of the server member in the pool.",
           "args": []
         },
         {
-          "name": "health",
-          "description": "Health of the server member in the pool.",
+          "name": "href",
+          "description": "The member’s canonical URL.",
           "args": []
         }
       ]
@@ -15236,7 +15730,7 @@
       "name": "ibm_is_network_acl",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
         {
           "name": "name",
@@ -15386,7 +15880,7 @@
       "name": "ibm_is_public_gateway",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
         {
           "name": "name",
@@ -15406,6 +15900,11 @@
         {
           "name": "tags",
           "description": "(Optional, Array of strings) Enter any tags that you want to associate with your VPC. Tags might help you find your VPC more easily after it is created. Separate multiple tags with a comma (`,`).",
+          "args": []
+        },
+        {
+          "name": "resource_group",
+          "description": "(Optional, String) Enter the ID of the resource group where you want to create the public gateway. To list available resource groups, run `ibmcloud resource groups`. If you do not specify a resource group, the public gateway is created in the `default` resource group.",
           "args": []
         },
         {
@@ -15458,7 +15957,7 @@
       "name": "ibm_is_security_group",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
         {
           "name": "name",
@@ -15518,12 +16017,12 @@
             },
             {
               "name": "port_max",
-              "description": "The TCP/UDP port range that includes maximum bound.",
+              "description": "The TCP/UDP port range that includes the maximum bound.",
               "args": []
             },
             {
               "name": "port_min",
-              "description": "The TCP/UDP port range that includes minimum bound.",
+              "description": "The TCP/UDP port range that includes the minimum bound.",
               "args": []
             }
           ]
@@ -15534,7 +16033,7 @@
       "name": "ibm_is_security_group_network_interface_attachment",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
         {
           "name": "security_group",
@@ -15651,7 +16150,7 @@
       "name": "ibm_is_security_group_rule",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
         {
           "name": "group",
@@ -15695,12 +16194,12 @@
           "args": [
             {
               "name": "port_min",
-              "description": "(Required, Integer) The TCP port range that includes minimum bound. Valid values are from 1 to 65535.",
+              "description": "(Required, Integer) The TCP port range that includes the minimum bound. Valid values are from 1 to 65535.",
               "args": []
             },
             {
               "name": "port_max",
-              "description": "(Required, Integer) The TCP port range that includes maximum bound. Valid values are from 1 to 65535.",
+              "description": "(Required, Integer) The TCP port range that includes the maximum bound. Valid values are from 1 to 65535.",
               "args": []
             }
           ]
@@ -15739,7 +16238,7 @@
       "name": "ibm_is_ssh_key",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
         {
           "name": "name",
@@ -15789,7 +16288,7 @@
       "name": "ibm_is_subnet",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
         {
           "name": "ipv4_cidr_block",
@@ -15818,7 +16317,12 @@
         },
         {
           "name": "public_gateway",
-          "description": "(Optional, String) The ID of the public gateway for the subnet that you want to attach. You create the public gateway by using the [`ibm_is_public_gateway` resource](#provider-public-gateway).",
+          "description": "(Optional, String) The ID of the public gateway for the subnet that you want to attach to the subnet. You create the public gateway with the [`ibm_is_public_gateway` resource](#provider-public-gateway).",
+          "args": []
+        },
+        {
+          "name": "resource_group",
+          "description": "(Optional, String) The ID of the resource group where you want to create the subnet.",
           "args": []
         },
         {
@@ -15855,11 +16359,191 @@
         }
       ]
     },
+    "ibm_is_subnet_network_acl_attachment": {
+      "name": "ibm_is_subnet_network_acl_attachment",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "VPC infrastructure resources",
+      "args": [
+        {
+          "name": "network_acl",
+          "description": "(Optional, String) The network ACL identity.",
+          "args": []
+        },
+        {
+          "name": "subnet",
+          "description": "(Optional, String) The subnet identifier.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "created_at",
+          "description": "The creation date and time the network ACL.",
+          "args": []
+        },
+        {
+          "name": "crn",
+          "description": "The CRN of this network ACL.",
+          "args": []
+        },
+        {
+          "name": "href",
+          "description": "The URL of this network ACL.",
+          "args": []
+        },
+        {
+          "name": "id",
+          "description": "The unique identifier of this network ACL.",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "The user-defined name of this network ACL.",
+          "args": []
+        },
+        {
+          "name": "protocol",
+          "description": "The protocol list to enforce.",
+          "args": [
+            {
+              "name": "icmp",
+              "description": "The protocol ICMP.",
+              "args": [
+                {
+                  "name": "code",
+                  "description": "The ICMP traffic code to allow. If unspecified, all codes are allowed. This can only be specified if type is also specified.",
+                  "args": []
+                },
+                {
+                  "name": "type",
+                  "description": "The ICMP traffic type to allow. If unspecified, all types are allowed by this rule.",
+                  "args": []
+                }
+              ]
+            },
+            {
+              "name": "tcp",
+              "description": "The TCP protocol.",
+              "args": [
+                {
+                  "name": "destination_port_max",
+                  "description": "The inclusive maximum bound of TCP destination port range.",
+                  "args": []
+                },
+                {
+                  "name": "destination_port_min",
+                  "description": "The inclusive minimum bound of TCP destination port range.",
+                  "args": []
+                },
+                {
+                  "name": "source_port_max",
+                  "description": "The inclusive maximum bound of TCP source port range.",
+                  "args": []
+                },
+                {
+                  "name": "source_port_min",
+                  "description": "The inclusive minimum bound of TCP source port range.",
+                  "args": []
+                }
+              ]
+            },
+            {
+              "name": "udp",
+              "description": "The UDP protocol.",
+              "args": [
+                {
+                  "name": "destination_port_max",
+                  "description": "The inclusive maximum bound of UDP destination port range.",
+                  "args": []
+                },
+                {
+                  "name": "destination_port_min",
+                  "description": "The inclusive minimum bound of UDP destination port range.",
+                  "args": []
+                },
+                {
+                  "name": "source_port_max",
+                  "description": "The inclusive maximum bound of UDP source port range.",
+                  "args": []
+                },
+                {
+                  "name": "source_port_min",
+                  "description": "The inclusive minimum bound of UDP source port range.",
+                  "args": []
+                }
+              ]
+            },
+            {
+              "name": "subnets",
+              "description": "The subnets to which this network ACL is attached.",
+              "args": []
+            },
+            {
+              "name": "vpc",
+              "description": "The VPC to which this network ACL is a part of.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "resource_group",
+          "description": "The resource group of this network ACL.",
+          "args": []
+        },
+        {
+          "name": "rules",
+          "description": "The ordered rules of this network ACL. If rules does not exist, all traffic will be denied. Nested rules blocks has the following structure.",
+          "args": [
+            {
+              "name": "action",
+              "description": "Specify to allow or deny matching traffic.",
+              "args": []
+            },
+            {
+              "name": "created_at",
+              "description": "The rule creation date and time.",
+              "args": []
+            },
+            {
+              "name": "source",
+              "description": "The source CIDR block. The CIDR block 0.0.0.0/0 applies to all addresses.",
+              "args": []
+            },
+            {
+              "name": "destination",
+              "description": "The destination CIDR block. The CIDR block 0.0.0.0/0 applies to all addresses.",
+              "args": []
+            },
+            {
+              "name": "href",
+              "description": "The URL of the Network ACL rule.",
+              "args": []
+            },
+            {
+              "name": "id",
+              "description": "The unique identifier of the Network ACL rule.",
+              "args": []
+            },
+            {
+              "name": "ip_version",
+              "description": "The IP version of the rule.",
+              "args": []
+            },
+            {
+              "name": "name",
+              "description": "The user-defined name of the rule.",
+              "args": []
+            }
+          ]
+        }
+      ]
+    },
     "ibm_is_volume": {
       "name": "ibm_is_volume",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
         {
           "name": "name",
@@ -15903,7 +16587,7 @@
         },
         {
           "name": "tags",
-          "description": "(A list of tags that you want to add to your volume. Tags can help you find your volume more easily later., List of strings) No",
+          "description": "(Optional, List of strings) A list of tags that you want to add to your volume. Tags can help you find your volume more easily later.",
           "args": []
         }
       ],
@@ -15929,7 +16613,7 @@
       "name": "ibm_is_vpc",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
         {
           "name": "classic_access",
@@ -16031,7 +16715,7 @@
       "name": "ibm_is_vpc_address_prefix",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
         {
           "name": "name",
@@ -16071,7 +16755,7 @@
       "name": "ibm_is_vpc_route",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
         {
           "name": "name",
@@ -16116,7 +16800,7 @@
       "name": "ibm_is_vpn_gateway",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
         {
           "name": "name",
@@ -16161,7 +16845,7 @@
       "name": "ibm_is_vpn_gateway_connection",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "VPC infrastructure resources (Gen 1 compute)",
+      "groupName": "VPC infrastructure resources",
       "args": [
         {
           "name": "name",
@@ -16244,28 +16928,8 @@
       "groupName": "Key Management Service resources",
       "args": [
         {
-          "name": "instance_id",
-          "description": "(Required, String) The HPCS or key-protect instance GUID.",
-          "args": []
-        },
-        {
-          "name": "key_name",
-          "description": "(Required, String) The name of the key.",
-          "args": []
-        },
-        {
-          "name": "standard_key",
-          "description": "(Optional, Boolean) Set flag `true` for standard key, and `false` for root key. Default value is **false**.",
-          "args": []
-        },
-        {
           "name": "endpoint_type",
           "description": "(Optional, String) The type of the public or private endpoint to be used for creating keys.",
-          "args": []
-        },
-        {
-          "name": "payload",
-          "description": "(Optional, String) The base64 encoded key that you want to store and manage in the service. To import an existing key, provide a 256-bit key. To generate a new key, omit this parameter.",
           "args": []
         },
         {
@@ -16274,13 +16938,38 @@
           "args": []
         },
         {
+          "name": "expiration_date",
+          "description": "(Optional, String) Expiry date of the key material. The date format follows with RFC 3339. You can set an expiration date on any key on its creation. A key moves into the deactivated state within one hour past its expiration date, if one is assigned. If you create a key without specifying an expiration date, the key does not expire. For example, `2018-12-01T23:20:50.52Z`.",
+          "args": []
+        },
+        {
           "name": "force_delete",
           "description": "(Optional, Boolean) If set to **true**, Key Protect forces the deletion of a root or standard key, even if this key is still in use, such as to protect an IBM Cloud Object Storage bucket. Note that the key cannot be deleted if the protected cloud resource is set up with a retention policy. Successful deletion includes the removal of any registrations that are associated with the key. Default value is **false**.",
           "args": []
         },
         {
+          "name": "instance_id",
+          "description": "(Required, String) The HPCS or key-protect instance GUID.",
+          "args": []
+        },
+        {
           "name": "iv_value",
           "description": "(Optional, String) Used with import tokens. The initialization vector (IV) that is generated when you encrypt a nonce. The IV value is required to decrypt the encrypted nonce value that you provide when you make a key import request to the service. To generate an IV, encrypt the nonce by running `ibmcloud kp import-token encrypt-nonce`. Only for imported root key.",
+          "args": []
+        },
+        {
+          "name": "key_name",
+          "description": "(Required, String) The name of the key.",
+          "args": []
+        },
+        {
+          "name": "payload",
+          "description": "(Optional, String) The base64 encoded key that you want to store and manage in the service. To import an existing key, provide a 256-bit key. To generate a new key, omit this parameter.",
+          "args": []
+        },
+        {
+          "name": "standard_key",
+          "description": "(Optional, Boolean) Set flag `true` for standard key, and `false` for root key. Default value is **false**.",
           "args": []
         }
       ],
@@ -18387,7 +19076,7 @@
         },
         {
           "name": "network_id",
-          "description": "(Optional, String) Enter the ID of the network being connected through this connection. This parameter is required for network type 'vpc', the CRN of the VPC to be connected. This field is required to be unspecified for network type 'classic'. For example, `crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`",
+          "description": "(Optional, String) Enter the ID of the network being connected through this connection. This parameter is required for network type `vpc`, the CRN of the VPC to be connected. This field is required to be unspecified for network type `classic`. For example, `crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`",
           "args": []
         }
       ],
