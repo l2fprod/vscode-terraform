@@ -2902,7 +2902,7 @@
         },
         {
           "name": "whitelist",
-          "description": "A list of whitelisted IP addresses or ranges.",
+          "description": "A list of allowed IP addresses or ranges.",
           "args": []
         }
       ]
@@ -4085,7 +4085,7 @@
             },
             {
               "name": "iam_id",
-              "description": "The IAM ID of the serviceID.",
+              "description": "The IAM ID of the service ID.",
               "args": []
             },
             {
@@ -10064,7 +10064,7 @@
         },
         {
           "name": "os_key_name",
-          "description": "(Optional, String) The operating system key name that you want to use to provision the computing instance. To get disk key names, first find the package key name in the [{site.data.keyword.cloud_notm} API](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_CPU\"}}}). Then, replace <PACKAGE_NAME> with your package key name in the following [URL](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/<PACKAGE_NAME>/getItems?objectMask=mask[prices[id,categories[id,name,categoryCode],capacityRestrictionType,capacityRestrictionMinimum,capacityRestrictionMaximum,locationGroupId]]). Select an OS key name from the resulting available OS key names.",
+          "description": "(Optional, String) The operating system key name that you want to use to provision the computing instance. To get disk key names, first find the package key name in the [{site.data.keyword.cloud_notm}} API](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/getAllObjects?objectFilter={\"type\":{\"keyName\":{\"operation\":\"BARE_METAL_CPU\"}}}). Then, replace <PACKAGE_NAME> with your package key name in the following [URL](https://api.softlayer.com/rest/v3/SoftLayer_Product_Package/<PACKAGE_NAME>/getItems?objectMask=mask[prices[id,categories[id,name,categoryCode],capacityRestrictionType,capacityRestrictionMinimum,capacityRestrictionMaximum,locationGroupId]]). Select an OS key name from the resulting available OS key names.",
           "args": []
         },
         {
@@ -10696,7 +10696,7 @@
           "args": [
             {
               "name": "name",
-              "description": "(Optional, String) The add-on name such as `istio`. Supported addons are `kube-terminal`, `alb-oauth-proxy`, `debug-tool`, `istio`, `knative`, `static-route`,`vpc-block-csi-driver`.",
+              "description": "(Optional, String) The add-on name such as `istio`. Supported add-ons are `kube-terminal`, `alb-oauth-proxy`, `debug-tool`, `istio`, `knative`, `static-route`,`vpc-block-csi-driver`.",
               "args": []
             },
             {
@@ -11101,7 +11101,7 @@
         },
         {
           "name": "wait_for_worker_update",
-          "description": "(Optional, Boolean) Set to `true` to wait and update the kube version of worker nodes. **NOTE** Setting wait_for_worker_update to `false` is not recommended. Setting `false` results in upgrading all the worker nodes in the cluster at the same time causing the cluster downtime.",
+          "description": "(Optional, Boolean) Set to `true` to wait and update the Kubernetes version of worker nodes. **NOTE** Setting wait_for_worker_update to `false` is not recommended. Setting `false` results in upgrading all the worker nodes in the cluster at the same time causing the cluster downtime.",
           "args": []
         }
       ],
@@ -11528,7 +11528,7 @@
         },
         {
           "name": "entitlement",
-          "description": "(Optional, String) The {{site.data.keyword.openshiftshort}} cluster entitlement avoids the OCP license charges incurred. Use Cloud Pak with OCP Licence entitlement to create the {{site.data.keyword.openshiftshort}}cluster. **NOTE** <ul><li> It is set only the first time creation of the cluster, further modifications are not impacted. </li></ul> <ul><li> Set this argument to `cloud_pak` only if you use the cluster with a Cloud Pak that has an {{site.data.keyword.openshiftshort}} entitlement.</li></ul>",
+          "description": "(Optional, String) The {{site.data.keyword.openshiftshort}} cluster entitlement avoids the OCP license charges incurred. Use Cloud Pak with OCP Licence entitlement to create the {{site.data.keyword.openshiftshort}} cluster. **NOTE** <ul><li> It is set only the first time creation of the cluster, further modifications are not impacted. </li></ul> <ul><li> Set this argument to `cloud_pak` only if you use the cluster with a Cloud Pak that has an {{site.data.keyword.openshiftshort}} entitlement.</li></ul>",
           "args": []
         },
         {
@@ -11538,7 +11538,7 @@
         },
         {
           "name": "wait_for_worker_update",
-          "description": "(Optional, Boolean) Set to `true` to wait and update the kube version of worker nodes. **NOTE** Setting wait_for_worker_update to `false` is not recommended. Setting `false` results in upgrading all the worker nodes in the cluster at the same time causing the cluster downtime.",
+          "description": "(Optional, Boolean) Set to `true` to wait and update the Kubernetes  version of worker nodes. **NOTE** Setting wait_for_worker_update to `false` is not recommended. Setting `false` results in upgrading all the worker nodes in the cluster at the same time causing the cluster downtime.",
           "args": []
         }
       ],
@@ -12481,7 +12481,7 @@
         },
         {
           "name": "network_account",
-          "description": "The virtual connections across two different {{site.data.keyword.cloud_notm} accounts network_account indicates the account that owns the target network. For example, `00aa14a2e0fb102c8995ebeff65555`.",
+          "description": "The virtual connections across two different IBM Cloud accounts network_account indicates the account that owns the target network. For example, `00aa14a2e0fb102c8995ebeff65555`.",
           "args": []
         }
       ]
@@ -12522,7 +12522,7 @@
       "name": "ibm_dns_permitted_network",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "DNS service resources",
+      "groupName": "DNS Services resources",
       "args": [
         {
           "name": "instance_id",
@@ -12567,7 +12567,7 @@
       "name": "ibm_dns_permitted_networks",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "DNS service data sources",
+      "groupName": "DNS Services data sources",
       "args": [
         {
           "name": "instance_id",
@@ -12733,7 +12733,7 @@
       "name": "ibm_dns_resource_record",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "DNS service resources",
+      "groupName": "DNS Services resources",
       "args": [
         {
           "name": "instance_id",
@@ -12823,7 +12823,7 @@
       "name": "ibm_dns_resource_records",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "DNS service data sources",
+      "groupName": "DNS Services data sources",
       "args": [
         {
           "name": "instance_id",
@@ -12922,7 +12922,7 @@
       "name": "ibm_dns_zone",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "DNS service resources",
+      "groupName": "DNS Services resources",
       "args": [
         {
           "name": "name",
@@ -12977,7 +12977,7 @@
       "name": "ibm_dns_zones",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "DNS service data sources",
+      "groupName": "DNS Services data sources",
       "args": [
         {
           "name": "instance_id",
@@ -13931,7 +13931,7 @@
         },
         {
           "name": "iam_id",
-          "description": "The IAM ID of the serviceID.",
+          "description": "The IAM ID of the service ID.",
           "args": []
         },
         {
