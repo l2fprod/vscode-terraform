@@ -4428,7 +4428,7 @@
             },
             {
               "name": "storage_bucket",
-              "description": "The COS bucket name where the flow logs are logged.",
+              "description": "The IBM Cloud Object Storage bucket name where the flow logs are logged.",
               "args": []
             },
             {
@@ -9739,7 +9739,7 @@
         },
         {
           "name": "tls_1_3",
-          "description": "(Optional, String) The TLS 1.3 version setting. Valid values are `on`, `off`, `zrt`. zrt will enable TLS 1.3 and the Zero RTT feature. If `on` is set, then `zrt` is enabled by default.",
+          "description": "(Optional, String) The TLS 1.3 version setting. Valid values are `on`, `off`, `zrt`. `zrt` will enable TLS 1.3 and the Zero RTT feature. If `on` is set, then `zrt` is enabled by default.",
           "args": []
         },
         {
@@ -11497,7 +11497,7 @@
         },
         {
           "name": "cos_instance_crn",
-          "description": "(Optional, String) Required for OpenShift clusters only. The standard cloud object storage instance CRN to back up the internal registry in your OpenShift on VPC Gen 2 cluster.",
+          "description": "(Optional, String) Required for OpenShift clusters only. The standard IBM Cloud Object Storage instance CRN to back up the internal registry in your OpenShift on VPC Gen 2 cluster.",
           "args": []
         },
         {
@@ -14390,7 +14390,7 @@
         },
         {
           "name": "storage_bucket",
-          "description": "(Required, String) The name of the COS bucket where the collected flows will be logged. The bucket must exist and an IAM service authorization must grant IBM Cloud flow logs resources of VPC infrastructure services writer access to the bucket.",
+          "description": "(Required, String) The name of the IBM Cloud Object Storage bucket where the collected flows will be logged. The bucket must exist and an IAM service authorization must grant IBM Cloud flow logs resources of VPC infrastructure services writer access to the bucket.",
           "args": []
         },
         {
