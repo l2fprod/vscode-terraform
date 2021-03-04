@@ -661,7 +661,7 @@
       "attrs": [
         {
           "name": "created_on",
-          "description": "Create data and time of the custom page.",
+          "description": "Created date and time of the custom page.",
           "args": []
         },
         {
@@ -686,7 +686,7 @@
         },
         {
           "name": "modified_on",
-          "description": "Modified data and time of the custom page.",
+          "description": "Modified date and time of the custom page.",
           "args": []
         },
         {
@@ -2518,7 +2518,7 @@
         },
         {
           "name": "most_recent",
-          "description": "(Optional, Boolean) If more than one SSH key matches the label, you can set this argument to `true` to import only the most recent key. **NOTE**: The search must return only one match. More or less than one match causes IBM Cloud Provider plug-in for Terraform to fail. Ensure that your label is specific enough to return a single SSH key only, or use the `most_recent` argument.",
+          "description": "(Optional, Boolean) If more than one SSH key matches the label, you can set this argument to `true` to import only the most recent key. **NOTE**: The search must return only one match. More or less than one match causes Terraform to fail. Ensure that your label is specific enough to return a single SSH key only, or use the `most_recent` argument.",
           "args": []
         }
       ],
@@ -2940,6 +2940,21 @@
       ],
       "attrs": [
         {
+          "name": "api_key_id",
+          "description": "The ID of the API key.",
+          "args": []
+        },
+        {
+          "name": "api_key_owner_name",
+          "description": "The name of the key owner.",
+          "args": []
+        },
+        {
+          "name": "api_key_owner_email",
+          "description": "The Email ID of the key owner.",
+          "args": []
+        },
+        {
           "name": "albs",
           "description": "A list of Ingress application load balancers (ALBs) that are attached to the cluster.",
           "args": [
@@ -3264,6 +3279,11 @@
           "name": "valid_kube_versions",
           "description": "The supported Kubernetes version in IBM Cloud Kubernetes Service clusters.",
           "args": []
+        },
+        {
+          "name": "valid_openshift_versions",
+          "description": "The supported OpenShift Container Platform version in {{site.data.keyword.openshiftlong_notm}} clusters.",
+          "args": []
         }
       ]
     },
@@ -3410,6 +3430,21 @@
         }
       ],
       "attrs": [
+        {
+          "name": "api_key_id",
+          "description": "The ID of the API key.",
+          "args": []
+        },
+        {
+          "name": "api_key_owner_name",
+          "description": "The name of the key owner.",
+          "args": []
+        },
+        {
+          "name": "api_key_owner_email",
+          "description": "The Email ID of the key owner.",
+          "args": []
+        },
         {
           "name": "albs",
           "description": "A list of Ingress application load balancers (ALBs) that are attached to the cluster.",
@@ -3860,12 +3895,74 @@
           "args": []
         },
         {
+          "name": "endpoint_type",
+          "description": "(Optional, String) The type of the endpoint either public or private to be used for the buckets. Default value is `public`.",
+          "args": []
+        },
+        {
           "name": "resource_instance_id",
           "description": "(Required, String) The ID of the IBM Cloud Object Storage service instance for which you want to create a bucket.",
+          "args": []
+        },
+        {
+          "name": "storage_class",
+          "description": "(Required, String) Storage class of the bucket. Supported values are `standard`, `vault`, `cold`, `flex`, `smart`.",
           "args": []
         }
       ],
       "attrs": [
+        {
+          "name": "allowed_ip",
+          "description": "List of `IPv4` or `IPv6` addresses in CIDR notation to be affected by firewall.",
+          "args": []
+        },
+        {
+          "name": "activity_tracking",
+          "description": "Nested block with the following structure.",
+          "args": [
+            {
+              "name": "read_data_events",
+              "description": "Enables sending log data to Activity Tracker and LogDNA to provide visibility into an object read and write events.",
+              "args": []
+            },
+            {
+              "name": "write_data_events",
+              "description": "If set to `true`, all object write events (that is `uploads`) is sent to Activity Tracker.",
+              "args": []
+            },
+            {
+              "name": "activity_tracker_crn",
+              "description": "The first time activity_tracking is configured.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "archive_rule",
+          "description": "Nested block with the following structure.",
+          "args": [
+            {
+              "name": "rule_id",
+              "description": "Unique identifier for the rule. Archive rules allow you to set a specific time frame after which objects transition to archive.",
+              "args": []
+            },
+            {
+              "name": "enable",
+              "description": "Specifies archive rule status either `enable` or `disable` for a bucket.",
+              "args": []
+            },
+            {
+              "name": "days",
+              "description": "Specifies the number of days when the specific rule action takes effect.",
+              "args": []
+            },
+            {
+              "name": "type",
+              "description": "Specifies the storage class or archive type to which you want the object to transition. Supported values are `Glacier` or `Accelerated`.",
+              "args": []
+            }
+          ]
+        },
         {
           "name": "crn",
           "description": "The CRN of the bucket.",
@@ -3873,8 +3970,34 @@
         },
         {
           "name": "cross_region_location",
-          "description": "The location if you created a cross-regional bucket.",
+          "description": "The location to create a cross-regional bucket.",
           "args": []
+        },
+        {
+          "name": "expire_rule",
+          "description": "Nested block with the following structure.",
+          "args": [
+            {
+              "name": "rule_id",
+              "description": "Unique identifier for the rule. Expire rules allow you to set a specific time frame after which objects are deleted.",
+              "args": []
+            },
+            {
+              "name": "enable",
+              "description": "Specifies expire rule status either `enable` or `disable` for a bucket.",
+              "args": []
+            },
+            {
+              "name": "days",
+              "description": "Specifies the number of days when the specific rule action takes effect.",
+              "args": []
+            },
+            {
+              "name": "prefix",
+              "description": "Specifies a prefix filter to apply to only a subset of objects with names that match the prefix.",
+              "args": []
+            }
+          ]
         },
         {
           "name": "id",
@@ -3883,12 +4006,23 @@
         },
         {
           "name": "key_protect",
-          "description": "The CRN of the IBM Key Protect instance that you use to encrypt your data in IBM Cloud Object Storage.",
+          "description": "The CRN of the IBM Key Protect instance where a root key is already provisioned.",
           "args": []
         },
         {
+          "name": "metrics_monitoring",
+          "description": "Nested block with the following structure",
+          "args": [
+            {
+              "name": "metrics_monitoring_crn",
+              "description": "The first time `metrics_monitoring` is configured. The instance of IBM Cloud monitoring that will receive the bucket metrics.",
+              "args": []
+            }
+          ]
+        },
+        {
           "name": "region_location",
-          "description": "The location if you created a regional bucket.",
+          "description": "The location to create a regional bucket.",
           "args": []
         },
         {
@@ -3898,13 +4032,58 @@
         },
         {
           "name": "single_site_location",
-          "description": "The location if you created a single site bucket.",
+          "description": "The location to create a single site bucket.",
           "args": []
         },
         {
           "name": "storage_class",
           "description": "The storage class of the bucket.",
           "args": []
+        }
+      ]
+    },
+    "ibm_cr_namespaces": {
+      "name": "ibm_cr_namespaces",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Kubernetes Service data sources",
+      "args": [],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier of the namespace datasource.",
+          "args": []
+        },
+        {
+          "name": "namespaces",
+          "description": "List of namespaces available in the account.",
+          "args": [
+            {
+              "name": "name",
+              "description": "The name of the namespace to create.",
+              "args": []
+            },
+            {
+              "name": "resource_group_id",
+              "description": "ID of the resource group to which the namespace is assigned.",
+              "args": []
+            },
+            {
+              "name": "crn",
+              "description": "The `CRN` of the namespace.",
+              "args": []
+            },
+            {
+              "name": "created_on",
+              "description": "The created time of the namespace.",
+              "args": []
+            },
+            {
+              "name": "updated_on",
+              "description": "The updated time of the namespace.",
+              "args": []
+            }
+          ]
         }
       ]
     },
@@ -3916,7 +4095,7 @@
       "args": [
         {
           "name": "name",
-          "description": "(Required, String) The name of the Cloud Databases instance. IBM Cloud does not enforce that service names are unique and it is possible that duplicate service names exist. The first located service instance is used by IBM Cloud Provider plug-in for Terraform. The name must not include spaces.",
+          "description": "(Required, String) The name of the Cloud Databases instance. IBM Cloud does not enforce that service names are unique and it is possible that duplicate service names exist. The first located service instance is used by Terraform. The name must not include spaces.",
           "args": []
         },
         {
@@ -4615,6 +4794,151 @@
         }
       ]
     },
+    "ibm_dl_provider_gateways": {
+      "name": "ibm_dl_provider_gateways",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Direct Link Gateway data sources",
+      "args": [],
+      "attrs": [
+        {
+          "name": "gateways",
+          "description": "List of all the direct link ports.List of all Direct Link provider gateways in the IBM Cloud Infrastructure.",
+          "args": [
+            {
+              "name": "bgp_asn",
+              "description": "The customer BGP ASN.",
+              "args": []
+            },
+            {
+              "name": "created_at",
+              "description": "The date and time resource was created.",
+              "args": []
+            },
+            {
+              "name": "crn",
+              "description": "The CRN of the gateway.",
+              "args": []
+            },
+            {
+              "name": "global",
+              "description": "The gateways with global routing set as `true` can connect to networks outside their associated region.",
+              "args": []
+            },
+            {
+              "name": "id",
+              "description": "The unique identifier of the gateway.",
+              "args": []
+            },
+            {
+              "name": "name",
+              "description": "The unique user defined name for the gateway.",
+              "args": []
+            },
+            {
+              "name": "operational_status",
+              "description": "The operational status of the gateway.",
+              "args": []
+            },
+            {
+              "name": "resource_group",
+              "description": "The resource group identifier.",
+              "args": []
+            },
+            {
+              "name": "speed_mbps",
+              "description": "The gateway speed in megabits per second.",
+              "args": []
+            },
+            {
+              "name": "type",
+              "description": "The gateway type.",
+              "args": []
+            },
+            {
+              "name": "bgp_cer_cidr",
+              "description": "The BGP customer edge router CIDR.",
+              "args": []
+            },
+            {
+              "name": "bgp_ibm_asn",
+              "description": "The IBM BGP ASN.",
+              "args": []
+            },
+            {
+              "name": "bgp_ibm_cidr",
+              "description": "The IBM BGP CIDR.",
+              "args": []
+            },
+            {
+              "name": "bgp_status",
+              "description": "The gateway BGP status.",
+              "args": []
+            },
+            {
+              "name": "port",
+              "description": "The port identifier.",
+              "args": []
+            },
+            {
+              "name": "provider_api_managed",
+              "description": "Indicates whether gateway was created through a provider portal. If set `true`, gateway can only be changed or deleted through the corresponding provider portal.",
+              "args": []
+            },
+            {
+              "name": "vlan",
+              "description": "The VLAN allocated for the gateway. Only set for `type=connect` gateways created directly through the IBM portal.",
+              "args": []
+            }
+          ]
+        }
+      ]
+    },
+    "ibm_dl_provider_ports": {
+      "name": "ibm_dl_provider_ports",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Direct Link Gateway data sources",
+      "args": [],
+      "attrs": [
+        {
+          "name": "ports",
+          "description": "List of all the direct link ports in the IBM Cloud infrastructure.",
+          "args": [
+            {
+              "name": "label",
+              "description": "The port label.",
+              "args": []
+            },
+            {
+              "name": "location_display_name",
+              "description": "The port location long name.",
+              "args": []
+            },
+            {
+              "name": "location_name",
+              "description": "The port location name.",
+              "args": []
+            },
+            {
+              "name": "port_id",
+              "description": "The port identifier.",
+              "args": []
+            },
+            {
+              "name": "provider_name",
+              "description": "The port's provider name.",
+              "args": []
+            },
+            {
+              "name": "supported_link_speeds",
+              "description": "The port supported speeds in megabits per second.",
+              "args": []
+            }
+          ]
+        }
+      ]
+    },
     "ibm_dl_routers": {
       "name": "ibm_dl_routers",
       "type": "data",
@@ -4739,7 +5063,7 @@
       "args": [
         {
           "name": "resource_instance_id",
-          "description": "(Required, String) The ID/CRN of the event streams service instance.",
+          "description": "(Required, String) The ID/CRN of the Event Streams service instance.",
           "args": []
         },
         {
@@ -4756,7 +5080,7 @@
         },
         {
           "name": "kafka_http_url",
-          "description": "The API endpoint for interacting with event streams REST API.",
+          "description": "The API endpoint for interacting with Event Streams REST API.",
           "args": []
         },
         {
@@ -5208,7 +5532,7 @@
       "args": [
         {
           "name": "service",
-          "description": "(Required, String) The name of the IBM Cloud service for which you want to list supported actions. For account management services, you can find supported values in the [documentation](/docs/account?topic=account-account-services#api-acct-mgmt). For other services, run the `ibmcloud catalog service-marketplace` command and retrieve the value from the **Name** column of your CLI output.",
+          "description": "(Required, String) The name of the IBM Cloud service for which you want to list supported actions. For account management services, you can find supported values in the [documentation](/docs/account?topic=account-account-services#api-acct-mgmt). For other services, run the `ibmcloud catalog service-marketplace` command and retrieve the value from the **Name** column of your command line output.",
           "args": []
         }
       ],
@@ -5248,7 +5572,7 @@
       "args": [
         {
           "name": "service",
-          "description": "(Required, String) The name of the IBM Cloud service for which you want to list supported IAM roles. For account management services, you can find supported values in the [documentation](/docs/account?topic=account-account-services#api-acct-mgmt). For other services, run the `ibmcloud catalog service-marketplace` command and retrieve the value from the **Name** column of your CLI output.",
+          "description": "(Required, String) The name of the IBM Cloud service for which you want to list supported IAM roles. For account management services, you can find supported values in the [documentation](/docs/account?topic=account-account-services#api-acct-mgmt). For other services, run the `ibmcloud catalog service-marketplace` command and retrieve the value from the **Name** column of your command line output.",
           "args": []
         }
       ],
@@ -5623,7 +5947,7 @@
             },
             {
               "name": "created_at",
-              "description": "The data and time the flow log created.",
+              "description": "The date and time the flow log created.",
               "args": []
             },
             {
@@ -5783,7 +6107,7 @@
         },
         {
           "name": "private_key",
-          "description": "(Optional, String) The private key of an SSH key that you want to add to your Virtual Servers for VPC instance during creation in PEM format. SSH keys are used by virtual servers to identify a user or device through public-key cryptography. For more information, about how to create SSH keys and upload them to IBM Cloud, see [Locating or generating your SSH key](/docs/vpc?topic=vpc-ssh-keys#locating-ssh-keys). The SSH key is used to decrypt the default administrator password in Windows if Windows is installed as the operating system on your Virtual Servers for VPC instance.",
+          "description": "(Optional, String) The private key of an SSH key that you want to add to your Virtual Servers for VPC instance during creation in PEM format. It is used to decrypt the default password of the Windows administrator for the virtual server instance if the image is used of type `windows`.",
           "args": []
         },
         {
@@ -6265,6 +6589,11 @@
           "name": "family",
           "description": "The family of the virtual server instance profile.",
           "args": []
+        },
+        {
+          "name": "architecture",
+          "description": "The default Operating System architecture for an instance of the profile.",
+          "args": []
         }
       ]
     },
@@ -6287,6 +6616,11 @@
             {
               "name": "family",
               "description": "The family of the virtual server instance profile.",
+              "args": []
+            },
+            {
+              "name": "architecture",
+              "description": "The default Operating System architecture for an instance of the profile.",
               "args": []
             }
           ]
@@ -6402,7 +6736,7 @@
               "args": [
                 {
                   "name": "encryption",
-                  "description": "The encryption key CRN to encrypt the boot volume attached.",
+                  "description": "The encryption key CRN such as HPCS, Key Protect, etc., is provided to encrypt the boot volume attached.",
                   "args": []
                 },
                 {
@@ -6467,7 +6801,18 @@
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "VPC infrastructure data sources",
-      "args": [],
+      "args": [
+        {
+          "name": "vpc_name",
+          "description": "(Optional, String) The name of the VPC to filter the instances attached.",
+          "args": []
+        },
+        {
+          "name": "vpc",
+          "description": "(Optional, String) The VPC ID to filter the instances attached.",
+          "args": []
+        }
+      ],
       "attrs": [
         {
           "name": "instances",
@@ -7151,7 +7496,7 @@
         },
         {
           "name": "rules",
-          "description": "A nested block describes the rules of the attributes.",
+          "description": "Rules associated with security group. Each rule has following attributes.",
           "args": [
             {
               "name": "rule_id",
@@ -7175,12 +7520,12 @@
             },
             {
               "name": "type",
-              "description": "The ICMP traffic type to allow.",
+              "description": "The traffic type to allow.",
               "args": []
             },
             {
               "name": "code",
-              "description": "The ICMP traffic code to allow.",
+              "description": "The traffic code to allow.",
               "args": []
             },
             {
@@ -7192,13 +7537,13 @@
               "name": "port_min",
               "description": "The TCP/UDP port range that includes the minimum bound.",
               "args": []
+            },
+            {
+              "name": "remote",
+              "description": "Security group ID, an IP address, a CIDR block, or a single security group identifier.",
+              "args": []
             }
           ]
-        },
-        {
-          "name": "protocol",
-          "description": "The type of the protocol rules `ALL`, `ICMP`, `UDP`, `TCP`",
-          "args": []
         }
       ]
     },
@@ -7406,13 +7751,8 @@
       ],
       "attrs": [
         {
-          "name": "resource_group",
-          "description": "The unique identifier for the resource group.",
-          "args": []
-        },
-        {
           "name": "created_at",
-          "description": "The created data and time of the endpoint gateway.",
+          "description": "The created date and time of the endpoint gateway.",
           "args": []
         },
         {
@@ -7445,6 +7785,11 @@
               "args": []
             }
           ]
+        },
+        {
+          "name": "resource_group",
+          "description": "The unique identifier for the resource group.",
+          "args": []
         },
         {
           "name": "target",
@@ -7483,6 +7828,21 @@
       ],
       "attrs": [
         {
+          "name": "address",
+          "description": "The endpoint gateway IP address.",
+          "args": []
+        },
+        {
+          "name": "auto_delete",
+          "description": "The endpoint gateway IP auto delete.",
+          "args": []
+        },
+        {
+          "name": "created_at",
+          "description": "The created date and time of the endpoint gateway IP.",
+          "args": []
+        },
+        {
           "name": "id",
           "description": "The endpoint gateway reserved IP ID.",
           "args": []
@@ -7498,23 +7858,8 @@
           "args": []
         },
         {
-          "name": "created_at",
-          "description": "The created date and time of the endpoint gateway IP.",
-          "args": []
-        },
-        {
           "name": "resource_type",
           "description": "The endpoint gateway IP resource type.",
-          "args": []
-        },
-        {
-          "name": "auto_delete",
-          "description": "The endpoint gateway IP auto delete.",
-          "args": []
-        },
-        {
-          "name": "address",
-          "description": "The endpoint gateway IP address.",
           "args": []
         },
         {
@@ -7545,32 +7890,11 @@
       "type": "data",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "VPC infrastructure data sources",
-      "args": [
-        {
-          "name": "name",
-          "description": "(Required, String) The endpoint gateways name.",
-          "args": []
-        }
-      ],
+      "args": [],
       "attrs": [
         {
-          "name": "id",
-          "description": "The endpoint gateway ID.",
-          "args": []
-        },
-        {
-          "name": "name",
-          "description": "The endpoint gateway name.",
-          "args": []
-        },
-        {
-          "name": "resource_group",
-          "description": "The unique identifier for the resource group.",
-          "args": []
-        },
-        {
           "name": "created_at",
-          "description": "The created data and time of the endpoint gateway.",
+          "description": "The created date and time of the endpoint gateway.",
           "args": []
         },
         {
@@ -7581,6 +7905,11 @@
         {
           "name": "lifecycle_state",
           "description": "The endpoint gateway lifecycle state, supported values are `deleted`, `deleting`, `failed`, `pending`, `stable`, `updating`, `waiting`, `suspended`.",
+          "args": []
+        },
+        {
+          "name": "id",
+          "description": "The endpoint gateway ID.",
           "args": []
         },
         {
@@ -7605,6 +7934,16 @@
           ]
         },
         {
+          "name": "name",
+          "description": "The endpoint gateway name.",
+          "args": []
+        },
+        {
+          "name": "resource_group",
+          "description": "The unique identifier for the resource group.",
+          "args": []
+        },
+        {
           "name": "target",
           "description": "The endpoint gateway target services.",
           "args": [
@@ -7624,6 +7963,51 @@
           "name": "vpc",
           "description": "The VPC ID.",
           "args": []
+        }
+      ]
+    },
+    "ibm_is_volume_profile": {
+      "name": "ibm_is_volume_profile",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "VPC infrastructure data sources",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, String) The name for the virtual server volume profile.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "href",
+          "description": "The family of the virtual server volume profile.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_is_volume_profiles": {
+      "name": "ibm_is_volume_profiles",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "VPC infrastructure data sources",
+      "args": [],
+      "attrs": [
+        {
+          "name": "profiles",
+          "description": "Lists all server volume profiles in the region.",
+          "args": [
+            {
+              "name": "name",
+              "description": "The name of the virtual server volume profile.",
+              "args": []
+            },
+            {
+              "name": "family",
+              "description": "The family of the virtual server volume profile.",
+              "args": []
+            }
+          ]
         }
       ]
     },
@@ -8905,6 +9289,127 @@
         }
       ]
     },
+    "ibm_pi_catalog_images": {
+      "name": "ibm_pi_catalog_images",
+      "type": "data",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Power Systems data sources",
+      "args": [
+        {
+          "name": "pi_cloud_instance_id",
+          "description": "(Required, String) The GUID of the service instance associated with an account.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "architecture",
+          "description": "The CPU architecture that the image is designed for.",
+          "args": []
+        },
+        {
+          "name": "id",
+          "description": "The unique identifier of the image.",
+          "args": []
+        },
+        {
+          "name": "operatingsystem",
+          "description": "The operating system that is installed with the image.",
+          "args": []
+        },
+        {
+          "name": "size",
+          "description": "The size of the image in megabytes.",
+          "args": []
+        },
+        {
+          "name": "state",
+          "description": "The state for this image.",
+          "args": []
+        },
+        {
+          "name": "images",
+          "description": "Lists all the images in the IBM Power Virtual Server Cloud.",
+          "args": [
+            {
+              "name": "image_id",
+              "description": "The unique identifier of an image.",
+              "args": []
+            },
+            {
+              "name": "name",
+              "description": "The name of the image.",
+              "args": []
+            },
+            {
+              "name": "state",
+              "description": "The state of an Operating System.",
+              "args": []
+            },
+            {
+              "name": "description",
+              "description": "The description of an image.",
+              "args": []
+            },
+            {
+              "name": "storage_type",
+              "description": "The storage type of an image.",
+              "args": []
+            },
+            {
+              "name": "href",
+              "description": "The `href` of an image.",
+              "args": []
+            },
+            {
+              "name": "creation_date",
+              "description": "The creation date of an image.",
+              "args": []
+            },
+            {
+              "name": "last_update_date",
+              "description": "The last updated date of an image.",
+              "args": []
+            },
+            {
+              "name": "image_type",
+              "description": "The type of the format.",
+              "args": []
+            },
+            {
+              "name": "disk_format",
+              "description": "The disk format.",
+              "args": []
+            },
+            {
+              "name": "operating_system",
+              "description": "Operating System.",
+              "args": []
+            },
+            {
+              "name": "hypervisor_type",
+              "description": "Hypervisor type.",
+              "args": []
+            },
+            {
+              "name": "architecture",
+              "description": "Architecture.",
+              "args": []
+            },
+            {
+              "name": "endianness",
+              "description": "The `Endianness` order.",
+              "args": []
+            },
+            {
+              "name": "href",
+              "description": "Address of an Image.",
+              "args": []
+            }
+          ]
+        }
+      ]
+    },
     "ibm_pi_image": {
       "name": "ibm_pi_image",
       "type": "data",
@@ -8913,7 +9418,7 @@
       "args": [
         {
           "name": "pi_cloud_instance_id",
-          "description": "(Required, String) The cloud instance ID associated with the account.",
+          "description": "(Required, String) The GUID of the service instance associated with an account.",
           "args": []
         },
         {
@@ -8958,7 +9463,7 @@
       "args": [
         {
           "name": "pi_cloud_instance_id",
-          "description": "(Required, String) The cloud instance ID that is associated with the account.",
+          "description": "(Required, String) The GUID of the service instance associated with an account.",
           "args": []
         }
       ],
@@ -8999,7 +9504,7 @@
       "args": [
         {
           "name": "pi_cloud_instance_id",
-          "description": "(Required, String) The service instance associated with the account.",
+          "description": "(Required, String) The GUID of the service instance associated with an account.",
           "args": []
         },
         {
@@ -9130,7 +9635,7 @@
       "args": [
         {
           "name": "pi_cloud_instance_id",
-          "description": "(Required, String) The service instance associated with the account.",
+          "description": "(Required, String) The GUID of the service instance associated with an account.",
           "args": []
         },
         {
@@ -9180,7 +9685,7 @@
       "args": [
         {
           "name": "pi_cloud_instance_id",
-          "description": "(Required, String) The ID of the Power Systems Virtual Server instance for which you want to retrieve volume details.",
+          "description": "(Required, String) The GUID of the service instance associated with an account.",
           "args": []
         },
         {
@@ -9251,7 +9756,7 @@
       "args": [
         {
           "name": "pi_cloud_instance_id",
-          "description": "(Required, String) The service instance associated with the account.",
+          "description": "(Required, String) The GUID of the service instance associated with an account.",
           "args": []
         },
         {
@@ -9286,7 +9791,7 @@
       "args": [
         {
           "name": "pi_cloud_instance_id",
-          "description": "(Required, String) The service instance associated with the account.",
+          "description": "(Required, String) The GUID of the service instance associated with an account.",
           "args": []
         },
         {
@@ -9346,7 +9851,7 @@
       "args": [
         {
           "name": "pi_cloud_instance_id",
-          "description": "(Required, String) The service instance associated with the account.",
+          "description": "(Required, String) The GUID of the service instance associated with an account.",
           "args": []
         }
       ],
@@ -9381,7 +9886,7 @@
       "args": [
         {
           "name": "pi_cloud_instance_id",
-          "description": "(Required, String) The ID of the Power Systems Virtual Server instance for which you want to retrieve tenants.",
+          "description": "(Required, String) The GUID of the service instance associated with an account.",
           "args": []
         }
       ],
@@ -9432,7 +9937,7 @@
       "args": [
         {
           "name": "pi_cloud_instance_id",
-          "description": "(Required, String) The ID of the Power Systems Virtual Server instance for which you want to retrieve volume details.",
+          "description": "(Required, String) The GUID of the service instance associated with an account.",
           "args": []
         },
         {
@@ -9679,7 +10184,7 @@
       "attrs": [
         {
           "name": "output_values",
-          "description": "A list of IBM Cloud Provider plug-in for Terraform output values that were exported for the workspace. All map entries are listed as key-value pairs.",
+          "description": "A list of Terraform output values that were exported for the workspace. All map entries are listed as key-value pairs.",
           "args": []
         },
         {
@@ -9709,7 +10214,7 @@
       "attrs": [
         {
           "name": "state_store",
-          "description": "The URL to the location where the IBM Cloud Provider plug-in for Terraform state file is stored.",
+          "description": "The URL to the location where the Terraform state file is stored.",
           "args": []
         }
       ]
@@ -9734,7 +10239,7 @@
         },
         {
           "name": "types",
-          "description": "The supported types of the IBM Cloud Provider plug-in for Terraform version.",
+          "description": "The supported types of the Terraform version.",
           "args": []
         },
         {
@@ -9787,7 +10292,7 @@
         },
         {
           "name": "most_recent",
-          "description": "(Optional, Boolean) If more than one security group has the same name or description, you can set this argument to `true` to import only the most recent security group. **NOTE**: The search must return only one match for IBM Cloud Provider plug-in for Terraform to be success. Ensure that your name and description combinations are specific enough to return a single security group key only, or set the `most_recent` argument to `true`.",
+          "description": "(Optional, Boolean) If more than one security group has the same name or description, you can set this argument to `true` to import only the most recent security group. **NOTE**: The search must return only one match for Terraform to be success. Ensure that your name and description combinations are specific enough to return a single security group key only, or set the `most_recent` argument to `true`.",
           "args": []
         }
       ],
@@ -10370,7 +10875,7 @@
         },
         {
           "name": "app_version",
-          "description": "(Optional, String) The version of the app. If you make changes to the content in the app compressed file specified by _app_path_, IBM Cloud Provider plug-in for Terraform can't detect the changes. You can let IBM Cloud Provider plug-in for Terraform know that your file content has changed by either changing the application compressed file name or by using this argument to indicate the version of the file.",
+          "description": "(Optional, String) The version of the app. If you make changes to the content in the app compressed file specified by _app_path_, Terraform can't detect the changes. You can let Terraform know that your file content has changed by either changing the application compressed file name or by using this argument to indicate the version of the file.",
           "args": []
         },
         {
@@ -11078,7 +11583,7 @@
       "attrs": [
         {
           "name": "created_on",
-          "description": "Create data and time of the custom page.",
+          "description": "Created date and time of the custom page.",
           "args": []
         },
         {
@@ -11093,7 +11598,7 @@
         },
         {
           "name": "modified_on",
-          "description": "Modified data and time of the custom page.",
+          "description": "Modified date and time of the custom page.",
           "args": []
         },
         {
@@ -11813,7 +12318,7 @@
         },
         {
           "name": "quote_id",
-          "description": "(Optional, String) When you define `quote_id`, IBM Cloud Provider plug-in for Terraform uses specifications in the quote to create a Bare Metal server. You can find the quote ID in the [IBM Cloud infrastructure customer portal](https://cloud.ibm.com/classic) by navigating to **Account > Sales > Quotes**.",
+          "description": "(Optional, String) When you define `quote_id`, Terraform uses specifications in the quote to create a Bare Metal server. You can find the quote ID in the [IBM Cloud infrastructure customer portal](https://cloud.ibm.com/classic) by navigating to **Account > Sales > Quotes**.",
           "args": []
         }
       ],
@@ -12537,7 +13042,7 @@
         },
         {
           "name": "persistence",
-          "description": "(Optional, Bool) Persist the secret data in your cluster. If the secret is later deleted from the CLI or OpenShift web console, the secret is automatically re-created in your cluster.",
+          "description": "(Optional, Bool) Persist the secret data in your cluster. If the secret is later deleted from the command line or OpenShift web console, the secret is automatically re-created in your cluster.",
           "args": []
         }
       ],
@@ -12563,6 +13068,11 @@
           "args": []
         },
         {
+          "name": "id",
+          "description": "The unique identifier of the certificate in the format `<cluster_name_id>/<secret_name>`.",
+          "args": []
+        },
+        {
           "name": "issuer_name",
           "description": "The name of the issuer of the certificate.",
           "args": []
@@ -12570,6 +13080,36 @@
         {
           "name": "status",
           "description": "The Status of the secret.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_container_api_key_reset": {
+      "name": "ibm_container_api_key_reset",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Kubernetes Service resources",
+      "args": [
+        {
+          "name": "region",
+          "description": "(Required, String) The region in which API key has to be reset.",
+          "args": []
+        },
+        {
+          "name": "resource_group_id",
+          "description": "(Optional, String) The ID of the resource group. You can retrieve the value from data source `ibm_resource_group`. If not provided defaults to default resource group.",
+          "args": []
+        },
+        {
+          "name": "reset_api_key",
+          "description": "(Optional, Integer) Determines the API key need reset or not. This attribute is added to avoid the state dependencies. You need to increment the attribute to reset the API key on same `region` and `resource_group_id`. The default value is `1`.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The resource ID. ID is a combination of `<region>/<resource_group_id>`.",
           "args": []
         }
       ]
@@ -12727,6 +13267,11 @@
           "args": []
         },
         {
+          "name": "patch_version",
+          "description": "(Optional, String) Updates the worker nodes with the required patch version. The patch_version should be in the format:  `patch_version_fixpack_version`. For more information, about Kubernetes version information and update, see [Kubernetes version update](/docs/containers?topic=containers-cs_versions). **NOTE:** To update the patch or fix pack versions of the worker nodes, run the command `ibmcloud ks workers -c <cluster_name_or_id> --output json`. Fetch the required patch & fix pack versions from `kubeVersion.target` and set the `patch_version` parameter.",
+          "args": []
+        },
+        {
           "name": "public_service_endpoint",
           "description": "(Optional, Boolean) If set to **true**, your cluster is set up with a public service endpoint. You can use the public service endpoint to access the Kubernetes master from the public network. To use service endpoints, your account must be enabled for [Virtual Routing and Forwarding (VRF)](/docs/account?topic=account-vrf-service-endpoint#vrf). For more information, see [Worker-to-master and user-to-master communication: Service endpoints](/docs/containers?topic=containers-plan_clusters#workeruser-master). If set to **false**, the public service endpoint is disabled for your cluster.",
           "args": []
@@ -12747,6 +13292,11 @@
           "args": []
         },
         {
+          "name": "pod_subnet",
+          "description": "(Optional, String) Specify a custom subnet CIDR to provide private IP addresses for pods. The subnet must be at least `/23` or more. For more information, refer to [Pod subnet](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#pod-subnet).",
+          "args": []
+        },
+        {
           "name": "resource_group_id",
           "description": "(Optional, String) The ID of the resource group where you want to provision your cluster. To retrieve the ID, use the  `ibm_resource_group` data source. If no value is provided, the cluster is automatically provisioned into the `default` resource group.",
           "args": []
@@ -12754,6 +13304,11 @@
         {
           "name": "subnet_id",
           "description": "(Optional, String) The ID of an existing subnet that you want to use for your worker nodes. To find existing subnets, run `ibmcloud ks subnets`.",
+          "args": []
+        },
+        {
+          "name": "service_subnet",
+          "description": "(Optional, String) Specify a custom subnet CIDR to provide private IP addresses for services. The subnet should be at least `/24` or more. For more information, refer to [Subnet service](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#service-subnet).",
           "args": []
         },
         {
@@ -12811,6 +13366,11 @@
         {
           "name": "wait_for_worker_update",
           "description": "(Optional, Boolean) Set to `true` to wait and update the Kubernetes version of worker nodes. **NOTE** Setting wait_for_worker_update to `false` is not recommended. Setting `false` results in upgrading all the worker nodes in the cluster at the same time causing the cluster downtime.",
+          "args": []
+        },
+        {
+          "name": "wait_till",
+          "description": "(Optional, String) The cluster creation happens in multi-stages. To avoid the longer wait times for resource execution.This argument in the resource will wait for the specified stage and complete the execution. The default stage value is `IngressReady`. The supported stages are  `MasterNodeReady` Resource waits till the master node is ready.  `OneWorkerNodeReady` Resource waits till one worker node is in to ready state.  `IngressReady` Resource waits till the ingress-host and ingress-secret are available.",
           "args": []
         }
       ],
@@ -13129,35 +13689,9 @@
       "groupName": "Kubernetes Service resources",
       "args": [
         {
-          "name": "flavor",
-          "description": "(Required, String) The flavor of the VPC worker node that you want to use.",
+          "name": "cos_instance_crn",
+          "description": "(Optional, String) Required for OpenShift clusters only. The standard IBM Cloud Object Storage instance CRN to back up the internal registry in your OpenShift on VPC Gen 2 cluster.",
           "args": []
-        },
-        {
-          "name": "name",
-          "description": "(Required, String) The name of the cluster.",
-          "args": []
-        },
-        {
-          "name": "vpc_id",
-          "description": "(Required, String) The ID of the VPC that you want to use for your cluster. To list available VPCs, run `ibmcloud is vpcs`.",
-          "args": []
-        },
-        {
-          "name": "zones",
-          "description": "(Required, List) A nested block describes the zones of this VPC cluster.",
-          "args": [
-            {
-              "name": "subnet_id",
-              "description": "(Required, String) The VPC subnet to assign the cluster.",
-              "args": []
-            },
-            {
-              "name": "name",
-              "description": "(Required, String) The name of the zone",
-              "args": []
-            }
-          ]
         },
         {
           "name": "disable_public_service_endpoint",
@@ -13165,53 +13699,23 @@
           "args": []
         },
         {
-          "name": "kube_version",
-          "description": "(Optional, String) Specify the Kubernetes version, including the major.minor version. If you do not include this flag, the default version is used. To see available versions, run `ibmcloud ks versions`.",
+          "name": "entitlement",
+          "description": "(Optional, String) The {{site.data.keyword.openshiftshort}} cluster entitlement avoids the OCP license charges incurred. Use Cloud Pak with OCP Licence entitlement to create the {{site.data.keyword.openshiftshort}} cluster. **NOTE** <ul><li> It is set only the first time creation of the cluster, further modifications are not impacted. </li></ul> <ul><li> Set this argument to `cloud_pak` only if you use the cluster with a Cloud Pak that has an {{site.data.keyword.openshiftshort}} entitlement.</li></ul>",
           "args": []
         },
         {
-          "name": "update_all_workers",
-          "description": "(Optional, Boolean) Set to true, if you want to update workers Kubernetes version with the cluster kube_version.",
+          "name": "force_delete_storage",
+          "description": "(Optional, Boolean) If set to `true`,force the removal of persistent storage associated with the cluster during cluster deletion. Default value is `false`. **NOTE** If `force_delete_storage` parameter is used after provisioning the cluster, then, you need to execute `terraform apply` before `terraform destroy` for `force_delete_storage` parameter to take effect.",
           "args": []
         },
         {
-          "name": "pod_subnet",
-          "description": "(Optional, String) Specify a custom subnet CIDR to provide private IP addresses for pods. The subnet must have a CIDR of at least `/23` or larger. For more information, see the [documentation](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_subnets). Default value is `172.30.0.0/16`.",
+          "name": "flavor",
+          "description": "(Required, String) The flavor of the VPC worker node that you want to use.",
           "args": []
         },
         {
-          "name": "service_subnet",
-          "description": "(Optional, String) Specify a custom subnet CIDR to provide private IP addresses for services. The subnet must be at least ’/24’ or larger. For more information, see the [documentation](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_messages). Default value is `172.21.0.0/16`.",
-          "args": []
-        },
-        {
-          "name": "worker_count",
-          "description": "(Optional, Integer) The number of worker nodes per zone in the default worker pool. Default value `1`.",
-          "args": []
-        },
-        {
-          "name": "worker_labels",
-          "description": "(Optional, Map) Labels on all the workers in the default worker pool.",
-          "args": []
-        },
-        {
-          "name": "resource_group_id",
-          "description": "(Optional, String) The ID of the resource group. You can retrieve the value by running `ibmcloud resource groups` or by using the `ibm_resource_group` data source. If no value is provided, the `default` resource group is used.",
-          "args": []
-        },
-        {
-          "name": "tags",
-          "description": "(Optional, Array of strings) A list of tags that you want to associate with your VPC cluster. **Note**: For users on account to add tags to a resource, they must be assigned the [appropriate permissions]/docs/account?topic=account-access).",
-          "args": []
-        },
-        {
-          "name": "cos_instance_crn",
-          "description": "(Optional, String) Required for OpenShift clusters only. The standard IBM Cloud Object Storage instance CRN to back up the internal registry in your OpenShift on VPC Gen 2 cluster.",
-          "args": []
-        },
-        {
-          "name": "wait_till",
-          "description": "(Optional, String) The creation of a cluster can take a few minutes (for virtual servers) or even hours (for Bare Metal servers) to complete. To avoid long wait times when you run your IBM Cloud Provider plug-in for Terraform code, you can specify the stage when you want IBM Cloud Provider plug-in for Terraform to mark the cluster resource creation as completed. Depending on what stage you choose, the cluster creation might not be fully completed and continues to run in the background. However, your IBM Cloud Provider plug-in for Terraform code can continue to run without waiting for the cluster to be fully created. Supported stages are: <ul><li><strong>`MasterNodeReady`</strong>: IBM Cloud Provider plug-in for Terraform marks the creation of your cluster complete when the cluster master is in a <code>ready</code> state.</li><li><strong>`OneWorkerNodeReady`</strong>: IBM Cloud Provider plug-in for Terraform marks the creation of your cluster complete when the master and at least one worker node are in a <code>ready</code> state.</li><li><strong>`IngressReady`</strong>: IBM Cloud Provider plug-in for Terraform marks the creation of your cluster complete when the cluster master and all worker nodes are in a <code>ready</code> state, and the Ingress subdomain is fully set up.</li></ul> If you do not specify this option, <code>`IngressReady`</code> is used by default. You can set this option only when the cluster is created. If this option is set during a cluster update or deletion, the parameter is ignored by the IBM Cloud Provider plug-in for Terraform provider.",
+          "name": "name",
+          "description": "(Required, String) The name of the cluster.",
           "args": []
         },
         {
@@ -13236,19 +13740,80 @@
           ]
         },
         {
-          "name": "entitlement",
-          "description": "(Optional, String) The {{site.data.keyword.openshiftshort}} cluster entitlement avoids the OCP license charges incurred. Use Cloud Pak with OCP Licence entitlement to create the {{site.data.keyword.openshiftshort}} cluster. **NOTE** <ul><li> It is set only the first time creation of the cluster, further modifications are not impacted. </li></ul> <ul><li> Set this argument to `cloud_pak` only if you use the cluster with a Cloud Pak that has an {{site.data.keyword.openshiftshort}} entitlement.</li></ul>",
+          "name": "kube_version",
+          "description": "(Optional, String) Specify the Kubernetes version, including the major.minor version. If you do not include this flag, the default version is used. To see available versions, run `ibmcloud ks versions`.",
           "args": []
         },
         {
-          "name": "force_delete_storage",
-          "description": "(Optional, Boolean) If set to `true`,force the removal of persistent storage associated with the cluster during cluster deletion. Default value is `false`. **NOTE** If `force_delete_storage` parameter is used after provisioning the cluster, then, you need to execute `terraform apply` before `terraform destroy` for `force_delete_storage` parameter to take effect.",
+          "name": "patch_version",
+          "description": "(Optional, String) Updates the worker nodes with the required patch version. The patch_version should be in the format:  `patch_version_fixpack_version`. For more information, about Kubernetes version information and update, see [Kubernetes version update](/docs/containers?topic=containers-cs_versions). **NOTE:** To update the patch or fix pack versions of the worker nodes, run the command `ibmcloud ks workers -c <cluster_name_or_id> --output json`. Fetch the required patch & fixpack versions from `kubeVersion.target` and set the `patch_version` parameter.",
+          "args": []
+        },
+        {
+          "name": "pod_subnet",
+          "description": "(Optional, String) Specify a custom subnet CIDR to provide private IP addresses for pods. The subnet must have a CIDR of at least `/23` or larger. For more information, see the [documentation](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_subnets). Default value is `172.30.0.0/16`.",
+          "args": []
+        },
+        {
+          "name": "service_subnet",
+          "description": "(Optional, String) Specify a custom subnet CIDR to provide private IP addresses for services. The subnet must be at least ’/24’ or larger. For more information, see the [documentation](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_messages). Default value is `172.21.0.0/16`.",
           "args": []
         },
         {
           "name": "wait_for_worker_update",
           "description": "(Optional, Boolean) Set to `true` to wait and update the Kubernetes  version of worker nodes. **NOTE** Setting wait_for_worker_update to `false` is not recommended. Setting `false` results in upgrading all the worker nodes in the cluster at the same time causing the cluster downtime.",
           "args": []
+        },
+        {
+          "name": "wait_till",
+          "description": "(Optional, String) The creation of a cluster can take a few minutes (for virtual servers) or even hours (for Bare Metal servers) to complete. To avoid long wait times when you run your Terraform code, you can specify the stage when you want Terraform to mark the cluster resource creation as completed. Depending on what stage you choose, the cluster creation might not be fully completed and continues to run in the background. However, your Terraform code can continue to run without waiting for the cluster to be fully created. Supported stages are: <ul><li><strong>`MasterNodeReady`</strong>: Terraform marks the creation of your cluster complete when the cluster master is in a <code>ready</code> state.</li><li><strong>`OneWorkerNodeReady`</strong>: Terraform marks the creation of your cluster complete when the master and at least one worker node are in a <code>ready</code> state.</li><li><strong>`IngressReady`</strong>: Terraform marks the creation of your cluster complete when the cluster master and all worker nodes are in a <code>ready</code> state, and the Ingress subdomain is fully set up.</li></ul> If you do not specify this option, <code>`IngressReady`</code> is used by default. You can set this option only when the cluster is created. If this option is set during a cluster update or deletion, the parameter is ignored by the Terraform provider.",
+          "args": []
+        },
+        {
+          "name": "worker_count",
+          "description": "(Optional, Integer) The number of worker nodes per zone in the default worker pool. Default value `1`.",
+          "args": []
+        },
+        {
+          "name": "worker_labels",
+          "description": "(Optional, Map) Labels on all the workers in the default worker pool.",
+          "args": []
+        },
+        {
+          "name": "resource_group_id",
+          "description": "(Optional, String) The ID of the resource group. You can retrieve the value by running `ibmcloud resource groups` or by using the `ibm_resource_group` data source. If no value is provided, the `default` resource group is used.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, Array of strings) A list of tags that you want to associate with your VPC cluster. **Note**: For users on account to add tags to a resource, they must be assigned the [appropriate permissions]/docs/account?topic=account-access).",
+          "args": []
+        },
+        {
+          "name": "update_all_workers",
+          "description": "(Optional, Boolean) Set to true, if you want to update workers Kubernetes version with the cluster kube_version.",
+          "args": []
+        },
+        {
+          "name": "vpc_id",
+          "description": "(Required, String) The ID of the VPC that you want to use for your cluster. To list available VPCs, run `ibmcloud is vpcs`.",
+          "args": []
+        },
+        {
+          "name": "zones",
+          "description": "(Required, List) A nested block describes the zones of this VPC cluster.",
+          "args": [
+            {
+              "name": "subnet_id",
+              "description": "(Required, String) The VPC subnet to assign the cluster.",
+              "args": []
+            },
+            {
+              "name": "name",
+              "description": "(Required, String) The name of the zone",
+              "args": []
+            }
+          ]
         }
       ],
       "attrs": [
@@ -13535,7 +14100,7 @@
         },
         {
           "name": "wait_till_albs",
-          "description": "(Optional, Boolean) When you add a zone to a worker pool, worker nodes are provisioned in that zone with the configuration that you defined in your worker pool. This process and enabling the ALBs on those worker nodes can take a few minutes to complete. To avoid long wait times when you run your IBM Cloud Provider plug-in for Terraform code, you can specify the stage when you want IBM Cloud Provider plug-in for Terraform to mark the zone attachment complete. Set to **true** to wait until all worker nodes are successfully provisioned in the zone that you added to your worker pool and all ALBs are available and healthy. If you want the worker node creation and ALB enablement to continue in the background, set this option to **false**.",
+          "description": "(Optional, Boolean) When you add a zone to a worker pool, worker nodes are provisioned in that zone with the configuration that you defined in your worker pool. This process and enabling the ALBs on those worker nodes can take a few minutes to complete. To avoid long wait times when you run your Terraform code, you can specify the stage when you want Terraform to mark the zone attachment complete. Set to **true** to wait until all worker nodes are successfully provisioned in the zone that you added to your worker pool and all ALBs are available and healthy. If you want the worker node creation and ALB enablement to continue in the background, set this option to **false**.",
           "args": []
         },
         {
@@ -13751,6 +14316,46 @@
         }
       ]
     },
+    "ibm_cr_namespace": {
+      "name": "ibm_cr_namespace",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Kubernetes Service resources",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, String) The name of the namespaces to create.",
+          "args": []
+        },
+        {
+          "name": "resource_group_id",
+          "description": "(Optional, String) The ID of the resource group to which the namespace is assigned. If not provided, default resource group ID will be assigned.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The name of the namespace.",
+          "args": []
+        },
+        {
+          "name": "crn",
+          "description": "The `CRN` of the namespace.",
+          "args": []
+        },
+        {
+          "name": "created_on",
+          "description": "The created time of the namespace.",
+          "args": []
+        },
+        {
+          "name": "updated_on",
+          "description": "The updated time of the namespace.",
+          "args": []
+        }
+      ]
+    },
     "ibm_database": {
       "name": "ibm_database",
       "type": "resource",
@@ -13769,7 +14374,7 @@
         },
         {
           "name": "location",
-          "description": "(Required, String) The location where you want to deploy your instance. The location must match the `region` parameter that you specify in the `provider` block of your IBM Cloud Provider plug-in for Terraform configuration file. The default value is `us-south`. Currently, supported regions are `us-south`, `us-east`, `eu-gb`, `eu-de`, `au-syd`, `jp-tok`, `oslo01`.",
+          "description": "(Required, String) The location where you want to deploy your instance. The location must match the `region` parameter that you specify in the `provider` block of your Terraform configuration file. The default value is `us-south`. Currently, supported regions are `us-south`, `us-east`, `eu-gb`, `eu-de`, `au-syd`, `jp-tok`, `oslo01`.",
           "args": []
         },
         {
@@ -14032,7 +14637,7 @@
         },
         {
           "name": "connectionstrings",
-          "description": "A list of connection strings for the database for each user ID. For more information, about how to use connection strings, see the [documentation](/docs/databases-for-postgresql?topic=databases-for-postgresql-connection-strings). The results are returned in pairs of the userid and string: `connectionstrings.1.name = admin connectionstrings.1.string = postgres://admin:$PASSWORD@79226bd4-4076-4873-b5ce-b1dba48ff8c4.b8a5e798d2d04f2e860e54e5d042c915.databases.appdomain.cloud:32554/ibmclouddb?sslmode=verify-full` Individual string parameters can be retrieved by using IBM Cloud Provider plug-in for Terraform variables and outputs `connectionstrings.x.hosts.x.port` and `connectionstrings.x.hosts.x.host`",
+          "description": "A list of connection strings for the database for each user ID. For more information, about how to use connection strings, see the [documentation](/docs/databases-for-postgresql?topic=databases-for-postgresql-connection-strings). The results are returned in pairs of the userid and string: `connectionstrings.1.name = admin connectionstrings.1.string = postgres://admin:$PASSWORD@79226bd4-4076-4873-b5ce-b1dba48ff8c4.b8a5e798d2d04f2e860e54e5d042c915.databases.appdomain.cloud:32554/ibmclouddb?sslmode=verify-full` Individual string parameters can be retrieved by using Terraform variables and outputs `connectionstrings.x.hosts.x.port` and `connectionstrings.x.hosts.x.host`",
           "args": []
         }
       ]
@@ -14188,6 +14793,126 @@
         {
           "name": "operational_status",
           "description": "The gateway operational status. For gateways pending LOA approval, patch operational_status to the appropriate value to approve or reject its LOA. For example, `loa_accepted`.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_dl_provider_gateway": {
+      "name": "ibm_dl_provider_gateway",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Direct Link Gateway resources",
+      "args": [
+        {
+          "name": "bgp_asn",
+          "description": "(Required, Integer) The BGP ASN of the gateway to be created. For example, `64999`.",
+          "args": []
+        },
+        {
+          "name": "bgp_cer_cidr",
+          "description": "(Optional, String) The BGP customer edge router CIDR. Specify a value within bgp_base_cidr. If bgp_base_cidr is `169.254.0.0/16`, this parameter can exclude and a CIDR is selected automatically. For example, `10.254.30.78/30`.",
+          "args": []
+        },
+        {
+          "name": "bgp_ibm_cidr",
+          "description": "(Optional, String) The {{site.data.keyword.IBM_notm}} BGP CIDR. Specify a value within bgp_base_cidr. If bgp_base_cidr is `169.254.0.0/16`, this parameter can exclude and a CIDR is selected automatically. For example, `10.254.30.77/30`.",
+          "args": []
+        },
+        {
+          "name": "customer_account_id",
+          "description": "(Required, String) The customer IBM Cloud account ID for the new gateway. A gateway object contains the pending create request to be available in the specified account.",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "(Required, String) The unique user-defined name for this gateway. Example: `myGateway`",
+          "args": []
+        },
+        {
+          "name": "port",
+          "description": "(Required, String) The gateway port for type to connect gateways.",
+          "args": []
+        },
+        {
+          "name": "speed_mbps",
+          "description": "(Required, Integer) The gateway speed in megabits per second. For example, `10.254.30.78/30`.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique ID of the gateway.",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "The unique user-defined name for the gateway",
+          "args": []
+        },
+        {
+          "name": "crn",
+          "description": "The CRN of the gateway.",
+          "args": []
+        },
+        {
+          "name": "created_at",
+          "description": "The date and time resource created.",
+          "args": []
+        },
+        {
+          "name": "location_display_name",
+          "description": "The gateway location long name.",
+          "args": []
+        },
+        {
+          "name": "resource_group",
+          "description": "The resource group reference.",
+          "args": []
+        },
+        {
+          "name": "bgp_asn",
+          "description": "The IBM BGP ASN.",
+          "args": []
+        },
+        {
+          "name": "bgp_status",
+          "description": "The gateway BGP status.",
+          "args": []
+        },
+        {
+          "name": "customer_account_id",
+          "description": "The customer IBM Cloud account ID for the new gateway. A gateway object contains the pending create request to be available in the specified account.",
+          "args": []
+        },
+        {
+          "name": "link_status",
+          "description": "The gateway link status. You can include only on `type=dedicated` gateways. For example, `down`, `up`.",
+          "args": []
+        },
+        {
+          "name": "port",
+          "description": "The gateway port for `type=connect` gateways.",
+          "args": []
+        },
+        {
+          "name": "vlan",
+          "description": "The VLAN allocated for the gateway. You can set only for `type=connect` gateways created directly through the {{site.data.keyword.IBM_notm}} portal.",
+          "args": []
+        },
+        {
+          "name": "provider_api_managed",
+          "description": "Indicates whether the gateway changes need to be made via a provider portal.",
+          "args": []
+        },
+        {
+          "name": "operational_status",
+          "description": "The gateway operational status. Supported values are`configuring`, `create_pending`, `create_rejected`, `delete_pending`, `provisioned`.",
+          "args": []
+        },
+        {
+          "name": "provider_api_managed",
+          "description": "Indicates whether the gateway changes must be made through a provider portal.",
           "args": []
         }
       ]
@@ -15422,7 +16147,7 @@
         },
         {
           "name": "resource_instance_id",
-          "description": "(Required, String) The ID/CRN of the event streams service instance.",
+          "description": "(Required, String) The ID/CRN of the Event Streams service instance.",
           "args": []
         }
       ],
@@ -15439,7 +16164,7 @@
         },
         {
           "name": "kafka_http_url",
-          "description": "The API endpoint for interacting with event streams REST API.",
+          "description": "The API endpoint for interacting with Event Streams REST API.",
           "args": []
         }
       ]
@@ -16083,7 +16808,7 @@
           "args": [
             {
               "name": "service",
-              "description": "(Optional, String) The service name that you want to include in your policy definition. For account management services, you can find supported values in the [documentation](/docs/account?topic=account-account-services#api-acct-mgmt). For other services, run the `ibmcloud catalog service-marketplace` command and retrieve the value from the **Name** column of your CLI output.",
+              "description": "(Optional, String) The service name that you want to include in your policy definition. For account management services, you can find supported values in the [documentation](/docs/account?topic=account-account-services#api-acct-mgmt). For other services, run the `ibmcloud catalog service-marketplace` command and retrieve the value from the **Name** column of your command line output.",
               "args": []
             },
             {
@@ -16262,6 +16987,86 @@
         {
           "name": "crn",
           "description": "The CRN of the custom role.",
+          "args": []
+        }
+      ]
+    },
+    "ibm_iam_service_api_key": {
+      "name": "ibm_iam_service_api_key",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "Identity & Access (IAM) resources",
+      "args": [
+        {
+          "name": "name",
+          "description": "(Required, String) The name of the service API key.",
+          "args": []
+        },
+        {
+          "name": "description",
+          "description": "(Optional, String) The description of the service API key.",
+          "args": []
+        },
+        {
+          "name": "iam_service_id",
+          "description": "(Required, String) The IAM ID of the service.",
+          "args": []
+        },
+        {
+          "name": "apikey",
+          "description": "(Optional, String) The API key value. This property only contains the API key value for the following cases: `create an API key`, `update a Service API key that stores the API key value as retrievable`, or `get a service API key that stores the API key value as retrievable`. All other operations do not return the API key value. For example, all user API key related operations, except for create, do not contain the API key value.",
+          "args": []
+        },
+        {
+          "name": "locked",
+          "description": "(Optional, Bool) The API key cannot be changed if set to `true`.",
+          "args": []
+        },
+        {
+          "name": "store_value",
+          "description": "(Optional, Bool) The boolean value whether API key value is retrievable in the future.",
+          "args": []
+        },
+        {
+          "name": "file",
+          "description": "(Optional, String) The file name where API key is to be stored.",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "account_id",
+          "description": "The account Id of the API key.",
+          "args": []
+        },
+        {
+          "name": "entity_tag ",
+          "description": "The version or entity tag of the service API key.",
+          "args": []
+        },
+        {
+          "name": "id",
+          "description": "The unique identifier of the API key.",
+          "args": []
+        },
+        {
+          "name": "crn",
+          "description": "The `CRN` of the service API key.",
+          "args": []
+        },
+        {
+          "name": "created_by",
+          "description": "The IAM ID of the service that is created by the API key.",
+          "args": []
+        },
+        {
+          "name": "created_at",
+          "description": "The date and time service API key was created.",
+          "args": []
+        },
+        {
+          "name": "modified_at",
+          "description": "The date and time service API key was modified.",
           "args": []
         }
       ]
@@ -17116,6 +17921,11 @@
       "groupName": "VPC infrastructure resources",
       "args": [
         {
+          "name": "auto_delete_volume",
+          "description": "(Optional, Bool) If set to `true`, automatically deletes the volumes that are attached to an instance. **Note** Setting this argument can bring some inconsistency in the volume resource, as the volumes is destroyed along with instances.",
+          "args": []
+        },
+        {
           "name": "boot_volume",
           "description": "(Optional, List) A list of boot volumes for an instance.",
           "args": [
@@ -17965,7 +18775,7 @@
         },
         {
           "name": "default_pool",
-          "description": "(Required, String) The load balancer pool unique identifier.",
+          "description": "(Optional, String) The load balancer pool unique identifier.",
           "args": []
         },
         {
@@ -18849,7 +19659,7 @@
         },
         {
           "name": "total_ipv4_address_count",
-          "description": "(Optional, String) The total number of IPv4 addresses. Either `ipv4_cid_block` or `total_pv4_address_count` input parameters must be provided in the resource.",
+          "description": "(Optional, String) The total number of IPv4 addresses. Either `ipv4_cidr_block` or `total_pv4_address_count` input parameters must be provided in the resource.",
           "args": []
         },
         {
@@ -19108,27 +19918,6 @@
           "args": []
         },
         {
-          "name": "target",
-          "description": "(Required, List) The endpoint gateway target.",
-          "args": [
-            {
-              "name": "name",
-              "description": "(Required, String) The endpoint gateway target name.",
-              "args": []
-            },
-            {
-              "name": "resource_type",
-              "description": "(Required, String) The endpoint gateway target resource type.",
-              "args": []
-            }
-          ]
-        },
-        {
-          "name": "vpc",
-          "description": "(Required, String) The VPC ID.",
-          "args": []
-        },
-        {
           "name": "ips",
           "description": "(Optional, List) The endpoint gateway resource group.",
           "args": [
@@ -19163,6 +19952,32 @@
           "name": "tags",
           "description": "(Optional, List of strings) A list of tags associated with the instance.",
           "args": []
+        },
+        {
+          "name": "target",
+          "description": "(Required, List) The endpoint gateway target.",
+          "args": [
+            {
+              "name": "crn",
+              "description": "(Optional, String) The endpoint gateway target `CRN`. If CRN not specified, `name` must be specified.",
+              "args": []
+            },
+            {
+              "name": "name",
+              "description": "(Required, String) The endpoint gateway target name.",
+              "args": []
+            },
+            {
+              "name": "resource_type",
+              "description": "(Required, String) The endpoint gateway target resource type.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "vpc",
+          "description": "(Required, String) The VPC ID.",
+          "args": []
         }
       ],
       "attrs": [
@@ -19188,7 +20003,7 @@
         },
         {
           "name": "lifecycle_state",
-          "description": "The lifecyle state of the endpoint gateway.",
+          "description": "The lifecycle state of the endpoint gateway.",
           "args": []
         }
       ]
@@ -19331,6 +20146,195 @@
           "name": "crn",
           "description": "The CRN for the volume.",
           "args": []
+        }
+      ]
+    },
+    "ibm_is_vpc": {
+      "name": "ibm_is_vpc",
+      "type": "resource",
+      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
+      "groupName": "VPC infrastructure resources",
+      "args": [
+        {
+          "name": "classic_access",
+          "description": "(Optional, Boolean) Specify if you want to create a VPC that can connect to classic infrastructure resources. Enter **true** to set up private network connectivity from your VPC to classic infrastructure resources that are created in the same IBM Cloud account, and **false** to disable this access. If you choose to not set up this access, you cannot enable it after the VPC is created. Make sure to review the [prerequisites](/docs/vpc-on-classic-network?topic=vpc-on-classic-setting-up-access-to-your-classic-infrastructure-from-vpc#vpc-prerequisites) before you create a VPC with classic infrastructure access. Note that you can enable one VPC for classic infrastructure access per IBM Cloud account only.",
+          "args": []
+        },
+        {
+          "name": "address_prefix_management",
+          "description": "(Optional, String) Indicates whether a default address prefix should be created automatically (`auto`) or manually (`manual`) for each zone in this VPC. Default value `auto`.",
+          "args": []
+        },
+        {
+          "name": "default_network_acl",
+          "description": "(Deprecated, String) The ID of the default network ACL.",
+          "args": []
+        },
+        {
+          "name": "name",
+          "description": "(Required, String) Enter a name for your VPC.",
+          "args": []
+        },
+        {
+          "name": "resource_group",
+          "description": "(Optional, String) Enter the ID of the resource group where you want to create the VPC. To list available resource groups, run `ibmcloud resource groups`. If you do not specify a resource group, the VPC is created in the `default` resource group.",
+          "args": []
+        },
+        {
+          "name": "tags",
+          "description": "(Optional, Array of Strings) Enter any tags that you want to associate with your VPC. Tags might help you find your VPC more easily after it is created. Separate multiple tags with a comma (`,`).",
+          "args": []
+        }
+      ],
+      "attrs": [
+        {
+          "name": "crn",
+          "description": "The CRN of the VPC.",
+          "args": []
+        },
+        {
+          "name": "default_security_group",
+          "description": "The default security group ID created and attached to the VPC.",
+          "args": []
+        },
+        {
+          "name": "default_network_acl",
+          "description": "The default network ACL ID created and attached to the VPC.",
+          "args": []
+        },
+        {
+          "name": "id",
+          "description": "The unique identifier of the VPC that you created.",
+          "args": []
+        },
+        {
+          "name": "subnets",
+          "description": "A list of subnets that are attached to a VPC.",
+          "args": [
+            {
+              "name": "name",
+              "description": "The name of the subnet.",
+              "args": []
+            },
+            {
+              "name": "id",
+              "description": "The ID of the subnet.",
+              "args": []
+            },
+            {
+              "name": "status",
+              "description": "The status of the subnet.",
+              "args": []
+            },
+            {
+              "name": "zone",
+              "description": "The Zone of the subnet.",
+              "args": []
+            },
+            {
+              "name": "total_ipv4_address_count",
+              "description": "Total IPv4 addresses under the subnet.",
+              "args": []
+            },
+            {
+              "name": "available_ipv4_address_count",
+              "description": "Available IPv4 addresses available for the usage in the subnet.",
+              "args": []
+            },
+            {
+              "name": "total_ipv4_address_count",
+              "description": "The total number of IPv4 addresses in the subnet.",
+              "args": []
+            },
+            {
+              "name": "available_ipv4_address_count",
+              "description": "The number of IPv4 addresses in the subnet that are available for you to be used.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "status",
+          "description": "The provisioning status of your VPC.",
+          "args": []
+        },
+        {
+          "name": "cse_source_addresses",
+          "description": "A list of the cloud service endpoints that are associated with your VPC, including their source IP address and zone.",
+          "args": [
+            {
+              "name": "address",
+              "description": "The IP address of the cloud service endpoint.",
+              "args": []
+            },
+            {
+              "name": "zone_name",
+              "description": "The zone where the cloud service endpoint is located.",
+              "args": []
+            }
+          ]
+        },
+        {
+          "name": "security_group",
+          "description": "A list of security groups attached to VPC. The nested security group block has the following structure:",
+          "args": [
+            {
+              "name": "group_id",
+              "description": "The security group ID.",
+              "args": []
+            },
+            {
+              "name": "group_name",
+              "description": "The name of the security group.",
+              "args": []
+            },
+            {
+              "name": "rules",
+              "description": "Set of rules attached to a security group.",
+              "args": [
+                {
+                  "name": "rule_id",
+                  "description": "The rule ID.",
+                  "args": []
+                },
+                {
+                  "name": "direction",
+                  "description": "The direction of the traffic either inbound or outbound.",
+                  "args": []
+                },
+                {
+                  "name": "ip_version",
+                  "description": "ip version either ipv4 or IPv6.",
+                  "args": []
+                },
+                {
+                  "name": "remote",
+                  "description": "Security group id, an IP address, a CIDR block, or a single security group identifier.",
+                  "args": []
+                },
+                {
+                  "name": "type",
+                  "description": "The ICMP traffic type to allow.",
+                  "args": []
+                },
+                {
+                  "name": "code",
+                  "description": "The ICMP traffic code to allow.",
+                  "args": []
+                },
+                {
+                  "name": "port_min",
+                  "description": "The inclusive lower bound of TCP port range.",
+                  "args": []
+                },
+                {
+                  "name": "port_max",
+                  "description": "The inclusive upper bound of TCP port range.",
+                  "args": []
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -19539,7 +20543,7 @@
         },
         {
           "name": "next_hop",
-          "description": "(Optional, String) The next hop of the route.",
+          "description": "(Required, String) The next hop of the route.",
           "args": []
         },
         {
@@ -19610,6 +20614,11 @@
         {
           "name": "tags",
           "description": "(Optional, List of strings) A list of tags that you want to add to your VPN gateway. Tags can help you find your VPN gateway more easily later.",
+          "args": []
+        },
+        {
+          "name": "mode",
+          "description": "(String, Optional) Mode in VPN gateway. Supported values are `route` or `policy`. The default value is `route`.",
           "args": []
         }
       ],
@@ -19813,7 +20822,7 @@
               "args": [
                 {
                   "name": "interval_month",
-                  "description": "(Required, Integer) Specifies the key rotation time interval in months. CONSTRAINTS: 1 ≤ value ≤ 12 **NOTE:** Rotation policy cannot be set for standard key and imported key. Once the rotation policy is set, it cannot be unset or removed by using IBM Cloud Provider plug-in for Terraform.",
+                  "description": "(Required, Integer) Specifies the key rotation time interval in months. CONSTRAINTS: 1 ≤ value ≤ 12 **NOTE:** Rotation policy cannot be set for standard key and imported key. Once the rotation policy is set, it cannot be unset or removed by using Terraform.",
                   "args": []
                 }
               ]
@@ -19824,7 +20833,7 @@
               "args": [
                 {
                   "name": "enabled",
-                  "description": "(Required, Bool) If set to `true`, Key Protect enables a dual authorization policy on a single key. **NOTE:** Once the dual authorization policy is set on the key, it cannot be reverted. A key with dual authorization policy enabled cannot be destroyed by using IBM Cloud Provider plug-in for Terraform.",
+                  "description": "(Required, Bool) If set to `true`, Key Protect enables a dual authorization policy on a single key. **NOTE:** Once the dual authorization policy is set on the key, it cannot be reverted. A key with dual authorization policy enabled cannot be destroyed by using Terraform.",
                   "args": []
                 }
               ]
@@ -20222,7 +21231,7 @@
         },
         {
           "name": "stay_secondary",
-          "description": "(Optional, Boolean) Specifies whether the secondary Netscaler VPX will  take over the service. Set this argument to `true` to prevent the secondary Netscaler VPX from taking over the service even if the primary Netscaler VPX fails. For more information, see the [Citrix Netscaler Docs](https://docs.citrix.com/en-us/netscaler/10-5/ns-system-wrapper-10-con/ns-nw-ha-intro-wrppr-con/ns-nw-ha-frcng-scndry-nd-sty-scndry-tsk.html) and the [Citrix support Docs  ](https://support.citrix.com/article/CTX116748). The default value is `false`.",
+          "description": "(Optional, Boolean) Specifies whether the secondary Netscaler VPX will  take over the service. Set this argument to `true` to prevent the secondary Netscaler VPX from taking over the service even if the primary Netscaler VPX fails. For more information, see the [Citrix Netscaler Docs](https://docs.citrix.com/en-us/netscaler/10-5/ns-system-wrapper-10-con/ns-nw-ha-intro-wrppr-con/ns-nw-ha-frcng-scndry-nd-sty-scndry-tsk.html) and the [Citrix support documentation  ](https://support.citrix.com/article/CTX116748). The default value is `false`.",
           "args": []
         },
         {
@@ -20412,6 +21421,11 @@
               "args": []
             }
           ]
+        },
+        {
+          "name": "session_stickiness",
+          "description": "(Optional, String) The `SOURCE_IP` or `HTTP_COOKIE` for session stickiness.",
+          "args": []
         },
         {
           "name": "ssl_ciphers",
@@ -20904,7 +21918,7 @@
         },
         {
           "name": "pi_cloud_instance_id",
-          "description": "(Required, String) The cloud_instance_id for this account.",
+          "description": "(Required, String) The GUID of the service instance associated with an account.",
           "args": []
         }
       ],
@@ -20929,7 +21943,7 @@
       "args": [
         {
           "name": "pi_cloud_instance_id",
-          "description": "(Required, String) The cloud instance ID of your account.",
+          "description": "(Required, String) The GUID of the service instance associated with an account.",
           "args": []
         },
         {
@@ -21120,7 +22134,7 @@
       "args": [
         {
           "name": "pi_cloud_instance_id",
-          "description": "(Required, String) The cloud instance ID for this account.",
+          "description": "(Required, String) The GUID of the service instance associated with an account.",
           "args": []
         },
         {
@@ -21155,7 +22169,7 @@
       "args": [
         {
           "name": "pi_cloud_instance_id",
-          "description": "(Required, String) The cloud instance ID for this account.",
+          "description": "(Required, String) The GUID of the service instance associated with an account.",
           "args": []
         },
         {
@@ -21205,7 +22219,7 @@
         },
         {
           "name": "pi_cloud_instance_id",
-          "description": "(Required, String) The cloud_instance_id of the account.",
+          "description": "(Required, String) The GUID of the service instance associated with an account.",
           "args": []
         },
         {
@@ -21275,7 +22289,7 @@
         },
         {
           "name": "pi_cloud_instance_id",
-          "description": "(Required, String) The cloud instance ID for this account.",
+          "description": "(Required, String) The GUID of the service instance associated with an account.",
           "args": []
         }
       ],
@@ -21300,7 +22314,7 @@
       "args": [
         {
           "name": "pi_cloud_instance_id",
-          "description": "(Required, String) The cloud instance ID for this account.",
+          "description": "(Required, String) The GUID of the service instance associated with an account.",
           "args": []
         },
         {
@@ -21400,7 +22414,7 @@
         },
         {
           "name": "service",
-          "description": "(Required, String) The name of the service offering. You can retrieve the value by installing the `catalogs-management` CLI plug-in and running the `ibmcloud catalog service-marketplace` or `ibmcloud catalog search` command. For more information, about IBM Cloud catalog service marketplace, refer [IBM Cloud catalog service marketplace] (docs/cli?topic=cli-ibmcloud_catalog#ibmcloud_catalog_service_marketplace).",
+          "description": "(Required, String) The name of the service offering. You can retrieve the value by installing the `catalogs-management` command line plug-in and running the `ibmcloud catalog service-marketplace` or `ibmcloud catalog search` command. For more information, about IBM Cloud catalog service marketplace, refer [IBM Cloud catalog service marketplace](/docs/cli?topic=cli-ibmcloud_catalog#ibmcloud_catalog_service_marketplace).",
           "args": []
         },
         {
@@ -21766,7 +22780,7 @@
         },
         {
           "name": "iops",
-          "description": "(Required, Float) The IOPS value for the storage. For supported values, see [Provisioning](/docs/BlockStorage?topic=BlockStorage-About#provisioning).",
+          "description": "(Required, Float) The IOPS value for the storage. For supported values.",
           "args": []
         },
         {
@@ -21810,7 +22824,43 @@
           "args": []
         }
       ],
-      "attrs": []
+      "attrs": [
+        {
+          "name": "id",
+          "description": "The unique identifier of the storage.",
+          "args": []
+        },
+        {
+          "name": "hostname",
+          "description": "The fully qualified domain name of the storage.",
+          "args": []
+        },
+        {
+          "name": "allowed_virtual_guest_info",
+          "description": "Deprecated please use `allowed_host_info` instead.",
+          "args": []
+        },
+        {
+          "name": "allowed_hardware_info",
+          "description": "Deprecated please use `allowed_host_info` instead.",
+          "args": []
+        },
+        {
+          "name": "allowed_host_info",
+          "description": "The user name, password, and host IQN of the hosts with access to the storage.",
+          "args": []
+        },
+        {
+          "name": "lunid",
+          "description": "The `LUN` ID of the storage device.",
+          "args": []
+        },
+        {
+          "name": "volumename",
+          "description": "The name of the storage volume.",
+          "args": []
+        }
+      ]
     },
     "ibm_storage_evault": {
       "name": "ibm_storage_evault",
