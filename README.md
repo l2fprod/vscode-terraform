@@ -12,4 +12,4 @@
 
 ## Features at a glance
 
-- Forked of [Mikael Olenfalk's extension](https://marketplace.visualstudio.com/items?itemName=mauve.terraform) adding support for [IBM Cloud Provider](https://ibm-cloud.github.io/tf-ibm-docs/) until [PR](https://github.com/mauve/vscode-terraform/pull/234) is merged into main codebase.
+- Forked of [Mikael Olenfalk's extension](https://marketplace.visualstudio.com/items?itemName=mauve.terraform) adding support for [IBM Cloud Provider](https://cloud.ibm.com/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started/) until [PR](https://github.com/mauve/vscode-terraform/pull/234) is merged into main codebase.
