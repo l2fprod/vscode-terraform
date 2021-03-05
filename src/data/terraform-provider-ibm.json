@@ -5673,6 +5673,11 @@
           "args": []
         },
         {
+          "name": "sort",
+          "description": "(String, Optional) The single field sort query for policies.",
+          "args": []
+        },
+        {
           "name": "policies",
           "args": [
             {
@@ -5690,7 +5695,7 @@
           "args": [
             {
               "name": "id",
-              "description": "The unique identifier of the IAM service policy. The ID is composed of \\<iam_service_id\\>/\\<service_policy_id\\>",
+              "description": "The unique identifier of the IAM service policy. The ID is composed of `<iam_service_id>/<service_policy_id>`",
               "args": []
             },
             {
@@ -5710,7 +5715,12 @@
       "args": [
         {
           "name": "ibm_id",
-          "description": "(Required, String) The IBMid or email address of the user.",
+          "description": "(Required, String) The IBM ID or email address of the user.",
+          "args": []
+        },
+        {
+          "name": "sort",
+          "description": "(String, Optional) The single field sort query for policies.",
           "args": []
         }
       ],
@@ -5721,7 +5731,7 @@
           "args": [
             {
               "name": "id",
-              "description": "The unique identifier of the IAM user policy. The ID is composed of \\<ibm_id\\>/\\<user_policy_id\\>.",
+              "description": "The unique identifier of the IAM user policy. The ID is composed of `<ibm_id>/<user_policy_id>`.",
               "args": []
             },
             {
@@ -5772,7 +5782,7 @@
       "args": [
         {
           "name": "id",
-          "description": "(Required, String) The IBMid or email address of the user.",
+          "description": "(Required, String) The IBM ID or email address of the user.",
           "args": []
         }
       ],
@@ -8053,6 +8063,16 @@
         {
           "name": "default_network_acl",
           "description": "The ID of the default network ACL.",
+          "args": []
+        },
+        {
+          "name": "default_security_group",
+          "description": "The unique identifier of the VPC default security group.",
+          "args": []
+        },
+        {
+          "name": "default_routing_table",
+          "description": "The unique identifier of the VPC default routing table.",
           "args": []
         },
         {
@@ -13746,7 +13766,7 @@
         },
         {
           "name": "patch_version",
-          "description": "(Optional, String) Updates the worker nodes with the required patch version. The patch_version should be in the format:  `patch_version_fixpack_version`. For more information, about Kubernetes version information and update, see [Kubernetes version update](/docs/containers?topic=containers-cs_versions). **NOTE:** To update the patch or fix pack versions of the worker nodes, run the command `ibmcloud ks workers -c <cluster_name_or_id> --output json`. Fetch the required patch & fixpack versions from `kubeVersion.target` and set the `patch_version` parameter.",
+          "description": "(Optional, String) Updates the worker nodes with the required patch version. The patch_version should be in the format:  `patch_version_fixpack_version`. For more information, about Kubernetes version information and update, see [Kubernetes version update](/docs/containers?topic=containers-cs_versions). **NOTE:** To update the patch or fix pack versions of the worker nodes, run the command `ibmcloud ks workers -c <cluster_name_or_id> --output json`. Fetch the required patch & fix pack versions from `kubeVersion.target` and set the `patch_version` parameter.",
           "args": []
         },
         {
@@ -16325,6 +16345,11 @@
               "args": []
             },
             {
+              "name": "code_path",
+              "description": "(Optional, String) When not using the `blackbox` executable, the file path of code to execute and supports only `.zip` extension to create the action.       **NOTE**: Conflicts with `exec.components`, `exec.image`, `exec.code`.",
+              "args": []
+            },
+            {
               "name": "kind",
               "description": "(Required, String) The type of action. You can find supported kinds in the [IBM Cloud Functions Docs](/docs/openwhisk?topic=openwhisk-runtimes).",
               "args": []
@@ -18455,16 +18480,6 @@
       "groupName": "VPC infrastructure resources",
       "args": [
         {
-          "name": "templates",
-          "args": [
-            {
-              "name": "id",
-              "description": "(Required, String) The ID of the instance template.",
-              "args": []
-            }
-          ]
-        },
-        {
           "name": "name",
           "description": "(Required, String) The name of the instance template.",
           "args": []
@@ -18522,6 +18537,11 @@
               "name": "primary_ipv4_address",
               "description": "(Optional, String) The IPv4 address assigned to the primary network interface.",
               "args": []
+            },
+            {
+              "name": "allow_ip_spoofing",
+              "description": "(Optional, Bool) Indicates whether IP spoofing is allowed on this interface. If set to `false` IP spoofing is prevented on the interface. If set to `true`, IP spoofing is allowed on the interface..",
+              "args": []
             }
           ]
         },
@@ -18548,6 +18568,11 @@
               "name": "primary_ipv4_address",
               "description": "(Optional, String) The IPv4 address assigned to the network interface.",
               "args": []
+            },
+            {
+              "name": "allow_ip_spoofing",
+              "description": "(Optional, Bool) Indicates whether IP spoofing is allowed on this interface. If set to `false` IP spoofing is prevented on the interface. If set to `true`, IP spoofing is allowed on the interface..",
+              "args": []
             }
           ]
         },
@@ -18563,21 +18588,6 @@
             {
               "name": "name",
               "description": "(Optional, String) The name of the boot volume.",
-              "args": []
-            },
-            {
-              "name": "size",
-              "description": "(Optional, String) The boot volume size to configure in giga bytes.",
-              "args": []
-            },
-            {
-              "name": "iops",
-              "description": "(Optional, String) The IOPS for the boot volume.",
-              "args": []
-            },
-            {
-              "name": "profile",
-              "description": "(Optional, String) The profile for the boot volume configuration.",
               "args": []
             },
             {
@@ -18688,6 +18698,11 @@
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
       "groupName": "VPC infrastructure resources",
       "args": [
+        {
+          "name": "logging",
+          "description": "(Optional, Bool) Enable load balancer data logs for LogDNA. The data logs helps to troubleshoot connectivity issues.",
+          "args": []
+        },
         {
           "name": "name",
           "description": "(Required, String) The name of the VPC load balancer.",
@@ -20200,6 +20215,11 @@
         {
           "name": "default_network_acl",
           "description": "The default network ACL ID created and attached to the VPC.",
+          "args": []
+        },
+        {
+          "name": "default_routing_table",
+          "description": "The unique identifier of the VPC default routing table.",
           "args": []
         },
         {
