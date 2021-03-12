@@ -4042,51 +4042,6 @@
         }
       ]
     },
-    "ibm_cr_namespaces": {
-      "name": "ibm_cr_namespaces",
-      "type": "data",
-      "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "Kubernetes Service data sources",
-      "args": [],
-      "attrs": [
-        {
-          "name": "id",
-          "description": "The unique identifier of the namespace datasource.",
-          "args": []
-        },
-        {
-          "name": "namespaces",
-          "description": "List of namespaces available in the account.",
-          "args": [
-            {
-              "name": "name",
-              "description": "The name of the namespace to create.",
-              "args": []
-            },
-            {
-              "name": "resource_group_id",
-              "description": "ID of the resource group to which the namespace is assigned.",
-              "args": []
-            },
-            {
-              "name": "crn",
-              "description": "The `CRN` of the namespace.",
-              "args": []
-            },
-            {
-              "name": "created_on",
-              "description": "The created time of the namespace.",
-              "args": []
-            },
-            {
-              "name": "updated_on",
-              "description": "The updated time of the namespace.",
-              "args": []
-            }
-          ]
-        }
-      ]
-    },
     "ibm_database": {
       "name": "ibm_database",
       "type": "data",
@@ -14340,7 +14295,7 @@
       "name": "ibm_cr_namespace",
       "type": "resource",
       "url": "https://cloud.ibm.com/docs/terraform?topic=terraform-provider-changelog",
-      "groupName": "Kubernetes Service resources",
+      "groupName": "Container Registry resources",
       "args": [
         {
           "name": "name",
